@@ -10,6 +10,13 @@ test('golden document passes schema and semantic validation without mutation', (
   assert.deepEqual(input, golden);
   assert.deepEqual(JSON.parse(JSON.stringify(input)), golden);
 });
+test('Unicode text length counts code points', () => {
+  const input = structuredClone(golden);
+  input.dataset.categories[0].label = '\u{1F600}'.repeat(1024);
+  assert.equal(validateChart(input).valid, true);
+  input.dataset.categories[0].label += 'x';
+  assert.equal(validateChart(input).valid, false);
+});
 const invalid = {
   'unknown schema version': m => { m.schemaVersion = 99; },
   'missing field': m => { delete m.revision; },

@@ -58,6 +58,12 @@ internal static class DomainTests
                 Require(ChartCodec.Decode(golden.Replace("\"revision\": 4", "\"revision\": 4.0")).Revision == 4);
             });
             Test("infinite layout rejected", () => { var m = ChartCodec.Decode(golden); m.Layout.X = Double.PositiveInfinity; Reject(() => ChartCodec.Encode(m)); });
+            Test("Unicode length follows schema code-point semantics", () => {
+                var m = ChartCodec.Decode(golden);
+                m.Dataset.Categories[0].Label = String.Concat(System.Linq.Enumerable.Repeat("\U0001F600", 1024));
+                Require(ChartCodec.Decode(ChartCodec.Encode(m)).Dataset.Categories[0].Label.Length == 2048);
+                m.Dataset.Categories[0].Label += "x"; Reject(() => ChartCodec.Encode(m));
+            });
             Test("malformed JSON", () => Reject(() => ChartCodec.Decode("{")));
             Test("duplicate JSON property", () => Reject(() => ChartCodec.Decode(golden.Replace("\"revision\": 4", "\"revision\": 4, \"revision\": 5"))));
             Test("comments rejected", () => Reject(() => ChartCodec.Decode("/*comment*/" + golden)));

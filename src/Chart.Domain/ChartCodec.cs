@@ -25,7 +25,18 @@ namespace PowerPointIntelligence.Domain
         private static void Require(bool valid, string code)
         { if (!valid) throw new InvalidDataException(code); }
         private static bool Finite(double value) { return !Double.IsNaN(value) && !Double.IsInfinity(value); }
-        private static bool Text(string value) { return !String.IsNullOrWhiteSpace(value) && value.Length <= 1024; }
+        private static bool Text(string value)
+        {
+            if (String.IsNullOrWhiteSpace(value)) return false;
+            // JSON Schema maxLength counts Unicode code points, not UTF-16 code units.
+            int count = 0;
+            for (int i = 0; i < value.Length; i++)
+            {
+                if (Char.IsHighSurrogate(value[i]) && i + 1 < value.Length && Char.IsLowSurrogate(value[i + 1])) i++;
+                count++;
+            }
+            return count <= 1024;
+        }
 
         public static void Validate(ChartDocument model)
         {
@@ -99,8 +110,8 @@ namespace PowerPointIntelligence.Domain
             if (type == typeof(bool)) { Require(token.Type == JTokenType.Boolean, "json.type.boolean"); return; }
             if (type == typeof(int)) {
                 Require(token.Type == JTokenType.Integer || token.Type == JTokenType.Float, "json.type.integer");
-                double value = (double)token;
-                Require(Finite(value) && value == Math.Truncate(value) && value >= Int32.MinValue && value <= Int32.MaxValue, "json.type.integer");
+                double integerValue = (double)token;
+                Require(Finite(integerValue) && integerValue == Math.Truncate(integerValue) && integerValue >= Int32.MinValue && integerValue <= Int32.MaxValue, "json.type.integer");
                 return;
             }
             if (type == typeof(double)) { Require(token.Type == JTokenType.Integer || token.Type == JTokenType.Float, "json.type.number"); return; }
