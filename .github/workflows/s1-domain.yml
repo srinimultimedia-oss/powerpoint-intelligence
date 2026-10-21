@@ -1,0 +1,31 @@
+name: S1 domain contracts
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  contracts:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Compile and run C# domain and migration tests
+        shell: pwsh
+        run: ./scripts/Test-S1.ps1
+      - name: Build .NET Framework 4.8 domain project
+        shell: pwsh
+        run: |
+          $vswhere = Join-Path ${env:ProgramFiles(x86)} 'Microsoft Visual Studio/Installer/vswhere.exe'
+          $vs = & $vswhere -latest -products '*' -property installationPath
+          & (Join-Path $vs 'MSBuild/Current/Bin/MSBuild.exe') src/Chart.Domain/Chart.Domain.csproj /restore /t:Build /verbosity:minimal
+          if ($LASTEXITCODE) { throw 'Domain project build failed.' }
+      - name: Install locked schema validator
+        working-directory: packages/chart-domain
+        run: npm ci --ignore-scripts
+      - name: Test JSON schema and semantic validation
+        working-directory: packages/chart-domain
+        run: npm test
+      - name: Validate C# serialization against JSON schema
+        working-directory: packages/chart-domain
+        run: node test/validate-roundtrip.mjs ../../artifacts/domain-roundtrip.v2.json

@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:powerpoint-intelligence:chart-document:v2",
+  "title": "S1 embedded clustered-column chart contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "chartId", "revision", "chartType", "dataset", "series", "axes", "layout", "style"],
+  "properties": {
+    "schemaVersion": { "const": 2 },
+    "chartId": { "type": "string", "pattern": "^(?!00000000-0000-0000-0000-000000000000$)[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$" },
+    "revision": { "type": "integer", "minimum": 0, "maximum": 2147483647 },
+    "chartType": { "const": "clustered-column" },
+    "dataset": { "$ref": "#/$defs/dataset" },
+    "series": { "type": "array", "minItems": 1, "maxItems": 100, "items": { "$ref": "#/$defs/series" } },
+    "axes": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "$ref": "#/$defs/axis" } },
+    "layout": { "$ref": "#/$defs/layout" },
+    "style": { "$ref": "#/$defs/style" }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9:._-]{0,127}$" },
+    "text": { "type": "string", "minLength": 1, "maxLength": 1024, "pattern": "\\S" },
+    "category": {
+      "type": "object", "additionalProperties": false, "required": ["id", "label"],
+      "properties": { "id": { "$ref": "#/$defs/id" }, "label": { "$ref": "#/$defs/text" } }
+    },
+    "dataset": {
+      "type": "object", "additionalProperties": false, "required": ["id", "categories"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "categories": { "type": "array", "minItems": 1, "maxItems": 1000, "items": { "$ref": "#/$defs/category" } }
+      }
+    },
+    "series": {
+      "type": "object", "additionalProperties": false, "required": ["id", "name", "values"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" }, "name": { "$ref": "#/$defs/text" },
+        "values": { "type": "array", "minItems": 1, "maxItems": 1000, "items": { "type": ["number", "null"] } }
+      }
+    },
+    "axis": {
+      "type": "object", "additionalProperties": false, "required": ["id", "role", "scale", "numberFormat"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" }, "role": { "enum": ["category", "value"] },
+        "scale": { "enum": ["category", "linear"] }, "numberFormat": { "$ref": "#/$defs/text" }
+      },
+      "allOf": [
+        { "if": { "properties": { "role": { "const": "category" } } }, "then": { "properties": { "scale": { "const": "category" } } } },
+        { "if": { "properties": { "role": { "const": "value" } } }, "then": { "properties": { "scale": { "const": "linear" } } } }
+      ]
+    },
+    "layout": {
+      "type": "object", "additionalProperties": false, "required": ["unit", "x", "y", "width", "height"],
+      "properties": {
+        "unit": { "const": "pt" },
+        "x": { "type": "number", "minimum": -1000000, "maximum": 1000000 },
+        "y": { "type": "number", "minimum": -1000000, "maximum": 1000000 },
+        "width": { "type": "number", "exclusiveMinimum": 0, "maximum": 1000000 },
+        "height": { "type": "number", "exclusiveMinimum": 0, "maximum": 1000000 }
+      }
+    },
+    "style": {
+      "type": "object", "additionalProperties": false, "required": ["showLegend", "seriesColors"],
+      "properties": {
+        "showLegend": { "type": "boolean" },
+        "seriesColors": { "type": "array", "minItems": 1, "maxItems": 100, "items": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" } }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 2,
+  "chartId": "73c68f66-4226-47ef-93b7-187fdf2fb9af",
+  "revision": 4,
+  "chartType": "clustered-column",
+  "dataset": {
+    "id": "dataset:sales",
+    "categories": [{"id":"category:q1","label":"Q1"},{"id":"category:q2","label":"Q2 & <forecast>"},{"id":"category:q3","label":"日本語"}]
+  },
+  "series": [
+    {"id":"series:actual","name":"Actual","values":[-1.25,0.0,30.0]},
+    {"id":"series:plan","name":"Plan","values":[15.0,null,35.0]}
+  ],
+  "axes": [
+    {"id":"axis:category","role":"category","scale":"category","numberFormat":"General"},
+    {"id":"axis:value","role":"value","scale":"linear","numberFormat":"0.00"}
+  ],
+  "layout": {"unit":"pt","x":60.0,"y":90.0,"width":600.0,"height":340.0},
+  "style": {"showLegend":true,"seriesColors":["#4472C4","#ED7D31"]}
+}

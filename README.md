@@ -1,6 +1,6 @@
 # PowerPoint Intelligence — Codex Starter
 
-**Status:** S0 implementation under development; Windows VSTO runtime acceptance is unverified. See [S0 evidence](docs/evidence/S0-2026-10-21.md) and [validation runbook](docs/implementation/S0-windows-validation.md). Do not proceed to S1 until all S0 acceptance criteria pass in actual PowerPoint.
+**Status:** S0 accepted by the owner; Windows VSTO runtime tests remain unverified. S1 domain/contracts work has begun on explicit owner instruction. See [S0 evidence](docs/evidence/S0-2026-10-21.md), [S1 scope](docs/implementation/S1-domain-contracts.md) and [S1 evidence](docs/evidence/S1-2026-10-21.md).
 
 ## Approved baseline
 - Windows desktop PowerPoint first; C# VSTO/COM adapter (.NET Framework 4.8)

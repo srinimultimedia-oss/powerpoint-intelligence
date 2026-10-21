@@ -24,4 +24,4 @@ Windows + desktop PowerPoint, Visual Studio with Office development tools, .NET 
 - S0-AT-004: Duplicated slide has no chart identity collision.
 - S0-AT-005: Missing/corrupt metadata yields safe diagnostics, not data loss.
 
-**Current status:** IN PROGRESS. Implementation and test harness added; no S0 acceptance criterion is marked passed. See [execution evidence](../evidence/S0-2026-10-21.md) and [Windows validation runbook](S0-windows-validation.md). VSTO build/load and actual PowerPoint execution remain unverified. **S1 is gated.**
+**Current status:** ACCEPTED BY OWNER in chat on 21 October 2026, followed by explicit authorization to start S1. No S0 acceptance test is marked passed without execution evidence. See [execution evidence](../evidence/S0-2026-10-21.md) and [Windows validation runbook](S0-windows-validation.md). VSTO build/load and actual PowerPoint execution remain unverified; owner acceptance authorizes progression with those limitations recorded.
