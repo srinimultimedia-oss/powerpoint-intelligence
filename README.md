@@ -1,6 +1,6 @@
 # PowerPoint Intelligence — Codex Starter
 
-**Status:** Project initialized as a source-code scaffold. **Not** deployed to GitHub, Codex, or PowerPoint. The VSTO add-in must be created/compiled/tested on a Windows workstation with supported Visual Studio, Office desktop, and .NET Framework tooling.
+**Status:** S0 implementation under development; Windows VSTO runtime acceptance is unverified. See [S0 evidence](docs/evidence/S0-2026-10-21.md) and [validation runbook](docs/implementation/S0-windows-validation.md). Do not proceed to S1 until all S0 acceptance criteria pass in actual PowerPoint.
 
 ## Approved baseline
 - Windows desktop PowerPoint first; C# VSTO/COM adapter (.NET Framework 4.8)
@@ -18,7 +18,8 @@
 6. Do not start Azure calls until networking, endpoint, identity and data-handling decisions are approved.
 
 ## Repository map
-- `apps/powerpoint-vsto/`: Windows add-in contracts and implementation guide (not yet a compiled VSTO project)
+- `apps/powerpoint-vsto/`: .NET Framework 4.8 VSTO project, ribbon/status pane, native chart adapter and bounded versioned XML persistence (full VSTO build/load unverified)
+- `tests/s0/`, `scripts/Test-S0.ps1`: metadata tests and opt-in interactive Office integration harness
 - `packages/chart-core/`: deterministic chart calculations with unit tests
 - `services/ai-gateway/`: on-prem AI action contract and policy placeholders
 - `docs/`: decisions, development milestones, architecture and source SRS
