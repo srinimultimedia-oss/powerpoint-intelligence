@@ -168,6 +168,8 @@
 
 ## Codex starting instructions
 
+**Execution update — 21 October 2026:** The owner explicitly accepted S0 and authorized starting S1. This permits progression while the unexecuted S0 Windows acceptance checks remain unverified. The first S1 domain/contracts profile is under review; see [scope](../implementation/S1-domain-contracts.md) and [execution evidence](../evidence/S1-2026-10-21.md). It does not imply acceptance of any full chart/editing feature. The controlling DOCX section 13 places geometry, rendering and command execution in later slices; its sequence governs the S1 scope despite the broader shorthand in this index.
+
 1. Read `AGENTS.md`, `docs/DECISIONS.md`, `docs/implementation/S0-feasibility.md`, and the full DOCX requirements.
 2. Work only on **S0** until its acceptance tests pass in Windows PowerPoint.
 3. Keep unknown Office versions, Azure tenant/model configuration, database choices and enterprise policies explicitly unresolved.
