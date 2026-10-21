@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AIActionPlan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "planId",
+    "status",
+    "actions",
+    "approvalRequired"
+  ],
+  "properties": {
+    "planId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "proposed",
+        "validated",
+        "approved",
+        "executed",
+        "failed"
+      ]
+    },
+    "approvalRequired": {
+      "type": "boolean"
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "actionId",
+          "type",
+          "arguments"
+        ],
+        "properties": {
+          "actionId": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "CREATE_CHART",
+              "UPDATE_CHART",
+              "CONVERT_CHART",
+              "APPLY_LAYOUT",
+              "ADD_ANNOTATION",
+              "GENERATE_SLIDE",
+              "GENERATE_REPORT"
+            ]
+          },
+          "targetId": {
+            "type": "string"
+          },
+          "arguments": {
+            "type": "object"
+          },
+          "expectedRevision": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    }
+  }
+}
