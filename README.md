@@ -20,6 +20,7 @@
 ## Repository map
 - `apps/powerpoint-vsto/`: .NET Framework 4.8 VSTO project, ribbon/status pane, native chart adapter and bounded versioned XML persistence (full VSTO build/load unverified)
 - `tests/s0/`, `scripts/Test-S0.ps1`: metadata tests and opt-in interactive Office integration harness
+- `src/Chart.Domain/`, `packages/chart-domain/`, `tests/s1/`: .NET Framework 4.8 canonical domain profile, shared JSON Schema, explicit S0 import and contract tests
 - `packages/chart-core/`: deterministic chart calculations with unit tests
 - `services/ai-gateway/`: on-prem AI action contract and policy placeholders
 - `docs/`: decisions, development milestones, architecture and source SRS
