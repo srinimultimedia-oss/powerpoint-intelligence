@@ -1,5 +1,7 @@
 name: S0 metadata (does not validate VSTO or PowerPoint)
 on: [push, pull_request]
+permissions:
+  contents: read
 jobs:
   metadata:
     runs-on: windows-latest
