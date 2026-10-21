@@ -1,10 +1,11 @@
 node_modules/
-**/bin/
-**/obj/
-.vs/
 .env
-*.pfx
 *.snk
-*.user
 TestResults/
 coverage/
+**/bin/
+**/obj/
+*.user
+*.pfx
+.vs/
+artifacts/

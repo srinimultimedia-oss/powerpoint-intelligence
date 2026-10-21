@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
+    <Platform Condition="'$(Platform)' == ''">AnyCPU</Platform>
+    <ProjectGuid>{D6312EDC-399B-46DD-9093-05A19BBC07B4}</ProjectGuid>
+    <ProjectTypeGuids>{BAA0C2D2-18E2-41B9-852F-F413020CAA33};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType><RootNamespace>PowerPointIntelligence.AddIn</RootNamespace>
+    <AssemblyName>PowerPointIntelligence</AssemblyName><TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>7.3</LangVersion><OfficeApplication>PowerPoint</OfficeApplication><OfficeVersion>15.0</OfficeVersion>
+    <VSTO_HostIdentifier>PowerPoint</VSTO_HostIdentifier><VSTO_TrustAssembliesLocation>true</VSTO_TrustAssembliesLocation>
+    <LoadBehavior>3</LoadBehavior><FriendlyName>PowerPoint Intelligence S0</FriendlyName>
+    <Description>S0 native editable chart and persistence feasibility</Description>
+    <SignManifests Condition="'$(ManifestKeyFile)' != ''">true</SignManifests>
+    <ManifestKeyFile Condition="'$(ManifestKeyFile)' != ''">$(ManifestKeyFile)</ManifestKeyFile>
+    <SignAssembly>false</SignAssembly><BootstrapperEnabled>true</BootstrapperEnabled>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">17.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'"><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><OutputPath>bin\Debug\</OutputPath><DefineConstants>DEBUG;TRACE</DefineConstants></PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'"><Optimize>true</Optimize><OutputPath>bin\Release\</OutputPath><DefineConstants>TRACE</DefineConstants></PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System"/><Reference Include="System.Core"/><Reference Include="System.Xml"/>
+    <Reference Include="System.Windows.Forms"/><Reference Include="System.Drawing"/><Reference Include="Microsoft.CSharp"/>
+    <Reference Include="office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"><EmbedInteropTypes>true</EmbedInteropTypes></Reference>
+    <Reference Include="Microsoft.Office.Interop.PowerPoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"><EmbedInteropTypes>true</EmbedInteropTypes></Reference>
+    <Reference Include="Microsoft.Office.Tools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
+    <Reference Include="Microsoft.Office.Tools.Common.v4.0.Utilities"><Private>true</Private></Reference>
+    <Reference Include="Microsoft.VisualStudio.Tools.Applications.Runtime, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contracts.cs"/><Compile Include="MetadataCodec.cs"/><Compile Include="PowerPointHost.cs"/>
+    <Compile Include="ThisAddIn.cs"><SubType>Code</SubType></Compile>
+    <Compile Include="ThisAddIn.Designer.cs"><DependentUpon>ThisAddIn.Designer.xml</DependentUpon></Compile>
+    <None Include="ThisAddIn.Designer.xml"><DependentUpon>ThisAddIn.cs</DependentUpon></None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+  <Import Project="$(VSToolsPath)\OfficeTools\Microsoft.VisualStudio.Tools.Office.targets"/>
+  <ProjectExtensions><VisualStudio><FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
+    <ProjectProperties HostName="PowerPoint" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="PowerPoint" Language="cs" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\16.0\PowerPoint\InstallRoot\Path#POWERPNT.EXE" />
+    <Host Name="PowerPoint" GeneratedCodeNamespace="PowerPointIntelligence.AddIn" IconIndex="0"><HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" /></Host>
+  </FlavorProperties></VisualStudio></ProjectExtensions>
+</Project>
