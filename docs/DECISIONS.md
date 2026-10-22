@@ -6,6 +6,7 @@
 - AD-003: Azure OpenAI is the approved AI provider (external Azure dependency).
 - AD-004: Native editable PowerPoint objects are the primary output model.
 - AD-005: Full engineering documentation; Codex is expected to develop iteratively.
+- AD-010 (22 October 2026): Owner requires configurable Windows desktop Office 2016 ("Office 16"), Office 2019 ("Office 19") and Microsoft 365 compatibility. Explicit profiles and configurable process architecture/minimum build are implemented; product-specific runtime acceptance is not yet verified. See `docs/implementation/office-compatibility.md`.
 
 ## Recommended, subject to proof-of-concept
 - AD-006: VSTO/COM add-in built in C# targeting .NET Framework 4.8.
@@ -14,7 +15,7 @@
 - AD-009: Custom XML metadata plus stable object tags/IDs where supported.
 
 ## BLOCKED — obtain owner/environment confirmation
-- Q-001: Supported Office versions, bitness, update channel and licensing.
+- Q-001 (partially resolved by AD-010): Office 2016, Office 2019 and Microsoft 365 families requested. Exact supported/tested builds, x86/x64 deployment matrix, update channels and licensing remain unresolved. Profile configuration is not runtime certification.
 - Q-002: Windows desktop estate and software installation rights.
 - Q-003: Azure OpenAI resource, region, deployment names, approved model versions and network egress/private endpoint topology.
 - Q-004: On-prem identity provider, SSO protocols, user groups, service accounts.

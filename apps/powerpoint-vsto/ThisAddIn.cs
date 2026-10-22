@@ -1,6 +1,9 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.IO;
+using PowerPointIntelligence.Compatibility;
 using PowerPointIntelligence.Host;
 using Office = Microsoft.Office.Core;
 using PowerPoint = Microsoft.Office.Interop.PowerPoint;
@@ -13,15 +16,46 @@ namespace PowerPointIntelligence.AddIn
         private Label inspector;
         private Microsoft.Office.Tools.CustomTaskPane pane;
         private bool busy;
+        private bool compatibilityAllowed;
+        private string compatibilityStatus = "Office compatibility has not been checked.";
+        private IntelligenceRibbon ribbon;
+        internal bool CommandsEnabled { get { return host != null && compatibilityAllowed; } }
 
         private void OnStartup(object sender, EventArgs e)
         {
             host = new PowerPointHost(Application);
+            ConfigureCompatibility();
             Application.WindowSelectionChange += SelectionChanged;
             Application.PresentationOpen += Opened;
             Application.PresentationBeforeSave += BeforeSave;
             Application.WindowActivate += Activated;
             Application.PresentationClose += Closed;
+            if (ribbon != null) ribbon.Refresh();
+        }
+        private void ConfigureCompatibility()
+        {
+            try
+            {
+                var settings = OfficeSettings.Load(typeof(ThisAddIn).Assembly.Location + ".config");
+                string build = null;
+                try
+                {
+                    var info = FileVersionInfo.GetVersionInfo(Path.Combine(Application.Path, "POWERPNT.EXE"));
+                    if (info.FileMajorPart > 0)
+                        build = new Version(info.FileMajorPart, info.FileMinorPart, info.FileBuildPart, info.FilePrivatePart).ToString();
+                }
+                catch (IOException) { }
+                catch (UnauthorizedAccessException) { }
+                var result = OfficeCompatibility.Evaluate(settings, Application.Version, build, Environment.Is64BitProcess);
+                compatibilityAllowed = result.Allowed;
+                compatibilityStatus = result.Message;
+            }
+            catch (Exception ex) when (ex is FormatException || ex is System.Configuration.ConfigurationErrorsException ||
+                ex is IOException || ex is UnauthorizedAccessException || ex is COMException)
+            {
+                compatibilityAllowed = false;
+                compatibilityStatus = "Office compatibility configuration is invalid or unavailable. Check the add-in .dll.config file. Chart commands are disabled.";
+            }
         }
         private void OnShutdown(object sender, EventArgs e)
         {
@@ -41,7 +75,7 @@ namespace PowerPointIntelligence.AddIn
             pane = CustomTaskPanes.Add(control, "PowerPoint Intelligence", Application.ActiveWindow);
             pane.Width = 330;
             pane.Visible = true;
-            host.Status = text => inspector.Text = text;
+            host.Status = text => inspector.Text = compatibilityStatus + Environment.NewLine + Environment.NewLine + text;
         }
         private void RemovePane()
         {
@@ -54,12 +88,24 @@ namespace PowerPointIntelligence.AddIn
         {
             if (busy || host == null) return;
             busy = true;
-            try { EnsurePane(); action(); }
+            try
+            {
+                EnsurePane();
+                if (!compatibilityAllowed) { inspector.Text = compatibilityStatus; return; }
+                action();
+            }
             catch (Exception) { if (inspector != null) inspector.Text = "Operation unavailable. Check slide selection, document permissions and metadata. Native objects were not replaced during inspection."; }
             finally { busy = false; }
         }
         internal void Insert() { Run(() => host.InsertEditableChart(MetadataCodec.Sample())); }
         internal void Inspect() { Run(() => { host.InspectAndRecover(true); ShowSelection(); }); }
+        internal void ShowCompatibility()
+        {
+            if (host == null || busy) return;
+            try { EnsurePane(); inspector.Text = compatibilityStatus; }
+            catch (COMException) { } // No document/window; try again after opening a presentation.
+            catch (InvalidOperationException) { }
+        }
         private void ShowSelection()
         {
             var ids = host.GetSelectedObjectIds();
@@ -84,7 +130,7 @@ namespace PowerPointIntelligence.AddIn
                 Run(() => host.InspectAndRecover(true));
         }
         protected override Office.IRibbonExtensibility CreateRibbonExtensibilityObject()
-        { return new IntelligenceRibbon(this); }
+        { return ribbon ?? (ribbon = new IntelligenceRibbon(this)); }
         private void InternalStartup() { Startup += OnStartup; Shutdown += OnShutdown; }
     }
 
@@ -92,16 +138,22 @@ namespace PowerPointIntelligence.AddIn
     public sealed class IntelligenceRibbon : Office.IRibbonExtensibility
     {
         private readonly ThisAddIn addin;
+        private Office.IRibbonUI ribbonUI;
         public IntelligenceRibbon(ThisAddIn addin) { this.addin = addin; }
         public string GetCustomUI(string ribbonID)
         {
-            return "<customUI xmlns='http://schemas.microsoft.com/office/2009/07/customui'><ribbon><tabs>" +
+            return "<customUI xmlns='http://schemas.microsoft.com/office/2009/07/customui' onLoad='OnLoad'><ribbon><tabs>" +
                 "<tab id='ppiTab' label='Intelligence'><group id='ppiS0' label='S0 Feasibility'>" +
-                "<button id='ppiInsert' label='Insert Sample Chart' size='large' onAction='InsertSample'/>" +
-                "<button id='ppiInspect' label='Inspect / Recover' onAction='InspectChart'/>" +
+                "<button id='ppiInsert' label='Insert Sample Chart' size='large' onAction='InsertSample' getEnabled='GetCommandEnabled'/>" +
+                "<button id='ppiInspect' label='Inspect / Recover' onAction='InspectChart' getEnabled='GetCommandEnabled'/>" +
+                "<button id='ppiCompatibility' label='Office Compatibility' onAction='ShowCompatibility'/>" +
                 "</group></tab></tabs></ribbon></customUI>";
         }
         public void InsertSample(Office.IRibbonControl control) { addin.Insert(); }
         public void InspectChart(Office.IRibbonControl control) { addin.Inspect(); }
+        public void ShowCompatibility(Office.IRibbonControl control) { addin.ShowCompatibility(); }
+        public bool GetCommandEnabled(Office.IRibbonControl control) { return addin.CommandsEnabled; }
+        public void OnLoad(Office.IRibbonUI ui) { ribbonUI = ui; }
+        internal void Refresh() { if (ribbonUI != null) ribbonUI.Invalidate(); }
     }
 }

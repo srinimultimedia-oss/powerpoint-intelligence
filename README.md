@@ -3,6 +3,7 @@
 **Status:** S0 accepted by the owner; Windows VSTO runtime tests remain unverified. S1 domain/contracts work has begun on explicit owner instruction. See [S0 evidence](docs/evidence/S0-2026-10-21.md), [S1 scope](docs/implementation/S1-domain-contracts.md) and [S1 evidence](docs/evidence/S1-2026-10-21.md).
 
 ## Approved baseline
+- Configurable Office 2016, Office 2019 and Microsoft 365 desktop targets: [configuration and validation matrix](docs/implementation/office-compatibility.md). Actual product/build runtime compatibility remains unverified.
 - Windows desktop PowerPoint first; C# VSTO/COM adapter (.NET Framework 4.8)
 - On-premises .NET 8+ application services; Azure OpenAI through controlled gateway (not an on-prem model)
 - Native editable PowerPoint shapes/charts as feasible, plus versioned canonical metadata
