@@ -20,12 +20,18 @@ namespace PowerPointIntelligence.AddIn
         {
             base.Initialize();
             Application = GetHostItem<PowerPoint.Application>(typeof(PowerPoint.Application), "Application");
+            System.Windows.Forms.Application.EnableVisualStyles();
             CustomTaskPanes = factory.CreateCustomTaskPaneCollection(null, null, "CustomTaskPanes", "CustomTaskPanes", this);
-            InternalStartup();
         }
         protected override void FinishInitialization()
-        { OnStartup(); }
-        protected override void InitializeDataBindings() { BeginInitialization(); EndInitialization(); }
+        { InternalStartup(); OnStartup(); }
+        protected override void InitializeDataBindings()
+        {
+            BeginInit();
+            CustomTaskPanes.BeginInit();
+            CustomTaskPanes.EndInit();
+            EndInit();
+        }
         protected override void OnShutdown()
         {
             base.OnShutdown();
