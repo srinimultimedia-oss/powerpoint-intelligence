@@ -1,4 +1,5 @@
-param([string]$Compiler, [switch]$InteractiveOffice, [switch]$MetadataOnly, [switch]$CompileOnly)
+param([string]$Compiler, [switch]$InteractiveOffice, [switch]$MetadataOnly, [switch]$CompileOnly,
+    [string]$OfficeInteropPath, [string]$PowerPointInteropPath)
 $ErrorActionPreference = 'Stop'
 $repo = Split-Path $PSScriptRoot -Parent
 Push-Location $repo
@@ -20,10 +21,23 @@ try {
         if ($LASTEXITCODE) { throw 'Metadata tests failed.' }
     } else { Write-Output 'COMPILE ONLY: metadata tests compiled, not executed.' }
     if ($MetadataOnly) { return }
-    $office = 'C:\Windows\assembly\GAC_MSIL\office\15.0.0.0__71e9bce111e9429c\OFFICE.DLL'
-    $ppt = 'C:\Windows\assembly\GAC_MSIL\Microsoft.Office.Interop.PowerPoint\15.0.0.0__71e9bce111e9429c\Microsoft.Office.Interop.PowerPoint.dll'
-    if (!(Test-Path $office) -or !(Test-Path $ppt)) { throw 'Office 15 PIAs required for adapter checks.' }
-    & $Compiler /nologo /target:exe /out:artifacts\HostIntegrationTests.exe "/r:$office" "/r:$ppt" /r:Microsoft.CSharp.dll apps\powerpoint-vsto\Contracts.cs apps\powerpoint-vsto\MetadataCodec.cs apps\powerpoint-vsto\PowerPointHost.cs tests\s0\HostIntegrationTests.cs
+    $piaRoot = Join-Path ${env:ProgramFiles(x86)} 'Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office15'
+    if (!$OfficeInteropPath) {
+        $candidate = Join-Path $piaRoot 'office.dll'
+        if (Test-Path $candidate) { $OfficeInteropPath = $candidate }
+        else { $OfficeInteropPath = Get-ChildItem (Join-Path $env:WINDIR 'assembly\GAC_MSIL\office') -Recurse -Filter office.dll -ErrorAction SilentlyContinue | Sort-Object FullName -Descending | Select-Object -First 1 -ExpandProperty FullName }
+    }
+    if (!$PowerPointInteropPath) {
+        $candidate = Join-Path $piaRoot 'Microsoft.Office.Interop.PowerPoint.dll'
+        if (Test-Path $candidate) { $PowerPointInteropPath = $candidate }
+        else { $PowerPointInteropPath = Get-ChildItem (Join-Path $env:WINDIR 'assembly\GAC_MSIL\Microsoft.Office.Interop.PowerPoint') -Recurse -Filter Microsoft.Office.Interop.PowerPoint.dll -ErrorAction SilentlyContinue | Sort-Object FullName -Descending | Select-Object -First 1 -ExpandProperty FullName }
+    }
+    if (!$OfficeInteropPath -or !$PowerPointInteropPath -or !(Test-Path $OfficeInteropPath) -or !(Test-Path $PowerPointInteropPath)) {
+        throw 'Office/PowerPoint PIAs not found. Supply -OfficeInteropPath and -PowerPointInteropPath from your Office development tools.'
+    }
+    # Match the add-in project: embed the referenced API types rather than require a
+    # particular PIA assembly to be installed alongside every Office runtime edition.
+    & $Compiler /nologo /target:exe /out:artifacts\HostIntegrationTests.exe "/link:$OfficeInteropPath" "/link:$PowerPointInteropPath" /r:Microsoft.CSharp.dll apps\powerpoint-vsto\Contracts.cs apps\powerpoint-vsto\MetadataCodec.cs apps\powerpoint-vsto\PowerPointHost.cs tests\s0\HostIntegrationTests.cs
     if ($LASTEXITCODE) { throw 'Host integration compilation failed.' }
     if ($InteractiveOffice -and !$CompileOnly) {
         $fixture = Join-Path $repo ('artifacts\office-' + [Guid]::NewGuid().ToString('N'))

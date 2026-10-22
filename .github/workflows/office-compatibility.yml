@@ -1,0 +1,15 @@
+name: Office compatibility configuration (no Office automation)
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  settings:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        platform: [AnyCPU, x86, x64]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile and execute compatibility policy tests
+        shell: pwsh
+        run: ./scripts/Test-OfficeCompatibility.ps1 -Platform '${{ matrix.platform }}'
