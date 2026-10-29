@@ -53,10 +53,10 @@ namespace PowerPointIntelligence.Library
                 db.Execute("PRAGMA user_version="+Version.ToString(CultureInfo.InvariantCulture));
                 db.Execute("COMMIT");
             }
-            catch{db.Execute("ROLLBACK");throw;}
+            catch{db.RollbackIfActive();throw;}
             Validate(db);
         }
-        internal static void Validate(SqliteDatabase db)
+        internal static void Validate(SqliteDatabase db,bool deep=true)
         {
             if((long)db.Query("PRAGMA application_id").Single()[0]!=ApplicationId||(long)db.Query("PRAGMA user_version").Single()[0]!=Version)throw new InvalidDataException("Unknown PIIDX format/schema version; no automatic downgrade or overwrite.");
             foreach(var table in RequiredColumns)
@@ -72,8 +72,8 @@ namespace PowerPointIntelligence.Library
             }
             var headers=db.Query("SELECT format_id,schema_version FROM INDEX_METADATA").ToArray();
             if(headers.Length!=1||(string)headers[0][0]!=FormatId||(long)headers[0][1]!=Version)throw new InvalidDataException("PIIDX format metadata is invalid.");
-            if(db.Query("PRAGMA integrity_check").Any(row=>!String.Equals(row[0],"ok")))throw new InvalidDataException("PIIDX SQLite integrity verification failed.");
-            if(db.Query("PRAGMA foreign_key_check").Any())throw new InvalidDataException("PIIDX foreign-key verification failed.");
+            if(deep&&db.Query("PRAGMA integrity_check").Any(row=>!String.Equals(row[0],"ok")))throw new InvalidDataException("PIIDX SQLite integrity verification failed.");
+            if(deep&&db.Query("PRAGMA foreign_key_check").Any())throw new InvalidDataException("PIIDX foreign-key verification failed.");
         }
     }
 }

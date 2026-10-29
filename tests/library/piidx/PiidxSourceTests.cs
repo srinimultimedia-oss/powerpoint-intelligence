@@ -11,7 +11,7 @@ public static class PiidxSourceTests
     static void Check(bool condition,string name){if(!condition)throw new Exception("FAIL "+name);count++;}
     static void Throws<T>(Action action,string name) where T:Exception{try{action();}catch(T){count++;return;}throw new Exception("FAIL "+name);}
     static void Part(ZipArchive zip,string name,string xml){using(var output=new StreamWriter(zip.CreateEntry(name).Open(),new UTF8Encoding(false)))output.Write(xml);}
-    static void Fixture(string file,bool reverse=false,bool duplicate=false,bool external=false,bool dtd=false,bool strict=false)
+    internal static void Fixture(string file,bool reverse=false,bool duplicate=false,bool external=false,bool dtd=false,bool strict=false)
     {
         string p=strict?"http://purl.oclc.org/ooxml/presentationml/main":"http://schemas.openxmlformats.org/presentationml/2006/main";
         string a=strict?"http://purl.oclc.org/ooxml/drawingml/main":"http://schemas.openxmlformats.org/drawingml/2006/main";
@@ -32,6 +32,7 @@ public static class PiidxSourceTests
     }
     public static string Run(string folder,string originals)
     {
+        count=0;
         Directory.CreateDirectory(folder);string source=Path.Combine(folder,"日本語.pptx");Fixture(source);
         string hash=PresentationSource.Fingerprint(source,CancellationToken.None);
         var first=PresentationSource.Read(source,CancellationToken.None);

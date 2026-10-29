@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using Microsoft.Win32.SafeHandles;
 
 namespace PowerPointIntelligence.Library
@@ -32,6 +33,8 @@ namespace PowerPointIntelligence.Library
         [DefaultDllImportSearchPaths(DllImportSearchPath.System32),DllImport(Dll,CallingConvention=CallingConvention.Cdecl)] internal static extern int sqlite3_prepare_v2(SqliteHandle db,IntPtr sql,int length,out IntPtr statement,out IntPtr tail);
         [DefaultDllImportSearchPaths(DllImportSearchPath.System32),DllImport(Dll,CallingConvention=CallingConvention.Cdecl)] internal static extern int sqlite3_finalize(IntPtr statement);
         [DefaultDllImportSearchPaths(DllImportSearchPath.System32),DllImport(Dll,CallingConvention=CallingConvention.Cdecl)] internal static extern int sqlite3_step(StatementHandle statement);
+        [DefaultDllImportSearchPaths(DllImportSearchPath.System32),DllImport(Dll,CallingConvention=CallingConvention.Cdecl)] internal static extern void sqlite3_interrupt(SqliteHandle db);
+        [DefaultDllImportSearchPaths(DllImportSearchPath.System32),DllImport(Dll,CallingConvention=CallingConvention.Cdecl)] internal static extern int sqlite3_get_autocommit(SqliteHandle db);
         [DefaultDllImportSearchPaths(DllImportSearchPath.System32),DllImport(Dll,CallingConvention=CallingConvention.Cdecl)] internal static extern int sqlite3_bind_parameter_count(StatementHandle statement);
         [DefaultDllImportSearchPaths(DllImportSearchPath.System32),DllImport(Dll,CallingConvention=CallingConvention.Cdecl)] internal static extern int sqlite3_bind_null(StatementHandle statement,int index);
         [DefaultDllImportSearchPaths(DllImportSearchPath.System32),DllImport(Dll,CallingConvention=CallingConvention.Cdecl)] internal static extern int sqlite3_bind_int64(StatementHandle statement,int index,long value);
@@ -51,6 +54,23 @@ namespace PowerPointIntelligence.Library
         const int MaximumValueBytes=16*1024*1024;
         static readonly UTF8Encoding Utf8=new UTF8Encoding(false,true);
         SqliteHandle handle;
+        CancellationToken activeCancellation;
+        bool observingCancellation;
+        sealed class CancellationScope : IDisposable
+        {
+            readonly SqliteDatabase owner;readonly CancellationTokenRegistration registration;
+            internal CancellationScope(SqliteDatabase owner,CancellationTokenRegistration registration){this.owner=owner;this.registration=registration;}
+            public void Dispose(){registration.Dispose();owner.activeCancellation=CancellationToken.None;owner.observingCancellation=false;}
+        }
+        internal IDisposable ObserveCancellation(CancellationToken token)
+        {
+            token.ThrowIfCancellationRequested();if(observingCancellation)throw new InvalidOperationException("A connection already observes cancellation.");
+            activeCancellation=token;observingCancellation=true;
+            var registration=token.Register(()=>{var value=handle;if(value!=null&&!value.IsClosed)try{SqliteNative.sqlite3_interrupt(value);}catch(ObjectDisposedException){}});
+            return new CancellationScope(this,registration);
+        }
+        internal void RollbackIfActive(){if(handle!=null&&!handle.IsClosed&&SqliteNative.sqlite3_get_autocommit(handle)==0)Execute("ROLLBACK");}
+        Exception Failure(int code){return code==9&&activeCancellation.IsCancellationRequested?(Exception)new OperationCanceledException(activeCancellation):new SqliteFailure(code);}
         SqliteDatabase(SqliteHandle handle){this.handle=handle;}
         internal static SqliteDatabase Open(string path,bool readOnly)
         {
@@ -61,11 +81,11 @@ namespace PowerPointIntelligence.Library
             var value=new SqliteHandle(raw);
             if(rc!=0){value.Dispose();throw new SqliteFailure(rc);}
             var db=new SqliteDatabase(value);
-            try{Check(SqliteNative.sqlite3_busy_timeout(value,5000));db.Execute("PRAGMA foreign_keys=ON");db.Execute("PRAGMA trusted_schema=OFF");return db;}
+            try{db.Check(SqliteNative.sqlite3_busy_timeout(value,5000));db.Execute("PRAGMA foreign_keys=ON");db.Execute("PRAGMA trusted_schema=OFF");return db;}
             catch{db.Dispose();throw;}
         }
         static byte[] Bytes(string value){return Utf8.GetBytes(value+"\0");}
-        static void Check(int rc){if(rc!=0)throw new SqliteFailure(rc);}
+        void Check(int rc){if(rc!=0)throw Failure(rc);}
         StatementHandle Prepare(string sql,object[] values)
         {
             if(handle==null||handle.IsClosed)throw new ObjectDisposedException("SqliteDatabase");
@@ -76,7 +96,7 @@ namespace PowerPointIntelligence.Library
             {
                 IntPtr start=pinned.AddrOfPinnedObject();
                 Check(SqliteNative.sqlite3_prepare_v2(handle,start,data.Length,out raw,out tail));
-                int used=checked((int)(tail.ToInt64()-start.ToInt64()));
+                int used=IntPtr.Size==4?unchecked(tail.ToInt32()-start.ToInt32()):checked((int)(tail.ToInt64()-start.ToInt64()));
                 if(used<0||used>=data.Length)throw new InvalidDataException("SQLite returned an invalid statement boundary.");
                 string remainder=Utf8.GetString(data,used,data.Length-used-1);
                 if(!String.IsNullOrWhiteSpace(remainder))throw new ArgumentException("Only one SQL statement is permitted per call.");
@@ -93,7 +113,7 @@ namespace PowerPointIntelligence.Library
             }
             catch{statement.Dispose();throw;}
         }
-        static void Bind(StatementHandle s,int index,object value)
+        void Bind(StatementHandle s,int index,object value)
         {
             int rc;
             if(value==null)rc=SqliteNative.sqlite3_bind_null(s,index);
@@ -109,15 +129,17 @@ namespace PowerPointIntelligence.Library
             using(var statement=Prepare(sql,values))
             {
                 int rc;while((rc=SqliteNative.sqlite3_step(statement))==100){}
-                if(rc!=101)throw new SqliteFailure(rc);
+                if(rc!=101)throw Failure(rc);
             }
         }
         internal IEnumerable<object[]> Query(string sql,params object[] values)
         {
             using(var statement=Prepare(sql,values))
             {
+                activeCancellation.ThrowIfCancellationRequested();
                 int rc;while((rc=SqliteNative.sqlite3_step(statement))==100)
                 {
+                    activeCancellation.ThrowIfCancellationRequested();
                     var row=new object[SqliteNative.sqlite3_column_count(statement)];
                     for(int i=0;i<row.Length;i++)
                     {
@@ -130,7 +152,7 @@ namespace PowerPointIntelligence.Library
                     }
                     yield return row;
                 }
-                if(rc!=101)throw new SqliteFailure(rc);
+                if(rc!=101)throw Failure(rc);
             }
         }
         public void Dispose(){if(handle!=null){handle.Dispose();handle=null;}}

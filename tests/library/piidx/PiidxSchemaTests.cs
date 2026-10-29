@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using PowerPointIntelligence.Library;
 public static class PiidxSchemaTests
 {
@@ -9,6 +10,7 @@ public static class PiidxSchemaTests
     static void Throws<T>(Action action,string name) where T:Exception {try{action();}catch(T){count++;return;}throw new Exception("FAIL "+name);}
     public static string Run(string folder)
     {
+        count=0;
         Directory.CreateDirectory(folder);
         string path=Path.Combine(folder,"schema-smoke.piidx");
         if(File.Exists(path))throw new IOException("Use a fresh test directory; existing database preserved.");
@@ -43,6 +45,15 @@ public static class PiidxSchemaTests
             Throws<ArgumentException>(()=>db.Execute("SELECT ?",Double.NaN),"nonfinite rejected");
             Throws<ArgumentException>(()=>db.Execute("SELECT ?",new object()),"unsupported binding rejected");
             Throws<ArgumentException>(()=>db.Execute("SELECT ?"),"parameter count validated");
+            using(var cancellation=new CancellationTokenSource())
+            {
+                using(db.ObserveCancellation(cancellation.Token))
+                {
+                    cancellation.CancelAfter(25);
+                    Throws<OperationCanceledException>(()=>db.Query("WITH RECURSIVE numbers(n) AS (SELECT 1 UNION ALL SELECT n+1 FROM numbers WHERE n<100000000) SELECT sum(n) FROM numbers").ToList(),"native long query interruption");
+                }
+                Check(db.Query("SELECT k FROM PROBE").Count()==1,"connection recovers after interruption");
+            }
             db.Execute("PRAGMA user_version=99");
             Throws<InvalidDataException>(()=>PiidxSchema.Validate(db),"future schema rejected");
             db.Execute("PRAGMA user_version=1");

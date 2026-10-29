@@ -1,6 +1,6 @@
 # PIIDX file format specification — schema 1 foundation
 
-Status: database foundation implemented and tested; complete index writer/search/gallery migration remains in progress. No shipped PIIDX compatibility promise is made before integration acceptance.
+Status: schema, persistent catalog writer/reader, lexical search and preview cache are implemented and tested. Production gallery integration and native acceptance remain in progress. No shipped PIIDX compatibility promise is made before integration acceptance.
 
 PIIDX is a SQLite database, not a renamed proprietary file. The `.piidx` extension identifies this application's format. SQLite application_id is `0x50494958`; user_version is 1. INDEX_METADATA.format_id must equal `PowerPointIntelligence.PIIDX`, and schema_version must agree with user_version. Engine version is currently 0.1.0. A foreign, future-version or nonempty unversioned database is rejected without adoption or downgrade.
 
@@ -27,14 +27,14 @@ CREATE TRIGGER SLIDES_DELETE_SEARCH AFTER DELETE ON SLIDES BEGIN DELETE FROM SLI
 
 ## Entity meaning and compatibility
 
-- INDEX_METADATA records format/schema/engine identity, creation and success timestamps, library identity, source fingerprint and logical integrity digest. Writer-populated integrity fields are reserved in this foundation; they are not yet computed or claimed as verified.
+- INDEX_METADATA records format/schema/engine identity, creation and success timestamps, library identity, source fingerprint and logical integrity digest. The catalog writer now populates source/content integrity fields on every canonical mutation. Header library_id equals the sole registered library ID, or null for zero/multiple libraries.
 - LIBRARIES supports multiple registered roots, display names, recursion, enabled state and refresh timestamps.
 - PRESENTATIONS records stable presentation identity, library ownership, original source/relative paths, type, size, UTC modification time, content hash, status and slide count. Original sources are never modified by database initialization.
-- SLIDES stores stable identity separately from slide position/native ID, title/text/keywords/category, author/layout/master, dimensions and content fingerprint. Stable-ID assignment and extraction are subsequent engine work.
-- SLIDE_OBJECTS stores typed object identity, kind/name/text and versioned JSON geometry/metadata; extraction/DTO validation is not implemented by the schema itself.
+- SLIDES stores stable identity separately from slide position/native ID, title/text/keywords/category, author/layout/master, dimensions and content fingerprint. The writer assigns stable catalog IDs from persisted presentation identity and native slide ID; extraction is implemented.
+- SLIDE_OBJECTS stores typed object identity, kind/name/text and versioned JSON geometry/metadata; typed source extraction and metadata encoding are implemented in the core; the schema alone does not validate arbitrary caller JSON.
 - SLIDE_TAGS stores original and normalized tags, unique per slide.
-- SLIDE_PREVIEWS stores bounded-size PNG variants with source fingerprints, content hashes and rendering timestamps. PNG generation/content validation remains integration work.
-- SLIDE_SEARCH is FTS5 with Unicode tokenization and diacritic removal. Search-term parsing/ranking/filter services remain subsequent work; raw user query syntax must never become SQL.
+- SLIDE_PREVIEWS stores bounded-size PNG variants with source fingerprints, content hashes and rendering timestamps. PNG cache structure/checksum/content-hash/version validation is implemented; real Office generation and visual validation remain integration work.
+- SLIDE_SEARCH is FTS5 with Unicode tokenization and diacritic removal. Bounded search-term parsing, ranked FTS5 queries, literal exact matching and filters are implemented; raw user query syntax never becomes SQL.
 - INDEX_JOBS and INDEX_ERRORS track lifecycle, progress and sanitized diagnostics. A slide deletion removes its FTS entry through the schema trigger; child object/tag/preview rows cascade with foreign keys.
 
 ## Provider and resource policy
@@ -45,6 +45,15 @@ Connections use FULLMUTEX, a 5-second busy timeout, foreign_keys=ON and trusted_
 
 ## Evidence and remaining gates
 
-Run `scripts/Test-PiidxFoundation.ps1` from normal supported PowerShell. Current foundation has 26 x64 assertions, including Unicode/injection isolation, FTS5, rollback/reopen, read-only enforcement, exact schema rejection and safe statement handling. It does not prove PPTX/POTX indexing, refresh, thumbnails, search service, gallery operation, insertion, interrupted rebuild recovery, installer packaging or native Office acceptance.
+Run `scripts/Test-PiidxFoundation.ps1` from normal supported PowerShell. Current foundation has 28 x64 assertions, including Unicode/injection isolation, FTS5, rollback/reopen, read-only enforcement, exact schema rejection and safe statement handling. It does not prove PPTX/POTX indexing, refresh, thumbnails, search service, gallery operation, insertion, interrupted rebuild recovery, installer packaging or native Office acceptance.
 
 References: [Microsoft SQLite provider options](https://learn.microsoft.com/en-us/dotnet/standard/data/sqlite/custom-versions), [SQLite FTS5](https://www.sqlite.org/fts5.html). Runtime capability evidence is in artifacts/piidx, not inferred from documentation.
+## Canonical payload and source fingerprint encoding
+
+The operational catalog verifies both an unkeyed SHA256 canonical payload digest and a source-version digest. These detect accidental/inconsistent modification, not publisher authenticity. Exact ordered SQL query labels and sort keys in PiidxCatalog.DigestQueries are part of this pre-release schema-1 implementation: LIBRARIES by library_id; PRESENTATIONS by presentation_id; SLIDES by slide_id; SLIDE_OBJECTS by slide_id/object_id; SLIDE_TAGS by slide_id/normalized_tag; and SLIDE_SEARCH visible fields by slide_id. Native row iteration streams into SHA256.
+
+Encoding uses .NET BinaryWriter over UTF-8: query-label string; byte 1 per row followed by Int32 column count; each cell has byte type tag (0=null, 1=UTF-8 string, 2=Int64, 3=IEEE double), then BinaryWriter's corresponding value encoding; byte 0 terminates the query. Integers/doubles are little-endian and strings use BinaryWriter's 7-bit encoded byte length. Source fingerprint uses the same encoder over `SELECT presentation_id,source_path,content_hash,index_status FROM PRESENTATIONS ORDER BY presentation_id`. The full canonical digest excludes INDEX_METADATA's self-referential digest fields and jobs/errors. Header library identity is independently checked. Search-content row count, ownership, uniqueness and title/body/keyword correspondence are checked; writer commits also execute FTS5's integrity-check command.
+
+SLIDE_PREVIEWS is a regenerable derivative cache outside the canonical digest. Each PNG has its own SHA256, chunk CRCs, bounded dimensions and source-slide fingerprint checks. Corrupt cached pixels are rejected independently; no source snapshot is discarded merely because a preview needs regeneration. Payload eviction above 256 MiB reuses SQLite free pages and does not promise immediate database shrinkage.
+
+Current full core evidence is 123 x64 assertions, with native query interruption, rollback, coherent concurrent reads, stable IDs across reorder/unique-hash rename, missing/restored sources, source race guards, corrupt-file preservation, 1001-slide/long-path inputs, and all 62 copied packages. This does not establish native Office rendering, insertion, installation or save/reopen acceptance. A real previously generated native test deck was indexed to artifacts/piidx/sample-native-ffc4208f95e8412b9f26ecaf27d77f99/sample-native.piidx without a new Office execution; evidence.json records source and database hashes.

@@ -1,27 +1,23 @@
-# PIIDX migration progress — not acceptance
+# PIIDX migration progress — full acceptance pending
 
-Working repository: C:/Srini/powerpoint-intelligence/powerpoint-intelligence. Full objective remains the owner-provided TCIDX elimination / PIIDX engine goal; this checkpoint does not narrow it.
+Working root: C:/Srini/powerpoint-intelligence/powerpoint-intelligence. Branch: feature/piidx-library-engine. Preserve the complete owner goal; this checkpoint is not a smaller definition of success.
 
-## Verified checkpoint
+## Verified
 
-- Original audited Git baseline 78b9f87ef2218d6d19d7e8049d0f223281e9ed76: all 15 tracked files accounted for, plus merged untracked/ignored/admin files. Immutable pre-implementation CSV/summary copies are in baseline/. Initial discovery has no unreadable files after explicitly handling one Windows-1252 document.
-- No production TCIDX reader found; one optional installed-vendor source fallback and a legacy XML cache remain to replace.
-- Isolated REA entropy evidence and independent bounded XZ-stream observations recorded. No proprietary schema or text mapping claimed.
-- Actual Windows x64 SQLite 3.53.4 FTS5 feasibility passed.
-- 26 database foundation assertions passed on x64: required entities, strict schema/header/version/integrity validation, Unicode/SQL binding, transactions, FTS5, read-only/reopen, errors and statement boundaries. Regression tests first reproduced weakened-constraint and multi-statement failures, then passed after fixes.
-- Foundation compiles with the .NET Framework compiler for AnyCPU/x86/x64. Compilation is separate from execution. x86 PowerShell rejected the capability script before execution; no execution-policy changes or alternate invocation bypass was attempted.
+The immutable initial inventory accounts for all 15 files at baseline commit 78b9f87ef2218d6d19d7e8049d0f223281e9ed76 and merged untracked/ignored/admin files. Historical research is isolated. No production TCIDX reader was found; the old optional installed-vendor path and gallery XML cache still require removal/integration changes.
 
-- Source discovery/extraction now passes 24 additional x64 assertions, including all 62 local packages / 497 slides, typed object/tag metadata, strict/transitional XML, cancellation and source preservation. Source-library extraction is separate from persisted indexing and native PowerPoint integration.
+Core implemented: strict versioned SQLite schema, original presentation extraction, persistent multi-library indexing, incremental/forced rebuild, stable IDs, source fingerprint guards, sanitized jobs/errors, OS-lock-based interrupted-job recovery, safe ranked FTS5 search, source selection guards and persistent validated PNG caching.
 
-## Remaining implementation, required in full
+scripts/Test-Piidx.ps1 passes 123 x64 assertions: 28 foundation, 24 sources, 46 catalog, 14 previews, 4 edge cases, 7 corpus. Latest evidence: artifacts/piidx/suite-5fdea41f329b4c8c854231032362bedd/results.json. The corpus has 62 packages/497 slides/13049 objects/2078 tags. The suite also tests 1001-slide and long Unicode path inputs. Native Office rendering/insertion was not executed. Architecture compilation passes AnyCPU/x86/x64; x86 execution remains NOT EXECUTED — ENVIRONMENT UNAVAILABLE after Windows AuthorizationManager rejection, without bypassing policy.
 
-1. Broaden source-extraction edge coverage and implement persistent catalog slide/presentation identity in the writer. The native-ID-based discovery/extraction layer is implemented; deep embedded content and large/read-only/long-path race cases still need coverage.
-2. PIIDX reader/writer, source fingerprints, transactions, recovery, cancellation/progress, jobs/errors, incremental updates and atomic rebuild behavior.
-3. Safe FTS5 exact/prefix/phrase/multi-keyword ranked search, filters, concurrency and large-library testing.
-4. Multiple-library registration/removal, enterprise configuration, automatic refresh and migration/rollback from the old remembered library.
-5. Integrate the existing gallery/ribbon, native preview caching and editable slide insertion; remove installed-vendor fallback and obsolete cache usage.
-6. Update project build/source fingerprints, tests, installers and deployment validation. Do not invalidate scanner holds or manufacture installed acceptance.
-7. Execute all available regressions and real Windows/Office source insertion/edit/save/reopen checks. Existing AppContainer COM denial remains a separate baseline boundary; desktop evidence is required where this token cannot execute.
-8. Generate a real test-presentation PIIDX sample, final file-coverage/elimination/implementation reports, acceptance matrix and completed migration commits.
+## Required next work
 
-None of the full engine/UI/Office acceptance gates is declared complete. The foundation is not yet connected to the production VSTO project. Preserve all unrelated owner implementation and historical acceptance evidence. The quarantined scene runner policy is unchanged.
+1. Integrate the core into the existing VSTO gallery/ribbon, real native preview production/cache consumption, editable insertion and UI registration/removal/search/navigation.
+2. Implement automatic refresh and enterprise configuration, migrate legacy remembered folders through original sources, preserve rollback information, remove the vendor-path fallback and obsolete XML cache usage.
+3. Expand integration/edge coverage, native full-text/visual preservation and every relevant source object type; current package fixtures are extraction tests, not native round-trip acceptance.
+4. Wire project/build/source fingerprints, package dependencies/installation checks, dependency isolation tests and CI. Preserve scene quarantine holds and stable runner policies.
+5. Run all available regressions plus real Windows/Office insert/edit/save/reopen checks. AppContainer COM activation denial is a separate baseline; normal desktop evidence is required where this token cannot execute.
+6. Finish schema/architecture/API/deployment documentation, final tracked/new-file accounting, dependency elimination and implementation reports, the acceptance matrix and final migration commits.
+
+The production VSTO UI is not yet linked to the new core. No claim is made that the full migration or any Office acceptance gate is complete. Owner source, assets and historical acceptance evidence remain preserved.
+A sample native-source index and evidence are in artifacts/piidx/sample-native-ffc4208f95e8412b9f26ecaf27d77f99. The input is a previously owner-generated Office test deck; indexing it did not execute Office again. Test-All.ps1 now invokes the PIIDX suite against captured source while reusing the stable test DLL at RunnerRoot; unrelated existing checks remain intact.
