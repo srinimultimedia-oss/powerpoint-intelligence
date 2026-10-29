@@ -1,0 +1,99 @@
+{
+  "Mode": "Read-only isolated research; no decoded contents logged or copied",
+  "SourceSHA256": "c054734ab08964ba21e4ec55bde8d8ea74e590c151ee985eda22866672f6b3bd",
+  "XZSignatureOffsets": [
+    106,
+    2242,
+    4438,
+    6374,
+    12738,
+    14670,
+    16938,
+    20798,
+    25134,
+    28410,
+    31062
+  ],
+  "Blocks": [
+    {
+      "Offset": 106,
+      "DecodedBytes": 53937,
+      "CompleteStream": true,
+      "OutputSHA256": "7e1861600cfa33b94d1ff437454b47972dbd455b24562f41d8dda476ae3f6074",
+      "UTF8Decodable": false
+    },
+    {
+      "Offset": 2242,
+      "DecodedBytes": 70427,
+      "CompleteStream": true,
+      "OutputSHA256": "cba75305ef6488fc6e5ae75881d6f7e4c0cf6b75f9fe2bb345c542ebd9a53ffd",
+      "UTF8Decodable": false
+    },
+    {
+      "Offset": 4438,
+      "DecodedBytes": 59752,
+      "CompleteStream": true,
+      "OutputSHA256": "d6ff87683871e9bd6a03c407ca77b8ab26224b21e743f8edee59d7bdb3193433",
+      "UTF8Decodable": false
+    },
+    {
+      "Offset": 6374,
+      "DecodedBytes": 42286,
+      "CompleteStream": true,
+      "OutputSHA256": "cb5155283fbf768586148cccfbcb3784c8ecfa51f0b15bdd97aee0472fb6b74e",
+      "UTF8Decodable": false
+    },
+    {
+      "Offset": 12738,
+      "DecodedBytes": 48197,
+      "CompleteStream": true,
+      "OutputSHA256": "528ffdec1d6b1e5a40b034496a058102bd0821e678e8122a368f864cd8c0bb88",
+      "UTF8Decodable": false
+    },
+    {
+      "Offset": 14670,
+      "DecodedBytes": 56037,
+      "CompleteStream": true,
+      "OutputSHA256": "be681216b61639d67f1be1b4247a5b11f4692793b48e3c2953bc0ada2348a608",
+      "UTF8Decodable": false
+    },
+    {
+      "Offset": 16938,
+      "DecodedBytes": 117390,
+      "CompleteStream": true,
+      "OutputSHA256": "29b9d27afa8674b1223cd285dbb9a9f64030c548e4467da483ae227b95a78ce5",
+      "UTF8Decodable": false
+    },
+    {
+      "Offset": 20798,
+      "DecodedBytes": 105055,
+      "CompleteStream": true,
+      "OutputSHA256": "c0164b1c5b6205ae609208e7220dd1ef4fd4c34ce9dbf198c84c1ac5b7c99cb3",
+      "UTF8Decodable": false
+    },
+    {
+      "Offset": 25134,
+      "DecodedBytes": 103190,
+      "CompleteStream": true,
+      "OutputSHA256": "27dc75ce6cccf7395851b48c2ff44d731714fad3b372c05353c6c34ff5ceb63f",
+      "UTF8Decodable": false
+    },
+    {
+      "Offset": 28410,
+      "DecodedBytes": 75898,
+      "CompleteStream": true,
+      "OutputSHA256": "2e8620fee7083871e3d5c57fbc6d59df4813f6d4d8b9210b6dfe6c81dc5fa601",
+      "UTF8Decodable": false
+    },
+    {
+      "Offset": 31062,
+      "DecodedBytes": 70059,
+      "CompleteStream": true,
+      "OutputSHA256": "e5c9ccf6b4b63920f9086019e1cdfdf0a25315519946fcb9c7f4305ff9a9a0b8",
+      "UTF8Decodable": false
+    }
+  ],
+  "OriginalPotxAvailable": true,
+  "OriginalSlideCount": 11,
+  "Limitations": "XZ streams do not establish proprietary schema, field meanings, UI behavior or a production decoder. UTF8-decodable bytes alone are not proof of recovered slide text."
+}
