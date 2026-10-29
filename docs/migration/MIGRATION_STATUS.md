@@ -11,9 +11,11 @@ Working repository: C:/Srini/powerpoint-intelligence/powerpoint-intelligence. Fu
 - 26 database foundation assertions passed on x64: required entities, strict schema/header/version/integrity validation, Unicode/SQL binding, transactions, FTS5, read-only/reopen, errors and statement boundaries. Regression tests first reproduced weakened-constraint and multi-statement failures, then passed after fixes.
 - Foundation compiles with the .NET Framework compiler for AnyCPU/x86/x64. Compilation is separate from execution. x86 PowerShell rejected the capability script before execution; no execution-policy changes or alternate invocation bypass was attempted.
 
+- Source discovery/extraction now passes 24 additional x64 assertions, including all 62 local packages / 497 slides, typed object/tag metadata, strict/transitional XML, cancellation and source preservation. Source-library extraction is separate from persisted indexing and native PowerPoint integration.
+
 ## Remaining implementation, required in full
 
-1. Independent PPTX/POTX discovery/extraction with stable slide IDs, metadata/objects/tags and bounded resources.
+1. Broaden source-extraction edge coverage and implement persistent catalog slide/presentation identity in the writer. The native-ID-based discovery/extraction layer is implemented; deep embedded content and large/read-only/long-path race cases still need coverage.
 2. PIIDX reader/writer, source fingerprints, transactions, recovery, cancellation/progress, jobs/errors, incremental updates and atomic rebuild behavior.
 3. Safe FTS5 exact/prefix/phrase/multi-keyword ranked search, filters, concurrency and large-library testing.
 4. Multiple-library registration/removal, enterprise configuration, automatic refresh and migration/rollback from the old remembered library.

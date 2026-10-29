@@ -12,3 +12,9 @@ These types are internal C# implementation components, not a public SDK contract
 Reproduction: scripts/Test-PiidxSqliteCapability.ps1 and scripts/Test-PiidxFoundation.ps1. The latter records source hashes and runtime details under artifacts/piidx/schema-*/result.json. Files in these directories are test fixtures, not a completed sample presentation index. The negative tests intentionally create incompatible schemas.
 
 Reader/writer/search/refresh/insertion service contracts will be documented here when implemented. No stub API is represented as operational.
+## Implemented source layer
+
+- PresentationSource.Discover(root, recursive, cancellation): streams supported source paths under explicit file/directory limits.
+- PresentationSource.Fingerprint(path, cancellation): streams SHA256 without logging content.
+- PresentationSource.Read(path, cancellation): returns typed IndexedPresentation/IndexedSlide/IndexedObject metadata, checks source freshness, and preserves original files. Native slide IDs are separate from positions; object keys are separate from potentially repeated native object IDs. See PIIDX_SOURCE_EXTRACTION.md for scope, bounds and remaining gaps.
+- scripts/Test-PiidxSourceReader.ps1: 24 x64 assertions including all 62 local packages / 497 slides. This is extraction evidence, not a persisted-index or Office test.
