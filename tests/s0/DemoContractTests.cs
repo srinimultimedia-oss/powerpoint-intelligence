@@ -11,15 +11,19 @@ internal static class DemoContractTests
     [STAThread]
     public static int Main(string[] args)
     {
-        try { for(int p=0;p<args.Length;p++)if(!(p==0&&(args[p]=="--gallery-snapshot"||args[p]=="--fidelity-replay")))args[p]=PathPolicy.TestPath(args[p]); } catch(System.IO.InvalidDataException error) { Console.Error.WriteLine(error.Message); return 2; }
+        string sourceFile=null,outputDirectory,snapshotDirectory=null;
+        try {
+            if(args.Length==3&&(args[0]=="--gallery-snapshot"||args[0]=="--fidelity-replay")) { outputDirectory=PathPolicy.TestPath(args[1]);snapshotDirectory=PathPolicy.TestPath(args[2]); }
+            else { if(args.Length!=2)return 2;sourceFile=PathPolicy.TestPath(args[0]);outputDirectory=PathPolicy.TestPath(args[1]); }
+        } catch(System.IO.InvalidDataException error) { Console.Error.WriteLine(error.Message); return 2; }
 
         try
         {
-            if(args.Length==3&&args[0]=="--gallery-snapshot"){GalleryTests.Snapshot(args[1],args[2]);return 0;}
-            if(args.Length==3&&args[0]=="--fidelity-replay"){TemplateFidelityTests.Replay(args[1],args[2]);return 0;}
+            if(args.Length==3&&args[0]=="--gallery-snapshot"){GalleryTests.Snapshot(outputDirectory,snapshotDirectory);return 0;}
+            if(args.Length==3&&args[0]=="--fidelity-replay"){TemplateFidelityTests.Replay(outputDirectory,snapshotDirectory);return 0;}
             TemplateFidelityTests.Run();LibraryBrowserTests.Run();GalleryTests.Run(); PiidxGalleryTests.Run();
             var tools=DemoTools.Catalog;
-            NativeFormattingTests.Run();PresentationQualityTests.Run();NativeChartControlTests.Run();ExcelRangeMappingTests.Run();DataSourceTests.Run(args[1]);ChartAnnotationTests.Run();PresentationAgendaTests.Run();ChapterAgendaTests.Run();ContextPropertiesTests.Run(args[1]);ContextPanelModelTests.Run();ContextFormattingTests.Run();ContextChartFormattingTests.Run();XmlPartUpdateTests.Run();ProductivityToolTests.Run();IndicatorElementTests.Run();UniversalConnectorTests.Run();TextShapeElementTests.Run();ProcessFlowTests.Run();ServiceConnectionTests.Run(args[1]);DataLinkManagerTests.Run();
+            NativeFormattingTests.Run();PresentationQualityTests.Run();NativeChartControlTests.Run();ExcelRangeMappingTests.Run();DataSourceTests.Run(outputDirectory);ChartAnnotationTests.Run();PresentationAgendaTests.Run();ChapterAgendaTests.Run();ContextPropertiesTests.Run(outputDirectory);ContextPanelModelTests.Run();ContextFormattingTests.Run();ContextChartFormattingTests.Run();XmlPartUpdateTests.Run();ProductivityToolTests.Run();IndicatorElementTests.Run();UniversalConnectorTests.Run();TextShapeElementTests.Run();ProcessFlowTests.Run();ServiceConnectionTests.Run(outputDirectory);DataLinkManagerTests.Run();
             var cancelled=new DemoInputs { Prompt=(title,initial)=>null, OpenFile=filter=>null, SaveFile=(filter,name)=>null, Folder=()=>null };
             foreach(var id in new[]{"symbol","font","font-size","language","chart-style","chart-title","axes","cagr","round-data","excel-cagr","image","library","template","export-slide","import-json","style-file","library-browser","link-excel"})
             {
@@ -67,12 +71,12 @@ internal static class DemoContractTests
                 Console.WriteLine("PASS ribbon command binding: "+tool.Id);
             }
             var callbacks=document.SelectNodes("//@onAction | //@onLoad | //@getEnabled | //@loadImage").Cast<XmlAttribute>().Select(a=>a.Value).Distinct();
-            string source=File.ReadAllText(args[0]);
+            string source=File.ReadAllText(sourceFile);
             foreach(var callback in callbacks)if(!System.Text.RegularExpressions.Regex.IsMatch(source,@"public\s+\w+\s+"+callback+@"\("))throw new Exception("Missing callback: "+callback);
             if(FeatureInventory.Items.Select(f=>f.Id).Distinct().Count()!=103)throw new Exception("Inventory identities failed.");
-            Directory.CreateDirectory(args[1]);document.Save(Path.Combine(args[1],"demo-ribbon.xml"));
-            VerifyIcons(document,ns,args[1]);
-            File.WriteAllLines(Path.Combine(args[1],"demo-tool-ids.txt"),tools.Select(t=>t.Id));
+            Directory.CreateDirectory(outputDirectory);document.Save(Path.Combine(outputDirectory,"demo-ribbon.xml"));
+            VerifyIcons(document,ns,outputDirectory);
+            File.WriteAllLines(Path.Combine(outputDirectory,"demo-tool-ids.txt"),tools.Select(t=>t.Id));
             Console.WriteLine("PASS compiled ribbon XML, callbacks, all 90 tool bindings and 103 inventory identities. Office behavior NOT tested.");return 0;
         }
         catch(Exception ex){Console.Error.WriteLine(ex);return 1;}

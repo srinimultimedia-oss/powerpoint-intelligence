@@ -59,7 +59,31 @@ namespace PowerPointIntelligence.Security
             Syntax(path);
             string full = Selected(Path.IsPathRooted(path) ? path : Path.Combine(approved, path));
             if (!IsWithin(approved, full)) throw new InvalidDataException("Path escapes its authorized root.");
-            return full;
+            string relative = full.Substring(approved.TrimEnd('\\', '/').Length).TrimStart('\\', '/');
+            string safe = approved;
+            foreach (string component in relative.Split(new[] { '\\', '/' }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                // GetFileName removes path authority; Syntax rejects dot/device/ADS
+                // names before this explicit component-by-component reconstruction.
+                string name = Path.GetFileName(component);
+                if (!String.Equals(name, component, StringComparison.Ordinal)) throw new InvalidDataException("Invalid filename component.");
+                safe = Path.Combine(safe, name);
+            }
+            if (!String.Equals(safe.TrimEnd('\\', '/'), full.TrimEnd('\\', '/'), StringComparison.OrdinalIgnoreCase)) throw new InvalidDataException("Path reconstruction changed the requested location.");
+            return safe;
+        }
+
+        internal static string ApprovedRoot(string requested, IEnumerable<string> approvedRoots)
+        {
+            // Stored legacy data may select an independently approved root. It
+            // cannot authorize a new root, and is never returned to an IO sink.
+            string comparison = Selected(requested).TrimEnd('\\', '/');
+            foreach (string approved in approvedRoots)
+            {
+                string root = Selected(approved);
+                if (String.Equals(root.TrimEnd('\\', '/'), comparison, StringComparison.OrdinalIgnoreCase)) return root;
+            }
+            throw new InvalidDataException("Legacy source is not an approved library root. Add or configure the folder in Library before retrying migration; the original registration was preserved.");
         }
 
         internal static string Configured(string value, string baseDirectory)
@@ -101,10 +125,17 @@ namespace PowerPointIntelligence.Security
         {
             Syntax(path);
             string full = Selected(Path.GetFullPath(path));
-            if (!TestRoots().Any(root => IsWithin(root, full) && !String.Equals(root.TrimEnd('\\', '/'), full.TrimEnd('\\', '/'), StringComparison.OrdinalIgnoreCase)))
-                throw new InvalidDataException("Test paths must belong to a repository or OS temporary workspace.");
-            RejectLinkedAncestors(full);
-            return full;
+            // The requested string selects a trusted workspace but never becomes
+            // the filesystem root. Rebuild only validated filename components.
+            foreach (string root in TestRoots())
+            {
+                if (!IsWithin(root, full) || String.Equals(root.TrimEnd('\\', '/'), full.TrimEnd('\\', '/'), StringComparison.OrdinalIgnoreCase)) continue;
+                string relative = full.Substring(root.TrimEnd('\\', '/').Length).TrimStart('\\', '/');
+                string safe = Within(root, relative);
+                RejectLinkedAncestors(safe);
+                return safe;
+            }
+            throw new InvalidDataException("Test paths must belong to a repository or OS temporary workspace.");
         }
 
         internal static string ConfigFile(string path)

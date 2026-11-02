@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -11,9 +11,22 @@ internal static class PiidxGalleryTests
     static void Wait(Func<bool> ready,string name){DateTime deadline=DateTime.UtcNow.AddSeconds(15);while(DateTime.UtcNow<deadline){Application.DoEvents();if(ready())return;Thread.Sleep(10);}throw new Exception("PIIDX gallery timeout: "+name);}
     internal static void Run()
     {
-        string output=Path.Combine("artifacts","demo-contracts","piidx-ui-"+Guid.NewGuid().ToString("N")),sources=Path.Combine(output,"sources");Directory.CreateDirectory(sources);
+        string output=Path.Combine("artifacts","demo-contracts","piidx-ui-"+Guid.NewGuid().ToString("N").Substring(0,12)),sources=Path.Combine(output,"sources");Directory.CreateDirectory(sources);
         for(int i=0;i<13;i++)PiidxSourceTests.Fixture(Path.Combine(sources,"source"+i.ToString("00")+".pptx"));
         var catalog=PiidxCatalog.OpenOrCreate(Path.Combine(output,"gallery.piidx"));string id=catalog.Register(sources,"UI fixture",true);catalog.Refresh(id,CancellationToken.None);int rendered=0;int uiThread=Thread.CurrentThread.ManagedThreadId;
+        // Stored legacy content cannot nominate a filesystem root. Exercise the
+        // production migration from the existing gallery contract runner.
+        var migration=LibraryRuntimeProfile.Load(Path.GetFullPath(Path.Combine(output,"missing.config")),Path.GetFullPath(output),Path.GetFullPath(Path.Combine(output,"migration-profile")));
+        Directory.CreateDirectory(Path.GetDirectoryName(migration.LegacyCachePath));
+        Action<string> writeLegacyRegistration=folder=>new System.Xml.Linq.XDocument(new System.Xml.Linq.XElement(System.Xml.Linq.XName.Get("Library","urn:powerpoint-intelligence:local-library:v1"),new System.Xml.Linq.XAttribute("version","1"),new System.Xml.Linq.XAttribute("folder",folder))).Save(migration.LegacyCachePath);
+        string unapproved=Path.GetFullPath(Path.Combine(output,"not-approved-not-created"));writeLegacyRegistration(unapproved);
+        string original=File.ReadAllText(migration.LegacyCachePath);bool rejected=false;
+        try{migration.MigrateLegacy(catalog,CancellationToken.None);}catch(InvalidDataException){rejected=true;}
+        if(!rejected||Directory.Exists(unapproved)||File.ReadAllText(migration.LegacyCachePath)!=original||catalog.Libraries().Any(l=>l.Root==unapproved))throw new Exception("Unapproved stored library root was not rejected before access/registration.");
+        Console.WriteLine("PASS legacy migration rejects an unapproved stored root before directory access and preserves registration.");
+        writeLegacyRegistration(Path.GetFullPath(sources));original=File.ReadAllText(migration.LegacyCachePath);
+        if(migration.MigrateLegacy(catalog,CancellationToken.None)!=id||File.ReadAllText(migration.LegacyCachePath)!=original)throw new Exception("Approved legacy migration changed its source registration.");
+        Console.WriteLine("PASS legacy migration uses the independently registered root and preserves normal migration.");
         using(var form=new LocalLibraryForm(null,previewProvider:a=>{if(Thread.CurrentThread.ManagedThreadId!=uiThread)throw new Exception("Preview provider left the UI thread.");rendered++;return new Bitmap(720,405);},catalogOverride:catalog))
         {
             form.Show();var list=(ListView)form.Controls.Find("slideGallery",true).Single();Wait(()=>list.Items.Count==24,"first indexed page");

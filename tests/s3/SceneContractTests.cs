@@ -18,12 +18,13 @@ internal static class SceneContractTests
     { try { action(); } catch (InvalidDataException) { return; } throw new Exception("Expected InvalidDataException."); }
     public static int Main(string[] args)
     {
-        try { foreach(int p in new int[]{0,1,2})if(p<args.Length)args[p]=PathPolicy.TestPath(args[p]); } catch(System.IO.InvalidDataException error) { Console.Error.WriteLine(error.Message); return 2; }
+        string goldenFile, outputDirectory, corpusDirectory;
+        try { if(args.Length!=3) return 2; goldenFile=PathPolicy.TestPath(args[0]);outputDirectory=PathPolicy.TestPath(args[1]);corpusDirectory=PathPolicy.TestPath(args[2]); } catch(System.IO.InvalidDataException error) { Console.Error.WriteLine(error.Message); return 2; }
 
         try
         {
             Console.WriteLine("Scene contract runner process=" + (Environment.Is64BitProcess ? "x64" : "x86"));
-            string golden = File.ReadAllText(args[0]), output = args[1], corpus = args[2];
+            string golden = File.ReadAllText(goldenFile), output = outputDirectory, corpus = corpusDirectory;
             Directory.CreateDirectory(output);
             Test("all six geometry types decode to whitelisted DTOs", () => {
                 var model = SceneCodec.Decode(golden);
