@@ -31,7 +31,7 @@ namespace PowerPointIntelligence.Library
         {
             if(request==null)throw new ArgumentNullException("request");cancellation.ThrowIfCancellationRequested();
             string query=request.Query??"";
-            if(query.Length>4096||request.Limit<1||request.Limit>1000||request.Offset<0||request.Offset>10000000||!Enum.IsDefined(typeof(LibrarySearchMode),request.Mode))throw new ArgumentException("Search request exceeds supported bounds.");
+            if(query.Length>4096||request.Limit<1||request.Limit>1000||request.Offset<0||request.Offset>10000000||!Enum.IsDefined(typeof(LibrarySearchMode),request.Mode)||!Enum.IsDefined(typeof(LibrarySortMode),request.Sort)||!Enum.IsDefined(typeof(LibraryAspect),request.Aspect))throw new ArgumentException("Search request exceeds supported bounds.");
             var parameters=new List<object>();string from=" FROM SLIDES s JOIN PRESENTATIONS p ON p.presentation_id=s.presentation_id JOIN LIBRARIES l ON l.library_id=p.library_id";
             var predicates=new List<string>{"p.index_status='indexed'","l.enabled=1"};bool ranked=false;
             if(!String.IsNullOrWhiteSpace(query))
@@ -46,18 +46,31 @@ namespace PowerPointIntelligence.Library
             }
             if(!String.IsNullOrEmpty(request.LibraryId)){Id(request.LibraryId);predicates.Add("p.library_id=?");parameters.Add(request.LibraryId);}
             if(!String.IsNullOrEmpty(request.PresentationId)){Id(request.PresentationId);predicates.Add("p.presentation_id=?");parameters.Add(request.PresentationId);}
-            if(request.Category!=null){predicates.Add("s.category=?");parameters.Add(request.Category.Replace('\\','/').Trim('/'));}
+            if(request.Category!=null)
+            {
+                string category=request.Category.Replace('\\','/').Trim('/');
+                if(request.CategoryRecursive){if(category.Length>0){predicates.Add("(s.category=? OR instr(s.category,?||'/')=1)");parameters.Add(category);parameters.Add(category);}}
+                else{predicates.Add("s.category=?");parameters.Add(category);}
+            }
+            if(request.ModifiedSinceUtc.HasValue){predicates.Add("p.modified_utc>=?");parameters.Add(request.ModifiedSinceUtc.Value.ToUniversalTime().ToString("o",CultureInfo.InvariantCulture));}
+            if(request.Aspect!=LibraryAspect.All)predicates.Add(request.Aspect==LibraryAspect.Wide?"abs(s.width/s.height-16.0/9.0)<0.02":"abs(s.width/s.height-4.0/3.0)<0.02");
             if(!String.IsNullOrEmpty(request.Tag)){predicates.Add("EXISTS(SELECT 1 FROM SLIDE_TAGS t WHERE t.slide_id=s.slide_id AND t.normalized_tag=?)");parameters.Add(request.Tag.ToUpperInvariant());}
             if(!String.IsNullOrEmpty(request.Author)){predicates.Add("instr(upper(s.author),upper(?))>0");parameters.Add(request.Author);}
             if(!String.IsNullOrEmpty(request.Layout)){predicates.Add("(instr(upper(s.layout),upper(?))>0 OR instr(upper(s.master),upper(?))>0)");parameters.Add(request.Layout);parameters.Add(request.Layout);}
             string where=" WHERE "+String.Join(" AND ",predicates),rank=ranked?"bm25(SLIDE_SEARCH,0.0,5.0,1.0,2.0)":"0.0";
+            if(request.HideDuplicates)
+            {
+                string candidates="SELECT min(s.slide_id)"+from+where+" GROUP BY s.content_fingerprint";
+                var originalParameters=parameters.ToArray();where+=" AND s.slide_id IN ("+candidates+")";parameters.AddRange(originalParameters);
+            }
+            string ordering=request.Sort==LibrarySortMode.Title?"s.title COLLATE NOCASE,":request.Sort==LibrarySortMode.Newest?"p.modified_utc DESC,":request.Sort==LibrarySortMode.Relevance&&ranked?rank+",":"";
             using(var db=Connect(true))using(db.ObserveCancellation(cancellation))
             {
                 db.Execute("BEGIN");try
                 {
                     long total=(long)db.Query("SELECT count(*)"+from+where,parameters.ToArray()).Single()[0];cancellation.ThrowIfCancellationRequested();
                     var values=new List<object>(parameters){request.Limit,request.Offset};
-                    string sql="SELECT s.slide_id,p.presentation_id,p.library_id,p.source_path,p.content_hash,s.content_fingerprint,s.native_slide_id,s.title,s.text,s.category,s.author,s.layout,s.master,s.position,s.width,s.height,p.modified_utc,"+rank+from+where+" ORDER BY "+(ranked?rank+",":"")+"p.source_path COLLATE NOCASE,s.position,s.slide_id LIMIT ? OFFSET ?";
+                    string sql="SELECT s.slide_id,p.presentation_id,p.library_id,p.source_path,p.content_hash,s.content_fingerprint,s.native_slide_id,s.title,s.text,s.category,s.author,s.layout,s.master,s.position,s.width,s.height,p.modified_utc,"+rank+from+where+" ORDER BY "+ordering+"p.source_path COLLATE NOCASE,s.position,s.slide_id LIMIT ? OFFSET ?";
                     var rows=new List<LibrarySlideReference>();
                     foreach(var r in db.Query(sql,values.ToArray()))
                     {

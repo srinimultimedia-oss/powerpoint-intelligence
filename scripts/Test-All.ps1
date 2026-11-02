@@ -61,6 +61,7 @@ Push-Location $repo
 try {
     Invoke-Check 's0-unit' $shellPath @('-NoProfile','-File',"$scriptRoot/Test-S0.ps1")
     Invoke-Check 'piidx-engine' $shellPath @('-NoProfile','-File',"$scriptRoot/Test-Piidx.ps1",'-RunnerRoot',$originalRepo)
+    Invoke-Check 'piidx-isolation' $shellPath @('-NoProfile','-File',"$scriptRoot/Test-PiidxIsolation.ps1")
     Invoke-Check 'ribbon-definition' $shellPath @('-NoProfile','-File',"$scriptRoot/Test-Ribbon.ps1")
     Invoke-Check 'demo-feature-compile' $shellPath @('-NoProfile','-File',"$scriptRoot/Test-DemoFeatures.ps1")
     Invoke-Check 's1-domain' $shellPath @('-NoProfile','-File',"$scriptRoot/Test-S1.ps1")

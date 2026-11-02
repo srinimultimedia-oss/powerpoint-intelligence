@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
+    <Platform Condition="'$(Platform)' == ''">AnyCPU</Platform>
+    <ProjectGuid>{D6312EDC-399B-46DD-9093-05A19BBC07B4}</ProjectGuid>
+    <ProjectTypeGuids>{BAA0C2D2-18E2-41B9-852F-F413020CAA33};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType><RootNamespace>PowerPointIntelligence.AddIn</RootNamespace>
+    <AssemblyName>PowerPointIntelligence</AssemblyName><TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>7.3</LangVersion><OfficeApplication>PowerPoint</OfficeApplication><OfficeVersion>15.0</OfficeVersion>
+    <VSTO_HostIdentifier>PowerPoint</VSTO_HostIdentifier><VSTO_TrustAssembliesLocation>true</VSTO_TrustAssembliesLocation>
+    <LoadBehavior>3</LoadBehavior><FriendlyName>PowerPoint Intelligence</FriendlyName>
+    <Description>Editable charts, layout tools and local demonstration workspace</Description>
+    <SignManifests Condition="'$(ManifestKeyFile)' != ''">true</SignManifests>
+    <ManifestKeyFile Condition="'$(ManifestKeyFile)' != ''">$(ManifestKeyFile)</ManifestKeyFile>
+    <SignAssembly>false</SignAssembly><BootstrapperEnabled>true</BootstrapperEnabled>
+    <AppConfig>App.config</AppConfig><Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget Condition="'$(Platform)' == 'AnyCPU'">AnyCPU</PlatformTarget>
+    <PlatformTarget Condition="'$(Platform)' == 'x86'">x86</PlatformTarget>
+    <PlatformTarget Condition="'$(Platform)' == 'x64'">x64</PlatformTarget>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">17.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'"><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><OutputPath>bin\$(Platform)\Debug\</OutputPath><DefineConstants>DEBUG;TRACE</DefineConstants></PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'"><Optimize>true</Optimize><OutputPath>bin\$(Platform)\Release\</OutputPath><DefineConstants>TRACE</DefineConstants></PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json"><HintPath>..\..\artifacts\refs\newtonsoft\lib\net45\Newtonsoft.Json.dll</HintPath><Private>true</Private></Reference>
+    <Reference Include="System.IO.Compression"/><Reference Include="System.IO.Compression.FileSystem"/><Reference Include="System"/><Reference Include="System.Core"/><Reference Include="System.Xml"/><Reference Include="System.Xml.Linq"/><Reference Include="System.Configuration"/><Reference Include="System.Runtime.Serialization"/>
+    <Reference Include="System.Windows.Forms"/><Reference Include="System.Drawing"/><Reference Include="Microsoft.CSharp"/>
+    <Reference Include="office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"><EmbedInteropTypes>true</EmbedInteropTypes></Reference>
+    <Reference Include="Microsoft.Office.Interop.PowerPoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"><EmbedInteropTypes>true</EmbedInteropTypes></Reference>
+    <Reference Include="Microsoft.Office.Tools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"><Private>false</Private></Reference>
+    <Reference Include="Microsoft.Office.Tools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"><Private>false</Private></Reference>
+    <Reference Include="Microsoft.Office.Tools.v4.0.Framework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"><Private>false</Private></Reference>
+    <Reference Include="Microsoft.Office.Tools.Common.v4.0.Utilities"><Private>true</Private></Reference>
+    <Reference Include="Microsoft.VisualStudio.Tools.Applications.Runtime, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"><Private>false</Private></Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contracts.cs"/><Compile Include="MetadataCodec.cs"/><Compile Include="PowerPointHost.cs"/>
+    <Compile Include="OfficeCompatibility.cs"/>
+    <Compile Include="NativeFormatting.cs"/><Compile Include="PresentationQuality.cs"/><Compile Include="NativeSeriesControls.cs"/><Compile Include="NativeChartControls.cs"/><Compile Include="MappedLinkOperations.cs"/><Compile Include="ExcelRangeMapping.cs"/><Compile Include="ChartAnnotations.cs"/><Compile Include="ProductivityTools.cs" /><Compile Include="XmlPartUpdates.cs" /><Compile Include="ContextPanelModel.cs" /><Compile Include="ContextFormatting.cs" /><Compile Include="ContextChartFormatting.cs" /><Compile Include="ContextSelectionBridge.cs" /><Compile Include="ContextPropertiesView.cs" /><Compile Include="ContextPropertiesController.cs" /><Compile Include="ContextActionRouter.cs" /><Compile Include="ElementCommands.cs" /><Compile Include="IndicatorElements.cs" /><Compile Include="UniversalConnectors.cs"/><Compile Include="TextShapeElements.cs"/><Compile Include="ProcessFlowTools.cs"/><Compile Include="ChapterAgendaModel.cs"/><Compile Include="ChapterAgenda.cs"/><Compile Include="PresentationAgenda.cs"/><Compile Include="ServiceConnections.cs"/><Compile Include="DataLinkManager.cs"/><Compile Include="DemoTools.cs"/><Compile Include="DemoWorkspace.cs"/><Compile Include="FeatureInventory.cs"/>
+    <Compile Include="DemoLinks.cs"/><Compile Include="DemoApi.cs"/>
+    <Compile Include="DemoRibbon.cs"/><Compile Include="TemplateCatalog.cs"/><Compile Include="TemplateLibrary.cs"/><Compile Include="LocalLibraryGallery.cs"/><Compile Include="LocalLibraryWorkspace.cs"/><Compile Include="..\..\src\Library.Core\*.cs"/>
+    <Compile Include="RibbonIcons.cs"/><Compile Include="RendererRibbonCommand.cs"/>
+<Compile Include="..\..\src\Chart.Domain\ChartDocument.cs" />
+<Compile Include="..\..\src\Chart.Domain\ChartCodec.cs" />
+<Compile Include="..\..\src\Chart.Renderers\SceneContracts.cs" />
+<Compile Include="..\..\src\Chart.Renderers\SceneCodec.cs" />
+<Compile Include="..\..\src\Chart.Renderers\StrictSceneJson.cs" />
+<Compile Include="..\..\src\Shared.Contracts\BoundedJson.cs" />
+<Compile Include="..\..\src\Chart.Renderers\NativeRenderingCore.cs" />
+<Compile Include="..\..\src\Chart.Renderers\PowerPointSceneSurface.cs" /><EmbeddedResource Include="RendererSamples\canonical.json"><LogicalName>PowerPointIntelligence.RendererSamples.canonical.json</LogicalName></EmbeddedResource><EmbeddedResource Include="RendererSamples\scene.json"><LogicalName>PowerPointIntelligence.RendererSamples.scene.json</LogicalName></EmbeddedResource>
+    <Compile Include="DemoInputs.cs"/><Compile Include="DataSources.cs"/>
+    <None Include="App.config"/>
+    <Compile Include="ThisAddIn.cs"><SubType>Code</SubType></Compile>
+    <Compile Include="ThisAddIn.Designer.cs"><DependentUpon>ThisAddIn.Designer.xml</DependentUpon></Compile>
+    <None Include="ThisAddIn.Designer.xml"><DependentUpon>ThisAddIn.cs</DependentUpon></None>
+  </ItemGroup>
+  <ItemGroup Condition="'$(PpiEasySetupBuild)' == 'true'">
+    <Content Include="templates\**\*.potx"><CopyToOutputDirectory>Always</CopyToOutputDirectory><PublishState>Include</PublishState></Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+  <Target Name="ForcePayloadCompilation" BeforeTargets="CoreCompile" Condition="'$(PpiForcePayloadCompile)' == 'true'">
+    <!-- A restored snapshot can be older than cached compiler outputs. Invalidate
+         only the intermediate assembly; avoid VSTO Clean registration side effects. -->
+    <Error Condition="'@(IntermediateAssembly)' == ''" Text="Cannot force payload compilation: intermediate assembly is undefined."/>
+    <Delete Files="@(IntermediateAssembly)"/>
+  </Target>
+  <Target Name="ValidateOfficePlatform" BeforeTargets="PrepareForBuild">
+    <Error Condition="'$(Platform)' != 'AnyCPU' And '$(Platform)' != 'x86' And '$(Platform)' != 'x64'" Text="Office add-in Platform must be AnyCPU, x86 or x64."/>
+  </Target>
+  <Import Project="$(VSToolsPath)\OfficeTools\Microsoft.VisualStudio.Tools.Office.targets"/>
+  <Target Name="RefreshEasySetup" AfterTargets="Build" Condition="'$(Configuration)' == 'Release' And '$(SignManifests)' == 'true' And '$(PpiEasySetupBuild)' != 'true' And '$(PpiSkipEasySetup)' != 'true'">
+    <Exec Command="powershell.exe -NoProfile -File &quot;$(MSBuildProjectDirectory)\..\..\easySetup\Build-EasySetup.ps1&quot; -CertificateThumbprint &quot;$(ManifestCertificateThumbprint)&quot; -DeploymentVersion &quot;$(ApplicationVersion)&quot;" />
+  </Target>
+  <ProjectExtensions><VisualStudio><FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
+    <ProjectProperties HostName="PowerPoint" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="PowerPoint" Language="cs" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\16.0\PowerPoint\InstallRoot\Path#POWERPNT.EXE" />
+    <Host Name="PowerPoint" GeneratedCodeNamespace="PowerPointIntelligence.AddIn" IconIndex="0"><HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="ThisAddIn" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" /></Host>
+  </FlavorProperties></VisualStudio></ProjectExtensions>
+</Project>

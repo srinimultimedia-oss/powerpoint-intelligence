@@ -48,6 +48,8 @@ namespace PowerPointIntelligence.Library
         internal double Rank { get; set; }
         internal DateTime ModifiedUtc { get; set; }
     }
+    internal enum LibrarySortMode { Relevance,Source,Title,Newest }
+    internal enum LibraryAspect { All,Wide,Standard }
     internal enum LibrarySearchMode { AllWords,Phrase,Prefix,ExactText }
     internal sealed class LibrarySearchRequest
     {
@@ -55,6 +57,11 @@ namespace PowerPointIntelligence.Library
         internal string LibraryId { get; set; }
         internal string PresentationId { get; set; }
         internal string Category { get; set; }
+        internal bool CategoryRecursive { get; set; }
+        internal bool HideDuplicates { get; set; }
+        internal DateTime? ModifiedSinceUtc { get; set; }
+        internal LibraryAspect Aspect { get; set; }
+        internal LibrarySortMode Sort { get; set; }
         internal string Tag { get; set; }
         internal string Author { get; set; }
         internal string Layout { get; set; }

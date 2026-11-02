@@ -1,0 +1,12 @@
+name: S0 metadata (does not validate VSTO or PowerPoint)
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  metadata:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile and run host-independent metadata tests
+        shell: pwsh
+        run: ./scripts/Test-S0.ps1 -MetadataOnly

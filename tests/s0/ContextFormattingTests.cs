@@ -1,0 +1,8 @@
+using System;
+using System.IO;
+using PowerPointIntelligence.AddIn;
+internal static class ContextFormattingTests {
+ internal static void Run(){int count=0;Action<bool,string> check=(v,n)=>{if(!v)throw new Exception("FAIL "+n);count++;};Action<Action> reject=action=>{try{action();}catch(InvalidDataException){count++;return;}throw new Exception("Expected font validation rejection.");};ContextFontPlan.Validate("Segoe UI",12,true,false);count++;ContextFontPlan.Validate(null,1,null,null);count++;ContextFontPlan.Validate(null,4000,null,null);count++;
+ reject(()=>ContextFontPlan.Validate(null,null,null,null));foreach(string s in new[]{""," ","A\nB",new string('A',129)})reject(()=>ContextFontPlan.Validate(s,null,null,null));foreach(float s in new[]{0,4001,Single.NaN,Single.PositiveInfinity})reject(()=>ContextFontPlan.Validate(null,s,null,null));var a=new FontSelectionState{Family="A",Size=12,Bold=true,Italic=false};var b=new FontSelectionState{Family="B",Size=12,Bold=false,Italic=false};var m=ContextFontPlan.Merge(new[]{a,b});check(m.Family==null&&m.Size==12&&m.Bold==null&&m.Italic==false,"mixed properties independent");m=ContextFontPlan.Merge(new[]{a,a});check(m.Family=="A"&&m.Bold==true,"uniform properties retained");reject(()=>ContextFontPlan.Merge(new FontSelectionState[0]));int first=1,second=2;try{NativeFormattingTransaction.Run(new[]{new NativeFormattingChange(()=>first=10,()=>first=1),new NativeFormattingChange(()=>{second=20;throw new InvalidOperationException();},()=>second=2)});}catch(InvalidOperationException){}check(first==1&&second==2,"partial apply restores both font snapshots");Console.WriteLine(count+" contextual font contract assertions passed; Office remains unverified.");}
+}
+

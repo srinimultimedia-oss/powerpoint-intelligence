@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:powerpoint-intelligence:render-result:v1",
+  "title": "Version 1 point-based semantic render result",
+  "description": "Structural validation only. Consumers must also verify chart-scoped unique IDs, diagnostic references, SHA-256 and target revision before use. This schema does not authorize execution.",
+  "type": "object", "additionalProperties": false,
+  "required": ["schemaVersion", "chartId", "modelRevision", "unit", "plot", "semanticScene", "diagnostics", "renderHash"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "chartId": { "$ref": "#/$defs/chartId" },
+    "modelRevision": { "type": "integer", "minimum": 0, "maximum": 2147483647 },
+    "unit": { "const": "pt" },
+    "plot": { "$ref": "#/$defs/plot" },
+    "semanticScene": { "type": "array", "maxItems": 200000, "items": { "$ref": "#/$defs/node" } },
+    "diagnostics": { "type": "array", "maxItems": 10000, "items": { "$ref": "#/$defs/diagnostic" } },
+    "renderHash": { "type": "string", "pattern": "^[0-9a-f]{64}$(?![\\s\\S])" }
+  },
+  "$defs": {
+    "chartId": { "type": "string", "pattern": "^(?!00000000-0000-0000-0000-000000000000$)[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$(?![\\s\\S])" },
+    "nodeId": { "type": "string", "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/[A-Za-z0-9][A-Za-z0-9:._-]{0,159}(?:/[A-Za-z0-9][A-Za-z0-9:._-]{0,159}){0,3}$(?![\\s\\S])" },
+    "coordinate": { "type": "number", "minimum": -10000000, "maximum": 10000000 },
+    "dimension": { "type": "number", "minimum": 0, "maximum": 10000000 },
+    "color": { "type": ["string", "null"], "pattern": "^#[0-9a-fA-F]{6}$(?![\\s\\S])" },
+    "plot": {
+      "type": "object", "additionalProperties": false,
+      "required": ["x", "y", "width", "height", "unit"],
+      "properties": {
+        "x": { "type": "number", "minimum": -1000000, "maximum": 1000000 },
+        "y": { "type": "number", "minimum": -1000000, "maximum": 1000000 },
+        "width": { "type": "number", "exclusiveMinimum": 0, "maximum": 1000000 },
+        "height": { "type": "number", "exclusiveMinimum": 0, "maximum": 1000000 },
+        "unit": { "const": "pt" }
+      }
+    },
+    "point": {
+      "type": "object", "additionalProperties": false, "required": ["x", "y"],
+      "properties": { "x": { "$ref": "#/$defs/coordinate" }, "y": { "$ref": "#/$defs/coordinate" } }
+    },
+    "box": {
+      "type": "object", "additionalProperties": false, "required": ["type", "x", "y", "width", "height"],
+      "properties": {
+        "type": { "enum": ["rectangle", "ellipse"] }, "x": { "$ref": "#/$defs/coordinate" }, "y": { "$ref": "#/$defs/coordinate" },
+        "width": { "$ref": "#/$defs/dimension" }, "height": { "$ref": "#/$defs/dimension" }
+      }
+    },
+    "polyline": {
+      "type": "object", "additionalProperties": false, "required": ["type", "points"],
+      "properties": {
+        "type": { "const": "polyline" },
+        "points": { "type": "array", "minItems": 2, "maxItems": 10000, "items": { "$ref": "#/$defs/point" } }
+      }
+    },
+    "polygon": {
+      "type": "object", "additionalProperties": false, "required": ["type", "points"],
+      "properties": {
+        "type": { "const": "polygon" },
+        "points": { "type": "array", "minItems": 3, "maxItems": 10000, "items": { "$ref": "#/$defs/point" } }
+      }
+    },
+    "sector": {
+      "type": "object", "additionalProperties": false, "required": ["type", "cx", "cy", "radius", "startAngle", "sweep"],
+      "properties": {
+        "type": { "const": "sector" }, "cx": { "$ref": "#/$defs/coordinate" }, "cy": { "$ref": "#/$defs/coordinate" },
+        "radius": { "$ref": "#/$defs/dimension" },
+        "startAngle": { "type": "number", "minimum": -360, "maximum": 360 },
+        "sweep": { "type": "number", "exclusiveMinimum": 0, "maximum": 360 }
+      }
+    },
+    "text": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "x", "y", "width", "height", "text", "fontFamily", "fontSize", "alignment"],
+      "properties": {
+        "type": { "const": "text" }, "x": { "$ref": "#/$defs/coordinate" }, "y": { "$ref": "#/$defs/coordinate" },
+        "width": { "$ref": "#/$defs/dimension" }, "height": { "$ref": "#/$defs/dimension" },
+        "text": { "type": "string", "maxLength": 4096, "pattern": "^[^\\uD800-\\uDFFF]*$(?![\\s\\S])" },
+        "fontFamily": { "type": "string", "maxLength": 128, "allOf": [{ "pattern": "\\S" }, { "pattern": "^[^\\uD800-\\uDFFF]*$(?![\\s\\S])" }] },
+        "fontSize": { "type": "number", "minimum": 1, "maximum": 1000 },
+        "alignment": { "enum": ["left", "center", "right"] }
+      }
+    },
+    "paint": {
+      "type": "object", "additionalProperties": false, "required": ["fill", "stroke", "strokeWidth", "opacity"],
+      "properties": {
+        "fill": { "$ref": "#/$defs/color" }, "stroke": { "$ref": "#/$defs/color" },
+        "strokeWidth": { "type": "number", "minimum": 0, "maximum": 1000 }, "opacity": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "node": {
+      "type": "object", "additionalProperties": false, "required": ["id", "geometry", "paint"],
+      "properties": {
+        "id": { "$ref": "#/$defs/nodeId" }, "paint": { "$ref": "#/$defs/paint" },
+        "geometry": { "oneOf": [{ "$ref": "#/$defs/box" }, { "$ref": "#/$defs/polyline" }, { "$ref": "#/$defs/polygon" }, { "$ref": "#/$defs/sector" }, { "$ref": "#/$defs/text" }] }
+      }
+    },
+    "diagnostic": {
+      "type": "object", "additionalProperties": false, "required": ["code", "nodeId"],
+      "properties": {
+        "code": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]{0,63}$(?![\\s\\S])" },
+        "nodeId": { "anyOf": [{ "$ref": "#/$defs/nodeId" }, { "type": "null" }] }
+      }
+    }
+  }
+}

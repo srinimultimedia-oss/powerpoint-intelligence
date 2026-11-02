@@ -1,0 +1,170 @@
+Functional Feature Inventory
+Status: Preliminary inventory based on the earlier manual navigation review. This is not a certified exhaustive, page-by-page audit. Individual features, variations, commands, settings, and restrictions require verification against the linked official documentation.
+
+Official source: https://www.thinkcell.com/en/resources/manual/overview
+Prepared: 2026-10-22
+Purpose: Reference inventory for PowerPoint Intelligence feature analysis and development planning.
+
+Verification and implementation conventions
+- Status: Navigation-level means listed in the prior inventory, but not individually verified on its documentation page; Previously reviewed means earlier review reported direct documentation confirmation.
+- Priority: TBD until product scope and feasibility are assessed.
+- Implementation: Feature listing does not imply think-cell implementation details, source code, algorithms, or licensing rights are available.
+- Traceability: Use category IDs below and assign individual feature IDs during detailed page-level review.
+1. Interface and user interaction (UI)
+- Ribbon controls
+- Element insertion menus
+- Context menus
+- Mini toolbars
+- Keyboard and mouse shortcuts
+- Proofing language configuration
+- Installation and updates
+2. Shapes, layouts, and presentation editing (LAY)
+- Insert and duplicate elements
+- Format and style elements
+- Arrange and resize objects
+- Automatic layout
+- Group objects
+- Rotate and flip elements
+- Paste text into multiple objects
+- Select objects
+- Text boxes
+- Rounded rectangles
+- Process flows
+- Harvey balls and checkboxes
+3. PowerPoint productivity tools (PROD)
+- Align objects and match sizes
+- Swap objects
+- Scale PowerPoint shapes
+- Send and save slides
+- Clean up and sanitize presentations
+- Insert symbols
+- Replace and resize fonts
+- Switch decimal symbols
+- Build tables
+- Create agendas
+4. Data visualization and chart types (CHART)
+- Column charts
+- Bar charts
+- Stacked and clustered chart variants — details pending verification
+- Line and profile charts
+- Area charts
+- Waterfall charts
+- Pie and doughnut charts
+- Scatter charts
+- Bubble charts
+- Mekko charts with percent axis
+- Mekko charts with units
+- Import Mekko Graphics charts
+- Gantt charts and timelines
+5. Chart configuration and annotations (ANNOT)
+- Chart areas and plot areas
+- Value, date and category axes
+- Legends
+- Series and segment labels
+- Difference arrows
+- CAGR arrows
+- Value lines
+- Charts with data tables
+- Chart formatting and styling
+6. Data entry and integrations (DATA)
+- Element datasheets
+- Slide workbooks
+- Excel data links
+- Tableau data links
+- Manage data links
+- Tables with datasheets
+- Linked data range formatting
+- Excel CAGR calculations
+- Excel table and cell styles
+- Excel data rounding
+7. Reporting and automation (AUTO)
+- Automation with Excel data
+- Automation with JSON data
+- Chart scanner
+- API introduction
+- API reference
+8. Slide assets and brand compliance (ASSET)
+- Slide and image library
+- Slide templates
+- Images and icons
+- Manage library content
+- Default colors and fonts
+- Default agenda slide layouts
+- Style files
+- File names and paths on slides
+- Share presentations without think-cell
+9. AI-powered capabilities (AI)
+The earlier review reported direct confirmation of AI Assist functionality in official documentation. Detailed prerequisites and restrictions still need to be catalogued.
+- AI chat in PowerPoint
+- Create and edit slide content
+- Generate slides
+- Review slides
+- Rewrite, shorten and structure text
+- Custom text editing prompts
+- Translate slides
+- Create action titles
+- Create summary slides
+- Research financial and statistical data
+- Generate charts from researched data
+- Upload files for AI context
+- Connect MCP servers
+- Review recent AI chat history
+- Provide feedback on AI responses
+- AI assistance in Excel
+AI Assist interface tabs reported in earlier review
+1. Chat
+2. Edit Text
+3. Translate Slides
+4. Create Content
+5. Research Data
+6. Recent History
+AI-specific notes requiring detailed validation
+- Creation of editable PowerPoint shapes and think-cell elements through AI; earlier review noted a Gantt-chart exception.
+- Research of public-company financial data through Morningstar.
+- Sourced statistics and chart generation.
+- External tool access via MCP servers.
+10. Enterprise deployment (DEPLOY)
+- Pre-installation considerations
+- First installation
+- Ongoing maintenance
+- Configure slide and image library
+- Configure PowerPoint and Excel ribbons
+- Deploy default style files
+- Configure think-cell Assist
+- Add organizational resources to Tools menu
+11. Coverage and audit checklist
+- [x] Create navigation-level functional inventory from earlier review.
+- [ ] Enumerate every manual page and child page with canonical URL.
+- [ ] Confirm every feature name against its individual official page.
+- [ ] Capture every ribbon, context-menu, toolbar, keyboard, and mouse interaction.
+- [ ] Record chart-specific variants, labels, axes, annotations, and data behavior.
+- [ ] Record all Excel/Tableau links and refresh/error workflows.
+- [ ] Document API operations, parameters, examples, and restrictions.
+- [ ] Document AI functionality, licensing, data handling, and limitations.
+- [ ] Record enterprise installation, policy, deployment, and configuration options.
+- [ ] Identify deprecated, platform-specific, or version-specific behavior.
+- [ ] Cross-check the manual sitemap/navigation for missing topics.
+- [ ] Assign feature-level source links and evidence notes.
+- [ ] Translate verified requirements into development acceptance tests.
+12. Feature-level specification template
+feature_id: "CHART-001"
+module: "Data visualization"
+submodule: "TBD"
+feature_name: "TBD"
+summary: "TBD"
+user_entry_point: "TBD"
+user_interactions: []
+functional_behavior: []
+configuration_options: []
+inputs: []
+outputs: []
+dependencies: []
+restrictions: []
+platform_support: "TBD"
+source_url: "TBD"
+verification_status: "Unverified"
+implementation_priority: "TBD"
+acceptance_criteria: []
+13. Source
+- Official think-cell User Manual — Overview
+Important: This document faithfully converts the feature inventory in the conversation into Markdown; it does not claim a newly completed exhaustive manual audit. Before treating it as an implementation-ready specification, complete the coverage checklist and attach direct sources to each individual feature.
