@@ -33,7 +33,7 @@ try {
         $references=@('/nostdlib+',"/r:$refs/mscorlib.dll","/r:$refs/System.dll","/r:$refs/System.Core.dll","/r:$dependency")
         & $compiler /nologo /deterministic+ /langversion:7.3 "/platform:$Platform" /target:library "/out:$($files.Library)" @references src/Chart.Renderers/SceneContracts.cs src/Chart.Renderers/SceneCodec.cs src/Chart.Renderers/StrictSceneJson.cs src/Shared.Contracts/BoundedJson.cs
         if($LASTEXITCODE){throw 'Scene library build failed.'}
-        & $compiler /nologo /deterministic+ /langversion:7.3 "/platform:$Platform" /target:exe "/out:$($files.Executable)" @references "/r:$($files.Library)" tests/s3/SceneContractTests.cs
+        & $compiler /nologo /deterministic+ /langversion:7.3 "/platform:$Platform" /target:exe "/out:$($files.Executable)" @references "/r:$($files.Library)" tests/s3/SceneContractTests.cs tests/s3/SceneArtifactPath.cs
         if($LASTEXITCODE){throw 'Scene runner build failed.'}
         $hashes=[ordered]@{};foreach($name in $files.Keys){$hashes[$name]=(Get-FileHash -LiteralPath $files[$name] -Algorithm SHA256).Hash}
         if($ScannerEvidence){$report=Read-PpiReviewedScannerEvidence $ScannerEvidence;Assert-PpiRunnerScannerClear $report $files $hashes}
@@ -76,4 +76,17 @@ try {
     }
     & node.exe tests/s3/validate-roundtrip.mjs $corpus $roundtrip
     if($LASTEXITCODE) { throw 'Scene cross-language round-trip validation failed.' }
+    # Exercise the real, already-provenance-checked runner with a data-derived
+    # traversal name. Everything, including the outside-output sentinel, is owned test data.
+    $negative=Join-Path $results ('security-negative-'+[Guid]::NewGuid().ToString('N'))
+    $negativeOutput=Join-Path $negative 'output'
+    New-Item -ItemType Directory -Force $negativeOutput | Out-Null
+    $sentinel=Join-Path $negative 'sentinel.v1.json'
+    [IO.File]::WriteAllText($sentinel,'owned sentinel')
+    $golden=(Resolve-Path 'tests/s3/fixtures/all-primitives.v1.json').ProviderPath
+    ConvertTo-Json -InputObject @([ordered]@{name='../sentinel';valid=$true;json=[IO.File]::ReadAllText($golden)}) -Depth 4 | Set-Content (Join-Path $negative 'cases.json')
+    if((Get-FileHash -LiteralPath $executable -Algorithm SHA256).Hash -ne (Get-Content -LiteralPath $receiptPath -Raw | ConvertFrom-Json).Hashes.Executable){throw 'Runner changed before the security regression; execution refused.'}
+    $negativeRun=Start-Process -FilePath $executable -ArgumentList @(('"'+$golden+'"'),('"'+$negativeOutput+'"'),('"'+$negative+'"')) -WindowStyle Hidden -Wait -PassThru -RedirectStandardOutput (Join-Path $negative 'stdout.log') -RedirectStandardError (Join-Path $negative 'stderr.log')
+    if($negativeRun.ExitCode -ne 1 -or [IO.File]::ReadAllText($sentinel) -ne 'owned sentinel' -or !(Select-String -LiteralPath (Join-Path $negative 'stderr.log') -Pattern 'Corpus name' -Quiet)){throw 'Real scene runner did not reject the unsafe corpus name without altering the sentinel.'}
+    Write-Output 'PASS real scene runner rejects corpus traversal before outside-output mutation.'
 } finally { Pop-Location }

@@ -12,7 +12,7 @@ New-Item -ItemType Directory -Path $snapshot | Out-Null
 foreach($folder in @('apps','src','scripts','tests','packages','docs')) {
     Get-ChildItem (Join-Path $repo $folder) -File -Recurse | Where-Object {
         $relative=$_.FullName.Substring($repo.Length+1)
-        ($relative -match '(^|[\\/])node_modules[\\/]' -or $relative -notmatch '(^|[\\/])(bin|obj|artifacts)[\\/]') -and
+        ($relative -match '(^|[\\/])node_modules[\\/]' -or $relative -notmatch '(^|[\\/])(bin|obj|artifacts|__pycache__)[\\/]') -and
         $_.Name -notlike '.env*' -and $_.Extension -notin @('.pfx','.p12','.snk','.key','.pem')
     } | ForEach-Object {
         $destination=Join-Path $snapshot $_.FullName.Substring($repo.Length+1)
@@ -60,6 +60,7 @@ function Invoke-Check([string]$Name, [string]$Executable, [string[]]$Arguments) 
 Push-Location $repo
 try {
     Invoke-Check 's0-unit' $shellPath @('-NoProfile','-File',"$scriptRoot/Test-S0.ps1")
+    Invoke-Check 'security-remediation' $shellPath @('-NoProfile','-File',"$scriptRoot/Test-SecurityRemediation.ps1")
     Invoke-Check 'piidx-engine' $shellPath @('-NoProfile','-File',"$scriptRoot/Test-Piidx.ps1",'-RunnerRoot',$originalRepo)
     Invoke-Check 'piidx-isolation' $shellPath @('-NoProfile','-File',"$scriptRoot/Test-PiidxIsolation.ps1")
     Invoke-Check 'ribbon-definition' $shellPath @('-NoProfile','-File',"$scriptRoot/Test-Ribbon.ps1")

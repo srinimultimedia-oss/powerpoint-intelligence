@@ -1,8 +1,8 @@
 ﻿# PowerPoint Intelligence — easySetup
 
-Version: 1.0.0.13
-Source SHA-256: 13E49A73A5694BA3A2413E243DDBF1BD01BABBEB23DBD830895E87359EE17A67
-Generated UTC: 2026-11-01T19:00:34.4009183Z
+Version: 1.0.0.15
+Source SHA-256: 2945C70CC45CFF9C9B4EC4AD7605BDB7AA9D8D852DDAF6E04284B9408649E22F
+Generated UTC: 2026-11-02T06:46:48.0286539Z
 
 Run PowerPointIntelligenceSetup.exe after saving and closing PowerPoint. Setup detects Office x86/x64, verifies/extracts its embedded payload to the current user's LocalAppData, and opens the normal VSTO publisher prompt. Keep extracted version folders: VSTO may depend on them. Installation is per Windows user. Updates use a newer signed deployment version: the prior easySetup package is uninstalled through VSTO and the previous package is offered for rollback if installation fails. A first migration from an older repository-based installation may require uninstalling that old package normally if VSTO reports a different installation location. Uninstall through Windows Apps / Programs and Features. No administrator rights, certificate trust stores, antivirus exclusions or security policies are changed by this bootstrapper. A company policy may still require administrator assistance.
 
