@@ -1,0 +1,253 @@
+{
+  "report": "C:\\Users\\srini\\Downloads\\Cx_ScanReport_2026-11-02_121110.md",
+  "report_sha256": "80fe271c51f386d4b31d96701832e53a40da2ffa9962c4aa3d793a28e8179930",
+  "scan_id": "6cd9bdd1-dcd1-4511-9b4f-f14ca67486e2",
+  "scanned": "2026-11-02 12:06 Asia/Dubai",
+  "created": "2026-11-02 12:11 Asia/Dubai",
+  "preset": "ASA Premium",
+  "full_scan": true,
+  "files_scanned": 342,
+  "sast_files": 314,
+  "summary_high": 8,
+  "resolved_csharp_traversal_records": 87,
+  "resolved_ids": [
+    "-2135577675",
+    "-2135358301",
+    "-1926027703",
+    "-1885568552",
+    "-1880250405",
+    "-1719932254",
+    "-1686233768",
+    "-1657118664",
+    "-1654445831",
+    "-1651521647",
+    "-1612927088",
+    "-1599453999",
+    "-1579543158",
+    "-1574684448",
+    "-1549767052",
+    "-1532911912",
+    "-1477818700",
+    "-1477818700",
+    "-1429002613",
+    "-1429002613",
+    "-1345387132",
+    "-1299226345",
+    "-1176590899",
+    "-1153363084",
+    "-771679709",
+    "-756336288",
+    "-753889073",
+    "-695368680",
+    "-661553133",
+    "-498998273",
+    "-485459168",
+    "-457272103",
+    "-419043739",
+    "-315100207",
+    "-293388255",
+    "-169465736",
+    "-152178112",
+    "-86767479",
+    "-82668503",
+    "-56861040",
+    "-47860084",
+    "-47860084",
+    "46418524",
+    "320475186",
+    "341466547",
+    "360136018",
+    "361596616",
+    "507564216",
+    "596844632",
+    "596844632",
+    "596844632",
+    "596844632",
+    "596844632",
+    "596844632",
+    "601440768",
+    "661522298",
+    "711231073",
+    "724762689",
+    "745660673",
+    "758400680",
+    "766328971",
+    "793367280",
+    "920427747",
+    "934697572",
+    "955143290",
+    "1018546989",
+    "1025575657",
+    "1027859451",
+    "1144353721",
+    "1188711609",
+    "1201223223",
+    "1237596672",
+    "1294326411",
+    "1335748697",
+    "1398503197",
+    "1407586478",
+    "1552682661",
+    "1703303725",
+    "1739815605",
+    "1855789791",
+    "1907694926",
+    "1966682696",
+    "2097746304",
+    "2129211647",
+    "2145587874",
+    "-1886406541",
+    "531211230"
+  ],
+  "active_summary_path_traversal": 1,
+  "detailed_records": [
+    {
+      "ordinal": 1,
+      "id": "-440452681",
+      "severity": "High",
+      "detail_query": "Inclusion of Functionality from Untrusted Control Sphere",
+      "detail_cwe": "829",
+      "link": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/6cd9bdd1-dcd1-4511-9b4f-f14ca67486e2?resultId=UwdWmtbzQ%2FNMvz4zdSW5HTco9nA%3D)",
+      "source": {
+        "file": "/scripts/Piidx-TestSuite.ps1",
+        "line": 11,
+        "code": "$prior=$null;if(Test-Path -LiteralPath $receipt){$prior=Get-Content -LiteralPath $receipt -Raw | ConvertFrom-Json}"
+      },
+      "destination": {
+        "file": "/scripts/Piidx-TestSuite.ps1",
+        "line": 26,
+        "code": "$null=[Reflection.Assembly]::LoadFrom($dll)"
+      }
+    },
+    {
+      "ordinal": 2,
+      "id": "1619924552",
+      "severity": "High",
+      "detail_query": "Inclusion of Functionality from Untrusted Control Sphere",
+      "detail_cwe": "829",
+      "link": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/6cd9bdd1-dcd1-4511-9b4f-f14ca67486e2?resultId=ClcRZxCOdcTfMJDLj2AU1XFnAFY%3D)",
+      "source": {
+        "file": "/scripts/Source-Fingerprint.ps1",
+        "line": 18,
+        "code": "$files=@(Get-ChildItem (Join-Path $Root 'apps/powerpoint-vsto') -File -Recurse | Where-Object { $_.FullName -notmatch '[\\\\/](bin|obj)[\\\\/]' -and $_.Extension -in @('.cs','.csproj','.config','.json') }; Get-ChildItem (Join-Path $Root 'src/Chart.Domain') -File; Get-ChildItem (Join-Path $Root 'src/Chart.Renderers') -File; Get-ChildItem (Join-Path $Root 'src/Shared.Contracts') -File; Get-ChildItem (Join-Path $Root 'src/Library.Core') -File) | Sort-Object FullName"
+      },
+      "destination": {
+        "file": "/scripts/Source-Fingerprint.ps1",
+        "line": 19,
+        "code": "$lines=@($files | ForEach-Object { ($_.FullName.Substring($Root.Length+1))+'='+(Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash })"
+      }
+    },
+    {
+      "ordinal": 3,
+      "id": "1611841882",
+      "severity": "High",
+      "detail_query": "Inclusion of Functionality from Untrusted Control Sphere",
+      "detail_cwe": "829",
+      "link": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/6cd9bdd1-dcd1-4511-9b4f-f14ca67486e2?resultId=tZzaGQZ9RePuJraih8zd1V1E4tA%3D)",
+      "source": {
+        "file": "/scripts/Source-Fingerprint.ps1",
+        "line": 7,
+        "code": "$_.FullName.Substring($Root.Length+1) -notmatch '(^|[\\\\/])(bin|obj|node_modules|artifacts)[\\\\/]' -and $_.Extension -in @('.cs','.csproj','.ps1','.py','.json','.mjs','.ts','.tsx','.config','.xsd')"
+      },
+      "destination": {
+        "file": "/scripts/Source-Fingerprint.ps1",
+        "line": 10,
+        "code": "$records.Add($relative+'='+(Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash)"
+      }
+    },
+    {
+      "ordinal": 4,
+      "id": "1735884981",
+      "severity": "High",
+      "detail_query": "Inclusion of Functionality from Untrusted Control Sphere",
+      "detail_cwe": "829",
+      "link": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/6cd9bdd1-dcd1-4511-9b4f-f14ca67486e2?resultId=CEgdOtszNx4zIWh5NfLbqcfoIN8%3D)",
+      "source": {
+        "file": "/scripts/Scene-RunnerCache.ps1",
+        "line": 15,
+        "code": "$receipt=Get-Content -LiteralPath $ReceiptPath -Raw | ConvertFrom-Json"
+      },
+      "destination": {
+        "file": "/scripts/Test-SceneContracts.ps1",
+        "line": 58,
+        "code": "& $executable tests/s3/fixtures/all-primitives.v1.json $roundtrip $corpus 2>&1 | Tee-Object -FilePath (Join-Path $results 'execution.log')"
+      }
+    },
+    {
+      "ordinal": 5,
+      "id": "-160022997",
+      "severity": "High",
+      "detail_query": "Inclusion of Functionality from Untrusted Control Sphere",
+      "detail_cwe": "829",
+      "link": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/6cd9bdd1-dcd1-4511-9b4f-f14ca67486e2?resultId=28kNKHDqL46PPk%2BDLXjHv%2F9gTp0%3D)",
+      "source": {
+        "file": "/scripts/Collect-SceneThreatEvidence.ps1",
+        "line": 1,
+        "code": "param([ValidateRange(1,14)][int]$Days=3, [string]$OutputDirectory, [ValidateSet('McAfee','Defender','All')][string]$Scanner='McAfee')"
+      },
+      "destination": {
+        "file": "/scripts/Collect-SceneThreatEvidence.ps1",
+        "line": 89,
+        "code": "$report | ConvertTo-Json -Depth 12 | Set-Content -LiteralPath $reportPath"
+      },
+      "summary_type": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+      "assessment": "Confirmed output-directory authority gap; fixed in source, subsequent scan pending",
+      "control_files": [
+        "scripts/Diagnostic-OutputPath.ps1",
+        "scripts/Collect-SceneThreatEvidence.ps1"
+      ],
+      "tests": [
+        "scripts/Test-DiagnosticOutputPath.ps1"
+      ]
+    },
+    {
+      "ordinal": 6,
+      "id": "-1447597795",
+      "severity": "High",
+      "detail_query": "Inclusion of Functionality from Untrusted Control Sphere",
+      "detail_cwe": "829",
+      "link": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/6cd9bdd1-dcd1-4511-9b4f-f14ca67486e2?resultId=N3iP3l9zlKd9tSsqYE%2B7mnyvVas%3D)",
+      "source": {
+        "file": "/easySetup/Build-EasySetup.ps1",
+        "line": 14,
+        "code": "$certificate=Get-Item ('Cert:\\CurrentUser\\My\\'+$CertificateThumbprint)"
+      },
+      "destination": {
+        "file": "/easySetup/Build-EasySetup.ps1",
+        "line": 78,
+        "code": "$signature=Set-AuthenticodeSignature -FilePath $pending -Certificate $certificate -HashAlgorithm SHA256"
+      }
+    },
+    {
+      "ordinal": 7,
+      "id": "156779163",
+      "severity": "High",
+      "detail_query": "Inclusion of Functionality from Untrusted Control Sphere",
+      "detail_cwe": "829",
+      "link": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/6cd9bdd1-dcd1-4511-9b4f-f14ca67486e2?resultId=WIQ%2FF4n%2FYFIX5YdyKEuzvBzTdaE%3D)",
+      "source": {
+        "file": "/easySetup/Build-EasySetup.ps1",
+        "line": 14,
+        "code": "$certificate=Get-Item ('Cert:\\CurrentUser\\My\\'+$CertificateThumbprint)"
+      },
+      "destination": {
+        "file": "/easySetup/Build-EasySetup.ps1",
+        "line": 27,
+        "code": "& (Join-Path $vs 'MSBuild/Current/Bin/MSBuild.exe') (Join-Path $repo 'apps/powerpoint-vsto/PowerPointIntelligence.csproj') /t:Build /p:Configuration=Release \"/p:Platform=$platform\" /p:SignManifests=true /p:UseSharedCompilation=false /p:PpiForcePayloadCompile=true /p:PpiEasySetupBuild=true \"/p:OutputPath=$output/\" \"/p:AppConfig=$configFile\" \"/p:ManifestCertificateThumbprint=$CertificateThumbprint\" \"/p:ApplicationVersion=$DeploymentVersion\" /v:minimal /nologo"
+      }
+    }
+  ],
+  "summary_only_scs": 1,
+  "verification": {
+    "source_sha256": "7871C33660B6ADBD55973B103F1858528CBCACCA7E673C690BE52F813EB502A2",
+    "local_suite": "artifacts/validation-20261102-122044-01d9bb98/results.json",
+    "passed": 23,
+    "failed_held": 1,
+    "diagnostic_assertions": 31,
+    "actual_collector_valid_output": "PASS",
+    "existing_windows_reparse_rejected": "PASS",
+    "junction_fixture_creation": "SKIP: session permission",
+    "windows_powershell_51": "BLOCKED: AuthorizationManager check failed; no bypass",
+    "new_scan": "PENDING"
+  }
+}

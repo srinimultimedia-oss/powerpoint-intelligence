@@ -1,8 +1,11 @@
 param([ValidateRange(1,14)][int]$Days=3, [string]$OutputDirectory, [ValidateSet('McAfee','Defender','All')][string]$Scanner='McAfee')
 $ErrorActionPreference='Stop'
 $repo=Split-Path $PSScriptRoot -Parent
+. (Join-Path $PSScriptRoot 'Diagnostic-OutputPath.ps1')
 if(!$OutputDirectory) { $OutputDirectory=Join-Path $repo ('artifacts/scene-threat-'+(Get-Date -Format 'yyyyMMdd-HHmmss')) }
-New-Item -ItemType Directory -Force -Path $OutputDirectory | Out-Null
+$outputPath=Get-PpiDiagnosticOutputDirectory $OutputDirectory $repo
+$reportPath=Get-PpiDiagnosticReportPath $outputPath
+New-Item -ItemType Directory -Force -Path $outputPath | Out-Null
 $errors=New-Object System.Collections.Generic.List[object]
 function Record-ReadFailure([string]$Source,$Record) {
     $errors.Add([pscustomobject]@{Source=$Source;Type=$Record.Exception.GetType().FullName;HResult=('0x{0:X8}' -f $Record.Exception.HResult);Message=$Record.Exception.Message})
@@ -85,7 +88,7 @@ foreach($folder in $receiptFolders) {
 }
 $report.BuildReceipts=@($receipts.ToArray());$report.Errors=@($errors.ToArray())
 if($report.McAfeeDetections.Count -gt 0 -or $report.Detections.Count -gt 0 -or $report.Events.Count -gt 0) { $report.Conclusion='Matching scanner/policy records collected. Review the exact threat name, affected path and action before deciding remediation. This is not a false-positive verdict or proof that protection is active.' }
-$reportPath=Join-Path $OutputDirectory 'scene-threat-evidence.json'
+$reportPath=Get-PpiDiagnosticReportPath $outputPath
 $report | ConvertTo-Json -Depth 12 | Set-Content -LiteralPath $reportPath
 Write-Output "Evidence: $reportPath"
 Write-Output ("Matching McAfee detections={0}; Defender detections={1}; events={2}; read errors={3}" -f $report.McAfeeDetections.Count,$report.Detections.Count,$report.Events.Count,$report.Errors.Count)

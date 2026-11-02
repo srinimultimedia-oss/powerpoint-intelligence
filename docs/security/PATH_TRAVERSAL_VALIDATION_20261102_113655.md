@@ -1,0 +1,22 @@
+# Path-traversal validation — report 2026-11-02 11:36
+
+This supplements, rather than overwrites, the earlier report assessment. See [the 87-record register](CHECKMARX_PATH_TRAVERSAL_20261102_113655.md) and its JSON companion for original IDs, source/sink references, control locations and comparison counts.
+
+## Current source and executed checks
+
+Source SHA-256: `02FDCB26D95E6A574E59C67E8A8C9585D1BFF7AD2F69C584E93D6F5C536F1C99`.
+
+Final aggregate evidence: `artifacts/validation-20261102-115859-2b9d5ad6/results.json` and `source-snapshot.json`. **23 PASS / 1 FAIL**. The failure is the existing missing PIIDX cached test assembly; it is held, not waived or relabelled PASS. All three production compile targets, compatibility architectures, S0/S1/domain contracts, ribbon, demo compilation, JSON/schema/chart/typecheck, renderer, scene, template and cross-language checks pass. The snapshot fingerprint matches current source.
+
+- Security regressions: 30 actual path-authority assertions, 28 corpus-path assertions and 22 offline repair security tests pass. A red test first demonstrated the missing ApprovedRoot API; the production control and all six new approval/reconstruction assertions then passed. Evidence: `artifacts/path-review-113655-before.log`, `path-review-113655-security.log` and aggregate security log.
+- Actual legacy migration tests in the existing gallery/ribbon contract runner: unapproved stored root rejected with InvalidDataException before directory existence/registration, no target folder/registration created, exact cache text preserved; independently registered root still migrates to the same ID with preserved cache. Evidence: aggregate `ribbon-definition.log` and `artifacts/path-review-113655-ribbon.log`. The existing gallery fixture suffix was shortened to keep its migration receipt below .NET Framework legacy path limits in nested source snapshots; no Windows long-path policy was changed.
+- Actual CLI tests: ten input/output traversal and unowned absolute-root cases pass for domain, scene, renderer, gallery/snapshot and Office-property modes. Each returns exit 2 before data access or COM activation. Evidence: `artifacts/path-review-113655-cli.json`. Mode positions and normal positive execution are covered by the aggregate suite.
+- Scene checks: 148 assertions and 73 cross-language round trips on each of AnyCPU/x86/x64, plus actual malicious corpus rejection. Reviewed rebuilds retained the existing stable executable paths and provenance/scanner checks. Evidence: `artifacts/path-review-113655-scene-{AnyCPU,x86,x64}.log` and aggregate scene logs.
+- Templates: 36 offline fidelity-policy assertions, 520 layout previews and 10,400 palette/layout combinations pass. Evidence: `artifacts/path-review-113655-templates.log`. Offline previews are not native Office acceptance.
+
+## Remaining acceptance gates
+
+1. **Checkmarx rescan:** the supplied scan predates this revision. All 87 traversal records have revised controls and traceability, but none is declared scanner-resolved here. Compare original IDs/flows, review new records and keep the seven unrelated untrusted-functionality records and summary-only supply-chain result separate. No scanner suppression/exclusion or custom sanitizer declaration was introduced.
+2. **PIIDX cached suite:** `artifacts/piidx/PiidxTestSuite.dll` is still missing despite its historical receipt. Its guard refuses automatic recovery. The 11:13 scanner report has no PIIDX detection and cannot establish the deletion cause or current protection status. Do not restore/replace it or run another cached binary to evade the guard. Targeted migration tests were added to the pre-existing gallery contract runner; the full PIIDX suite remains unexecuted.
+3. **Desktop acceptance:** Office UI, chart/data refresh and save/reopen need the normal desktop token and freshly built/installed payload. They were not run under this AppContainer. Rebuild/sign the deployment through the existing workflow; an older installer is intentionally stale. Certificate trust and antivirus/Windows controls remain unchanged.
+4. Existing ACLs remain part of the path-authority model. These changes do not claim handle-based protection against namespace races/hard-link attacks or introduce an enterprise folder allowlist. Explicit selected external inputs remain supported. A new legacy root must first be added/configured in Library, then migration can retry when Library reopens.
