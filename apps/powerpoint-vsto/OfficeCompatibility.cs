@@ -1,3 +1,4 @@
+﻿using PowerPointIntelligence.Security;
 using System;
 using System.Collections.Specialized;
 using System.Configuration;
@@ -30,6 +31,7 @@ namespace PowerPointIntelligence.Compatibility
         public static OfficeSettings Load(string configurationPath)
         {
             // Map the add-in's config explicitly: never read or modify POWERPNT.EXE.config.
+            configurationPath=PathPolicy.ConfigFile(configurationPath);
             if (!File.Exists(configurationPath)) return Parse(new NameValueCollection());
             var config = ConfigurationManager.OpenMappedExeConfiguration(
                 new ExeConfigurationFileMap { ExeConfigFilename = configurationPath }, ConfigurationUserLevel.None);

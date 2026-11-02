@@ -1,4 +1,4 @@
-param([string]$Compiler, [switch]$CompileOnly)
+﻿param([string]$Compiler, [switch]$CompileOnly)
 $ErrorActionPreference = 'Stop'
 $repo = Split-Path $PSScriptRoot -Parent
 Push-Location $repo
@@ -21,7 +21,7 @@ try {
     Copy-Item $dependency artifacts/Newtonsoft.Json.dll -Force
     & $Compiler /nologo /langversion:7.3 /target:library /out:artifacts\Chart.Domain.dll "/r:$dependency" src\Chart.Domain\ChartDocument.cs src\Chart.Domain\ChartCodec.cs src\Chart.Domain\S0Migration.cs apps\powerpoint-vsto\Contracts.cs apps\powerpoint-vsto\MetadataCodec.cs
     if ($LASTEXITCODE) { throw 'Domain library compilation failed.' }
-    & $Compiler /nologo /langversion:7.3 /target:exe /out:artifacts\DomainTests.exe "/r:$dependency" /r:artifacts\Chart.Domain.dll tests\s1\DomainTests.cs
+    & $Compiler /nologo /langversion:7.3 /target:exe /out:artifacts\DomainTests.exe "/r:$dependency" /r:artifacts\Chart.Domain.dll tests\s1\DomainTests.cs src/Library.Core/PathPolicy.cs
     if ($LASTEXITCODE) { throw 'Domain tests compilation failed.' }
     if ($CompileOnly) { Write-Output 'COMPILE ONLY: domain library and tests compiled; no execution.'; return }
     & .\artifacts\DomainTests.exe tests/s1/fixtures/clustered-column.v2.json artifacts/domain-roundtrip.v2.json

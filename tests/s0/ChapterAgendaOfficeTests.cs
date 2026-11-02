@@ -1,3 +1,4 @@
+﻿using PowerPointIntelligence.Security;
 using System;
 using System.Globalization;
 using System.IO;
@@ -17,7 +18,7 @@ internal static class ChapterAgendaOfficeTests
     }
     private static void Refused(Action action,string name){bool refused=false;try{action();}catch(Exception ex) when(ex is InvalidDataException||ex is InvalidOperationException){refused=true;}Require(refused,name);}
     internal static void Run(PowerPoint.Application app,string outputDirectory)
-    {
+    {outputDirectory=PathPolicy.TestPath(outputDirectory);
         if(app==null)throw new ArgumentNullException("app");Directory.CreateDirectory(outputDirectory);count=0;
         string file=Path.Combine(Path.GetFullPath(outputDirectory),"chapter-agenda-native-"+Guid.NewGuid().ToString("N")+".pptx");PowerPoint.Presentation owned=null;
         Console.WriteLine("CHAPTER AGENDA Office="+app.Version+"; process="+(Environment.Is64BitProcess?"x64":"x86"));

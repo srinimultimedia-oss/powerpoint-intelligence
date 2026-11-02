@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PowerPointIntelligence.Security;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -54,7 +55,7 @@ namespace PowerPointIntelligence.AddIn
         }
         private static T WithWorkbook<T>(string path,Func<object,T> action)
         {
-            var file=new FileInfo(path);if(!file.Exists||file.Length>20*1024*1024)throw new InvalidDataException("The source is missing or exceeds 20 MB. Explicitly relink it.");
+            path=PathPolicy.Selected(path);var file=new FileInfo(path);if(!file.Exists||file.Length>20*1024*1024)throw new InvalidDataException("The source is missing or exceeds 20 MB. Explicitly relink it.");
             dynamic excel=null,book=null;try{excel=Activator.CreateInstance(Type.GetTypeFromProgID("Excel.Application",true));excel.Visible=false;excel.DisplayAlerts=false;excel.AutomationSecurity=3;excel.AskToUpdateLinks=false;book=excel.Workbooks.Open(path,0,true);return action((object)book);}finally{try{if(book!=null)book.Close(false);}finally{if(excel!=null)System.Runtime.InteropServices.Marshal.ReleaseComObject((object)excel);}}
         }
         private static LinkedTable ReadRange(object workbook,string worksheet,string address)

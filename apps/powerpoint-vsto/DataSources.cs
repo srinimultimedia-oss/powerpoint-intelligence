@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PowerPointIntelligence.Security;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -92,7 +93,7 @@ namespace PowerPointIntelligence.AddIn
         }
         internal static LinkedTable Load(DataSourceLink link,bool numeric=true)
         {
-            var info=new FileInfo(link.Path);if(!info.Exists||info.Length>20*1024*1024)throw new InvalidDataException("The linked source is missing or exceeds 20 MB. Relink it using Data Source.");
+            link.Path=PathPolicy.Selected(link.Path);var info=new FileInfo(link.Path);if(!info.Exists||info.Length>20*1024*1024)throw new InvalidDataException("The linked source is missing or exceeds 20 MB. Relink it using Data Source.");
             if(link.Format=="excel"){if(link.Mapping!=null)return link.Mapping.Project(MappedExcelData.Read(link.Path,link.Mapping),numeric);var raw=Excel(link.Path);return numeric?ChooseColumns(raw,PickColumns):raw.Validate(false);}
             string text=File.ReadAllText(link.Path);
             if(link.Format=="csv")return Csv(text,numeric);
@@ -279,14 +280,14 @@ namespace PowerPointIntelligence.AddIn
             if(link.Mapping!=null){Require(link.Format=="excel");link.Mapping.Validate();}
             Require(!String.IsNullOrWhiteSpace(link.Path) && link.Path.Length<=32767 && Path.IsPathRooted(link.Path));
             Require(!link.Path.StartsWith(@"\\?\",StringComparison.Ordinal) && !link.Path.StartsWith(@"\\.\",StringComparison.Ordinal));
-            Require(String.Equals(Path.GetFullPath(link.Path),link.Path,StringComparison.OrdinalIgnoreCase));
+            Require(String.Equals(PathPolicy.Selected(link.Path),link.Path,StringComparison.OrdinalIgnoreCase));
             Require(option.Extensions.Contains(Path.GetExtension(link.Path),StringComparer.OrdinalIgnoreCase));
         }
         internal static DataSourceLink Create(string format,string path)
         {
             var option=Option(format);
             if(String.IsNullOrWhiteSpace(path) || !Path.IsPathRooted(path))throw new InvalidDataException("Choose an existing source file.");
-            var link=new DataSourceLink{Id=Guid.NewGuid().ToString("D"),Format=option.Id,Path=Path.GetFullPath(path),LinkedAtUtc=DateTime.UtcNow};
+            var link=new DataSourceLink{Id=Guid.NewGuid().ToString("D"),Format=option.Id,Path=PathPolicy.Selected(path),LinkedAtUtc=DateTime.UtcNow};
             Validate(link);
             if(!new FileInfo(link.Path).Exists)throw new FileNotFoundException("The selected source file is unavailable.");
             return link;

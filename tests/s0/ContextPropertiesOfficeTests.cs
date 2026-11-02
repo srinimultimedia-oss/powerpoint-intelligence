@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PowerPointIntelligence.Security;
+using System;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -55,9 +56,9 @@ internal static class ContextPropertiesOfficeTests
         finally{File.WriteAllText(Path.Combine(evidenceDirectory,"context-selection-probe-"+checkpoint+".xml"),doc.OuterXml);}
     }
     internal static void Run(PowerPoint.Application app,string output)
-    {
+    {output=PathPolicy.TestPath(output);
         Directory.CreateDirectory(output);evidenceDirectory=output;focusCheckpoint=0;count=0;var connections=app.COMAddIns.Cast<Office.COMAddIn>().Where(a=>(a.ProgId+" "+a.Description).Contains("PowerPointIntelligence")||(a.ProgId+" "+a.Description).Contains("PowerPoint Intelligence")).ToArray();if(connections.Length!=1||!connections[0].Connect)throw new InvalidOperationException("Install/connect the current PowerPoint Intelligence add-in before contextual UI validation.");dynamic api=connections[0].Object;string build=(string)api.GetBuildInfo();if(!build.StartsWith(DemoRibbon.BuildMarker+";",StringComparison.Ordinal))throw new InvalidOperationException("Installed add-in is stale. Install the current source before testing its automatic property box.");
-        PowerPoint.Presentation deck=null;string file=Path.Combine(Path.GetFullPath(output),"context-properties-native.pptx");try{
+        PowerPoint.Presentation deck=null;string file=Path.Combine(PathPolicy.TestPath(output),"context-properties-native.pptx");try{
             deck=app.Presentations.Add(Office.MsoTriState.msoTrue);deck.PageSetup.SlideWidth=960;deck.PageSetup.SlideHeight=540;var slide=deck.Slides.Add(1,PowerPoint.PpSlideLayout.ppLayoutBlank);deck.Windows[1].ViewType=PowerPoint.PpViewType.ppViewNormal;deck.Windows[1].Activate();EnsureTestForeground(app,"initial");slide.Select();app.ActiveWindow.Selection.Unselect();Wait(api,app,"None",false);Check(true,"no selection hides property box");
             var text=TextShapeElements.Insert(app,"textbox");text.TextFrame.TextRange.Text="Native property box";text.Select();ProbeSelectedText(app);EnsureTestForeground(app,"text-baseline");var foreground=ContextSelectionBridge.GetForegroundWindow();var info=Wait(api,app,"Text",true,false);Check(ContextSelectionBridge.GetForegroundWindow()==foreground,"automatic property box does not steal foreground focus");Check(info.GetAttribute("font")=="true"&&info.GetAttribute("fill")=="true","managed text exposes applicable properties");string textKey=ContextSelectionBridge.Key(app);int textId=text.Id;
             ContextFormatting.ApplyFont(app,"Arial",22,true,null);NativeFormatting.Text(app,"center");NativeFormatting.Text(app,"middle");Check(text.TextFrame.TextRange.Font.Size==22&&text.TextFrame.TextRange.Font.Bold==Office.MsoTriState.msoTrue,"font edits apply to native field");

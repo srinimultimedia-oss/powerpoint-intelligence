@@ -1,3 +1,4 @@
+﻿using PowerPointIntelligence.Security;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -13,7 +14,7 @@ namespace PowerPointIntelligence.Library
     {
         internal readonly string IndexPath;
         static readonly CultureInfo Invariant=CultureInfo.InvariantCulture;
-        PiidxCatalog(string path){IndexPath=Path.GetFullPath(path);if(!String.Equals(Path.GetExtension(path),".piidx",StringComparison.OrdinalIgnoreCase))throw new ArgumentException("A PIIDX filename is required.");}
+        PiidxCatalog(string path){IndexPath=PathPolicy.Configured(path,Environment.CurrentDirectory);PathPolicy.RejectLinkedAncestors(IndexPath);if(!String.Equals(Path.GetExtension(path),".piidx",StringComparison.OrdinalIgnoreCase))throw new ArgumentException("A PIIDX filename is required.");}
         internal static PiidxCatalog Open(string path)
         {
             var catalog=new PiidxCatalog(path);if(!File.Exists(catalog.IndexPath))throw new FileNotFoundException("PIIDX index is missing.",catalog.IndexPath);
@@ -36,7 +37,7 @@ namespace PowerPointIntelligence.Library
         }
         FileStream WriterLock(CancellationToken cancellation)
         {
-            string path=IndexPath+".writer.lock";DateTime deadline=DateTime.UtcNow.AddSeconds(5);
+            string path=PathPolicy.Within(Path.GetDirectoryName(IndexPath),Path.GetFileName(IndexPath)+".writer.lock");PathPolicy.RejectLinkedAncestors(path);DateTime deadline=DateTime.UtcNow.AddSeconds(5);
             while(true)
             {
                 cancellation.ThrowIfCancellationRequested();
@@ -48,7 +49,7 @@ namespace PowerPointIntelligence.Library
         static string Utc(){return DateTime.UtcNow.ToString("o",Invariant);}
         static DateTime Date(string value){DateTime parsed;if(!DateTime.TryParseExact(value,"o",Invariant,DateTimeStyles.RoundtripKind,out parsed))throw new InvalidDataException("Index timestamp is invalid.");return parsed.ToUniversalTime();}
         static void Id(string value){Guid parsed;if(!Guid.TryParseExact(value,"D",out parsed)||parsed==Guid.Empty)throw new ArgumentException("A canonical nonempty catalog ID is required.");}
-        static string Root(string path){string full=Path.GetFullPath(path);return full.Length==Path.GetPathRoot(full).Length?full:full.TrimEnd(Path.DirectorySeparatorChar,Path.AltDirectorySeparatorChar);}
+        static string Root(string path){string full=PathPolicy.Configured(path,Environment.CurrentDirectory);return full.Length==Path.GetPathRoot(full).Length?full:full.TrimEnd(Path.DirectorySeparatorChar,Path.AltDirectorySeparatorChar);}
         static string Relative(string root,string file){string prefix=root.TrimEnd(Path.DirectorySeparatorChar,Path.AltDirectorySeparatorChar)+Path.DirectorySeparatorChar;file=Path.GetFullPath(file);if(!file.StartsWith(prefix,StringComparison.OrdinalIgnoreCase))throw new InvalidDataException("Source escaped its registered library.");return file.Substring(prefix.Length).Replace('\\','/');}
         internal IReadOnlyList<LibraryRegistration> Libraries()
         {

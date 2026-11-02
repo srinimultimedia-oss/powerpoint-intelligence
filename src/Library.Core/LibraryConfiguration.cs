@@ -1,3 +1,4 @@
+﻿using PowerPointIntelligence.Security;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -27,9 +28,10 @@ namespace PowerPointIntelligence.Library
         {
             using(var reader=XmlReader.Create(new StringReader(text),new XmlReaderSettings{DtdProcessing=DtdProcessing.Prohibit,XmlResolver=null,MaxCharactersInDocument=4000000}))return XDocument.Load(reader);
         }
-        static string PathValue(string value,string baseDirectory){return Path.GetFullPath(Path.IsPathRooted(value)?value:Path.Combine(baseDirectory,value));}
+        static string PathValue(string value,string baseDirectory){return PathPolicy.Configured(value,baseDirectory);}
         internal static LibraryRuntimeProfile Load(string configPath,string baseDirectory,string localAppData)
         {
+            configPath=PathPolicy.ConfigFile(configPath);baseDirectory=PathPolicy.Configured(baseDirectory,Environment.CurrentDirectory);localAppData=PathPolicy.Configured(localAppData,Environment.CurrentDirectory);
             var result=new LibraryRuntimeProfile{IndexPath=Path.Combine(localAppData,"PowerPointIntelligence","Library","catalog.piidx"),LegacyCachePath=Path.Combine(localAppData,"PowerPointIntelligence","library-index-v1.xml"),RefreshSeconds=60,WatchRootLimit=32};
             if(!File.Exists(configPath))return result;
             if(new FileInfo(configPath).Length>4000000)throw new InvalidDataException("Library configuration exceeds limits.");
@@ -70,7 +72,7 @@ namespace PowerPointIntelligence.Library
             using(var reader=XmlReader.Create(new StringReader(text),new XmlReaderSettings{DtdProcessing=DtdProcessing.Prohibit,XmlResolver=null,MaxCharactersInDocument=40000000}))
             {
                 reader.MoveToContent();if(reader.LocalName!="Library"||reader.NamespaceURI!="urn:powerpoint-intelligence:local-library:v1"||reader.GetAttribute("version")!="1"||String.IsNullOrWhiteSpace(reader.GetAttribute("folder")))throw new InvalidDataException("Legacy library registration is unsupported.");
-                return Path.GetFullPath(reader.GetAttribute("folder"));
+                return PathPolicy.Selected(reader.GetAttribute("folder"));
             }
         }
 

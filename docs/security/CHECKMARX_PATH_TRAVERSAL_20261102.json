@@ -1,0 +1,3116 @@
+{
+  "report": "C:\\Users\\srini\\Downloads\\Cx_ScanReport_2026-11-02_105245.md",
+  "sha256": "fed7937f8295e7be926137477d78d62951442a00d8087673ce3c56d01a53ad90",
+  "detailed_report_records": 119,
+  "traversal_records": 111,
+  "findings": [
+    {
+      "query": "Path_Traversal",
+      "ordinal": 1,
+      "id": "-1686233768",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=zhmSRDDN3pFJZncfZ6jBXwD3x7o%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 18,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 76,
+        "code": "if (expected) { model = SceneCodec.Decode(json); File.WriteAllText(SceneArtifactPath.Resolve(output, name), SceneCodec.Encode(model)); }",
+        "method": "Lambda",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/s3/SceneContractTests.cs",
+        "line": 21
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 2,
+      "id": "1907694926",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=0NsnIcSAd6EGPZGWPP7u1bdiaYc%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 18,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 69,
+        "code": "var cases = JArray.Parse(File.ReadAllText(Path.Combine(corpus, \"cases.json\")));",
+        "method": "Main",
+        "element": "ReadAllText"
+      },
+      "current_guard": {
+        "file": "tests/s3/SceneContractTests.cs",
+        "line": 21
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 3,
+      "id": "793367280",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=0X5q%2Fib8IoaFzi17BfwSCmx1p8M%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 18,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 23,
+        "code": "string golden = File.ReadAllText(args[0]), output = args[1], corpus = args[2];",
+        "method": "Main",
+        "element": "ReadAllText"
+      },
+      "current_guard": {
+        "file": "tests/s3/SceneContractTests.cs",
+        "line": 21
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 4,
+      "id": "-498998273",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=FGyIJfSvW66QkyvrHRR%2F29l6lTs%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 18,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 33,
+        "code": "File.WriteAllText(Path.Combine(output, \"all-primitives.v1.json\"), before);",
+        "method": "Lambda",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/s3/SceneContractTests.cs",
+        "line": 21
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 5,
+      "id": "1025575657",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=YwBlINP%2FhPfyUFv5itz3SZQOF9c%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 18,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 66,
+        "code": "File.WriteAllText(Path.Combine(output, \"csharp-produced.v1.json\"), SceneCodec.Encode(model));",
+        "method": "Lambda",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/s3/SceneContractTests.cs",
+        "line": 21
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 6,
+      "id": "-1612927088",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=MmCYKLu9ULHkSaNyLc4w2hp3uqU%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 18,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 24,
+        "code": "Directory.CreateDirectory(output);",
+        "method": "Main",
+        "element": "CreateDirectory"
+      },
+      "current_guard": {
+        "file": "tests/s3/SceneContractTests.cs",
+        "line": 21
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 7,
+      "id": "2145587874",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=kQIHU%2BoNHLIVszril8rM7FOLfUY%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 18,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 81,
+        "code": "File.WriteAllText(Path.Combine(output, \"results.json\"), JsonConvert.SerializeObject(rows, Formatting.Indented));",
+        "method": "Main",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/s3/SceneContractTests.cs",
+        "line": 21
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 8,
+      "id": "-753889073",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=qKLIOY8xtoAqqdQBMCNsEmBGW%2FA%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/library/TemplateLibraryTests.cs",
+        "line": 21,
+        "code": "[STAThread] public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/library/TemplateLibraryTests.cs",
+        "line": 51,
+        "code": "File.WriteAllLines(Path.Combine(output,\"catalog.tsv\"),rows);File.WriteAllLines(Path.Combine(output,\"duplicate-structures.txt\"),duplicates);",
+        "method": "Main",
+        "element": "WriteAllLines"
+      },
+      "current_guard": {
+        "file": "tests/library/TemplateLibraryTests.cs",
+        "line": 27
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 9,
+      "id": "-457272103",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=EfvJD%2BdSl%2FD%2B7XAPJzkQr1F2Kls%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/LinkedChartDiagnostic.cs",
+        "line": 14,
+        "code": "Directory.CreateDirectory(output);string log=Path.Combine(output,\"linked-chart-stages.tsv\");",
+        "method": "Run",
+        "element": "CreateDirectory"
+      },
+      "current_guard": {
+        "file": "tests/s0/LinkedChartDiagnostic.cs",
+        "line": 14
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 10,
+      "id": "1201223223",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=UCcCTDpphdeVMQfYVOPpQO%2FdjG0%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s3/NativeRendererTests.cs",
+        "line": 48,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s3/NativeRendererTests.cs",
+        "line": 111,
+        "code": "File.WriteAllText(Path.Combine(args[2], \"rendered-chart.v1.xml\"), xml);",
+        "method": "Lambda",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/s3/NativeRendererTests.cs",
+        "line": 51
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 11,
+      "id": "936672265",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=cCCPdwieTN%2FR3qH3fV9k7jdXQio%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/DemoLinks.cs",
+        "line": 51,
+        "code": "var info=new FileInfo(path);if(!info.Exists||!String.Equals(info.Extension,\".xlsx\",StringComparison.OrdinalIgnoreCase)||info.Length>20*1024*1024)throw new InvalidDataException(\"Choose an existing .xlsx file under 20 MB.\");",
+        "method": "Transfer",
+        "element": "Exists"
+      },
+      "current_guard": {
+        "file": "apps/powerpoint-vsto/DemoLinks.cs",
+        "line": 52
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Fully qualified selected input; traversal, devices, ADS and ambiguous Windows names rejected before IO. Selected external files remain supported."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 12,
+      "id": "-2135358301",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=DhaC6deo%2F52xVQTCskAqEnVA1sM%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s3/NativeRendererTests.cs",
+        "line": 48,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s3/NativeRendererTests.cs",
+        "line": 53,
+        "code": "canonical = File.ReadAllText(args[0]); scene = File.ReadAllText(args[1]);",
+        "method": "Main",
+        "element": "ReadAllText"
+      },
+      "current_guard": {
+        "file": "tests/s3/NativeRendererTests.cs",
+        "line": 51
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 13,
+      "id": "1855789791",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=JHbgV2YJ0dKomzB5mh%2BZVCTWgaI%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 36,
+        "code": "catch(Exception error){File.WriteAllText(Path.Combine(args[1],\"mapped-excel-result.txt\"),\"FAIL \"+error.GetType().Name+\" 0x\"+error.HResult.ToString(\"X8\"));Console.Error.WriteLine(error);return 1;}",
+        "method": "Main",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/s0/DemoOfficeTests.cs",
+        "line": 27
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 14,
+      "id": "745660673",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=Sn1kv5QOeNSBke8HIehSy7oBEXc%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/ContextPropertiesOfficeTests.cs",
+        "line": 74,
+        "code": "File.WriteAllText(Path.Combine(output,\"context-properties-state.xml\"),State(api).OuterXml);Console.WriteLine(\"CONTEXT \"+count+\" native assertions passed; Office=\"+app.Version+\"; process=\"+(Environment.Is64BitProcess?\"x64\":\"x86\")+\". Color-picker visuals, every chart family and per-monitor DPI still need manual coverage.\");",
+        "method": "Run",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/s0/ContextPropertiesOfficeTests.cs",
+        "line": 59
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 15,
+      "id": "-1426692475",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=bjVvqj3s0XvHoIo0v7OqOdmJUTE%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/library/TemplateLibraryTests.cs",
+        "line": 21,
+        "code": "[STAThread] public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/library/TemplateLibraryTests.cs",
+        "line": 26,
+        "code": "string output=Path.GetFullPath(args[0]);Directory.CreateDirectory(output);",
+        "method": "Main",
+        "element": "CreateDirectory"
+      },
+      "current_guard": {
+        "file": "tests/library/TemplateLibraryTests.cs",
+        "line": 27
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 16,
+      "id": "934697572",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=Hfy1AishGxl2qSC2Lr3vEk%2B%2FmRU%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 32,
+        "code": "var badSave=Valid();badSave.Profiles[0].Endpoint=\"https://example.invalid/?token=secret\";string preserved=File.ReadAllText(file);Reject(()=>ServiceConnections.Save(file,badSave),\"invalid save rejected\");Check(File.ReadAllText(file)==preserved,\"invalid save preserves previous config\");",
+        "method": "Run",
+        "element": "ReadAllText"
+      },
+      "current_guard": {
+        "file": "tests/s0/ServiceConnectionTests.cs",
+        "line": 31
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 17,
+      "id": "1027859451",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=8ZsApVw557IyhudK0kWwJFV2GVo%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoScenario.cs",
+        "line": 100,
+        "code": "File.WriteAllText(linkedSource,id==\"waterfall\"?\"Category,Change\\nA,137.5\\nB,-8\\nC,20\":\"Category,Actual,Plan\\n1,137.5,15\\n2,22,18\\n3,30,35\");",
+        "method": "Prepare",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/s0/DemoScenario.cs",
+        "line": 35
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 18,
+      "id": "706674842",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=9LMI6BsvpYSoTxfiKF9gTWIanuI%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 9,
+        "code": "[STAThread] public static int Main(string[] args){try{Run(args.Length==0?null:args[0]);return 0;}catch(Exception ex){Console.Error.WriteLine(ex);return 1;}}",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 95,
+        "code": "try{File.WriteAllText(temp,xml,new UTF8Encoding(false,true));if(File.Exists(target))File.Replace(temp,target,null);else File.Move(temp,target);}finally{if(File.Exists(temp))File.Delete(temp);}",
+        "method": "Save",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 91
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Checked configuration filename/type, contained relative paths, writable ancestor reparse rejection."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 19,
+      "id": "-771679709",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=Nxy%2FiOS1W%2BKBTIms7kW8oNuDBpI%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/ContextPropertiesTests.cs",
+        "line": 17,
+        "code": "Directory.CreateDirectory(output);int count=0;Action<bool,string> check=(ok,name)=>{if(!ok)throw new Exception(\"FAIL property box: \"+name);count++;};",
+        "method": "Run",
+        "element": "CreateDirectory"
+      },
+      "current_guard": {
+        "file": "tests/s0/ContextPropertiesTests.cs",
+        "line": 17
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 20,
+      "id": "1739815605",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=9JOLSPyhOd0IQ9px4F0qMVRmYLA%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 28,
+        "code": "Directory.CreateDirectory(args[1]);var rows=new List<string>{\"ToolId,Status,Evidence\"};",
+        "method": "Main",
+        "element": "CreateDirectory"
+      },
+      "current_guard": {
+        "file": "tests/s0/DemoOfficeTests.cs",
+        "line": 27
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 21,
+      "id": "-1654445831",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=XiHu8UCGoseKo3%2Bg61jzypF0cKk%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 9,
+        "code": "[STAThread] public static int Main(string[] args){try{Run(args.Length==0?null:args[0]);return 0;}catch(Exception ex){Console.Error.WriteLine(ex);return 1;}}",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 90,
+        "code": "if(!File.Exists(path))return ServiceConnectionSettings.Empty();if(new FileInfo(path).Length>MaxFileBytes)throw new InvalidDataException(\"Saved configuration exceeds byte limit.\");return Decode(File.ReadAllText(path,new UTF8Encoding(false,true)));",
+        "method": "Load",
+        "element": "ReadAllText"
+      },
+      "current_guard": {
+        "file": "apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 91
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Checked configuration filename/type, contained relative paths, writable ancestor reparse rejection."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 22,
+      "id": "1398503197",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=g9%2BBOozbzwD0R3INY1bF8asQYd0%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DataSourceTests.cs",
+        "line": 18,
+        "code": "Directory.CreateDirectory(output);var registryPath=Path.Combine(Path.GetFullPath(output),\"registry-fixture.csv\");File.WriteAllText(registryPath,\"Category,Value\\r\\nFixture,1\\r\\n\");",
+        "method": "Run",
+        "element": "CreateDirectory"
+      },
+      "current_guard": {
+        "file": "tests/s0/DataSourceTests.cs",
+        "line": 18
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 23,
+      "id": "-763093660",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=VKuj%2Fs1PC2hBciArwXnBywcbDlU%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/DataSources.cs",
+        "line": 95,
+        "code": "var info=new FileInfo(link.Path);if(!info.Exists||info.Length>20*1024*1024)throw new InvalidDataException(\"The linked source is missing or exceeds 20 MB. Relink it using Data Source.\");",
+        "method": "Load",
+        "element": "Exists"
+      },
+      "current_guard": {
+        "file": "apps/powerpoint-vsto/DataSources.cs",
+        "line": 96
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Fully qualified selected input; traversal, devices, ADS and ambiguous Windows names rejected before IO. Selected external files remain supported."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 24,
+      "id": "-1926027703",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=0QPXyyluTFz2kwLnwqnHtMIXPHg%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/WorkflowOfficeTests.cs",
+        "line": 42,
+        "code": "Directory.CreateDirectory(outputDirectory);assertions=0;",
+        "method": "Run",
+        "element": "CreateDirectory"
+      },
+      "current_guard": {
+        "file": "tests/s0/WorkflowOfficeTests.cs",
+        "line": 41
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 25,
+      "id": "361596616",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=8xL1gc653NYB4i1F0sl7Qm2nZ5E%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/LinkedChartDiagnostic.cs",
+        "line": 15,
+        "code": "File.WriteAllText(log,\"Stage\\tField\\tValue\\r\\n\");",
+        "method": "Run",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/s0/LinkedChartDiagnostic.cs",
+        "line": 14
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 26,
+      "id": "-1699090574",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=TRPHXxxdaCciDZS0GqJ7v6lfcL4%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 95,
+        "code": "try{File.WriteAllText(temp,xml,new UTF8Encoding(false,true));if(File.Exists(target))File.Replace(temp,target,null);else File.Move(temp,target);}finally{if(File.Exists(temp))File.Delete(temp);}",
+        "method": "Save",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 91
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Checked configuration filename/type, contained relative paths, writable ancestor reparse rejection."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 27,
+      "id": "1335748697",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=KNZqOvB%2BHMWq0aMwU8l2C7nAq4E%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DataSourceTests.cs",
+        "line": 136,
+        "code": "File.WriteAllText(Path.Combine(output,\"data-sources-runtime.txt\"),\"PASS four source references, duplicate suppression, unchanged slide and native save/reopen. Native picker UI not exercised.\");",
+        "method": "OfficeRoundtrip",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/s0/DataSourceTests.cs",
+        "line": 18
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 28,
+      "id": "-1761994869",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=PB3jHgDBazoicAvZQngFYoWvvVk%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DataSourceTests.cs",
+        "line": 58,
+        "code": "string path=Path.Combine(folder,\"\u65e5\u672c\u8a9e & source\"+extension);File.WriteAllText(path,\"owned reference-only fixture\");",
+        "method": "Run",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/s0/DataSourceTests.cs",
+        "line": 18
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 29,
+      "id": "46418524",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=K54MNEn7yynx90BTxFdk6tNN3%2Fk%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DataSourceTests.cs",
+        "line": 127,
+        "code": "string source=Path.GetFullPath(Path.Combine(directory,\"reference\"+option.Extensions[0]));File.WriteAllText(source,\"reference only\");",
+        "method": "OfficeRoundtrip",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/s0/DataSourceTests.cs",
+        "line": 18
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 30,
+      "id": "-152178112",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=lfjLQ15AdZ1RHVqrR16iRN2nZ8s%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 31,
+        "code": "Check(ServiceConnections.Load(file).Profiles.All(p=>ServiceConnections.Status(p)==\"Not configured\")&&!Directory.Exists(root),\"read/cancel path creates no file or directory\");ServiceConnections.Save(file,Valid());string first=File.ReadAllText(file);Check(ServiceConnections.Encode(ServiceConnections.Load(file))==first,\"file round trip\");var changed=Valid();changed.Profiles[0].Deployment=\"second-approved-deployment\";ServiceConnections.Save(file,changed);Check(ServiceConnections.Load(file).Profiles[0].Deployment==\"second-approved-deployment\",\"existing config atomically replaced\");Check(Directory.GetFiles(root).Length==1,\"temporary files cleaned after save\");",
+        "method": "Run",
+        "element": "ReadAllText"
+      },
+      "current_guard": {
+        "file": "tests/s0/ServiceConnectionTests.cs",
+        "line": 31
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 31,
+      "id": "-86767479",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=psd%2FdfY84t4q%2BZO2137XUrH8UZc%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/ContextPropertiesOfficeTests.cs",
+        "line": 25,
+        "code": "File.WriteAllText(Path.Combine(evidenceDirectory,\"context-properties-failure.xml\"),state.OuterXml);",
+        "method": "Wait",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/s0/ContextPropertiesOfficeTests.cs",
+        "line": 59
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 32,
+      "id": "-473184483",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=9pDOrhTNnx7jaMU9elLW6VFHR5k%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DataSourceTests.cs",
+        "line": 49,
+        "code": "string folder=Path.Combine(Path.GetFullPath(output),\"data-source-fixtures\");Directory.CreateDirectory(folder);",
+        "method": "Run",
+        "element": "CreateDirectory"
+      },
+      "current_guard": {
+        "file": "tests/s0/DataSourceTests.cs",
+        "line": 18
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 33,
+      "id": "-1372051600",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=1QEnskrsARGjpo0fRE3jlVv3Ous%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 90,
+        "code": "if(!File.Exists(path))return ServiceConnectionSettings.Empty();if(new FileInfo(path).Length>MaxFileBytes)throw new InvalidDataException(\"Saved configuration exceeds byte limit.\");return Decode(File.ReadAllText(path,new UTF8Encoding(false,true)));",
+        "method": "Load",
+        "element": "Exists"
+      },
+      "current_guard": {
+        "file": "apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 91
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Checked configuration filename/type, contained relative paths, writable ancestor reparse rejection."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 34,
+      "id": "-1176590899",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=zo010L5NbQQSdU6WAJLWrikmbL4%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/library/TemplateLibraryTests.cs",
+        "line": 21,
+        "code": "[STAThread] public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/library/TemplateLibraryTests.cs",
+        "line": 51,
+        "code": "File.WriteAllLines(Path.Combine(output,\"catalog.tsv\"),rows);File.WriteAllLines(Path.Combine(output,\"duplicate-structures.txt\"),duplicates);",
+        "method": "Main",
+        "element": "WriteAllLines"
+      },
+      "current_guard": {
+        "file": "tests/library/TemplateLibraryTests.cs",
+        "line": 27
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 35,
+      "id": "601440768",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=oqieDn%2F3dSp1PbnUJi5RB0GWhT4%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoScenario.cs",
+        "line": 56,
+        "code": "if(!File.Exists(path))using(var image=new Bitmap(30,20)){using(var graphics=Graphics.FromImage(image))graphics.Clear(Color.Navy);image.Save(path,System.Drawing.Imaging.ImageFormat.Png);}",
+        "method": "Assets",
+        "element": "Exists"
+      },
+      "current_guard": {
+        "file": "tests/s0/DemoScenario.cs",
+        "line": 35
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 36,
+      "id": "507564216",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=rY8KM%2B6I0lUB64d4EWtuOaw4ikM%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 95,
+        "code": "try{File.WriteAllText(temp,xml,new UTF8Encoding(false,true));if(File.Exists(target))File.Replace(temp,target,null);else File.Move(temp,target);}finally{if(File.Exists(temp))File.Delete(temp);}",
+        "method": "Save",
+        "element": "Move"
+      },
+      "current_guard": {
+        "file": "apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 91
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Checked configuration filename/type, contained relative paths, writable ancestor reparse rejection."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 37,
+      "id": "-56861040",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=KHNP4QyQ3nwHofD0JpY4t5m2fds%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 9,
+        "code": "[STAThread] public static int Main(string[] args){try{Run(args.Length==0?null:args[0]);return 0;}catch(Exception ex){Console.Error.WriteLine(ex);return 1;}}",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 95,
+        "code": "try{File.WriteAllText(temp,xml,new UTF8Encoding(false,true));if(File.Exists(target))File.Replace(temp,target,null);else File.Move(temp,target);}finally{if(File.Exists(temp))File.Delete(temp);}",
+        "method": "Save",
+        "element": "Move"
+      },
+      "current_guard": {
+        "file": "apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 91
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Checked configuration filename/type, contained relative paths, writable ancestor reparse rejection."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 38,
+      "id": "-576431034",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=WjpE1ADSLydo4BHEQuKBoBp3LxQ%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/DataSources.cs",
+        "line": 97,
+        "code": "string text=File.ReadAllText(link.Path);",
+        "method": "Load",
+        "element": "ReadAllText"
+      },
+      "current_guard": {
+        "file": "apps/powerpoint-vsto/DataSources.cs",
+        "line": 96
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Fully qualified selected input; traversal, devices, ADS and ambiguous Windows names rejected before IO. Selected external files remain supported."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 39,
+      "id": "-1532911912",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=5w%2BFgvxnpnm0MlN%2BIw1XmJPkOFs%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/ContextPropertiesOfficeTests.cs",
+        "line": 55,
+        "code": "finally{File.WriteAllText(Path.Combine(evidenceDirectory,\"context-selection-probe-\"+checkpoint+\".xml\"),doc.OuterXml);}",
+        "method": "ProbeSelectedText",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/s0/ContextPropertiesOfficeTests.cs",
+        "line": 59
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 40,
+      "id": "-419043739",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=qxkk6WQWzeeT2kdaKXMgsqB0cfQ%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoScenario.cs",
+        "line": 180,
+        "code": "case \"export-json\":using(var stream=File.OpenRead(output)){var model=(ChartDocument)new DataContractJsonSerializer(typeof(ChartDocument)).ReadObject(stream);MetadataCodec.Validate(model);Check(model.ChartId==managedId,\"Exported chart identity\");}break;",
+        "method": "ExecuteAndAssert",
+        "element": "OpenRead"
+      },
+      "current_guard": {
+        "file": "tests/s0/DemoScenario.cs",
+        "line": 35
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 41,
+      "id": "-695368680",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=MzLgKjqZ%2B9%2BaUDFxz%2BnwVtZVBt4%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 9,
+        "code": "[STAThread] public static int Main(string[] args){try{Run(args.Length==0?null:args[0]);return 0;}catch(Exception ex){Console.Error.WriteLine(ex);return 1;}}",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 31,
+        "code": "Check(ServiceConnections.Load(file).Profiles.All(p=>ServiceConnections.Status(p)==\"Not configured\")&&!Directory.Exists(root),\"read/cancel path creates no file or directory\");ServiceConnections.Save(file,Valid());string first=File.ReadAllText(file);Check(ServiceConnections.Encode(ServiceConnections.Load(file))==first,\"file round trip\");var changed=Valid();changed.Profiles[0].Deployment=\"second-approved-deployment\";ServiceConnections.Save(file,changed);Check(ServiceConnections.Load(file).Profiles[0].Deployment==\"second-approved-deployment\",\"existing config atomically replaced\");Check(Directory.GetFiles(root).Length==1,\"temporary files cleaned after save\");",
+        "method": "Run",
+        "element": "ReadAllText"
+      },
+      "current_guard": {
+        "file": "tests/s0/ServiceConnectionTests.cs",
+        "line": 31
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 42,
+      "id": "-661553133",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=VdIluzjTyH6igSthbL7sagrkeY8%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/library/TemplateFidelityTests.cs",
+        "line": 81,
+        "code": "Directory.CreateDirectory(output);var rows=new List<string>{\"Index,Stage,SameDimensions,ExactPixels,WithinTolerance,ChangedPixels,MaxChannelDelta,AlphaChanges,NonEdgeChanges,AllowedPixels\"};int passed=0;",
+        "method": "Replay",
+        "element": "CreateDirectory"
+      },
+      "current_guard": {
+        "file": "tests/library/TemplateFidelityTests.cs",
+        "line": 81
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 43,
+      "id": "-82668503",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=EB9GtJi0HwsHocm%2B8OOFukE6quA%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/LinkedChartDiagnostic.cs",
+        "line": 16,
+        "code": "Action<string,string,string> record=(stage,key,value)=>File.AppendAllText(log,stage+\"\\t\"+key+\"\\t\"+value.Replace('\\r',' ').Replace('\\n',' ')+\"\\r\\n\");",
+        "method": "Lambda",
+        "element": "AppendAllText"
+      },
+      "current_guard": {
+        "file": "tests/s0/LinkedChartDiagnostic.cs",
+        "line": 14
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 44,
+      "id": "2097746304",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=6GNIMWo%2Bv8Ksx9KWvZDDwjEq4As%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 33,
+        "code": "string tooLarge=Path.Combine(root,\"oversize.xml\");File.WriteAllBytes(tooLarge,new byte[ServiceConnections.MaxFileBytes+1]);Reject(()=>ServiceConnections.Load(tooLarge),\"saved byte bound\");",
+        "method": "Run",
+        "element": "WriteAllBytes"
+      },
+      "current_guard": {
+        "file": "tests/s0/ServiceConnectionTests.cs",
+        "line": 31
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 45,
+      "id": "-1401055022",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=H0NFEVVsH0jf%2Bt0Mm2NihUYf%2BWQ%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ExcelRangeMapping.cs",
+        "line": 57,
+        "code": "var file=new FileInfo(path);if(!file.Exists||file.Length>20*1024*1024)throw new InvalidDataException(\"The source is missing or exceeds 20 MB. Explicitly relink it.\");",
+        "method": "WithWorkbook",
+        "element": "Exists"
+      },
+      "current_guard": {
+        "file": "apps/powerpoint-vsto/ExcelRangeMapping.cs",
+        "line": 58
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Fully qualified selected input; traversal, devices, ADS and ambiguous Windows names rejected before IO. Selected external files remain supported."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 46,
+      "id": "-1880250405",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=8dFcaeMLNpisf3Kr26Win5NzOD0%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s1/DomainTests.cs",
+        "line": 18,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s1/DomainTests.cs",
+        "line": 27,
+        "code": "File.WriteAllText(args[1], encoded);",
+        "method": "Lambda",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/s1/DomainTests.cs",
+        "line": 21
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 47,
+      "id": "-1517092728",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=pI4niFHa15S70BQ765fMcICcmZM%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/library/TemplateLibraryTests.cs",
+        "line": 21,
+        "code": "[STAThread] public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/library/TemplateFidelity.cs",
+        "line": 129,
+        "code": "if(diagnosticFile!=null)File.WriteAllText(diagnosticFile,text.ToString());",
+        "method": "Formatting",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/library/TemplateFidelity.cs",
+        "line": 108
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 48,
+      "id": "-1549767052",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=NyilSyowfVOJLrx%2B604cZL0Sg4c%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/ChapterAgendaOfficeTests.cs",
+        "line": 21,
+        "code": "if(app==null)throw new ArgumentNullException(\"app\");Directory.CreateDirectory(outputDirectory);count=0;",
+        "method": "Run",
+        "element": "CreateDirectory"
+      },
+      "current_guard": {
+        "file": "tests/s0/ChapterAgendaOfficeTests.cs",
+        "line": 21
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 49,
+      "id": "-1477818700",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=LI8v914S6ycQ8i778zPCr7nR0wc%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 95,
+        "code": "try{File.WriteAllText(temp,xml,new UTF8Encoding(false,true));if(File.Exists(target))File.Replace(temp,target,null);else File.Move(temp,target);}finally{if(File.Exists(temp))File.Delete(temp);}",
+        "method": "Save",
+        "element": "Exists"
+      },
+      "current_guard": {
+        "file": "apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 91
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Checked configuration filename/type, contained relative paths, writable ancestor reparse rejection."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 50,
+      "id": "462301936",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=LvXP7O%2F%2B2NiGF6JxXkGJ6MkiHNk%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DataSourceTests.cs",
+        "line": 98,
+        "code": "File.WriteAllText(path,content);var link=DataSources.Create(format,path);var table=LinkedChartData.Load(link);",
+        "method": "Run",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/s0/DataSourceTests.cs",
+        "line": 18
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 51,
+      "id": "-1477818700",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=XhC%2F2Yi2D7dwNS%2FguMu0Lpz1mPk%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 95,
+        "code": "try{File.WriteAllText(temp,xml,new UTF8Encoding(false,true));if(File.Exists(target))File.Replace(temp,target,null);else File.Move(temp,target);}finally{if(File.Exists(temp))File.Delete(temp);}",
+        "method": "Save",
+        "element": "Replace"
+      },
+      "current_guard": {
+        "file": "apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 91
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Checked configuration filename/type, contained relative paths, writable ancestor reparse rejection."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 52,
+      "id": "-1720959708",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=omhEi3DYDYM2X6ZDlgKvFCSo8jQ%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DataSourceTests.cs",
+        "line": 66,
+        "code": "string wrong=Path.Combine(folder,\"wrong.bin\");File.WriteAllText(wrong,\"fixture\");",
+        "method": "Run",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/s0/DataSourceTests.cs",
+        "line": 18
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 53,
+      "id": "1760295004",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=m0yg2y4QUoskgziiEj0YW6Ww%2Bn0%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/library/TemplateLibraryTests.cs",
+        "line": 21,
+        "code": "[STAThread] public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/library/TemplateFidelity.cs",
+        "line": 107,
+        "code": "try{var deck=(PowerPoint.Presentation)slide.Parent;deck.SaveCopyAs(file,PowerPoint.PpSaveAsFileType.ppSaveAsOpenXMLPresentation,Office.MsoTriState.msoFalse);string geometry=PackageGeometry(file,slide.SlideIndex);if(diagnosticFile!=null)File.WriteAllText(diagnosticFile,geometry);return geometry;}",
+        "method": "PersistedGeometry",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/library/TemplateFidelity.cs",
+        "line": 108
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 54,
+      "id": "-1885568552",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=s%2FuFmPhOplxbCNSAlPvMpfreV90%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/src/Library.Core/PiidxCatalog.cs",
+        "line": 34,
+        "code": "if((File.GetAttributes(IndexPath)&FileAttributes.ReparsePoint)!=0)throw new InvalidDataException(\"PIIDX index cannot be a reparse point.\");",
+        "method": "Connect",
+        "element": "GetAttributes"
+      },
+      "current_guard": {
+        "file": "src/Library.Core/PiidxCatalog.cs",
+        "line": 17
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Canonical configured index/root, writable ancestor reparse rejection, contained writer lock."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 55,
+      "id": "1703303725",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=01HtJwbSdIY83puIn1IlHrcW3Zs%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/LinkedChartDiagnostic.cs",
+        "line": 45,
+        "code": "File.WriteAllText(source,\"Category,Actual,Plan\\r\\nA,42.5,150\\r\\nB,20,25\\r\\nC,30,35\\r\\n\");",
+        "method": "Run",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/s0/LinkedChartDiagnostic.cs",
+        "line": 14
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 56,
+      "id": "1291543521",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=2SWWMoGXdaYa%2FLWoAJy%2FHAjhKjM%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/src/Library.Core/PiidxCatalog.cs",
+        "line": 43,
+        "code": "if(File.Exists(path)&&(File.GetAttributes(path)&FileAttributes.ReparsePoint)!=0)throw new InvalidDataException(\"Index writer lock cannot be a reparse point.\");",
+        "method": "WriterLock",
+        "element": "GetAttributes"
+      },
+      "current_guard": {
+        "file": "src/Library.Core/PiidxCatalog.cs",
+        "line": 17
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Canonical configured index/root, writable ancestor reparse rejection, contained writer lock."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 57,
+      "id": "1291543521",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=LNXrnuIO0QsUYyU2xdHiYBhJUhg%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/src/Library.Core/PiidxCatalog.cs",
+        "line": 43,
+        "code": "if(File.Exists(path)&&(File.GetAttributes(path)&FileAttributes.ReparsePoint)!=0)throw new InvalidDataException(\"Index writer lock cannot be a reparse point.\");",
+        "method": "WriterLock",
+        "element": "Exists"
+      },
+      "current_guard": {
+        "file": "src/Library.Core/PiidxCatalog.cs",
+        "line": 17
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Canonical configured index/root, writable ancestor reparse rejection, contained writer lock."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 58,
+      "id": "-315100207",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=Eu2%2FMxhBCYWjAZmc%2BvkGl29iEcE%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 90,
+        "code": "if(!File.Exists(path))return ServiceConnectionSettings.Empty();if(new FileInfo(path).Length>MaxFileBytes)throw new InvalidDataException(\"Saved configuration exceeds byte limit.\");return Decode(File.ReadAllText(path,new UTF8Encoding(false,true)));",
+        "method": "Load",
+        "element": "ReadAllText"
+      },
+      "current_guard": {
+        "file": "apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 91
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Checked configuration filename/type, contained relative paths, writable ancestor reparse rejection."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 59,
+      "id": "1144353721",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=lD4pvJdlz9HgKg9Xd6orgQIX0k4%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/compatibility/OfficeCompatibilityTests.cs",
+        "line": 19,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/OfficeCompatibility.cs",
+        "line": 33,
+        "code": "if (!File.Exists(configurationPath)) return Parse(new NameValueCollection());",
+        "method": "Load",
+        "element": "Exists"
+      },
+      "current_guard": {
+        "file": "apps/powerpoint-vsto/OfficeCompatibility.cs",
+        "line": 34
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Checked configuration filename/type, contained relative paths, writable ancestor reparse rejection."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 60,
+      "id": "596844632",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=G8eFTGUqb4j8yiAMDdTUrs6%2BOmc%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 31,
+        "code": "catch(Exception ex){if(args[0]==\"--interactive-properties\")rows.Add(\"context-properties-native,BLOCKED,\"+ex.GetType().Name);else if(agendaOnly)rows.Add(\"chapter-agenda-native,BLOCKED,\"+ex.GetType().Name);else if(args[0]==\"--interactive-elements\")foreach(var id in new[]{\"productivity-native\",\"text-elements-native\",\"process-grid-native\",\"indicators-native\",\"universal-connectors-native\"})rows.Add(id+\",BLOCKED,\"+ex.GetType().Name);else foreach(var tool in DemoTools.Catalog)rows.Add(tool.Id+\",BLOCKED,\"+ex.GetType().Name);File.WriteAllLines(Path.Combine(args[1],\"features.csv\"),rows);Console.Error.WriteLine(ex);return 1;}",
+        "method": "Main",
+        "element": "WriteAllLines"
+      },
+      "current_guard": {
+        "file": "tests/s0/DemoOfficeTests.cs",
+        "line": 27
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 61,
+      "id": "596844632",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=iKszGFCKFc%2Fei02qqW0d17z9R0A%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 39,
+        "code": "if(args[0]==\"--interactive-properties\"){try{ContextPropertiesOfficeTests.Run(app,args[1]);ContextFormattingOfficeTests.Run(app,args[1]);rows.Add(\"context-properties-native,PASS,Installed automatic property box scope native edits and save reopen\");File.WriteAllLines(Path.Combine(args[1],\"features.csv\"),rows);return 0;}catch(Exception error){rows.Add(\"context-properties-native,\"+(error is ContextTestForegroundUnavailableException?\"BLOCKED\":\"FAIL\")+\",\"+error.GetType().Name);File.WriteAllLines(Path.Combine(args[1],\"features.csv\"),rows);Console.Error.WriteLine(error);return 1;}}",
+        "method": "Main",
+        "element": "WriteAllLines"
+      },
+      "current_guard": {
+        "file": "tests/s0/DemoOfficeTests.cs",
+        "line": 27
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 62,
+      "id": "596844632",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=mJN1lbvyMvk%2BdAQdfqZa9L08e1Y%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 39,
+        "code": "if(args[0]==\"--interactive-properties\"){try{ContextPropertiesOfficeTests.Run(app,args[1]);ContextFormattingOfficeTests.Run(app,args[1]);rows.Add(\"context-properties-native,PASS,Installed automatic property box scope native edits and save reopen\");File.WriteAllLines(Path.Combine(args[1],\"features.csv\"),rows);return 0;}catch(Exception error){rows.Add(\"context-properties-native,\"+(error is ContextTestForegroundUnavailableException?\"BLOCKED\":\"FAIL\")+\",\"+error.GetType().Name);File.WriteAllLines(Path.Combine(args[1],\"features.csv\"),rows);Console.Error.WriteLine(error);return 1;}}",
+        "method": "Main",
+        "element": "WriteAllLines"
+      },
+      "current_guard": {
+        "file": "tests/s0/DemoOfficeTests.cs",
+        "line": 27
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 63,
+      "id": "596844632",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=NArskrhd8Tl2jzcs5F%2FYKDq0jlM%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 40,
+        "code": "if(agendaOnly){try{ChapterAgendaOfficeTests.Run(app,args[1]);rows.Add(\"chapter-agenda-native,PASS,Native chapter hierarchy edits moves copy split and persistence\");File.WriteAllLines(Path.Combine(args[1],\"features.csv\"),rows);return 0;}catch(Exception error){rows.Add(\"chapter-agenda-native,FAIL,\"+error.GetType().Name);File.WriteAllLines(Path.Combine(args[1],\"features.csv\"),rows);Console.Error.WriteLine(error);return 1;}}",
+        "method": "Main",
+        "element": "WriteAllLines"
+      },
+      "current_guard": {
+        "file": "tests/s0/DemoOfficeTests.cs",
+        "line": 27
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 64,
+      "id": "596844632",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=rwz%2B7lzSKsGyWLdkXQcESNqw79I%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 59,
+        "code": "if(disconnected){blockedCommands++;rows.Add(tool.Id+\",BLOCKED,Prior PowerPoint RPC disconnection; command not executed\");File.WriteAllLines(Path.Combine(args[1],\"features.csv\"),rows);continue;}",
+        "method": "Main",
+        "element": "WriteAllLines"
+      },
+      "current_guard": {
+        "file": "tests/s0/DemoOfficeTests.cs",
+        "line": 27
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 65,
+      "id": "596844632",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=wcubPOVxhIdHtM5UA5xqvkBXrfc%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 40,
+        "code": "if(agendaOnly){try{ChapterAgendaOfficeTests.Run(app,args[1]);rows.Add(\"chapter-agenda-native,PASS,Native chapter hierarchy edits moves copy split and persistence\");File.WriteAllLines(Path.Combine(args[1],\"features.csv\"),rows);return 0;}catch(Exception error){rows.Add(\"chapter-agenda-native,FAIL,\"+error.GetType().Name);File.WriteAllLines(Path.Combine(args[1],\"features.csv\"),rows);Console.Error.WriteLine(error);return 1;}}",
+        "method": "Main",
+        "element": "WriteAllLines"
+      },
+      "current_guard": {
+        "file": "tests/s0/DemoOfficeTests.cs",
+        "line": 27
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 66,
+      "id": "-47860084",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=8MhUIZV77C%2BoTHqVHfe76xPOq%2F4%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 9,
+        "code": "[STAThread] public static int Main(string[] args){try{Run(args.Length==0?null:args[0]);return 0;}catch(Exception ex){Console.Error.WriteLine(ex);return 1;}}",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 95,
+        "code": "try{File.WriteAllText(temp,xml,new UTF8Encoding(false,true));if(File.Exists(target))File.Replace(temp,target,null);else File.Move(temp,target);}finally{if(File.Exists(temp))File.Delete(temp);}",
+        "method": "Save",
+        "element": "Replace"
+      },
+      "current_guard": {
+        "file": "apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 91
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Checked configuration filename/type, contained relative paths, writable ancestor reparse rejection."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 67,
+      "id": "-1947506698",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=DhzEHqAdGtGYosdp%2BzV3OTWcc3M%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/src/Library.Core/PiidxCatalog.cs",
+        "line": 44,
+        "code": "try{return new FileStream(path,FileMode.OpenOrCreate,FileAccess.ReadWrite,FileShare.None);}",
+        "method": "WriterLock",
+        "element": "path"
+      },
+      "current_guard": {
+        "file": "src/Library.Core/PiidxCatalog.cs",
+        "line": 17
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Canonical configured index/root, writable ancestor reparse rejection, contained writer lock."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 68,
+      "id": "-47860084",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=vk%2FZCRxEEptjE%2FCjyiIBGxq5mj0%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 9,
+        "code": "[STAThread] public static int Main(string[] args){try{Run(args.Length==0?null:args[0]);return 0;}catch(Exception ex){Console.Error.WriteLine(ex);return 1;}}",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 95,
+        "code": "try{File.WriteAllText(temp,xml,new UTF8Encoding(false,true));if(File.Exists(target))File.Replace(temp,target,null);else File.Move(temp,target);}finally{if(File.Exists(temp))File.Delete(temp);}",
+        "method": "Save",
+        "element": "Exists"
+      },
+      "current_guard": {
+        "file": "apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 91
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Checked configuration filename/type, contained relative paths, writable ancestor reparse rejection."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 69,
+      "id": "-293388255",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=WvlBEks5cHPKDEw6UbxbFi5ZvZk%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 79,
+        "code": "rows.Add(tool.Id+\",\"+outcome+\",\"+evidence);File.WriteAllLines(Path.Combine(args[1],\"features.csv\"),rows);",
+        "method": "Main",
+        "element": "WriteAllLines"
+      },
+      "current_guard": {
+        "file": "tests/s0/DemoOfficeTests.cs",
+        "line": 27
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 70,
+      "id": "724762689",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=cvXecThDRi7Dw%2BBBuYm8MzloYLA%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 70,
+        "code": "Directory.CreateDirectory(args[1]);document.Save(Path.Combine(args[1],\"demo-ribbon.xml\"));",
+        "method": "Main",
+        "element": "CreateDirectory"
+      },
+      "current_guard": {
+        "file": "tests/s0/DemoContractTests.cs",
+        "line": 14
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 71,
+      "id": "-620214048",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=IRs2G%2FHx4B9J05xMsmsYS24ZvO4%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/ContextFormattingOfficeTests.cs",
+        "line": 9,
+        "code": "internal static void Run(PowerPoint.Application app,string outputDirectory){count=0;Directory.CreateDirectory(outputDirectory);string file=Path.Combine(Path.GetFullPath(outputDirectory),\"context-font-\"+Guid.NewGuid().ToString(\"N\")+\".pptx\");PowerPoint.Presentation deck=null;try{deck=app.Presentations.Add(Office.MsoTriState.msoTrue);deck.PageSetup.SlideWidth=960;deck.PageSetup.SlideHeight=540;deck.Windows[1].ViewType=PowerPoint.PpViewType.ppViewNormal;var slide=deck.Slides.Add(1,PowerPoint.PpSlideLayout.ppLayoutBlank);slide.Select();var a=slide.Shapes.AddTextbox(Office.MsoTextOrientation.msoTextOrientationHorizontal,50,50,250,70);a.TextFrame.TextRange.Text=\"ABCD\";a.TextFrame.TextRange.Font.Name=\"Arial\";a.TextFrame.TextRange.Font.Size=18;a.TextFrame.TextRange.Font.Bold=Office.MsoTriState.msoFalse;a.TextFrame.TextRange.Font.Italic=Office.MsoTriState.msoFalse;a.TextFrame.TextRange.Characters(2,1).Font.Bold=Office.MsoTriState.msoTrue;a.Select();var read=ContextFormatting.Read(app);Check(read.Family==\"Arial\"&&read.Size==18&&read.Bold==null&&read.Italic==false,\"read reports per-property mixed state without mutation\");a.TextFrame.TextRange.Characters(2,2).Select();ContextFormatting.ApplyFont(app,\"Calibri\",24,null,true);Check(a.TextFrame.TextRange.Characters(1,1).Font.Name==\"Arial\"&&a.TextFrame.TextRange.Characters(2,1).Font.Name==\"Calibri\"&&a.TextFrame.TextRange.Characters(4,1).Font.Size==18,\"selected-character scope preserved\");Check(a.TextFrame.TextRange.Characters(2,1).Font.Bold==Office.MsoTriState.msoTrue&&a.TextFrame.TextRange.Characters(3,1).Font.Bold==Office.MsoTriState.msoFalse,\"unrequested mixed bold formatting retained\");var b=slide.Shapes.AddShape(Office.MsoAutoShapeType.msoShapeRectangle,350,50,200,70);b.TextFrame.TextRange.Text=\"Second\";var group=slide.Shapes.Range(new object[]{a.Name,b.Name}).Group();int groupId=group.Id;group.Select();ContextFormatting.ApplyFont(app,\"Arial\",20,true,false);Check(group.GroupItems[1].TextFrame.TextRange.Font.Size==20&&group.GroupItems[2].TextFrame.TextRange.Font.Bold==Office.MsoTriState.msoTrue,\"bounded native group targets formatted\");var table=slide.Shapes.AddTable(2,2,50,200,300,140);for(int r=1;r<=2;r++)for(int c=1;c<=2;c++){table.Table.Cell(r,c).Shape.TextFrame.TextRange.Text=\"Cell\";table.Table.Cell(r,c).Shape.TextFrame.TextRange.Font.Size=12;}table.Select();ContextFormatting.ApplyFont(app,null,16,null,null);Check(table.Table.Cell(1,1).Shape.TextFrame.TextRange.Font.Size==16&&table.Table.Cell(2,2).Shape.TextFrame.TextRange.Font.Size==16,\"native table whole selection formatted\");var decoration=slide.Shapes.AddLine(600,50,650,50);var textLeaf=slide.Shapes.AddTextbox(Office.MsoTextOrientation.msoTextOrientationHorizontal,600,80,200,50);textLeaf.TextFrame.TextRange.Text=\"Diagram label\";var diagram=slide.Shapes.Range(new object[]{decoration.Name,textLeaf.Name}).Group();diagram.Select();ContextFormatting.ApplyFont(app,null,22,null,null);Check(diagram.GroupItems[2].TextFrame.TextRange.Font.Size==22,\"group nontext decoration skipped while editable text formatted\");var line=slide.Shapes.AddLine(10,450,100,450);slide.Shapes.Range(new object[]{group.Name,line.Name}).Select();bool refused=false;try{ContextFormatting.ApplyFont(app,null,32,null,null);}catch(InvalidOperationException){refused=true;}Check(refused&&group.GroupItems[1].TextFrame.TextRange.Font.Size==20,\"unsupported late target rejected before any mutation\");deck.SaveAs(file,PowerPoint.PpSaveAsFileType.ppSaveAsOpenXMLPresentation,Office.MsoTriState.msoFalse);deck.Close();deck=null;deck=app.Presentations.Open(file,Office.MsoTriState.msoFalse,Office.MsoTriState.msoFalse,Office.MsoTriState.msoTrue);group=deck.Slides[1].Shapes.Cast<PowerPoint.Shape>().Single(x=>x.Id==groupId);Check(group.GroupItems[1].TextFrame.TextRange.Font.Size==20&&group.GroupItems[2].TextFrame.TextRange.Font.Bold==Office.MsoTriState.msoTrue,\"native font edit survives save reopen\");Console.WriteLine(\"FONT \"+count+\" native assertions passed. Evidence deck: \"+file);}finally{if(deck!=null){deck.Saved=Office.MsoTriState.msoTrue;deck.Close();}}}",
+        "method": "Run",
+        "element": "CreateDirectory"
+      },
+      "current_guard": {
+        "file": "tests/s0/ContextFormattingOfficeTests.cs",
+        "line": 10
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 72,
+      "id": "360136018",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=ekjX7F%2B%2FKgBVj6M3Fdv%2F%2BgBlt3Q%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 72,
+        "code": "File.WriteAllLines(Path.Combine(args[1],\"demo-tool-ids.txt\"),tools.Select(t=>t.Id));",
+        "method": "Main",
+        "element": "WriteAllLines"
+      },
+      "current_guard": {
+        "file": "tests/s0/DemoContractTests.cs",
+        "line": 14
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 73,
+      "id": "314803386",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=gb3PyFCe4oIXaAk1ij0QKabLrQ0%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/DataSources.cs",
+        "line": 95,
+        "code": "var info=new FileInfo(link.Path);if(!info.Exists||info.Length>20*1024*1024)throw new InvalidDataException(\"The linked source is missing or exceeds 20 MB. Relink it using Data Source.\");",
+        "method": "Load",
+        "element": "Exists"
+      },
+      "current_guard": {
+        "file": "apps/powerpoint-vsto/DataSources.cs",
+        "line": 96
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Fully qualified selected input; traversal, devices, ADS and ambiguous Windows names rejected before IO. Selected external files remain supported."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 74,
+      "id": "-1657118664",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=DvKUYx1kPzDJ9tnckj%2BUNefNGBY%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 31,
+        "code": "Check(ServiceConnections.Load(file).Profiles.All(p=>ServiceConnections.Status(p)==\"Not configured\")&&!Directory.Exists(root),\"read/cancel path creates no file or directory\");ServiceConnections.Save(file,Valid());string first=File.ReadAllText(file);Check(ServiceConnections.Encode(ServiceConnections.Load(file))==first,\"file round trip\");var changed=Valid();changed.Profiles[0].Deployment=\"second-approved-deployment\";ServiceConnections.Save(file,changed);Check(ServiceConnections.Load(file).Profiles[0].Deployment==\"second-approved-deployment\",\"existing config atomically replaced\");Check(Directory.GetFiles(root).Length==1,\"temporary files cleaned after save\");",
+        "method": "Run",
+        "element": "Exists"
+      },
+      "current_guard": {
+        "file": "tests/s0/ServiceConnectionTests.cs",
+        "line": 31
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 75,
+      "id": "-2135577675",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=iqt89WuSJlyIR1zeC%2FOAofj%2B%2F6s%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/HostIntegrationTests.cs",
+        "line": 50,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/HostIntegrationTests.cs",
+        "line": 94,
+        "code": "if (Directory.Exists(directory)) throw new IOException(\"Use a new fixture directory.\");",
+        "method": "Main",
+        "element": "Exists"
+      },
+      "current_guard": {
+        "file": "tests/s0/HostIntegrationTests.cs",
+        "line": 94
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 76,
+      "id": "661522298",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=7tKF00ZbUAFVSXnGWfpcAfCDRZA%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s1/DomainTests.cs",
+        "line": 18,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s1/DomainTests.cs",
+        "line": 22,
+        "code": "golden = File.ReadAllText(args[0]);",
+        "method": "Main",
+        "element": "ReadAllText"
+      },
+      "current_guard": {
+        "file": "tests/s1/DomainTests.cs",
+        "line": 21
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 77,
+      "id": "-485459168",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=uQtGuvrudVPccEekicW7etLDt%2FE%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 31,
+        "code": "Check(ServiceConnections.Load(file).Profiles.All(p=>ServiceConnections.Status(p)==\"Not configured\")&&!Directory.Exists(root),\"read/cancel path creates no file or directory\");ServiceConnections.Save(file,Valid());string first=File.ReadAllText(file);Check(ServiceConnections.Encode(ServiceConnections.Load(file))==first,\"file round trip\");var changed=Valid();changed.Profiles[0].Deployment=\"second-approved-deployment\";ServiceConnections.Save(file,changed);Check(ServiceConnections.Load(file).Profiles[0].Deployment==\"second-approved-deployment\",\"existing config atomically replaced\");Check(Directory.GetFiles(root).Length==1,\"temporary files cleaned after save\");",
+        "method": "Run",
+        "element": "GetFiles"
+      },
+      "current_guard": {
+        "file": "tests/s0/ServiceConnectionTests.cs",
+        "line": 31
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 78,
+      "id": "2129211647",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=o%2F2UW63jdD5FZCHmCNTu3RYvqbo%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/LinkedChartDiagnostic.cs",
+        "line": 38,
+        "code": "string source=Path.Combine(Path.GetFullPath(output),\"diagnostic-fixture.csv\");File.WriteAllText(source,\"Category,Actual,Plan\\r\\nA,137.5,150\\r\\nB,20,25\\r\\nC,30,35\\r\\n\");",
+        "method": "Run",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/s0/LinkedChartDiagnostic.cs",
+        "line": 14
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 79,
+      "id": "-756336288",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=r%2BdwImr3iMjCpiVxx%2FLhylmI2r4%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 9,
+        "code": "[STAThread] public static int Main(string[] args){try{Run(args.Length==0?null:args[0]);return 0;}catch(Exception ex){Console.Error.WriteLine(ex);return 1;}}",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 31,
+        "code": "Check(ServiceConnections.Load(file).Profiles.All(p=>ServiceConnections.Status(p)==\"Not configured\")&&!Directory.Exists(root),\"read/cancel path creates no file or directory\");ServiceConnections.Save(file,Valid());string first=File.ReadAllText(file);Check(ServiceConnections.Encode(ServiceConnections.Load(file))==first,\"file round trip\");var changed=Valid();changed.Profiles[0].Deployment=\"second-approved-deployment\";ServiceConnections.Save(file,changed);Check(ServiceConnections.Load(file).Profiles[0].Deployment==\"second-approved-deployment\",\"existing config atomically replaced\");Check(Directory.GetFiles(root).Length==1,\"temporary files cleaned after save\");",
+        "method": "Run",
+        "element": "Exists"
+      },
+      "current_guard": {
+        "file": "tests/s0/ServiceConnectionTests.cs",
+        "line": 31
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 80,
+      "id": "280573853",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=1SIOpRiAKKPNK1QEidlIp9ZJqwg%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 95,
+        "code": "try{File.WriteAllText(temp,xml,new UTF8Encoding(false,true));if(File.Exists(target))File.Replace(temp,target,null);else File.Move(temp,target);}finally{if(File.Exists(temp))File.Delete(temp);}",
+        "method": "Save",
+        "element": "Delete"
+      },
+      "current_guard": {
+        "file": "apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 91
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Checked configuration filename/type, contained relative paths, writable ancestor reparse rejection."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 81,
+      "id": "1188711609",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=Ysvuo3T23EdzdvzR5aJ3bkF6ANo%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 9,
+        "code": "[STAThread] public static int Main(string[] args){try{Run(args.Length==0?null:args[0]);return 0;}catch(Exception ex){Console.Error.WriteLine(ex);return 1;}}",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 94,
+        "code": "string xml=Encode(settings);string target=Path.GetFullPath(path),directory=Path.GetDirectoryName(target);Directory.CreateDirectory(directory);string temp=Path.Combine(directory,\".sc-\"+Guid.NewGuid().ToString(\"N\")+\".tmp\");",
+        "method": "Save",
+        "element": "CreateDirectory"
+      },
+      "current_guard": {
+        "file": "apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 91
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Checked configuration filename/type, contained relative paths, writable ancestor reparse rejection."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 82,
+      "id": "280573853",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=zuDGlx92bjCr7%2FP1IpgC7ZeNJCQ%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 95,
+        "code": "try{File.WriteAllText(temp,xml,new UTF8Encoding(false,true));if(File.Exists(target))File.Replace(temp,target,null);else File.Move(temp,target);}finally{if(File.Exists(temp))File.Delete(temp);}",
+        "method": "Save",
+        "element": "Exists"
+      },
+      "current_guard": {
+        "file": "apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 91
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Checked configuration filename/type, contained relative paths, writable ancestor reparse rejection."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 83,
+      "id": "1947077620",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=fWgxvPMCSQjdkZkemkAsKMkzZCQ%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DataSourceTests.cs",
+        "line": 100,
+        "code": "File.Delete(path);Reject(()=>LinkedChartData.Load(link),format+\" moved file fails instead of using sample data\");",
+        "method": "Run",
+        "element": "Delete"
+      },
+      "current_guard": {
+        "file": "tests/s0/DataSourceTests.cs",
+        "line": 18
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 84,
+      "id": "758400680",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=WtLU6QZ6mMoKkwoHQpHwX5E5WjM%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 9,
+        "code": "[STAThread] public static int Main(string[] args){try{Run(args.Length==0?null:args[0]);return 0;}catch(Exception ex){Console.Error.WriteLine(ex);return 1;}}",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 33,
+        "code": "string tooLarge=Path.Combine(root,\"oversize.xml\");File.WriteAllBytes(tooLarge,new byte[ServiceConnections.MaxFileBytes+1]);Reject(()=>ServiceConnections.Load(tooLarge),\"saved byte bound\");",
+        "method": "Run",
+        "element": "WriteAllBytes"
+      },
+      "current_guard": {
+        "file": "tests/s0/ServiceConnectionTests.cs",
+        "line": 31
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 85,
+      "id": "-1574684448",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=enzbnbIJ0w5ipCzQ6ek2BDz99cU%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s3/NativeRendererTests.cs",
+        "line": 48,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s3/NativeRendererTests.cs",
+        "line": 53,
+        "code": "canonical = File.ReadAllText(args[0]); scene = File.ReadAllText(args[1]);",
+        "method": "Main",
+        "element": "ReadAllText"
+      },
+      "current_guard": {
+        "file": "tests/s3/NativeRendererTests.cs",
+        "line": 51
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 86,
+      "id": "-1345387132",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=Vq4%2BzyjrOejocZnKIRH4FKHlnkY%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/ContextPropertiesOfficeTests.cs",
+        "line": 24,
+        "code": "var watch=System.Diagnostics.Stopwatch.StartNew();XmlElement state=null;do{Application.DoEvents();state=State(api);if(visible&&ContextSelectionBridge.GetForegroundWindow()!=expectedOwner){File.WriteAllText(Path.Combine(evidenceDirectory,\"context-properties-focus-lost.xml\"),state.OuterXml);throw new ContextTestForegroundUnavailableException(\"Foreground focus was lost during the \"+kind+\" panel assertion. This assertion is BLOCKED, not a panel failure or a pass. See context-properties-focus-lost.xml.\");}if(state.GetAttribute(\"refreshes\")!=\"0\"&&!String.IsNullOrEmpty(state.GetAttribute(\"refreshes\"))&&state.GetAttribute(\"visible\")== (visible?\"true\":\"false\")&&(!visible||state.GetAttribute(\"kind\")==kind&&state.GetAttribute(\"selectionMatches\")==\"true\"))return state;Thread.Sleep(75);}while(watch.ElapsedMilliseconds<8000);",
+        "method": "Wait",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/s0/ContextPropertiesOfficeTests.cs",
+        "line": 59
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 87,
+      "id": "-1153363084",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=Wg5aBgRaflKTB9avt9K2%2F4cD46Q%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/ContextPropertiesOfficeTests.cs",
+        "line": 59,
+        "code": "Directory.CreateDirectory(output);evidenceDirectory=output;focusCheckpoint=0;count=0;var connections=app.COMAddIns.Cast<Office.COMAddIn>().Where(a=>(a.ProgId+\" \"+a.Description).Contains(\"PowerPointIntelligence\")||(a.ProgId+\" \"+a.Description).Contains(\"PowerPoint Intelligence\")).ToArray();if(connections.Length!=1||!connections[0].Connect)throw new InvalidOperationException(\"Install/connect the current PowerPoint Intelligence add-in before contextual UI validation.\");dynamic api=connections[0].Object;string build=(string)api.GetBuildInfo();if(!build.StartsWith(DemoRibbon.BuildMarker+\";\",StringComparison.Ordinal))throw new InvalidOperationException(\"Installed add-in is stale. Install the current source before testing its automatic property box.\");",
+        "method": "Run",
+        "element": "CreateDirectory"
+      },
+      "current_guard": {
+        "file": "tests/s0/ContextPropertiesOfficeTests.cs",
+        "line": 59
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 88,
+      "id": "1966682696",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=PHz1Z0Mwhgb2RWVMRDHk41d1cOI%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 9,
+        "code": "[STAThread] public static int Main(string[] args){try{Run(args.Length==0?null:args[0]);return 0;}catch(Exception ex){Console.Error.WriteLine(ex);return 1;}}",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 31,
+        "code": "Check(ServiceConnections.Load(file).Profiles.All(p=>ServiceConnections.Status(p)==\"Not configured\")&&!Directory.Exists(root),\"read/cancel path creates no file or directory\");ServiceConnections.Save(file,Valid());string first=File.ReadAllText(file);Check(ServiceConnections.Encode(ServiceConnections.Load(file))==first,\"file round trip\");var changed=Valid();changed.Profiles[0].Deployment=\"second-approved-deployment\";ServiceConnections.Save(file,changed);Check(ServiceConnections.Load(file).Profiles[0].Deployment==\"second-approved-deployment\",\"existing config atomically replaced\");Check(Directory.GetFiles(root).Length==1,\"temporary files cleaned after save\");",
+        "method": "Run",
+        "element": "GetFiles"
+      },
+      "current_guard": {
+        "file": "tests/s0/ServiceConnectionTests.cs",
+        "line": 31
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 89,
+      "id": "-169465736",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=19TZuM3Rd0JdaL8u69MrcDt0sT0%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 67,
+        "code": "string source=File.ReadAllText(args[0]);",
+        "method": "Main",
+        "element": "ReadAllText"
+      },
+      "current_guard": {
+        "file": "tests/s0/DemoContractTests.cs",
+        "line": 14
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 90,
+      "id": "-1579543158",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=%2BQLPaF9IX34nr3lCvagw%2Frb4IvM%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DataSourceTests.cs",
+        "line": 121,
+        "code": "string directory=Path.Combine(output,\"data-source-reference-fixtures\");Directory.CreateDirectory(directory);",
+        "method": "OfficeRoundtrip",
+        "element": "CreateDirectory"
+      },
+      "current_guard": {
+        "file": "tests/s0/DataSourceTests.cs",
+        "line": 18
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 91,
+      "id": "1237596672",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=TmuuBN907gVCnABeocDEZMeNSHc%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 9,
+        "code": "[STAThread] public static int Main(string[] args){try{Run(args.Length==0?null:args[0]);return 0;}catch(Exception ex){Console.Error.WriteLine(ex);return 1;}}",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 32,
+        "code": "var badSave=Valid();badSave.Profiles[0].Endpoint=\"https://example.invalid/?token=secret\";string preserved=File.ReadAllText(file);Reject(()=>ServiceConnections.Save(file,badSave),\"invalid save rejected\");Check(File.ReadAllText(file)==preserved,\"invalid save preserves previous config\");",
+        "method": "Run",
+        "element": "ReadAllText"
+      },
+      "current_guard": {
+        "file": "tests/s0/ServiceConnectionTests.cs",
+        "line": 31
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 92,
+      "id": "1552682661",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=VRZN8Ucqe1M5wWt8W%2BKPJbwLuWs%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DataSourceTests.cs",
+        "line": 18,
+        "code": "Directory.CreateDirectory(output);var registryPath=Path.Combine(Path.GetFullPath(output),\"registry-fixture.csv\");File.WriteAllText(registryPath,\"Category,Value\\r\\nFixture,1\\r\\n\");",
+        "method": "Run",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/s0/DataSourceTests.cs",
+        "line": 18
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 93,
+      "id": "-1599453999",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=8%2F0dzX4zpLWmklddL6tLgSAc17k%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/library/TemplateFidelityTests.cs",
+        "line": 83,
+        "code": "File.WriteAllLines(Path.Combine(output,\"raster-replay.csv\"),rows);Console.WriteLine(\"PASS \"+passed+\" saved raster comparisons. This is an offline replay, not a new native Office/formatting pass.\");",
+        "method": "Replay",
+        "element": "WriteAllLines"
+      },
+      "current_guard": {
+        "file": "tests/library/TemplateFidelityTests.cs",
+        "line": 81
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 94,
+      "id": "711231073",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=vKJaZZyHpKxJLn4xmJYZhGoQCO4%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/HostIntegrationTests.cs",
+        "line": 50,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/HostIntegrationTests.cs",
+        "line": 95,
+        "code": "Directory.CreateDirectory(directory);",
+        "method": "Main",
+        "element": "CreateDirectory"
+      },
+      "current_guard": {
+        "file": "tests/s0/HostIntegrationTests.cs",
+        "line": 94
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 95,
+      "id": "920427747",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=pEv8RFSRMQYW5dODcR9Xj8g3sQs%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/ContextPropertiesOfficeTests.cs",
+        "line": 70,
+        "code": "var connector=UniversalConnectors.Create(app,new ConnectorSpec {Begin=new ConnectorEndpoint {ShapeId=text.Id,Site=1},End=new ConnectorEndpoint {ShapeId=rounded.Id,Site=1}});connector.Select();Wait(api,app,\"Connector\",true);Check(true,\"universal connector receives its own controls\");var connectorState=UniversalConnectors.Read(connector);Check(connectorState.Begin.ShapeId==text.Id&&connectorState.End.ShapeId==rounded.Id,\"context connector retains native endpoint bindings\");File.WriteAllText(Path.Combine(output,\"context-connector-geometry.xml\"),new XElement(\"connectorGeometry\",new XAttribute(\"rotation\",connector.Rotation),new XAttribute(\"width\",connector.Width),new XAttribute(\"height\",connector.Height),new XAttribute(\"flipH\",connector.HorizontalFlip),new XAttribute(\"flipV\",connector.VerticalFlip)).ToString());",
+        "method": "Run",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/s0/ContextPropertiesOfficeTests.cs",
+        "line": 59
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 96,
+      "id": "341466547",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=j3yH1rl7XnIDxuDFlnBIDyDgdKg%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 35,
+        "code": "try{MappedExcelOfficeTests.Run(app,args[1]);File.WriteAllText(Path.Combine(args[1],\"mapped-excel-result.txt\"),\"PASS\");return 0;}",
+        "method": "Main",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/s0/DemoOfficeTests.cs",
+        "line": 27
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 97,
+      "id": "-1299226345",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=X7EUjDcA%2BUqd5geXF%2FFn7YBqYUg%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoScenario.cs",
+        "line": 55,
+        "code": "var directory=Path.Combine(root,\"assets\");Directory.CreateDirectory(directory);var path=Path.Combine(directory,\"sample.png\");",
+        "method": "Assets",
+        "element": "CreateDirectory"
+      },
+      "current_guard": {
+        "file": "tests/s0/DemoScenario.cs",
+        "line": 35
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 98,
+      "id": "-1651521647",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=lhnR3Mqu4KsZWrXJcUkoWLaKLJE%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 94,
+        "code": "string xml=Encode(settings);string target=Path.GetFullPath(path),directory=Path.GetDirectoryName(target);Directory.CreateDirectory(directory);string temp=Path.Combine(directory,\".sc-\"+Guid.NewGuid().ToString(\"N\")+\".tmp\");",
+        "method": "Save",
+        "element": "CreateDirectory"
+      },
+      "current_guard": {
+        "file": "apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 91
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Checked configuration filename/type, contained relative paths, writable ancestor reparse rejection."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 99,
+      "id": "333146485",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=q43gcb9ul%2B70G9hJmAtMu9aP%2Bv0%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 9,
+        "code": "[STAThread] public static int Main(string[] args){try{Run(args.Length==0?null:args[0]);return 0;}catch(Exception ex){Console.Error.WriteLine(ex);return 1;}}",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 95,
+        "code": "try{File.WriteAllText(temp,xml,new UTF8Encoding(false,true));if(File.Exists(target))File.Replace(temp,target,null);else File.Move(temp,target);}finally{if(File.Exists(temp))File.Delete(temp);}",
+        "method": "Save",
+        "element": "Exists"
+      },
+      "current_guard": {
+        "file": "apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 91
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Checked configuration filename/type, contained relative paths, writable ancestor reparse rejection."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 100,
+      "id": "333146485",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=vz2Hjz0JqMYNJK4UCQM6d%2F4%2FoCI%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 9,
+        "code": "[STAThread] public static int Main(string[] args){try{Run(args.Length==0?null:args[0]);return 0;}catch(Exception ex){Console.Error.WriteLine(ex);return 1;}}",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 95,
+        "code": "try{File.WriteAllText(temp,xml,new UTF8Encoding(false,true));if(File.Exists(target))File.Replace(temp,target,null);else File.Move(temp,target);}finally{if(File.Exists(temp))File.Delete(temp);}",
+        "method": "Save",
+        "element": "Delete"
+      },
+      "current_guard": {
+        "file": "apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 91
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Checked configuration filename/type, contained relative paths, writable ancestor reparse rejection."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 101,
+      "id": "955143290",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=wB1%2B%2Ffe7AYgr0DgFwJE0OXMqzv8%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/src/Library.Core/PiidxCatalog.cs",
+        "line": 33,
+        "code": "if(!File.Exists(IndexPath))throw new FileNotFoundException(\"PIIDX index is missing.\",IndexPath);",
+        "method": "Connect",
+        "element": "Exists"
+      },
+      "current_guard": {
+        "file": "src/Library.Core/PiidxCatalog.cs",
+        "line": 17
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Canonical configured index/root, writable ancestor reparse rejection, contained writer lock."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 102,
+      "id": "1407586478",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=dkHSaWEXmfH%2BnnUPLHB4kNGV6IQ%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/library/TemplateLibraryTests.cs",
+        "line": 21,
+        "code": "[STAThread] public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/library/TemplateLibraryTests.cs",
+        "line": 134,
+        "code": "var rows=new List<string>();Action<PowerPoint.Shape,string> visit=null;visit=(shape,path)=>{string text=\"\";if(shape.HasTextFrame==Office.MsoTriState.msoTrue&&shape.TextFrame.HasText==Office.MsoTriState.msoTrue)using(var hash=SHA256.Create())text=BitConverter.ToString(hash.ComputeHash(Encoding.UTF8.GetBytes(shape.TextFrame.TextRange.Text)));rows.Add(path+\"\\t\"+shape.Type+\"\\t\"+String.Join(\"\\t\",new[]{shape.Left,shape.Top,shape.Width,shape.Height,shape.Rotation}.Select(x=>x.ToString(\"R\",CultureInfo.InvariantCulture)))+\"\\t\"+text);if(shape.Type==Office.MsoShapeType.msoGroup)for(int i=1;i<=shape.GroupItems.Count;i++)visit(shape.GroupItems[i],path+\".\"+i);};for(int i=1;i<=slide.Shapes.Count;i++)visit(slide.Shapes[i],i.ToString(CultureInfo.InvariantCulture));File.WriteAllLines(output,rows);return String.Join(\"\\n\",rows);",
+        "method": "Geometry",
+        "element": "WriteAllLines"
+      },
+      "current_guard": {
+        "file": "tests/library/TemplateLibraryTests.cs",
+        "line": 27
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 103,
+      "id": "-1429002613",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=%2Bhb%2F40pn1EmatD%2FWp2jzFeYDlPM%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/library/TemplateLibraryTests.cs",
+        "line": 21,
+        "code": "[STAThread] public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/library/TemplateLibraryTests.cs",
+        "line": 157,
+        "code": "for(int i=0;i<assets.Length;i++){var slide=deck.Slides[i+2];bool exact=RenderHash(slide,Path.Combine(output,\"original-\"+i+\"-reopened.png\"),heights[i])==pixelHashes[i];var raster=TemplateFidelity.Files(Path.Combine(output,\"original-\"+i+\"-source.png\"),Path.Combine(output,\"original-\"+i+\"-reopened.png\"));bool geometry=Geometry(slide,Path.Combine(output,\"original-\"+i+\"-reopened-geometry.tsv\"))==nativeGeometry[i],format=TemplateFidelity.Formatting(slide,Path.Combine(output,\"original-\"+i+\"-reopened-format.txt\"))==nativeFormatting[i];fidelityRows.Add(i+\",reopen,\"+exact+\",\"+geometry+\",\"+format+\",,,\"+raster.Accepted+\",\"+raster.ChangedPixels+\",\"+raster.MaxChannelDelta+\",\"+raster.AlphaChanges+\",\"+raster.NonEdgeChanges+\",\"+raster.AllowedPixels);File.WriteAllLines(Path.Combine(output,\"original-fidelity.csv\"),fidelityRows);if(!raster.Accepted||!geometry||!format)fidelityFailures.Add(\"Reopen fidelity \"+i+\": tolerance=\"+raster.Accepted+\", geometry=\"+geometry+\", formatting=\"+format);Check(slide.TimeLine.MainSequence.Count==sourceEffects[i]&&slide.Tags[\"PPI_LIBRARY_ASSET_VERSION\"]==assets[i].Signature,\"Original builds/provenance lost on reopen\");}",
+        "method": "OriginalRoundtrip",
+        "element": "WriteAllLines"
+      },
+      "current_guard": {
+        "file": "tests/library/TemplateLibraryTests.cs",
+        "line": 27
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 104,
+      "id": "-1429002613",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=tmin9xmIT7%2FIZPSnJm1MZhRmC0Q%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/library/TemplateLibraryTests.cs",
+        "line": 21,
+        "code": "[STAThread] public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/library/TemplateLibraryTests.cs",
+        "line": 152,
+        "code": "bool exactPixels=RenderHash(slide,Path.Combine(output,\"original-\"+i+\"-inserted.png\"),heights[i])==pixelHashes[i];bool exactGeometry=Geometry(slide,Path.Combine(output,\"original-\"+i+\"-inserted-geometry.tsv\"))==geometry;bool exactFormat=TemplateFidelity.Formatting(slide,Path.Combine(output,\"original-\"+i+\"-inserted-format.txt\"))==nativeFormatting[i];bool repeatSource=RenderHash(session.Source(item),Path.Combine(output,\"original-\"+i+\"-source-repeat.png\"),heights[i])==pixelHashes[i];var raster=TemplateFidelity.Files(Path.Combine(output,\"original-\"+i+\"-source.png\"),Path.Combine(output,\"original-\"+i+\"-inserted.png\"));var repeatRaster=TemplateFidelity.Files(Path.Combine(output,\"original-\"+i+\"-source.png\"),Path.Combine(output,\"original-\"+i+\"-source-repeat.png\"));fidelityRows.Add(i+\",insert,\"+exactPixels+\",\"+exactGeometry+\",\"+exactFormat+\",\"+repeatSource+\",\"+repeatRaster.Accepted+\",\"+raster.Accepted+\",\"+raster.ChangedPixels+\",\"+raster.MaxChannelDelta+\",\"+raster.AlphaChanges+\",\"+raster.NonEdgeChanges+\",\"+raster.AllowedPixels);File.WriteAllLines(Path.Combine(output,\"original-fidelity.csv\"),fidelityRows);if(!raster.Accepted||!repeatRaster.Accepted||!exactGeometry||!exactFormat)fidelityFailures.Add(\"Insertion fidelity \"+i+\": exactPixels=\"+exactPixels+\", tolerance=\"+raster.Accepted+\", geometry=\"+exactGeometry+\", formatting=\"+exactFormat+\", repeated source=\"+repeatSource);Check(slide.Tags[\"PPI_LIBRARY_FORMATTING\"]==\"KEEP_SOURCE\",\"Source provenance missing\");",
+        "method": "OriginalRoundtrip",
+        "element": "WriteAllLines"
+      },
+      "current_guard": {
+        "file": "tests/library/TemplateLibraryTests.cs",
+        "line": 27
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 105,
+      "id": "-90541740",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=OqIk7uCWyqymaOVqsQQdlHdxbsE%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 11,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DataSourceTests.cs",
+        "line": 102,
+        "code": "string numericJson=Path.Combine(folder,\"numeric.json\");File.WriteAllText(numericJson,\"{\\\"headers\\\":[\\\"Category\\\",\\\"Value\\\"],\\\"rows\\\":[[\\\"East\\\",137.5]]}\");",
+        "method": "Run",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/s0/DataSourceTests.cs",
+        "line": 18
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 106,
+      "id": "1018546989",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=vnePh0X8No62qwmwYdHqAECICII%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 46,
+        "code": "File.WriteAllLines(Path.Combine(args[1],\"features.csv\"),rows);",
+        "method": "Main",
+        "element": "WriteAllLines"
+      },
+      "current_guard": {
+        "file": "tests/s0/DemoOfficeTests.cs",
+        "line": 27
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 107,
+      "id": "-1719932254",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=f1i%2BlTxPcmV9Mu3cyaCFzX2TcdE%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 24,
+        "code": "public static int Main(string[] args)",
+        "method": "Main",
+        "element": "args"
+      },
+      "destination": {
+        "file": "/tests/s0/ContextPropertiesOfficeTests.cs",
+        "line": 46,
+        "code": "var doc=new XmlDocument();var root=doc.CreateElement(\"testForeground\");doc.AppendChild(root);root.SetAttribute(\"checkpoint\",checkpoint);root.SetAttribute(\"initiallyForeground\",result.InitiallyForeground?\"true\":\"false\");root.SetAttribute(\"requestAccepted\",result.RequestAccepted?\"true\":\"false\");root.SetAttribute(\"verified\",result.Verified?\"true\":\"false\");root.SetAttribute(\"promptShown\",promptShown?\"true\":\"false\");root.SetAttribute(\"userStarted\",userStarted?\"true\":\"false\");root.SetAttribute(\"userRequestAccepted\",userRequestAccepted?\"true\":\"false\");File.WriteAllText(Path.Combine(evidenceDirectory,\"context-foreground-\"+checkpoint+\".xml\"),doc.OuterXml);",
+        "method": "EnsureTestForeground",
+        "element": "WriteAllText"
+      },
+      "current_guard": {
+        "file": "tests/s0/ContextPropertiesOfficeTests.cs",
+        "line": 59
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Independent repository/temp authority at CLI and/or direct evidence boundary; generated filenames are fixed or independently checked."
+    },
+    {
+      "query": "Stored_Path_Traversal",
+      "ordinal": 1,
+      "id": "-415229814",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=GjvmJiuEBfjaVFJiZGKw95jpwIk%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/src/Library.Core/PresentationSource.cs",
+        "line": 64,
+        "code": "foreach(string file in Directory.EnumerateFiles(folder))",
+        "method": "Discover",
+        "element": "EnumerateFiles"
+      },
+      "destination": {
+        "file": "/src/Library.Core/PresentationSource.cs",
+        "line": 67,
+        "code": "if((File.GetAttributes(file)&FileAttributes.ReparsePoint)!=0)continue;",
+        "method": "Discover",
+        "element": "GetAttributes"
+      },
+      "current_guard": {
+        "file": "src/Library.Core/PresentationSource.cs",
+        "line": 59
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Canonical configured source; containment checked on every discovered file/child; reparse entries skipped."
+    },
+    {
+      "query": "Stored_Path_Traversal",
+      "ordinal": 2,
+      "id": "-1886406541",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=7r7P03bSlII7%2BgNrVh3MN1IDkWw%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/src/Library.Core/LibraryConfiguration.cs",
+        "line": 83,
+        "code": "string root=LegacyFolder(File.ReadAllText(LegacyCachePath));if(!Directory.Exists(root))throw new DirectoryNotFoundException(\"Legacy library source folder is unavailable; original registration preserved.\");",
+        "method": "MigrateLegacy",
+        "element": "ReadAllText"
+      },
+      "destination": {
+        "file": "/src/Library.Core/PiidxCatalog.cs",
+        "line": 59,
+        "code": "root=Root(root);if(!Directory.Exists(root))throw new DirectoryNotFoundException(\"Library root is unavailable.\");",
+        "method": "Register",
+        "element": "Exists"
+      },
+      "current_guard": {
+        "file": "src/Library.Core/PiidxCatalog.cs",
+        "line": 17
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Canonical configured index/root, writable ancestor reparse rejection, contained writer lock."
+    },
+    {
+      "query": "Stored_Path_Traversal",
+      "ordinal": 3,
+      "id": "531211230",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=n30oKAsWn0dEueQWXjeOVuUM4AA%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/src/Library.Core/LibraryConfiguration.cs",
+        "line": 83,
+        "code": "string root=LegacyFolder(File.ReadAllText(LegacyCachePath));if(!Directory.Exists(root))throw new DirectoryNotFoundException(\"Legacy library source folder is unavailable; original registration preserved.\");",
+        "method": "MigrateLegacy",
+        "element": "ReadAllText"
+      },
+      "destination": {
+        "file": "/src/Library.Core/PiidxCatalog.cs",
+        "line": 60,
+        "code": "if((File.GetAttributes(root)&FileAttributes.ReparsePoint)!=0)throw new InvalidDataException(\"Register a direct library directory.\");",
+        "method": "Register",
+        "element": "GetAttributes"
+      },
+      "current_guard": {
+        "file": "src/Library.Core/PiidxCatalog.cs",
+        "line": 17
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Canonical configured index/root, writable ancestor reparse rejection, contained writer lock."
+    },
+    {
+      "query": "Stored_Path_Traversal",
+      "ordinal": 4,
+      "id": "-1305902851",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/235e8bda-90c8-4ee6-9d16-771a74111da0?resultId=pZkqSAN6%2BPLHWBqCxB5QhoEMwjQ%3D)",
+      "cwe": "22",
+      "source": {
+        "file": "/src/Library.Core/LibraryConfiguration.cs",
+        "line": 49,
+        "code": "result.Sources.AddRange(ParseSources(File.ReadAllText(file),Path.GetDirectoryName(file)));",
+        "method": "Load",
+        "element": "ReadAllText"
+      },
+      "destination": {
+        "file": "/src/Library.Core/PiidxCatalog.cs",
+        "line": 59,
+        "code": "root=Root(root);if(!Directory.Exists(root))throw new DirectoryNotFoundException(\"Library root is unavailable.\");",
+        "method": "Register",
+        "element": "Exists"
+      },
+      "current_guard": {
+        "file": "src/Library.Core/PiidxCatalog.cs",
+        "line": 17
+      },
+      "status": "Implemented in source; rescan pending",
+      "control": "Canonical configured index/root, writable ancestor reparse rejection, contained writer lock."
+    }
+  ]
+}

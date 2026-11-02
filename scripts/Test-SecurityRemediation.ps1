@@ -20,5 +20,7 @@ $rejected=$false
 try{[PowerPointIntelligence.Tests.Security.SceneArtifactPath]::ValidateNames($root,[string[]]@('same','SAME'))}catch{if($_.Exception.InnerException -is [IO.InvalidDataException]){$rejected=$true}else{throw}}
 if(!$rejected){throw 'Colliding corpus names accepted.'};$count++
 Write-Output "PASS $count corpus-path policy assertions against the actual C# helper; no cached runner replaced or executed."
+Add-Type -Path @((Join-Path $repo 'src/Library.Core/PathPolicy.cs'),(Join-Path $repo 'tests/security/PathPolicyTests.cs'))
+$null=[PowerPointIntelligence.Tests.Security.PathPolicyTests]::Run($repo)
 & $Python -B (Join-Path $repo 'tests/security/test_repair_template_alignment.py')
 if($LASTEXITCODE){throw 'Repair security regression tests failed.'}

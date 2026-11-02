@@ -1,3 +1,4 @@
+﻿using PowerPointIntelligence.Security;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -31,7 +32,7 @@ internal sealed class DemoScenario
     private bool Near(float a,float b){return Math.Abs(a-b)<0.05f;}
     internal DemoScenario(PowerPoint.Application app,string id,string root)
     {
-        this.app=app;this.id=id;this.root=root;
+        this.app=app;this.id=id;this.root=PathPolicy.TestPath(root);
         inputs=new DemoInputs {
             Prompt=(title,initial)=>PromptValue(title),
             OpenFile=ChooseFile,SaveFile=(filter,name)=>output=Path.Combine(root,id+".export"+Path.GetExtension(name)),

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PowerPointIntelligence.Security;
+using System;
 using System.Drawing;
 using System.IO;
 using System.IO.Compression;
@@ -77,7 +78,7 @@ internal static class TemplateFidelityTests
         return count;
     }
     internal static void Replay(string folder,string output)
-    {
+    {folder=PathPolicy.TestPath(folder);output=PathPolicy.TestPath(output);
         Directory.CreateDirectory(output);var rows=new List<string>{"Index,Stage,SameDimensions,ExactPixels,WithinTolerance,ChangedPixels,MaxChannelDelta,AlphaChanges,NonEdgeChanges,AllowedPixels"};int passed=0;
         for(int i=0;i<16;i++)foreach(var stage in new[]{"inserted","source-repeat","reopened"}){var r=TemplateFidelity.Files(Path.Combine(folder,"original-"+i+"-source.png"),Path.Combine(folder,"original-"+i+"-"+stage+".png"));rows.Add(i+","+stage+","+r.Csv);if(!r.Accepted)throw new Exception("Saved raster evidence outside policy: "+i+" "+stage+" "+r.Csv);passed++;}
         File.WriteAllLines(Path.Combine(output,"raster-replay.csv"),rows);Console.WriteLine("PASS "+passed+" saved raster comparisons. This is an offline replay, not a new native Office/formatting pass.");

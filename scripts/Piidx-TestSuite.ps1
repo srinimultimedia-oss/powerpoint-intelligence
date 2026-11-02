@@ -1,4 +1,4 @@
-function Import-PpiPiidxSuite {
+﻿function Import-PpiPiidxSuite {
     param([string]$Root,[string]$RunnerRoot)
     $ErrorActionPreference='Stop'
     $files=@(Get-ChildItem (Join-Path $Root 'src/Library.Core') -File -Filter '*.cs';Get-ChildItem (Join-Path $Root 'tests/library/piidx') -File -Filter '*.cs') | Sort-Object FullName
@@ -19,8 +19,8 @@ function Import-PpiPiidxSuite {
             $vswhere=Join-Path ${env:ProgramFiles(x86)} 'Microsoft Visual Studio/Installer/vswhere.exe'
             $vs=& $vswhere -latest -products '*' -property installationPath
             $compiler=Join-Path $vs 'MSBuild/Current/Bin/Roslyn/csc.exe'
-            & $compiler /nologo /target:library /deterministic+ /langversion:7.3 /codepage:65001 /platform:AnyCPU "/out:$dll" /reference:System.Xml.Linq.dll /reference:System.IO.Compression.dll /reference:System.IO.Compression.FileSystem.dll @($files.FullName)
-            if($LASTEXITCODE){throw 'PIIDX .NET Framework test-suite compilation failed.'}
+            $compilerOutput = & $compiler /nologo /target:library /deterministic+ /langversion:7.3 /codepage:65001 /platform:AnyCPU "/out:$dll" /reference:System.Xml.Linq.dll /reference:System.IO.Compression.dll /reference:System.IO.Compression.FileSystem.dll @($files.FullName)
+            if($LASTEXITCODE){throw ('PIIDX .NET Framework test-suite compilation failed. '+($compilerOutput -join [Environment]::NewLine))}
             [pscustomobject]@{InputSHA256=$inputHash;AssemblySHA256=(Get-FileHash -LiteralPath $dll -Algorithm SHA256).Hash;State='Compilation only; not execution evidence';Sources=$sources} | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath $receipt
         }
         $null=[Reflection.Assembly]::LoadFrom($dll)

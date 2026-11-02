@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PowerPointIntelligence.Security;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -23,6 +24,8 @@ internal static class DemoOfficeTests
     [STAThread]
     public static int Main(string[] args)
     {
+        try { foreach(int p in new int[]{1})if(p<args.Length)args[p]=PathPolicy.TestPath(args[p]); } catch(System.IO.InvalidDataException error) { Console.Error.WriteLine(error.Message); return 2; }
+
         if(args.Length!=2||(args[0]!="--interactive-office"&&args[0]!="--interactive-agenda"&&args[0]!="--interactive-elements"&&args[0]!="--interactive-properties"&&args[0]!="--diagnose-linked-chart"&&args[0]!="--diagnose-linked-chart-paused"&&args[0]!="--interactive-mapped-excel"))return 2;
         bool agendaOnly=args[0]=="--interactive-agenda";
         Directory.CreateDirectory(args[1]);var rows=new List<string>{"ToolId,Status,Evidence"};

@@ -1,3 +1,4 @@
+﻿using PowerPointIntelligence.Security;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -87,11 +88,11 @@ namespace PowerPointIntelligence.AddIn
         }
         internal static ServiceConnectionSettings Load(string path)
         {
-            if(!File.Exists(path))return ServiceConnectionSettings.Empty();if(new FileInfo(path).Length>MaxFileBytes)throw new InvalidDataException("Saved configuration exceeds byte limit.");return Decode(File.ReadAllText(path,new UTF8Encoding(false,true)));
+            path=PathPolicy.ConfigFile(path);if(!File.Exists(path))return ServiceConnectionSettings.Empty();if(new FileInfo(path).Length>MaxFileBytes)throw new InvalidDataException("Saved configuration exceeds byte limit.");return Decode(File.ReadAllText(path,new UTF8Encoding(false,true)));
         }
         internal static void Save(string path,ServiceConnectionSettings settings)
         {
-            string xml=Encode(settings);string target=Path.GetFullPath(path),directory=Path.GetDirectoryName(target);Directory.CreateDirectory(directory);string temp=Path.Combine(directory,".sc-"+Guid.NewGuid().ToString("N")+".tmp");
+            string xml=Encode(settings);string target=PathPolicy.ConfigFile(path),directory=Path.GetDirectoryName(target);Directory.CreateDirectory(directory);string temp=PathPolicy.Within(directory,".sc-"+Guid.NewGuid().ToString("N")+".tmp");
             try{File.WriteAllText(temp,xml,new UTF8Encoding(false,true));if(File.Exists(target))File.Replace(temp,target,null);else File.Move(temp,target);}finally{if(File.Exists(temp))File.Delete(temp);}
         }
         internal static void ShowConfiguration()

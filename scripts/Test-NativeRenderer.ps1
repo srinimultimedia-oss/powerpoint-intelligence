@@ -1,4 +1,4 @@
-param([switch]$InteractiveOffice, [switch]$CompileOnly, [ValidateSet('AnyCPU','x86','x64')][string]$Platform='AnyCPU')
+﻿param([switch]$InteractiveOffice, [switch]$CompileOnly, [ValidateSet('AnyCPU','x86','x64')][string]$Platform='AnyCPU')
 $ErrorActionPreference='Stop'
 $repo=Split-Path $PSScriptRoot -Parent
 Push-Location $repo
@@ -17,7 +17,7 @@ try {
     if($LASTEXITCODE) { throw 'Canonical scene fixture generation failed.' }
     $references=@('/nostdlib+',"/r:$refs/mscorlib.dll","/r:$refs/System.dll","/r:$refs/System.Core.dll","/r:$refs/System.Xml.dll","/r:$dependency","/link:$pia/office.dll","/link:$pia/Microsoft.Office.Interop.PowerPoint.dll")
     $resources=@('/resource:apps/powerpoint-vsto/RendererSamples/canonical.json,PowerPointIntelligence.RendererSamples.canonical.json','/resource:apps/powerpoint-vsto/RendererSamples/scene.json,PowerPointIntelligence.RendererSamples.scene.json')
-    & $compiler /nologo /langversion:7.3 "/platform:$Platform" /target:exe "/out:$output/NativeRendererTests.exe" @references @resources src/Chart.Domain/ChartDocument.cs src/Chart.Domain/ChartCodec.cs src/Chart.Renderers/SceneContracts.cs src/Chart.Renderers/SceneCodec.cs src/Chart.Renderers/StrictSceneJson.cs src/Shared.Contracts/BoundedJson.cs src/Chart.Renderers/NativeRenderingCore.cs src/Chart.Renderers/PowerPointSceneSurface.cs apps/powerpoint-vsto/RendererRibbonCommand.cs tests/s3/RendererRibbonTests.cs tests/s3/NativeRendererTests.cs
+    & $compiler /nologo /langversion:7.3 "/platform:$Platform" /target:exe "/out:$output/NativeRendererTests.exe" @references @resources src/Chart.Domain/ChartDocument.cs src/Chart.Domain/ChartCodec.cs src/Chart.Renderers/SceneContracts.cs src/Chart.Renderers/SceneCodec.cs src/Chart.Renderers/StrictSceneJson.cs src/Shared.Contracts/BoundedJson.cs src/Chart.Renderers/NativeRenderingCore.cs src/Chart.Renderers/PowerPointSceneSurface.cs apps/powerpoint-vsto/RendererRibbonCommand.cs tests/s3/RendererRibbonTests.cs tests/s3/NativeRendererTests.cs src/Library.Core/PathPolicy.cs
     if($LASTEXITCODE) { throw 'Native renderer compilation failed.' }
     if($CompileOnly) { Write-Output 'COMPILE ONLY: native renderer and tests; no unit or Office execution.'; return }
     $executionLog=Join-Path $output 'unit-execution.log'

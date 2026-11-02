@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PowerPointIntelligence.Security;
+using System;
 using System.IO;
 using System.Linq;
 using System.Xml;
@@ -14,8 +15,8 @@ internal static class DataSourceTests
     private static void Reject(Action action,string name)
     { try { action(); } catch(Exception ex) when(ex is InvalidDataException || ex is IOException) { Check(true,name);return; } throw new Exception("Data Source accepted "+name); }
     internal static void Run(string output)
-    {
-        Directory.CreateDirectory(output);var registryPath=Path.Combine(Path.GetFullPath(output),"registry-fixture.csv");File.WriteAllText(registryPath,"Category,Value\r\nFixture,1\r\n");
+    {output=PathPolicy.TestPath(output);
+        Directory.CreateDirectory(output);var registryPath=Path.Combine(PathPolicy.TestPath(output),"registry-fixture.csv");File.WriteAllText(registryPath,"Category,Value\r\nFixture,1\r\n");
         var registryFixture=DataSources.Create("csv",registryPath);
         var registryXml=DataSources.Encode(registryFixture);
         Check(DataSources.ReadRegistry(new[]{Tuple.Create(registryXml,false),Tuple.Create(registryXml,true)}).Count==1,"shape-attached reference is not a duplicate deck registry entry");
@@ -46,7 +47,7 @@ internal static class DataSourceTests
         int interfaceClose=0;LinkedChartData.CloseWorkbook(()=>{interfaceClose++;throw new System.Runtime.InteropServices.COMException("fixture",unchecked((int)0x800706B5));},()=>true);Check(interfaceClose==1,"unknown workbook interface is not replayed and requires verified chart state");
         bool unknownRejected=false;try{LinkedChartData.CloseWorkbook(()=>{throw new System.Runtime.InteropServices.COMException("fixture",unchecked((int)0x800706B5));},()=>false);}catch(System.Runtime.InteropServices.COMException){unknownRejected=true;}Check(unknownRejected,"unverified unknown interface remains failure");
         var workbookFixture=new WorkbookCloseFixture();LinkedChartData.CloseNativeWorkbook(workbookFixture);Check(workbookFixture.Saved,"reflection close binds save without dynamic metadata scan");
-        string folder=Path.Combine(Path.GetFullPath(output),"data-source-fixtures");Directory.CreateDirectory(folder);
+        string folder=Path.Combine(PathPolicy.TestPath(output),"data-source-fixtures");Directory.CreateDirectory(folder);
         Check(DataSources.Options.Select(o=>o.Id).SequenceEqual(new[]{"excel","csv","json","xml"}),"four ordered format options");
         foreach(var option in DataSources.Options)
         {
