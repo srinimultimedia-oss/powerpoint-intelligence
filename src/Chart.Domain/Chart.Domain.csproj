@@ -1,0 +1,18 @@
+<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
+    <OutputType>Library</OutputType><TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <AssemblyName>Chart.Domain</AssemblyName><RootNamespace>PowerPointIntelligence.Domain</RootNamespace>
+    <LangVersion>7.3</LangVersion><OutputPath>bin\$(Configuration)\</OutputPath>
+    <ProjectGuid>{747F846E-CA2D-4AC0-83D2-68F0A5C036BE}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System"/><Reference Include="System.Core"/><Reference Include="System.Xml"/>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
+    <Compile Include="ChartDocument.cs"/><Compile Include="ChartCodec.cs"/><Compile Include="S0Migration.cs"/>
+    <!-- S0 contracts contain no COM dependencies. Link rather than fork their wire format. -->
+    <Compile Include="..\..\apps\powerpoint-vsto\Contracts.cs"><Link>Legacy\Contracts.cs</Link></Compile>
+    <Compile Include="..\..\apps\powerpoint-vsto\MetadataCodec.cs"><Link>Legacy\MetadataCodec.cs</Link></Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+</Project>

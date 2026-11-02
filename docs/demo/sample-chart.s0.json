@@ -1,0 +1,1 @@
+{"SchemaVersion":1,"ChartId":"a4c30000-1111-4444-8888-000000000001","ChartType":"clustered-column","Revision":0,"Categories":["Q1","Q2","Q3"],"Series":[{"Id":"actual","Name":"Actual","Values":[10,20,30]},{"Id":"plan","Name":"Plan","Values":[15,18,35]}]}

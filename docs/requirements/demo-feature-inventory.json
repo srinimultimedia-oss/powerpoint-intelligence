@@ -1,0 +1,723 @@
+[
+  {
+    "Id": "UI-001",
+    "Category": "Interface and user interaction",
+    "Name": "Ribbon controls",
+    "State": "Partial demo",
+    "Note": "Elements, Review, Workspace and demo browser. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "UI-002",
+    "Category": "Interface and user interaction",
+    "Name": "Element insertion menus",
+    "State": "Partial demo",
+    "Note": "Elements and searchable demo catalog. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "UI-003",
+    "Category": "Interface and user interaction",
+    "Name": "Context menus",
+    "State": "Partial demo",
+    "Note": "Native PowerPoint context menus remain available; custom menu extension not implemented. Runtime unverified."
+  },
+  {
+    "Id": "UI-004",
+    "Category": "Interface and user interaction",
+    "Name": "Mini toolbars",
+    "State": "Partial demo",
+    "Note": "Floating quick-arrange toolbar. Runtime unverified; full reference-product semantics not implemented."
+  },
+  {
+    "Id": "UI-005",
+    "Category": "Interface and user interaction",
+    "Name": "Keyboard and mouse shortcuts",
+    "State": "Partial demo",
+    "Note": "Native PowerPoint shortcuts plus keyboard navigation of the demo browser. Runtime unverified."
+  },
+  {
+    "Id": "UI-006",
+    "Category": "Interface and user interaction",
+    "Name": "Proofing language configuration",
+    "State": "Partial demo",
+    "Note": "Selected text language ID. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "UI-007",
+    "Category": "Interface and user interaction",
+    "Name": "Installation and updates",
+    "State": "Partial demo",
+    "Note": "Install-Local.ps1 signed local-development deployment. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "LAY-001",
+    "Category": "Shapes, layouts, and presentation editing",
+    "Name": "Insert and duplicate elements",
+    "State": "Partial demo",
+    "Note": "Insert and duplicate selected native objects. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "LAY-002",
+    "Category": "Shapes, layouts, and presentation editing",
+    "Name": "Format and style elements",
+    "State": "Partial demo",
+    "Note": "Selected shape palette and chart styles. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "LAY-003",
+    "Category": "Shapes, layouts, and presentation editing",
+    "Name": "Arrange and resize objects",
+    "State": "Partial demo",
+    "Note": "Align, size, distribute and scale. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "LAY-004",
+    "Category": "Shapes, layouts, and presentation editing",
+    "Name": "Automatic layout",
+    "State": "Partial demo",
+    "Note": "Three-column selection grid only. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "LAY-005",
+    "Category": "Shapes, layouts, and presentation editing",
+    "Name": "Group objects",
+    "State": "Partial demo",
+    "Note": "Native group/ungroup. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "LAY-006",
+    "Category": "Shapes, layouts, and presentation editing",
+    "Name": "Rotate and flip elements",
+    "State": "Partial demo",
+    "Note": "90-degree rotation and horizontal/vertical flip. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "LAY-007",
+    "Category": "Shapes, layouts, and presentation editing",
+    "Name": "Paste text into multiple objects",
+    "State": "Partial demo",
+    "Note": "One line per selected text shape. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "LAY-008",
+    "Category": "Shapes, layouts, and presentation editing",
+    "Name": "Select objects",
+    "State": "Partial demo",
+    "Note": "Uses native PowerPoint selection. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "LAY-009",
+    "Category": "Shapes, layouts, and presentation editing",
+    "Name": "Text boxes",
+    "State": "Partial demo",
+    "Note": "Native text boxes. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "LAY-010",
+    "Category": "Shapes, layouts, and presentation editing",
+    "Name": "Rounded rectangles",
+    "State": "Partial demo",
+    "Note": "Native rounded rectangle. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "LAY-011",
+    "Category": "Shapes, layouts, and presentation editing",
+    "Name": "Process flows",
+    "State": "Partial demo",
+    "Note": "Four editable sample chevrons. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "LAY-012",
+    "Category": "Shapes, layouts, and presentation editing",
+    "Name": "Harvey balls and checkboxes",
+    "State": "Partial demo",
+    "Note": "Static editable symbol samples. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "PROD-001",
+    "Category": "PowerPoint productivity tools",
+    "Name": "Align objects and match sizes",
+    "State": "Partial demo",
+    "Note": "Selection alignment and match size. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "PROD-002",
+    "Category": "PowerPoint productivity tools",
+    "Name": "Swap objects",
+    "State": "Partial demo",
+    "Note": "Swap two selected positions. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "PROD-003",
+    "Category": "PowerPoint productivity tools",
+    "Name": "Scale PowerPoint shapes",
+    "State": "Partial demo",
+    "Note": "Scale selection up/down. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "PROD-004",
+    "Category": "PowerPoint productivity tools",
+    "Name": "Send and save slides",
+    "State": "Partial demo",
+    "Note": "Save selected slides to a local .pptx; no email sending. Runtime unverified."
+  },
+  {
+    "Id": "PROD-005",
+    "Category": "PowerPoint productivity tools",
+    "Name": "Clean up and sanitize presentations",
+    "State": "Partial demo",
+    "Note": "Explicit legacy-comment removal only; no complete document sanitization. Runtime unverified."
+  },
+  {
+    "Id": "PROD-006",
+    "Category": "PowerPoint productivity tools",
+    "Name": "Insert symbols",
+    "State": "Partial demo",
+    "Note": "Unicode text prompt. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "PROD-007",
+    "Category": "PowerPoint productivity tools",
+    "Name": "Replace and resize fonts",
+    "State": "Partial demo",
+    "Note": "Selected text font family and size. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "PROD-008",
+    "Category": "PowerPoint productivity tools",
+    "Name": "Switch decimal symbols",
+    "State": "Partial demo",
+    "Note": "Selected text only. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "PROD-009",
+    "Category": "PowerPoint productivity tools",
+    "Name": "Build tables",
+    "State": "Partial demo",
+    "Note": "Native sample 4x4 table. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "PROD-010",
+    "Category": "PowerPoint productivity tools",
+    "Name": "Create agendas",
+    "State": "Partial demo",
+    "Note": "Managed chapter agendas, hierarchy, contents, synchronized captions and block movement implemented; native acceptance pending."
+  },
+  {
+    "Id": "CHART-001",
+    "Category": "Data visualization and chart types",
+    "Name": "Column charts",
+    "State": "Partial demo",
+    "Note": "Native sample columns. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "CHART-002",
+    "Category": "Data visualization and chart types",
+    "Name": "Bar charts",
+    "State": "Partial demo",
+    "Note": "Native sample bars. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "CHART-003",
+    "Category": "Data visualization and chart types",
+    "Name": "Stacked and clustered chart variants — details pending verification",
+    "State": "Partial demo",
+    "Note": "Native stacked, clustered and 100% variants. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "CHART-004",
+    "Category": "Data visualization and chart types",
+    "Name": "Line and profile charts",
+    "State": "Partial demo",
+    "Note": "Native line; row-oriented comparison, no rotated profile axis. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "CHART-005",
+    "Category": "Data visualization and chart types",
+    "Name": "Area charts",
+    "State": "Partial demo",
+    "Note": "Native stacked area. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "CHART-006",
+    "Category": "Data visualization and chart types",
+    "Name": "Waterfall charts",
+    "State": "Partial demo",
+    "Note": "Editable static sample diagram. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "CHART-007",
+    "Category": "Data visualization and chart types",
+    "Name": "Pie and doughnut charts",
+    "State": "Partial demo",
+    "Note": "Native samples. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "CHART-008",
+    "Category": "Data visualization and chart types",
+    "Name": "Scatter charts",
+    "State": "Partial demo",
+    "Note": "Native sample XY. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "CHART-009",
+    "Category": "Data visualization and chart types",
+    "Name": "Bubble charts",
+    "State": "Partial demo",
+    "Note": "Native sample bubble. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "CHART-010",
+    "Category": "Data visualization and chart types",
+    "Name": "Mekko charts with percent axis",
+    "State": "Partial demo",
+    "Note": "Static grouped sample rectangles. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "CHART-011",
+    "Category": "Data visualization and chart types",
+    "Name": "Mekko charts with units",
+    "State": "Partial demo",
+    "Note": "Static grouped sample variable-width columns. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "CHART-012",
+    "Category": "Data visualization and chart types",
+    "Name": "Import Mekko Graphics charts",
+    "State": "Not implemented",
+    "Note": "Native PPTX slide import is available, but no proprietary Mekko Graphics format converter is implemented. A documented interchange format and fixtures are required."
+  },
+  {
+    "Id": "CHART-013",
+    "Category": "Data visualization and chart types",
+    "Name": "Gantt charts and timelines",
+    "State": "Partial demo",
+    "Note": "Static sample task bars. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "ANNOT-001",
+    "Category": "Chart configuration and annotations",
+    "Name": "Chart areas and plot areas",
+    "State": "Partial demo",
+    "Note": "Selected native chart area/plot area styling. Runtime unverified."
+  },
+  {
+    "Id": "ANNOT-002",
+    "Category": "Chart configuration and annotations",
+    "Name": "Value, date and category axes",
+    "State": "Partial demo",
+    "Note": "Native value-axis title only; broader date/category controls pending. Runtime unverified."
+  },
+  {
+    "Id": "ANNOT-003",
+    "Category": "Chart configuration and annotations",
+    "Name": "Legends",
+    "State": "Partial demo",
+    "Note": "Native chart legend toggle. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "ANNOT-004",
+    "Category": "Chart configuration and annotations",
+    "Name": "Series and segment labels",
+    "State": "Partial demo",
+    "Note": "Native data labels. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "ANNOT-005",
+    "Category": "Chart configuration and annotations",
+    "Name": "Difference arrows",
+    "State": "Partial demo",
+    "Note": "Static sample arrow annotation. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "ANNOT-006",
+    "Category": "Chart configuration and annotations",
+    "Name": "CAGR arrows",
+    "State": "Partial demo",
+    "Note": "Calculated CAGR text; arrow not implemented. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "ANNOT-007",
+    "Category": "Chart configuration and annotations",
+    "Name": "Value lines",
+    "State": "Partial demo",
+    "Note": "Static reference-line annotation. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "ANNOT-008",
+    "Category": "Chart configuration and annotations",
+    "Name": "Charts with data tables",
+    "State": "Partial demo",
+    "Note": "Native data-table toggle. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "ANNOT-009",
+    "Category": "Chart configuration and annotations",
+    "Name": "Chart formatting and styling",
+    "State": "Partial demo",
+    "Note": "Native chart style selector. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "DATA-001",
+    "Category": "Data entry and integrations",
+    "Name": "Element datasheets",
+    "State": "Partial demo",
+    "Note": "Open selected chart embedded workbook. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "DATA-002",
+    "Category": "Data entry and integrations",
+    "Name": "Slide workbooks",
+    "State": "Partial demo",
+    "Note": "List chart workbooks on current slide; no shared workbook model. Runtime unverified; full reference-product semantics not implemented."
+  },
+  {
+    "Id": "DATA-003",
+    "Category": "Data entry and integrations",
+    "Name": "Excel data links",
+    "State": "Partial demo",
+    "Note": "First-sheet local XLSX snapshot with persisted source path and explicit manual refresh. Runtime unverified; full reference-product semantics not implemented."
+  },
+  {
+    "Id": "DATA-004",
+    "Category": "Data entry and integrations",
+    "Name": "Tableau data links",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "DATA-005",
+    "Category": "Data entry and integrations",
+    "Name": "Manage data links",
+    "State": "Partial demo",
+    "Note": "Count links and refresh selected linked chart; no automatic rebinding. Runtime unverified; full reference-product semantics not implemented."
+  },
+  {
+    "Id": "DATA-006",
+    "Category": "Data entry and integrations",
+    "Name": "Tables with datasheets",
+    "State": "Partial demo",
+    "Note": "Native table grid editor up to 400 cells. Runtime unverified; full reference-product semantics not implemented."
+  },
+  {
+    "Id": "DATA-007",
+    "Category": "Data entry and integrations",
+    "Name": "Linked data range formatting",
+    "State": "Partial demo",
+    "Note": "Selected embedded workbook header styling only; no external style propagation. Runtime unverified; full reference-product semantics not implemented."
+  },
+  {
+    "Id": "DATA-008",
+    "Category": "Data entry and integrations",
+    "Name": "Excel CAGR calculations",
+    "State": "Partial demo",
+    "Note": "Calculated CAGR cell formula with entered positive inputs. Runtime unverified; full reference-product semantics not implemented."
+  },
+  {
+    "Id": "DATA-009",
+    "Category": "Data entry and integrations",
+    "Name": "Excel table and cell styles",
+    "State": "Partial demo",
+    "Note": "Bold shaded header in selected embedded workbook only. Runtime unverified."
+  },
+  {
+    "Id": "DATA-010",
+    "Category": "Data entry and integrations",
+    "Name": "Excel data rounding",
+    "State": "Partial demo",
+    "Note": "Bounded numeric-constant rounding in selected embedded workbook only. Runtime unverified."
+  },
+  {
+    "Id": "AUTO-001",
+    "Category": "Reporting and automation",
+    "Name": "Automation with Excel data",
+    "State": "Partial demo",
+    "Note": "Local XLSX snapshot into a native chart with bounded input and manual refresh. Runtime unverified; full reference-product semantics not implemented."
+  },
+  {
+    "Id": "AUTO-002",
+    "Category": "Reporting and automation",
+    "Name": "Automation with JSON data",
+    "State": "Partial demo",
+    "Note": "Validated S0 JSON chart import/export only; no general API. Runtime unverified."
+  },
+  {
+    "Id": "AUTO-003",
+    "Category": "Reporting and automation",
+    "Name": "Chart scanner",
+    "State": "Partial demo",
+    "Note": "Native chart/picture counts only. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "AUTO-004",
+    "Category": "Reporting and automation",
+    "Name": "API introduction",
+    "State": "Partial demo",
+    "Note": "Experimental local COM automation object and JSON insertion. Runtime unverified; full reference-product semantics not implemented."
+  },
+  {
+    "Id": "AUTO-005",
+    "Category": "Reporting and automation",
+    "Name": "API reference",
+    "State": "Partial demo",
+    "Note": "Demo API documentation with GetVersion and InsertChartJson. Runtime unverified; full reference-product semantics not implemented."
+  },
+  {
+    "Id": "ASSET-001",
+    "Category": "Slide assets and brand compliance",
+    "Name": "Slide and image library",
+    "State": "Partial demo",
+    "Note": "Local image insertion and slide import; no managed library. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "ASSET-002",
+    "Category": "Slide assets and brand compliance",
+    "Name": "Slide templates",
+    "State": "Partial demo",
+    "Note": "Apply local .potx template. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "ASSET-003",
+    "Category": "Slide assets and brand compliance",
+    "Name": "Images and icons",
+    "State": "Partial demo",
+    "Note": "Local images and Unicode symbols only. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "ASSET-004",
+    "Category": "Slide assets and brand compliance",
+    "Name": "Manage library content",
+    "State": "Partial demo",
+    "Note": "Browse local assets and insert/apply; no repository management or deletion. Runtime unverified; full reference-product semantics not implemented."
+  },
+  {
+    "Id": "ASSET-005",
+    "Category": "Slide assets and brand compliance",
+    "Name": "Default colors and fonts",
+    "State": "Partial demo",
+    "Note": "Apply selection palette/font only; no master defaults. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "ASSET-006",
+    "Category": "Slide assets and brand compliance",
+    "Name": "Default agenda slide layouts",
+    "State": "Partial demo",
+    "Note": "Managed chapter/contents slides inherit an agenda role model; legacy section overviews remain readable. Native behavior unverified; full reference-product semantics not implemented."
+  },
+  {
+    "Id": "ASSET-007",
+    "Category": "Slide assets and brand compliance",
+    "Name": "Style files",
+    "State": "Partial demo",
+    "Note": "Bounded original JSON style applied to selected shapes. Runtime unverified; full reference-product semantics not implemented."
+  },
+  {
+    "Id": "ASSET-008",
+    "Category": "Slide assets and brand compliance",
+    "Name": "File names and paths on slides",
+    "State": "Partial demo",
+    "Note": "Insert current file path. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "ASSET-009",
+    "Category": "Slide assets and brand compliance",
+    "Name": "Share presentations without think-cell",
+    "State": "Partial demo",
+    "Note": "Native objects remain editable; no sending workflow. Feature completeness and runtime verification are pending."
+  },
+  {
+    "Id": "AI-001",
+    "Category": "AI-powered capabilities",
+    "Name": "AI chat in PowerPoint",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "AI-002",
+    "Category": "AI-powered capabilities",
+    "Name": "Create and edit slide content",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "AI-003",
+    "Category": "AI-powered capabilities",
+    "Name": "Generate slides",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "AI-004",
+    "Category": "AI-powered capabilities",
+    "Name": "Review slides",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "AI-005",
+    "Category": "AI-powered capabilities",
+    "Name": "Rewrite, shorten and structure text",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "AI-006",
+    "Category": "AI-powered capabilities",
+    "Name": "Custom text editing prompts",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "AI-007",
+    "Category": "AI-powered capabilities",
+    "Name": "Translate slides",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "AI-008",
+    "Category": "AI-powered capabilities",
+    "Name": "Create action titles",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "AI-009",
+    "Category": "AI-powered capabilities",
+    "Name": "Create summary slides",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "AI-010",
+    "Category": "AI-powered capabilities",
+    "Name": "Research financial and statistical data",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "AI-011",
+    "Category": "AI-powered capabilities",
+    "Name": "Generate charts from researched data",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "AI-012",
+    "Category": "AI-powered capabilities",
+    "Name": "Upload files for AI context",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "AI-013",
+    "Category": "AI-powered capabilities",
+    "Name": "Connect MCP servers",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "AI-014",
+    "Category": "AI-powered capabilities",
+    "Name": "Review recent AI chat history",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "AI-015",
+    "Category": "AI-powered capabilities",
+    "Name": "Provide feedback on AI responses",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "AI-016",
+    "Category": "AI-powered capabilities",
+    "Name": "AI assistance in Excel",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "AI-017",
+    "Category": "AI-powered capabilities",
+    "Name": "Creation of editable PowerPoint shapes and think-cell elements through AI; earlier review noted a Gantt-chart exception.",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "AI-018",
+    "Category": "AI-powered capabilities",
+    "Name": "Research of public-company financial data through Morningstar.",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "AI-019",
+    "Category": "AI-powered capabilities",
+    "Name": "Sourced statistics and chart generation.",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "AI-020",
+    "Category": "AI-powered capabilities",
+    "Name": "External tool access via MCP servers.",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "DEPLOY-001",
+    "Category": "Enterprise deployment",
+    "Name": "Pre-installation considerations",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "DEPLOY-002",
+    "Category": "Enterprise deployment",
+    "Name": "First installation",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "DEPLOY-003",
+    "Category": "Enterprise deployment",
+    "Name": "Ongoing maintenance",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "DEPLOY-004",
+    "Category": "Enterprise deployment",
+    "Name": "Configure slide and image library",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "DEPLOY-005",
+    "Category": "Enterprise deployment",
+    "Name": "Configure PowerPoint and Excel ribbons",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "DEPLOY-006",
+    "Category": "Enterprise deployment",
+    "Name": "Deploy default style files",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "DEPLOY-007",
+    "Category": "Enterprise deployment",
+    "Name": "Configure think-cell Assist",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  },
+  {
+    "Id": "DEPLOY-008",
+    "Category": "Enterprise deployment",
+    "Name": "Add organizational resources to Tools menu",
+    "State": "Not configured",
+    "Note": "External service or enterprise environment is not configured. No live result or simulated success is returned."
+  }
+]

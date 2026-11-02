@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:powerpoint-intelligence:rendered-chart:v1" xmlns="urn:powerpoint-intelligence:rendered-chart:v1" elementFormDefault="qualified">
+  <xs:annotation><xs:documentation>Feasibility profile: canonical v2 clustered-column JSON plus verified scene v1 and native binding hints. Consumers must validate embedded JSON, exact projection, identity, tokens and zero-area policy in addition to this structural schema.</xs:documentation></xs:annotation>
+  <xs:simpleType name="CanonicalJson"><xs:restriction base="xs:string"><xs:minLength value="1"/><xs:maxLength value="1048576"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="SceneJson"><xs:restriction base="xs:string"><xs:minLength value="1"/><xs:maxLength value="8388608"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Token"><xs:restriction base="xs:string"><xs:pattern value="[0-9A-F]{64}"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Guid"><xs:restriction base="xs:string"><xs:pattern value="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Empty"><xs:restriction base="xs:string"><xs:length value="0"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="ShapeId"><xs:union><xs:simpleType><xs:restriction base="xs:int"><xs:minInclusive value="1"/></xs:restriction></xs:simpleType><xs:simpleType><xs:restriction base="Empty"/></xs:simpleType></xs:union></xs:simpleType>
+  <xs:element name="RenderedChart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Canonical" type="CanonicalJson"/>
+        <xs:element name="Scene" type="SceneJson"/>
+        <xs:element name="Bindings"><xs:complexType><xs:sequence>
+          <xs:element name="Binding" minOccurs="0" maxOccurs="2000"><xs:complexType>
+            <xs:attribute name="nodeId" type="xs:string" use="required"/>
+            <xs:attribute name="token" type="Token" use="required"/>
+            <xs:attribute name="shapeId" type="ShapeId" use="required"/>
+          </xs:complexType></xs:element>
+        </xs:sequence></xs:complexType></xs:element>
+      </xs:sequence>
+      <xs:attribute name="version" type="xs:string" fixed="1" use="required"/>
+      <xs:attribute name="chartId" type="Guid" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

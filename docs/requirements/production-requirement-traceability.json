@@ -1,0 +1,877 @@
+[
+  {
+    "Id": "CHT-001",
+    "Title": "Clustered column/bar",
+    "Behavior": "Render grouped series with vertical/horizontal category axes.",
+    "Acceptance": "3 series × 4 categories yields 12 bars with correct ordering.",
+    "State": "In progress: calculations/contracts and grouped-shape renderer spike; Office validation blocked, full acceptance pending",
+    "Evidence": [
+      "packages/chart-engine/src/basic-charts.ts",
+      "packages/chart-engine/test/basic-charts.test.mjs",
+      "packages/chart-engine/README.md",
+      "packages/chart-engine/schema/render-result.v1.schema.json",
+      "src/Chart.Renderers/SceneCodec.cs",
+      "tests/s3/SceneContractTests.cs",
+      "docs/implementation/scene-contract-draft.md",
+      "src/Chart.Renderers/NativeRenderingCore.cs",
+      "src/Chart.Renderers/PowerPointSceneSurface.cs",
+      "tests/s3/NativeRendererTests.cs",
+      "docs/implementation/native-renderer-spike.md",
+      "apps/powerpoint-vsto/RendererRibbonCommand.cs",
+      "docs/evidence/renderer-integration-blockers-2026-10-22.md"
+    ]
+  },
+  {
+    "Id": "CHT-002",
+    "Title": "100% stacked",
+    "Behavior": "Normalize positive category totals to 100%; define signed-data policy.",
+    "Acceptance": "20/30/50 renders 20%/30%/50%; zero total is handled.",
+    "State": "In progress: S2 calculations and shared scene contracts verified; native rendering and full acceptance pending",
+    "Evidence": [
+      "packages/chart-engine/src/basic-charts.ts",
+      "packages/chart-engine/test/basic-charts.test.mjs",
+      "packages/chart-engine/README.md",
+      "packages/chart-engine/schema/render-result.v1.schema.json",
+      "src/Chart.Renderers/SceneCodec.cs",
+      "tests/s3/SceneContractTests.cs",
+      "docs/implementation/scene-contract-draft.md"
+    ]
+  },
+  {
+    "Id": "CHT-003",
+    "Title": "Combination charts",
+    "Behavior": "Per-series type and axis assignment.",
+    "Acceptance": "Bars + line preserve values and distinct axis scales.",
+    "State": "In progress: bounded native selected-series column/line/area conversion and secondary axis implemented; runtime and full editing acceptance pending",
+    "Evidence": [
+      "apps/powerpoint-vsto/NativeSeriesControls.cs",
+      "tests/s0/WorkflowOfficeTests.cs",
+      "docs/implementation/parity-v17-validation.md"
+    ]
+  },
+  {
+    "Id": "CHT-004",
+    "Title": "Mekko / Marimekko",
+    "Behavior": "Weighted variable widths and stacked proportions.",
+    "Acceptance": "10/30/60 widths map to 10/30/60% of plot width.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "CHT-005",
+    "Title": "Scatter and bubble",
+    "Behavior": "Numeric XY coordinates and area-scaled bubble sizes.",
+    "Acceptance": "Coordinates are correct; bubble area follows size field.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "CHT-006",
+    "Title": "Histogram and Pareto",
+    "Behavior": "Numeric binning; descending Pareto and cumulative percentage.",
+    "Acceptance": "Bin counts match fixture; Pareto ends at 100%.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "CHT-007",
+    "Title": "Small multiples",
+    "Behavior": "Facet repeated panels with shared/independent axis options.",
+    "Acceptance": "Six facets share identical scale in shared-axis mode.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "CHT-008",
+    "Title": "Radar and heatmap",
+    "Behavior": "Radial series and matrix color mapping.",
+    "Acceptance": "Radial values and heatmap thresholds match fixtures.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "CHT-009",
+    "Title": "Gantt and timeline",
+    "Behavior": "Date ranges, milestones, dependencies, progress.",
+    "Acceptance": "10 tasks and dependencies remain anchored after date edit.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "CHT-010",
+    "Title": "Pie and doughnut",
+    "Behavior": "Nonnegative proportional sectors and editable labels.",
+    "Acceptance": "25/25/50 maps to 90/90/180 degrees.",
+    "State": "In progress: S2 calculations and shared scene contracts verified; native rendering and full acceptance pending",
+    "Evidence": [
+      "packages/chart-engine/src/basic-charts.ts",
+      "packages/chart-engine/test/basic-charts.test.mjs",
+      "packages/chart-engine/README.md",
+      "packages/chart-engine/schema/render-result.v1.schema.json",
+      "src/Chart.Renderers/SceneCodec.cs",
+      "tests/s3/SceneContractTests.cs",
+      "docs/implementation/scene-contract-draft.md"
+    ]
+  },
+  {
+    "Id": "CHT-011",
+    "Title": "Waterfall and bridge",
+    "Behavior": "Cumulative deltas, explicit totals/subtotals, connectors.",
+    "Acceptance": "100 + 40 − 25 = 115; total not double-counted.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "CHT-012",
+    "Title": "Line and area",
+    "Behavior": "Ordered points, gap policy, baseline, interpolation.",
+    "Acceptance": "Missing point follows selected gap policy.",
+    "State": "In progress: S2 calculations and shared scene contracts verified; native rendering and full acceptance pending",
+    "Evidence": [
+      "packages/chart-engine/src/basic-charts.ts",
+      "packages/chart-engine/test/basic-charts.test.mjs",
+      "packages/chart-engine/README.md",
+      "packages/chart-engine/schema/render-result.v1.schema.json",
+      "src/Chart.Renderers/SceneCodec.cs",
+      "tests/s3/SceneContractTests.cs",
+      "docs/implementation/scene-contract-draft.md"
+    ]
+  },
+  {
+    "Id": "CHT-013",
+    "Title": "Stacked column/bar",
+    "Behavior": "Positive and negative stacks independently around zero.",
+    "Acceptance": "Mixed-sign series do not overlap across zero.",
+    "State": "In progress: S2 calculations and shared scene contracts verified; native rendering and full acceptance pending",
+    "Evidence": [
+      "packages/chart-engine/src/basic-charts.ts",
+      "packages/chart-engine/test/basic-charts.test.mjs",
+      "packages/chart-engine/README.md",
+      "packages/chart-engine/schema/render-result.v1.schema.json",
+      "src/Chart.Renderers/SceneCodec.cs",
+      "tests/s3/SceneContractTests.cs",
+      "docs/implementation/scene-contract-draft.md"
+    ]
+  },
+  {
+    "Id": "INT-001",
+    "Title": "Automatic data labels",
+    "Behavior": "Format and place semantic data labels.",
+    "Acceptance": "Values refresh and empty-point policy holds.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "INT-002",
+    "Title": "Dynamic totals/subtotals",
+    "Behavior": "Recompute aggregates from current data.",
+    "Acceptance": "Change 10→15 increases dependent total by 5.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "INT-003",
+    "Title": "Absolute/percentage difference arrows",
+    "Behavior": "Compute delta and percent against selected baseline.",
+    "Acceptance": "80→100 shows +20 and +25%; zero denominator flagged.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "INT-004",
+    "Title": "Legends and series labels",
+    "Behavior": "Maintain series identity, order and direct labels.",
+    "Acceptance": "Rename series updates all bound labels.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "INT-005",
+    "Title": "Error indicators",
+    "Behavior": "Represent absolute, relative or confidence error ranges.",
+    "Acceptance": "50 ± 5 yields 45–55.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "INT-006",
+    "Title": "Annotations and connectors",
+    "Behavior": "Anchor callouts to semantic points.",
+    "Acceptance": "Resize retains attachment.",
+    "State": "In progress: native chart-bound reference/difference annotations with explicit refresh and versioned tags; automatic layout/update and full family coverage pending",
+    "Evidence": [
+      "apps/powerpoint-vsto/ChartAnnotations.cs",
+      "tests/s0/ChartAnnotationTests.cs",
+      "tests/s0/WorkflowOfficeTests.cs",
+      "docs/implementation/parity-v17-validation.md"
+    ]
+  },
+  {
+    "Id": "INT-007",
+    "Title": "Collision avoidance",
+    "Behavior": "Solve overlaps with priority/fallback policy.",
+    "Acceptance": "Dense fixture has no prohibited overlaps.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "INT-008",
+    "Title": "CAGR arrows",
+    "Behavior": "Compute CAGR with defined time intervals and domain.",
+    "Acceptance": "100→121 over 2 years yields 10%.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "INT-009",
+    "Title": "Value axes and breaks",
+    "Behavior": "Linear/log/time scales and marked discontinuities.",
+    "Acceptance": "Log rejects nonpositive values; break visibly marked.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "INT-010",
+    "Title": "Custom number formats",
+    "Behavior": "Locale-aware formatting without changing values.",
+    "Acceptance": "1234.5 and negative counterpart display correctly.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "INT-011",
+    "Title": "Data-driven colors",
+    "Behavior": "Color by sign, threshold or category.",
+    "Acceptance": "Threshold boundary follows inclusive rule.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "EDT-001",
+    "Title": "Drag handles",
+    "Behavior": "Move/resize editable objects within bounds.",
+    "Acceptance": "Corner drag honors min dimensions.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "EDT-002",
+    "Title": "Snap and align",
+    "Behavior": "Snap to guides and object anchors.",
+    "Acceptance": "Within tolerance snaps exactly.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "EDT-003",
+    "Title": "Multi-selection",
+    "Behavior": "Batch-edit compatible objects.",
+    "Acceptance": "Theme applied to three charts preserves data.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "EDT-004",
+    "Title": "Keyboard shortcuts",
+    "Behavior": "Configurable, focus-aware shortcuts.",
+    "Acceptance": "Editor typing not intercepted.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "EDT-005",
+    "Title": "Group and ungroup",
+    "Behavior": "Maintain semantic identity where supported.",
+    "Acceptance": "Group/reopen/ungroup preserves mapping.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "EDT-006",
+    "Title": "Chart conversion",
+    "Behavior": "Convert compatible semantics with warnings.",
+    "Acceptance": "Clustered→stacked preserves raw values.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "EDT-007",
+    "Title": "Resize/reflow",
+    "Behavior": "Recalculate geometry and labels on resize.",
+    "Acceptance": "40% width reduction does not clip mandatory content.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "EDT-008",
+    "Title": "Distribute objects",
+    "Behavior": "Equalize horizontal/vertical spacing.",
+    "Acceptance": "Four shapes have equal gaps.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "EDT-009",
+    "Title": "Context menus",
+    "Behavior": "Show context/permission-aware actions.",
+    "Acceptance": "Label right-click offers label actions.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "EDT-010",
+    "Title": "Undo/redo",
+    "Behavior": "Transactional command history and native undo policy.",
+    "Acceptance": "Edit/resize undo twice and redo twice restores states.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "EDT-011",
+    "Title": "Theme-aware formatting",
+    "Behavior": "Inherit theme with manual overrides.",
+    "Acceptance": "Theme changes inherited colors only.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "EDT-012",
+    "Title": "Selection synchronization",
+    "Behavior": "Reflect current selection in task pane.",
+    "Acceptance": "Selecting another chart shows correct properties.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "EDT-013",
+    "Title": "Manual override preservation",
+    "Behavior": "Preserve compatible custom edits after reflow.",
+    "Acceptance": "Refresh retains compatible label overrides.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "DAT-001",
+    "Title": "Embedded data editor",
+    "Behavior": "Spreadsheet-like typed cell editing.",
+    "Acceptance": "Edit/save/reopen retains values.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "DAT-002",
+    "Title": "Link refresh",
+    "Behavior": "Detect changes and update linked charts.",
+    "Acceptance": "Excel source change refreshes chart and timestamp.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "DAT-003",
+    "Title": "Formula handling",
+    "Behavior": "Parse allowed formulas, dependencies, errors.",
+    "Acceptance": "SUM recalculates; circular reference flagged.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "DAT-004",
+    "Title": "Database/API datasets",
+    "Behavior": "Authenticated approved read-only connectors.",
+    "Acceptance": "Bad schema/token fails safely.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "DAT-005",
+    "Title": "Data provenance",
+    "Behavior": "Track source, transforms, timestamps and hashes.",
+    "Acceptance": "Chart inspector shows lineage.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "DAT-006",
+    "Title": "Validation and reconciliation",
+    "Behavior": "Compare typed data and aggregate totals.",
+    "Acceptance": "100 source vs 95 transformed reports difference 5.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "DAT-007",
+    "Title": "Scheduled report data",
+    "Behavior": "Retrieve snapshots for scheduled reports.",
+    "Acceptance": "Run records dataset version and outcome.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "DAT-008",
+    "Title": "CSV import",
+    "Behavior": "Parse quotes, delimiters, Unicode, locales.",
+    "Acceptance": "Quoted commas and UTF-8 preserved.",
+    "State": "Not accepted: file-picker/reference UI implemented; CSV parsing and import acceptance remain pending",
+    "Evidence": [
+      "apps/powerpoint-vsto/DataSources.cs",
+      "tests/s0/DataSourceTests.cs",
+      "docs/implementation/data-source-links.md"
+    ]
+  },
+  {
+    "Id": "DAT-009",
+    "Title": "Broken link recovery",
+    "Behavior": "Relink relocated sources without chart recreation.",
+    "Acceptance": "Moved workbook relinks and refreshes.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "DAT-010",
+    "Title": "Excel range linking",
+    "Behavior": "Named ranges, sheets and structured tables.",
+    "Acceptance": "Table growth follows declared policy.",
+    "State": "In progress: explicit worksheet/range/columns and confirmed selected-chart relink policy AD-017; compatible manual refresh implemented; native acceptance and full link lifecycle pending",
+    "Evidence": [
+      "apps/powerpoint-vsto/DataSources.cs",
+      "tests/s0/DataSourceTests.cs",
+      "docs/implementation/data-source-links.md",
+      "apps/powerpoint-vsto/ExcelRangeMapping.cs",
+      "apps/powerpoint-vsto/MappedLinkOperations.cs",
+      "apps/powerpoint-vsto/DataLinkManager.cs",
+      "tests/s0/ExcelRangeMappingTests.cs",
+      "tests/s0/MappedExcelOfficeTests.cs",
+      "docs/implementation/parity-v17-validation.md"
+    ]
+  },
+  {
+    "Id": "SLD-001",
+    "Title": "Agenda and section slides",
+    "Behavior": "Generate sections from outline.",
+    "Acceptance": "Five sections yield five references.",
+    "State": "In progress: independent managed chapters, hierarchy, contents, caption synchronization, split scopes, native block movement and role-model inheritance implemented; native runtime acceptance pending",
+    "Evidence": [
+      "apps/powerpoint-vsto/PresentationAgenda.cs",
+      "tests/s0/PresentationAgendaTests.cs",
+      "tests/s0/WorkflowOfficeTests.cs",
+      "docs/implementation/parity-v17-validation.md",
+      "apps/powerpoint-vsto/ChapterAgendaModel.cs",
+      "apps/powerpoint-vsto/ChapterAgenda.cs",
+      "tests/s0/ChapterAgendaTests.cs",
+      "tests/s0/ChapterAgendaOfficeTests.cs",
+      "docs/implementation/agenda-reference-study.md",
+      "docs/implementation/chapter-agenda.md"
+    ]
+  },
+  {
+    "Id": "SLD-002",
+    "Title": "Harvey balls",
+    "Behavior": "Editable fraction-filled circles.",
+    "Acceptance": "75% renders and persists.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "SLD-003",
+    "Title": "Process diagrams",
+    "Behavior": "Editable nodes and connected edges.",
+    "Acceptance": "Five-step process retains connectors.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "SLD-004",
+    "Title": "Slide templates",
+    "Behavior": "Versioned placeholders and bindings.",
+    "Acceptance": "Template preserves placeholder IDs.",
+    "State": "Not accepted: procedural catalog plus external original-file mode (62 files/497 slides indexed on target); native previews/source design import implemented; v15 thumbnail gallery implemented; six source slides verified on insertion, remaining fidelity/edit/save-reopen gates pending",
+    "Evidence": [
+      "apps/powerpoint-vsto/TemplateCatalog.cs",
+      "apps/powerpoint-vsto/TemplateLibrary.cs",
+      "tests/library/TemplateLibraryTests.cs",
+      "tests/library/LibraryBrowserTests.cs",
+      "docs/implementation/template-library.md",
+      "docs/implementation/thinkcell-observable-study.md"
+    ]
+  },
+  {
+    "Id": "SLD-005",
+    "Title": "Batch formatting",
+    "Behavior": "Apply styles to scoped slides.",
+    "Acceptance": "20 titles updated, unrelated text unchanged.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "SLD-006",
+    "Title": "Presentation QA",
+    "Behavior": "Find overflow, broken links, missing data.",
+    "Acceptance": "Fixture flags all three issues.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "SLD-007",
+    "Title": "Slide library",
+    "Behavior": "Search, version and insert slide assets.",
+    "Acceptance": "Inserted slide records asset version.",
+    "State": "In progress, not accepted: bounded local PPTX/POTX text/metadata indexing, filters, opt-in persistence and native slide insertion implemented. Inserted asset schema/version/source-slide tags implemented; installed Office provenance/save-reopen acceptance remains pending",
+    "Evidence": [
+      "apps/powerpoint-vsto/TemplateLibrary.cs",
+      "tests/library/LibraryBrowserTests.cs",
+      "docs/implementation/thinkcell-observable-study.md"
+    ]
+  },
+  {
+    "Id": "SLD-008",
+    "Title": "Corporate themes",
+    "Behavior": "Brand palettes, fonts and locks.",
+    "Acceptance": "Locked objects remain unchanged.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "SLD-009",
+    "Title": "Icons and pictograms",
+    "Behavior": "Insert accessible scalable icons.",
+    "Acceptance": "Resizing preserves aspect and alt description.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "SLD-010",
+    "Title": "Checkboxes",
+    "Behavior": "Editable tri-state visual controls.",
+    "Acceptance": "Toggle and reopen retains state.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "SLD-011",
+    "Title": "Tables",
+    "Behavior": "Editable data-bound tables and totals.",
+    "Acceptance": "5×4 table recalculates totals.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "ENT-001",
+    "Title": "Template-based generation",
+    "Behavior": "Bind data into versioned templates.",
+    "Acceptance": "Five placeholders all populated.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "ENT-002",
+    "Title": "REST API",
+    "Behavior": "Authenticated report/template/data endpoints.",
+    "Acceptance": "Bad payload returns structured 4xx.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "ENT-003",
+    "Title": "Role-based access",
+    "Behavior": "Authorize actions and artifacts.",
+    "Acceptance": "Viewer cannot publish or bypass API.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "ENT-004",
+    "Title": "Deployment policies",
+    "Behavior": "Enforce managed configurations.",
+    "Acceptance": "Unapproved connector blocked.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "ENT-005",
+    "Title": "Offline mode",
+    "Behavior": "Local editing with online feature degradation.",
+    "Acceptance": "Network loss does not block embedded edit.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "ENT-006",
+    "Title": "Licensing and updates",
+    "Behavior": "Signed updates and entitlement checks.",
+    "Acceptance": "Tampered update rejected.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "ENT-007",
+    "Title": "Telemetry and diagnostics",
+    "Behavior": "Privacy-filtered performance and errors.",
+    "Acceptance": "No dataset contents in error telemetry.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "ENT-008",
+    "Title": "SSO integration",
+    "Behavior": "Enterprise identity and token validation.",
+    "Acceptance": "Expired token requires reauthentication.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "ENT-009",
+    "Title": "Audit history",
+    "Behavior": "Immutable/tamper-evident significant actions.",
+    "Acceptance": "Publish action records actor and outcome.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "ENT-010",
+    "Title": "Batch presentation generation",
+    "Behavior": "Isolated queued PPTX jobs.",
+    "Acceptance": "100 jobs individually traceable.",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-001",
+    "Title": "Text-to-chart",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Valid prompt generates editable chart with exact values",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-002",
+    "Title": "Chart recommendation",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Recommendation cites field types and chart suitability",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-003",
+    "Title": "Conversational chart editing",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Only intended formatting changes after approval",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-004",
+    "Title": "AI chart conversion",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Incompatible conversion leaves original unchanged",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-005",
+    "Title": "Smart label optimization",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Label suggestion passes deterministic collision solver",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-006",
+    "Title": "Chart explanation",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Explanations separate fact, calculation and inference",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-007",
+    "Title": "Natural-language data mapping",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Ambiguous field names request clarification",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-008",
+    "Title": "Data quality detection",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Nulls/outliers/invalid dates flagged by rules",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-009",
+    "Title": "Natural-language dataset querying",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Only approved read-only query tools invoked",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-010",
+    "Title": "Trend and variance analysis",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Reference totals and changes match independent oracle",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-011",
+    "Title": "Forecast assistance",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Forecast includes method, horizon and uncertainty",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-012",
+    "Title": "Data reconciliation assistant",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Mismatch traced to source/transform if possible",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-013",
+    "Title": "Text-to-slide",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Generated slide contains editable objects",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-014",
+    "Title": "Smart slide layout",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Locked content remains unchanged",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-015",
+    "Title": "Corporate style assistant",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Only approved brand styles used",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-016",
+    "Title": "Slide redesign",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Preview and rollback available",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-017",
+    "Title": "Narrative/storyline builder",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Unsupported claims flagged, not invented",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-018",
+    "Title": "Editable diagram generation",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Nodes and connectors remain editable",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-019",
+    "Title": "Executive summary",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Every number traces to data/slide",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-020",
+    "Title": "Insight generation",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "No unsupported statistical assertion",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-021",
+    "Title": "Presentation critique",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "QA findings reference object locations",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-022",
+    "Title": "Speaker notes",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "No invented slide metrics",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-023",
+    "Title": "Audience adaptation",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Rewrites preserve numerical facts",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-024",
+    "Title": "Source verification",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Unavailable evidence labeled unverified",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-025",
+    "Title": "AI report builder",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Approved template and exact data used",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-026",
+    "Title": "Multi-step task planning",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Failed dependent action stops/rolls back",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-027",
+    "Title": "Natural-language automation",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Schedule/destination confirmed before activation",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-028",
+    "Title": "Change-impact analysis",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Affected slide/chart/source revisions identified",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-029",
+    "Title": "Sensitive data protection",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Restricted data blocked or redacted before Azure call",
+    "State": "Not accepted",
+    "Evidence": []
+  },
+  {
+    "Id": "AI-030",
+    "Title": "AI action audit and approval",
+    "Behavior": "Model proposes structured, permission-scoped operations; deterministic validation applies.",
+    "Acceptance": "Approval and executed commands fully audited",
+    "State": "Not accepted",
+    "Evidence": []
+  }
+]

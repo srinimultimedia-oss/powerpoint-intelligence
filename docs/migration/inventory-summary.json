@@ -1,0 +1,12 @@
+{
+  "Baseline": "78b9f87ef2218d6d19d7e8049d0f223281e9ed76",
+  "Tracked": 15,
+  "InventoriedTracked": 15,
+  "TotalFiles": 397,
+  "Untracked": 219,
+  "Ignored": 134,
+  "Administrative": 29,
+  "Findings": 207,
+  "MissingTracked": [],
+  "InspectionErrors": []
+}

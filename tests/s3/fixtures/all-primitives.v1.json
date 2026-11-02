@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "chartId": "7bef06ad-f023-4b26-9a32-0d51b757bf59",
+  "modelRevision": 7,
+  "unit": "pt",
+  "plot": {
+    "x": 40,
+    "y": 60,
+    "width": 600,
+    "height": 300,
+    "unit": "pt"
+  },
+  "semanticScene": [
+    {
+      "id": "7bef06ad-f023-4b26-9a32-0d51b757bf59/bar:actual/q1",
+      "geometry": {
+        "type": "rectangle",
+        "x": 57,
+        "y": 335,
+        "width": 36,
+        "height": 25
+      },
+      "paint": {
+        "fill": "#3b82f6",
+        "stroke": null,
+        "strokeWidth": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "7bef06ad-f023-4b26-9a32-0d51b757bf59/marker:actual/q1",
+      "geometry": {
+        "type": "ellipse",
+        "x": 1e-7,
+        "y": 0,
+        "width": 6,
+        "height": 6
+      },
+      "paint": {
+        "fill": "#3b82f6",
+        "stroke": null,
+        "strokeWidth": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "7bef06ad-f023-4b26-9a32-0d51b757bf59/line:actual/q1/q2",
+      "geometry": {
+        "type": "polyline",
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 1.2345678901234567,
+            "y": 2.5
+          }
+        ]
+      },
+      "paint": {
+        "fill": null,
+        "stroke": "#0D9488",
+        "strokeWidth": 2,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "7bef06ad-f023-4b26-9a32-0d51b757bf59/area:actual/q1/q2",
+      "geometry": {
+        "type": "polygon",
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 50,
+            "y": 25
+          },
+          {
+            "x": 100,
+            "y": 0
+          }
+        ]
+      },
+      "paint": {
+        "fill": "#3b82f6",
+        "stroke": null,
+        "strokeWidth": 0,
+        "opacity": 0.35
+      }
+    },
+    {
+      "id": "7bef06ad-f023-4b26-9a32-0d51b757bf59/sector:q1",
+      "geometry": {
+        "type": "sector",
+        "cx": 200,
+        "cy": 150,
+        "radius": 50,
+        "startAngle": -90,
+        "sweep": 180
+      },
+      "paint": {
+        "fill": "#3b82f6",
+        "stroke": null,
+        "strokeWidth": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "7bef06ad-f023-4b26-9a32-0d51b757bf59/label:q1",
+      "geometry": {
+        "type": "text",
+        "x": 40,
+        "y": 25,
+        "width": 300,
+        "height": 30,
+        "text": "Δ Revenue 😀\nLine 2",
+        "fontFamily": "Segoe UI",
+        "fontSize": 12,
+        "alignment": "left"
+      },
+      "paint": {
+        "fill": "#3b82f6",
+        "stroke": null,
+        "strokeWidth": 0,
+        "opacity": 1
+      }
+    }
+  ],
+  "diagnostics": [
+    {
+      "code": "EXAMPLE_WARNING",
+      "nodeId": "7bef06ad-f023-4b26-9a32-0d51b757bf59/label:q1"
+    }
+  ],
+  "renderHash": "9a8e3f13aa05f89a369e95bc4b0815f0407ab2851fb2e58beb868efcf4f42fea"
+}

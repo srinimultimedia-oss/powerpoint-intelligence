@@ -1,8 +1,9 @@
 # PowerPoint Intelligence — Codex Starter
 
-**Status:** Project initialized as a source-code scaffold. **Not** deployed to GitHub, Codex, or PowerPoint. The VSTO add-in must be created/compiled/tested on a Windows workstation with supported Visual Studio, Office desktop, and .NET Framework tooling.
+**Status:** S0 accepted by the owner; Windows VSTO runtime tests remain unverified. S1 domain/contracts work has begun on explicit owner instruction. See [S0 evidence](docs/evidence/S0-2026-10-21.md), [S1 scope](docs/implementation/S1-domain-contracts.md) and [S1 evidence](docs/evidence/S1-2026-10-21.md).
 
 ## Approved baseline
+- Configurable Office 2016, Office 2019 and Microsoft 365 desktop targets: [configuration and validation matrix](docs/implementation/office-compatibility.md). Actual product/build runtime compatibility remains unverified.
 - Windows desktop PowerPoint first; C# VSTO/COM adapter (.NET Framework 4.8)
 - On-premises .NET 8+ application services; Azure OpenAI through controlled gateway (not an on-prem model)
 - Native editable PowerPoint shapes/charts as feasible, plus versioned canonical metadata
@@ -18,7 +19,9 @@
 6. Do not start Azure calls until networking, endpoint, identity and data-handling decisions are approved.
 
 ## Repository map
-- `apps/powerpoint-vsto/`: Windows add-in contracts and implementation guide (not yet a compiled VSTO project)
+- `apps/powerpoint-vsto/`: .NET Framework 4.8 VSTO project, ribbon/status pane, native chart adapter and bounded versioned XML persistence (full VSTO build/load unverified)
+- `tests/s0/`, `scripts/Test-S0.ps1`: metadata tests and opt-in interactive Office integration harness
+- `src/Chart.Domain/`, `packages/chart-domain/`, `tests/s1/`: .NET Framework 4.8 canonical domain profile, shared JSON Schema, explicit S0 import and contract tests
 - `packages/chart-core/`: deterministic chart calculations with unit tests
 - `services/ai-gateway/`: on-prem AI action contract and policy placeholders
 - `docs/`: decisions, development milestones, architecture and source SRS
