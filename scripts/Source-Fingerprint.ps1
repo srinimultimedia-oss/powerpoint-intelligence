@@ -4,7 +4,7 @@ function Get-PpiSourceFingerprint([string]$Root) {
         $path=Join-Path $Root $folder
         if(!(Test-Path $path)) { continue }
         Get-ChildItem $path -File -Recurse | Where-Object {
-            $_.FullName.Substring($Root.Length+1) -notmatch '(^|[\\/])(bin|obj|node_modules|artifacts)[\\/]' -and $_.Extension -in @('.cs','.csproj','.ps1','.json','.mjs','.ts','.tsx','.config','.xsd')
+            $_.FullName.Substring($Root.Length+1) -notmatch '(^|[\\/])(bin|obj|node_modules|artifacts)[\\/]' -and $_.Extension -in @('.cs','.csproj','.ps1','.py','.json','.mjs','.ts','.tsx','.config','.xsd')
         } | Sort-Object FullName | ForEach-Object {
             $relative=$_.FullName.Substring($Root.Length+1).Replace('\','/')
             $records.Add($relative+'='+(Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash)

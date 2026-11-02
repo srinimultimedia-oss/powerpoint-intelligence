@@ -6,6 +6,7 @@ using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using PowerPointIntelligence.Rendering;
+using PowerPointIntelligence.Tests.Security;
 
 internal static class SceneContractTests
 {
@@ -18,6 +19,7 @@ internal static class SceneContractTests
     {
         try
         {
+            Console.WriteLine("Scene contract runner process=" + (Environment.Is64BitProcess ? "x64" : "x86"));
             string golden = File.ReadAllText(args[0]), output = args[1], corpus = args[2];
             Directory.CreateDirectory(output);
             Test("all six geometry types decode to whitelisted DTOs", () => {
@@ -64,12 +66,14 @@ internal static class SceneContractTests
                 File.WriteAllText(Path.Combine(output, "csharp-produced.v1.json"), SceneCodec.Encode(model));
             });
             var rows = new List<object>();
-            foreach (var item in JArray.Parse(File.ReadAllText(Path.Combine(corpus, "cases.json"))))
+            var cases = JArray.Parse(File.ReadAllText(Path.Combine(corpus, "cases.json")));
+            SceneArtifactPath.ValidateNames(output, cases.Select(item => (string)item["name"]));
+            foreach (var item in cases)
             {
                 string name = (string)item["name"], json = (string)item["json"]; bool expected = (bool)item["valid"];
                 Test("shared fixture " + name, () => {
                     RenderResult model = null;
-                    if (expected) { model = SceneCodec.Decode(json); File.WriteAllText(Path.Combine(output, name + ".v1.json"), SceneCodec.Encode(model)); }
+                    if (expected) { model = SceneCodec.Decode(json); File.WriteAllText(SceneArtifactPath.Resolve(output, name), SceneCodec.Encode(model)); }
                     else Reject(() => SceneCodec.Decode(json));
                     rows.Add(new { Name = name, ExpectedValid = expected, Result = "PASS" });
                 });
