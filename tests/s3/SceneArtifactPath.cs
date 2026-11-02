@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,8 +10,10 @@ namespace PowerPointIntelligence.Tests.Security
     {
         public static string Resolve(string root, string name)
         {
+            // Inspect raw characters before path APIs: .NET Framework IsPathRooted
+            // throws on invalid characters. Separators/colon below already reject roots.
             if (String.IsNullOrWhiteSpace(name) || name.Length > 128 || name == "." || name == ".." ||
-                Path.IsPathRooted(name) || name.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0 ||
+                name.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0 ||
                 name.IndexOfAny(new[] { '/', '\\', ':' }) >= 0 || name.Any(Char.IsControl) ||
                 name.EndsWith(".", StringComparison.Ordinal) || name.EndsWith(" ", StringComparison.Ordinal))
                 throw new InvalidDataException("Corpus name must be a bounded safe basename.");

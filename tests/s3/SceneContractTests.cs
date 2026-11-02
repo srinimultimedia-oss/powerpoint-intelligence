@@ -24,6 +24,8 @@ internal static class SceneContractTests
         try
         {
             Console.WriteLine("Scene contract runner process=" + (Environment.Is64BitProcess ? "x64" : "x86"));
+            foreach(string invalidName in new[] { "bad\nname", "bad\0name", "bad\"name", "bad|name", "bad<name", "bad>name" })
+                Test("invalid corpus characters produce a domain rejection " + ((int)invalidName[3]).ToString("X4"), () => Reject(() => SceneArtifactPath.Resolve(outputDirectory, invalidName)));
             string golden = File.ReadAllText(goldenFile), output = outputDirectory, corpus = corpusDirectory;
             Directory.CreateDirectory(output);
             Test("all six geometry types decode to whitelisted DTOs", () => {
