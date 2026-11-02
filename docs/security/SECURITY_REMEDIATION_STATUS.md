@@ -56,3 +56,13 @@ Python bytecode is ignored and excluded from source snapshots; this run's genera
 - The **one High SCS summary** still lacks its original ID/rule/location and needs a redacted raw result. The download/untrusted-functionality taxonomy discrepancy also remains unresolved.
 - Additional **AR-01 dependency integrity** requires approved independent package identity/hash/signature material; the current version was not upgraded or given an invented local checksum. **AR-02 physical filesystem identity** needs an approved hostile-directory model and Windows integration coverage.
 - Full native Office acceptance, a freshly signed easySetup installer and a Checkmarx rescan remain separate evidence gates. No remaining finding is silently waived, and this partial remediation is not full security acceptance.
+
+## Latest traversal-only follow-up — 2 November 2026, report 11:36 Asia/Dubai
+
+The original counts above describe the earlier baseline and must not be substituted for the latest scan. The latest report contains 85 Path_Traversal and two Stored_Path_Traversal records (87 High/CWE-22), seven other detailed records and one summary-only SCS result. Reconstructed workspace paths, scalar CLI inputs and independent legacy-root approval are implemented and locally verified. Full evidence and all current original IDs: `CHECKMARX_PATH_TRAVERSAL_20261102_113655.md`, its JSON companion, and `PATH_TRAVERSAL_VALIDATION_20261102_113655.md`.
+
+Final local suite: 23 PASS / 1 held PIIDX missing-assembly failure, source `02FDCB26D95E6A574E59C67E8A8C9585D1BFF7AD2F69C584E93D6F5C536F1C99`. No Checkmarx suppression/exclusion, dependency upgrade, trust change or antivirus-policy change was made. Checkmarx rescan, reviewed PIIDX recovery and desktop Office acceptance remain open; full compliance is not claimed.
+
+## Traversal follow-up — report 12:11, 2 November 2026 Asia/Dubai
+
+The full 12:06 Checkmarx scan explicitly resolves all 85 Path_Traversal and two Stored_Path_Traversal C# records; original ID occurrences match the previous register. One PowerShell traversal record (-160022997) remains in the summary despite being grouped as CWE-829 in details. The earlier 11:36 scope classification missed that record; its corrected traversal total was 88, not 87 across all languages. This collector-output issue is now constrained to independently owned artifacts/temp paths and tested. See `CHECKMARX_PATH_TRAVERSAL_20261102_121110.md` / JSON. Source `7871C33660B6ADBD55973B103F1858528CBCACCA7E673C690BE52F813EB502A2`: 31 diagnostic assertions and full local 23 PASS / 1 held missing-PIIDX failure. Confirming collector rescan remains open; six other detailed findings and the SCS summary are not claimed resolved. No security controls were disabled.

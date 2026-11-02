@@ -2101,5 +2101,12 @@
       },
       "status": "Revised source control and local verification; Checkmarx rescan pending"
     }
-  ]
+  ],
+  "classification_correction": {
+    "explicit_csharp_traversal_records": 87,
+    "additional_powershell_summary_traversal": 1,
+    "additional_record_id": "-160022997",
+    "total_summary_traversal_across_languages": 88,
+    "note": "The seven grouped CWE-829 details include this collector traversal flow; see the 12:11 follow-up."
+  }
 }
