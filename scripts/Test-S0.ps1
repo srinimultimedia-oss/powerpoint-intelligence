@@ -1,4 +1,4 @@
-param([string]$Compiler, [switch]$InteractiveOffice, [switch]$MetadataOnly, [switch]$CompileOnly,
+﻿param([string]$Compiler, [switch]$InteractiveOffice, [switch]$MetadataOnly, [switch]$CompileOnly,
     [string]$OfficeInteropPath, [string]$PowerPointInteropPath)
 $ErrorActionPreference = 'Stop'
 $repo = Split-Path $PSScriptRoot -Parent
@@ -14,7 +14,7 @@ try {
     }
     if (!$Compiler -or !(Test-Path $Compiler)) { throw 'Supply -Compiler with a Roslyn csc.exe path (C# 7.3+). No machine changes are made.' }
     $Compiler = (Resolve-Path $Compiler).Path
-    & $Compiler /nologo /target:exe /out:artifacts\MetadataTests.exe apps\powerpoint-vsto\Contracts.cs apps\powerpoint-vsto\MetadataCodec.cs tests\s0\MetadataTests.cs
+    & $Compiler /nologo /target:exe /out:artifacts\MetadataTests.exe apps\powerpoint-vsto\Contracts.cs apps\powerpoint-vsto\MetadataCodec.cs tests\s0\MetadataTests.cs src/Library.Core/PathPolicy.cs
     if ($LASTEXITCODE) { throw 'Metadata test compilation failed.' }
     if (!$CompileOnly) {
         & .\artifacts\MetadataTests.exe
@@ -37,7 +37,7 @@ try {
     }
     # Match the add-in project: embed the referenced API types rather than require a
     # particular PIA assembly to be installed alongside every Office runtime edition.
-    & $Compiler /nologo /debug:full /optimize- /target:exe /out:artifacts\HostIntegrationTests.exe "/link:$OfficeInteropPath" "/link:$PowerPointInteropPath" /r:Microsoft.CSharp.dll /r:System.Windows.Forms.dll apps\powerpoint-vsto\Contracts.cs apps\powerpoint-vsto\MetadataCodec.cs apps\powerpoint-vsto\PowerPointHost.cs tests\s0\HostIntegrationTests.cs
+    & $Compiler /nologo /debug:full /optimize- /target:exe /out:artifacts\HostIntegrationTests.exe "/link:$OfficeInteropPath" "/link:$PowerPointInteropPath" /r:Microsoft.CSharp.dll /r:System.Windows.Forms.dll apps\powerpoint-vsto\Contracts.cs apps\powerpoint-vsto\MetadataCodec.cs apps\powerpoint-vsto\PowerPointHost.cs tests\s0\HostIntegrationTests.cs src/Library.Core/PathPolicy.cs
     if ($LASTEXITCODE) { throw 'Host integration compilation failed.' }
     if (!$CompileOnly) {
         & .\artifacts\HostIntegrationTests.exe --series-vector-tests

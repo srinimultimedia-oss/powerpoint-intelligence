@@ -1,3 +1,4 @@
+﻿using PowerPointIntelligence.Security;
 using System;
 using System.Globalization;
 using System.IO;
@@ -37,7 +38,7 @@ internal static class WorkflowOfficeTests
         Require(Math.Abs(Convert.ToDouble(values[2],CultureInfo.InvariantCulture)-last)<.001,"native series accepts edited data");
     }
     internal static void Run(PowerPoint.Application app,string outputDirectory)
-    {
+    {outputDirectory=PathPolicy.TestPath(outputDirectory);
         if(app==null)throw new ArgumentNullException("app");
         Directory.CreateDirectory(outputDirectory);assertions=0;
         string file=Path.Combine(Path.GetFullPath(outputDirectory),"workflow-native-"+Guid.NewGuid().ToString("N")+".pptx");

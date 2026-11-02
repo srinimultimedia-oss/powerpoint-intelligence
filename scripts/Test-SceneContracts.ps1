@@ -1,4 +1,4 @@
-param([ValidateSet('AnyCPU','x86','x64')][string]$Platform='AnyCPU', [switch]$CompileOnly,[string]$RunnerRoot,[switch]$RebuildReviewedRunner,[switch]$RecoverMissingRunner,[switch]$ReviewLegacyReceipt,[string]$ScannerEvidence)
+﻿param([ValidateSet('AnyCPU','x86','x64')][string]$Platform='AnyCPU', [switch]$CompileOnly,[string]$RunnerRoot,[switch]$RebuildReviewedRunner,[switch]$RecoverMissingRunner,[switch]$ReviewLegacyReceipt,[string]$ScannerEvidence)
 $ErrorActionPreference='Stop'
 if($RecoverMissingRunner -and !$RebuildReviewedRunner){throw 'RecoverMissingRunner requires RebuildReviewedRunner and a reviewed scanner report.'}
 if($ReviewLegacyReceipt -and (!$RebuildReviewedRunner -or !$RecoverMissingRunner -or $Platform -ne 'x64')){throw 'Explicit legacy review requires x64, RebuildReviewedRunner and RecoverMissingRunner.'}
@@ -33,7 +33,7 @@ try {
         $references=@('/nostdlib+',"/r:$refs/mscorlib.dll","/r:$refs/System.dll","/r:$refs/System.Core.dll","/r:$dependency")
         & $compiler /nologo /deterministic+ /langversion:7.3 "/platform:$Platform" /target:library "/out:$($files.Library)" @references src/Chart.Renderers/SceneContracts.cs src/Chart.Renderers/SceneCodec.cs src/Chart.Renderers/StrictSceneJson.cs src/Shared.Contracts/BoundedJson.cs
         if($LASTEXITCODE){throw 'Scene library build failed.'}
-        & $compiler /nologo /deterministic+ /langversion:7.3 "/platform:$Platform" /target:exe "/out:$($files.Executable)" @references "/r:$($files.Library)" tests/s3/SceneContractTests.cs tests/s3/SceneArtifactPath.cs
+        & $compiler /nologo /deterministic+ /langversion:7.3 "/platform:$Platform" /target:exe "/out:$($files.Executable)" @references "/r:$($files.Library)" tests/s3/SceneContractTests.cs tests/s3/SceneArtifactPath.cs src/Library.Core/PathPolicy.cs
         if($LASTEXITCODE){throw 'Scene runner build failed.'}
         $hashes=[ordered]@{};foreach($name in $files.Keys){$hashes[$name]=(Get-FileHash -LiteralPath $files[$name] -Algorithm SHA256).Hash}
         if($ScannerEvidence){$report=Read-PpiReviewedScannerEvidence $ScannerEvidence;Assert-PpiRunnerScannerClear $report $files $hashes}

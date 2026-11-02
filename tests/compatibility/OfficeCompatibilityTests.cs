@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Specialized;
 using System.IO;
 using PowerPointIntelligence.Compatibility;
@@ -18,6 +18,8 @@ internal static class OfficeCompatibilityTests
     }
     public static int Main(string[] args)
     {
+            if(args.Length>0)args[0]=PowerPointIntelligence.Security.PathPolicy.TestPath(args[0]);
+
         try
         {
             foreach (var profile in new[] { "auto", "office2016", "office2019", "microsoft365" })

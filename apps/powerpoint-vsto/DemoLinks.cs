@@ -1,3 +1,4 @@
+﻿using PowerPointIntelligence.Security;
 using System;
 using System.Globalization;
 using System.IO;
@@ -48,7 +49,7 @@ namespace PowerPointIntelligence.AddIn
         }
         private static void Transfer(PowerPoint.Shape shape,string path)
         {
-            var info=new FileInfo(path);if(!info.Exists||!String.Equals(info.Extension,".xlsx",StringComparison.OrdinalIgnoreCase)||info.Length>20*1024*1024)throw new InvalidDataException("Choose an existing .xlsx file under 20 MB.");
+            path=PathPolicy.Selected(path);var info=new FileInfo(path);if(!info.Exists||!String.Equals(info.Extension,".xlsx",StringComparison.OrdinalIgnoreCase)||info.Length>20*1024*1024)throw new InvalidDataException("Choose an existing .xlsx file under 20 MB.");
             var chart=shape.Chart;chart.ChartData.Activate();dynamic book=chart.ChartData.Workbook;dynamic source=null;
             try
             {

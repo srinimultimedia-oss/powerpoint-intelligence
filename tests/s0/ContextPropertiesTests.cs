@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PowerPointIntelligence.Security;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -13,7 +14,7 @@ internal static class ContextPropertiesTests
     private static ContextNativeState State(string managed,int id,string key)
     {var d=new ContextDescriptor {ShapeId=id,ManagedType=managed,CanText=true,CanFont=true,CanFill=true,CanOutline=true};if(managed=="indicator"){d.CanText=d.CanFont=false;}return new ContextNativeState {Snapshot=ContextPanelModel.Build(new[]{d},key),Font=new FontSelectionState {Family="Segoe UI",Size=18,Bold=false,Italic=null},Horizontal="center",Vertical="middle",Direction="horizontal",FillColor=0xF8D8A8,TextColor=0x403020,OutlineColor=null};}
     internal static void Run(string output)
-    {
+    {output=PathPolicy.TestPath(output);
         Directory.CreateDirectory(output);int count=0;Action<bool,string> check=(ok,name)=>{if(!ok)throw new Exception("FAIL property box: "+name);count++;};
         foreach(var failure in new Exception[]{new System.Runtime.InteropServices.COMException(),new System.Runtime.InteropServices.InvalidComObjectException(),new InvalidCastException(),new NotImplementedException(),new InvalidOperationException(),new System.IO.InvalidDataException()})check(ContextPropertiesController.IsInspectionFailure(failure),"interop inspection failure is published rather than escaping UI timer");check(!ContextPropertiesController.IsInspectionFailure(new OutOfMemoryException()),"fatal resource failure is not mislabeled unsupported Office formatting");
         int gestureRequests=0;using(var prompt=new ContextForegroundPrompt(()=>{gestureRequests++;return false;})){check(!prompt.StartRequested&&gestureRequests==0,"focus handoff never activates without a user gesture");var start=All(prompt).OfType<Button>().Single(b=>b.Name=="StartTest");typeof(Button).GetMethod("OnClick",BindingFlags.Instance|BindingFlags.NonPublic).Invoke(start,new object[]{EventArgs.Empty});check(prompt.StartRequested&&!prompt.RequestAccepted&&gestureRequests==1,"focus handoff preserves denial rather than claiming success");typeof(Button).GetMethod("OnClick",BindingFlags.Instance|BindingFlags.NonPublic).Invoke(start,new object[]{EventArgs.Empty});check(gestureRequests==1,"focus handoff requests activation only once per gesture");}

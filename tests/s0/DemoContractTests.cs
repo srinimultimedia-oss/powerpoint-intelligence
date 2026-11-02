@@ -1,3 +1,4 @@
+﻿using PowerPointIntelligence.Security;
 using System;
 using System.IO;
 using System.Linq;
@@ -10,6 +11,8 @@ internal static class DemoContractTests
     [STAThread]
     public static int Main(string[] args)
     {
+        try { for(int p=0;p<args.Length;p++)if(!(p==0&&(args[p]=="--gallery-snapshot"||args[p]=="--fidelity-replay")))args[p]=PathPolicy.TestPath(args[p]); } catch(System.IO.InvalidDataException error) { Console.Error.WriteLine(error.Message); return 2; }
+
         try
         {
             if(args.Length==3&&args[0]=="--gallery-snapshot"){GalleryTests.Snapshot(args[1],args[2]);return 0;}

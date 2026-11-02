@@ -1,3 +1,4 @@
+﻿using PowerPointIntelligence.Security;
 using System;
 using System.IO;
 using System.Globalization;
@@ -17,6 +18,8 @@ internal static class DomainTests
     { Test(name, () => { var value = JObject.Parse(golden); mutation(value); Reject(() => ChartCodec.Decode(value.ToString())); }); }
     public static int Main(string[] args)
     {
+        try { foreach(int p in new int[]{0,1})if(p<args.Length)args[p]=PathPolicy.TestPath(args[p]); } catch(System.IO.InvalidDataException error) { Console.Error.WriteLine(error.Message); return 2; }
+
         try
         {
             golden = File.ReadAllText(args[0]);

@@ -1,3 +1,4 @@
+﻿using PowerPointIntelligence.Security;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -47,6 +48,8 @@ internal static class NativeRendererTests
     [STAThread]
     public static int Main(string[] args)
     {
+        try { foreach(int p in new int[]{0,1,2})if(p<args.Length)args[p]=PathPolicy.TestPath(args[p]); } catch(System.IO.InvalidDataException error) { Console.Error.WriteLine(error.Message); return 2; }
+
         try
         {
             Console.WriteLine("Native renderer runner architecture=" + (Environment.Is64BitProcess ? "x64" : "x86"));

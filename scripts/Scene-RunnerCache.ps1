@@ -1,5 +1,5 @@
-function Get-PpiSceneBuildKey([string]$Root,[string]$Platform,[string]$Compiler,[string[]]$References,[string[]]$Sources,[string]$CacheKind='scene') {
-    if(!$Sources){$Sources=@('src/Chart.Renderers/SceneContracts.cs','src/Chart.Renderers/SceneCodec.cs','src/Chart.Renderers/StrictSceneJson.cs','src/Shared.Contracts/BoundedJson.cs','tests/s3/SceneContractTests.cs','tests/s3/SceneArtifactPath.cs')}
+﻿function Get-PpiSceneBuildKey([string]$Root,[string]$Platform,[string]$Compiler,[string[]]$References,[string[]]$Sources,[string]$CacheKind='scene') {
+    if(!$Sources){$Sources=@('src/Chart.Renderers/SceneContracts.cs','src/Chart.Renderers/SceneCodec.cs','src/Chart.Renderers/StrictSceneJson.cs','src/Shared.Contracts/BoundedJson.cs','tests/s3/SceneContractTests.cs','tests/s3/SceneArtifactPath.cs','src/Library.Core/PathPolicy.cs')}
     $records=@("$CacheKind-runner-cache-v1",'net48','csharp73',$Platform)
     foreach($source in $sources){$records+=($source+'='+(Get-FileHash -LiteralPath (Join-Path $Root $source) -Algorithm SHA256).Hash)}
     $records+=('compiler='+(Get-FileHash -LiteralPath $Compiler -Algorithm SHA256).Hash)

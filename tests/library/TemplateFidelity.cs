@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PowerPointIntelligence.Security;
+using System;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -104,7 +105,7 @@ internal static class TemplateFidelity
     private static string PersistedGeometry(PowerPoint.Slide slide,string diagnosticFile)
     {
         string file=Path.Combine(Path.GetTempPath(),"ppi-fidelity-geometry-"+Guid.NewGuid().ToString("N")+".pptx");
-        try{var deck=(PowerPoint.Presentation)slide.Parent;deck.SaveCopyAs(file,PowerPoint.PpSaveAsFileType.ppSaveAsOpenXMLPresentation,Office.MsoTriState.msoFalse);string geometry=PackageGeometry(file,slide.SlideIndex);if(diagnosticFile!=null)File.WriteAllText(diagnosticFile,geometry);return geometry;}
+        try{var deck=(PowerPoint.Presentation)slide.Parent;deck.SaveCopyAs(file,PowerPoint.PpSaveAsFileType.ppSaveAsOpenXMLPresentation,Office.MsoTriState.msoFalse);string geometry=PackageGeometry(file,slide.SlideIndex);if(diagnosticFile!=null)File.WriteAllText(PathPolicy.TestPath(diagnosticFile),geometry);return geometry;}
         finally{if(File.Exists(file))File.Delete(file);}
     }
     // Native values are compared exactly. Rendering tolerance never applies here.
@@ -126,7 +127,7 @@ internal static class TemplateFidelity
             if(shape.Type==Office.MsoShapeType.msoPicture||shape.Type==Office.MsoShapeType.msoLinkedPicture){var p=shape.PictureFormat;append(p.CropLeft);append(p.CropTop);append(p.CropRight);append(p.CropBottom);append(p.Brightness);append(p.Contrast);append(p.ColorType);}
             if(shape.Type==Office.MsoShapeType.msoGroup)foreach(PowerPoint.Shape child in shape.GroupItems)visit(child,depth+1);
         };foreach(PowerPoint.Shape shape in slide.Shapes)visit(shape,0);
-        if(diagnosticFile!=null)File.WriteAllText(diagnosticFile,text.ToString());
+        if(diagnosticFile!=null)File.WriteAllText(PathPolicy.TestPath(diagnosticFile),text.ToString());
         using(var sha=SHA256.Create())return BitConverter.ToString(sha.ComputeHash(Encoding.UTF8.GetBytes(text.ToString()))).Replace("-","");
     }
 }

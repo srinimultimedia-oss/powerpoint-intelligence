@@ -1,3 +1,4 @@
+﻿using PowerPointIntelligence.Security;
 using System;
 using System.IO;
 using System.Linq;
@@ -90,7 +91,7 @@ internal static class HostIntegrationTests
         }
         if (args.Length != 2 || args[0] != "--interactive-office")
         { Console.Error.WriteLine("Usage: HostIntegrationTests --interactive-office <new-output-directory>"); return 2; }
-        var directory = Path.GetFullPath(args[1]);
+        var directory = PathPolicy.TestPath(args[1]);
         if (Directory.Exists(directory)) throw new IOException("Use a new fixture directory.");
         Directory.CreateDirectory(directory);
         PowerPoint.Presentation deck = null, copyDeck = null;

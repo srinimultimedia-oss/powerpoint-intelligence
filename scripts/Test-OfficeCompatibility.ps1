@@ -1,4 +1,4 @@
-param([string]$Compiler, [ValidateSet('AnyCPU', 'x86', 'x64')][string]$Platform = 'AnyCPU', [switch]$CompileOnly)
+﻿param([string]$Compiler, [ValidateSet('AnyCPU', 'x86', 'x64')][string]$Platform = 'AnyCPU', [switch]$CompileOnly)
 $ErrorActionPreference = 'Stop'
 $repo = Split-Path $PSScriptRoot -Parent
 Push-Location $repo
@@ -14,7 +14,7 @@ try {
     $Compiler = (Resolve-Path $Compiler).Path
     $output = "artifacts/compatibility/$Platform"
     New-Item -ItemType Directory -Force $output | Out-Null
-    & $Compiler /nologo /langversion:7.3 "/platform:$Platform" /target:exe "/out:$output/OfficeCompatibilityTests.exe" /r:System.Configuration.dll apps\powerpoint-vsto\OfficeCompatibility.cs tests\compatibility\OfficeCompatibilityTests.cs
+    & $Compiler /nologo /langversion:7.3 "/platform:$Platform" /target:exe "/out:$output/OfficeCompatibilityTests.exe" /r:System.Configuration.dll apps\powerpoint-vsto\OfficeCompatibility.cs tests\compatibility\OfficeCompatibilityTests.cs src/Library.Core/PathPolicy.cs
     if ($LASTEXITCODE) { throw 'Office compatibility test compilation failed.' }
     if ($CompileOnly) { Write-Output "COMPILE ONLY: $Platform compatibility tests compiled; no execution."; return }
     & "$output/OfficeCompatibilityTests.exe" apps/powerpoint-vsto/App.config $Platform

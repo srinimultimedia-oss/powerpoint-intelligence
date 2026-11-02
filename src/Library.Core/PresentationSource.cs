@@ -1,3 +1,4 @@
+﻿using PowerPointIntelligence.Security;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -55,19 +56,19 @@ namespace PowerPointIntelligence.Library
         static string HashText(string value){using(var hash=SHA256.Create())return Hex(hash.ComputeHash(Encoding.UTF8.GetBytes(value)));}
         internal static IEnumerable<string> Discover(string root,bool recursive,CancellationToken cancellation)
         {
-            root=Path.GetFullPath(root);if(!Directory.Exists(root))throw new DirectoryNotFoundException("Library root is unavailable.");
+            root=PathPolicy.Configured(root,Environment.CurrentDirectory);if(!Directory.Exists(root))throw new DirectoryNotFoundException("Library root is unavailable.");
             if((File.GetAttributes(root)&FileAttributes.ReparsePoint)!=0)throw new InvalidDataException("Library root must be a direct directory, not a reparse point.");
             var pending=new Stack<string>();pending.Push(root);int directories=0,files=0;
             while(pending.Count>0)
             {
                 cancellation.ThrowIfCancellationRequested();string folder=pending.Pop();if(++directories>10000)throw new InvalidDataException("Library directory limit exceeded.");
-                foreach(string file in Directory.EnumerateFiles(folder))
+                foreach(string entry in Directory.EnumerateFiles(folder))
                 {
                     cancellation.ThrowIfCancellationRequested();if(++files>100000)throw new InvalidDataException("Library file limit exceeded.");
-                    if((File.GetAttributes(file)&FileAttributes.ReparsePoint)!=0)continue;
+                    string file=PathPolicy.Within(root,entry);if((File.GetAttributes(file)&FileAttributes.ReparsePoint)!=0)continue;
                     string ext=Path.GetExtension(file);if(String.Equals(ext,".pptx",StringComparison.OrdinalIgnoreCase)||String.Equals(ext,".potx",StringComparison.OrdinalIgnoreCase))yield return Path.GetFullPath(file);
                 }
-                if(recursive)foreach(string child in Directory.EnumerateDirectories(folder))if((File.GetAttributes(child)&FileAttributes.ReparsePoint)==0)pending.Push(child);
+                if(recursive)foreach(string entry in Directory.EnumerateDirectories(folder)){string child=PathPolicy.Within(root,entry);if((File.GetAttributes(child)&FileAttributes.ReparsePoint)==0)pending.Push(child);}
             }
         }
         static XDocument Xml(ZipArchive zip,string part,bool required)
@@ -125,7 +126,7 @@ namespace PowerPointIntelligence.Library
         }
         internal static IndexedPresentation Read(string path,CancellationToken cancellation)
         {
-            cancellation.ThrowIfCancellationRequested();path=Path.GetFullPath(path);string type=Path.GetExtension(path).ToLowerInvariant();
+            cancellation.ThrowIfCancellationRequested();path=PathPolicy.Configured(path,Environment.CurrentDirectory);string type=Path.GetExtension(path).ToLowerInvariant();
             if(type!=".pptx"&&type!=".potx")throw new InvalidDataException("Library sources must be PPTX or POTX presentations.");
             var info=new FileInfo(path);if(info.Length>MaximumFileBytes)throw new InvalidDataException("Presentation exceeds the configured file bound.");
             string hash=Fingerprint(path,cancellation);

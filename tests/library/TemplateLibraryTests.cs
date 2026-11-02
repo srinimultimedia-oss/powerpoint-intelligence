@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PowerPointIntelligence.Security;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -23,7 +24,7 @@ internal static class TemplateLibraryTests
         try
         {
             TemplateFidelityTests.Run();
-            string output=Path.GetFullPath(args[0]);Directory.CreateDirectory(output);
+            string output=PathPolicy.TestPath(args[0]);Directory.CreateDirectory(output);
             if(args.Contains("--source-originals")){OriginalRoundtrip(output);return 0;}
             Check(TemplateCatalog.Items.Count==520,"520 templates required");Check(TemplateCatalog.Items.Select(t=>t.Id).Distinct().Count()==520,"Unique template IDs");Check(TemplateCatalog.Items.Select(t=>t.Category).Distinct().Count()==26,"26 families required");
             Check(TemplatePalettes.Items.Count==20&&TemplatePalettes.Items.All(p=>p.Colors.Length==10),"20 palettes with 10 colors each");
