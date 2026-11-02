@@ -7,7 +7,7 @@ using PowerPointIntelligence.AddIn;
 internal static class ServiceConnectionTests
 {
     private static int passed;
-    [STAThread] public static int Main(string[] args){try{Run(args.Length==0?null:args[0]);return 0;}catch(Exception ex){Console.Error.WriteLine(ex);return 1;}}
+    [STAThread] public static int Main(string[] args){try{string workspace=args.Length==0?null:PathPolicy.TestPath(args[0]);Run(workspace);return 0;}catch(Exception ex){Console.Error.WriteLine(ex);return 1;}}
     private static void Check(bool condition,string name){if(!condition)throw new Exception("Service connection: "+name);passed++;}
     private static void Reject(Action action,string name){bool rejected=false;try{action();}catch(Exception ex) when(ex is InvalidDataException||ex is XmlException||ex is ArgumentException){rejected=true;}Check(rejected,name);}
     private static ServiceConnectionSettings Valid()

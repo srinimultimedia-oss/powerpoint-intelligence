@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -80,7 +80,7 @@ namespace PowerPointIntelligence.AddIn
                         catch(Exception ex)when(ex is IOException||ex is UnauthorizedAccessException||ex is System.Xml.XmlException){warnings.Add("Unavailable source: "+source.Root+" ("+ex.GetType().Name+")");}
                     }
                     if(initialFolder!=null&&!selected.Sources.Any(s=>String.Equals(Path.GetFullPath(s.Root),Path.GetFullPath(initialFolder),StringComparison.OrdinalIgnoreCase))){string id=index.Register(initialFolder,Path.GetFileName(initialFolder.TrimEnd('\\')),true);if(!index.Libraries().Single(l=>l.Id==id).LastRefreshUtc.HasValue)index.Refresh(id,workspaceToken);}
-                    try{selected.MigrateLegacy(index,workspaceToken);}catch(Exception ex)when(ex is IOException||ex is UnauthorizedAccessException||ex is System.Xml.XmlException){warnings.Add("Legacy registration preserved; migration unavailable ("+ex.GetType().Name+").");}
+                    try{selected.MigrateLegacy(index,workspaceToken);}catch(Exception ex)when(ex is IOException||ex is UnauthorizedAccessException||ex is System.Xml.XmlException){warnings.Add("Legacy registration preserved; migration unavailable ("+ex.GetType().Name+"). Verify its schema and add/configure its source folder before reopening Library.");}
                     return Tuple.Create(index,selected,warnings);
                 });
                 await WorkspaceUi();if(IsDisposed||Disposing)return;catalog=initialized.Item1;profile=initialized.Item2;

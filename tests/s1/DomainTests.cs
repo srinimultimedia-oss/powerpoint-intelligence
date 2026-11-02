@@ -18,16 +18,17 @@ internal static class DomainTests
     { Test(name, () => { var value = JObject.Parse(golden); mutation(value); Reject(() => ChartCodec.Decode(value.ToString())); }); }
     public static int Main(string[] args)
     {
-        try { foreach(int p in new int[]{0,1})if(p<args.Length)args[p]=PathPolicy.TestPath(args[p]); } catch(System.IO.InvalidDataException error) { Console.Error.WriteLine(error.Message); return 2; }
+        string inputFile, outputFile;
+        try { if(args.Length!=2) return 2; inputFile=PathPolicy.TestPath(args[0]);outputFile=PathPolicy.TestPath(args[1]); } catch(System.IO.InvalidDataException error) { Console.Error.WriteLine(error.Message); return 2; }
 
         try
         {
-            golden = File.ReadAllText(args[0]);
+            golden = File.ReadAllText(inputFile);
             Test("golden JSON round trip preserves every field", () => {
                 var encoded = ChartCodec.Encode(ChartCodec.Decode(golden));
                 Require(JToken.DeepEquals(JToken.Parse(golden), JToken.Parse(encoded)));
                 Require(encoded == ChartCodec.Encode(ChartCodec.Decode(encoded)));
-                File.WriteAllText(args[1], encoded);
+                File.WriteAllText(outputFile, encoded);
             });
             Test("culture invariant wire format", () => {
                 var prior = CultureInfo.CurrentCulture;

@@ -26,6 +26,12 @@ namespace PowerPointIntelligence.Tests.Security
             reject(() => PathPolicy.ConfigFile(Path.Combine(owned, "not-config.exe")));
             reject(() => PathPolicy.Selected("\\rooted-but-drive-dependent"));
             reject(() => PathPolicy.Selected("/rooted-but-drive-dependent"));
+            check(PathPolicy.ApprovedRoot(owned + "\\", new[] { owned }) == owned);
+            check(PathPolicy.ApprovedRoot(owned.ToUpperInvariant(), new[] { owned }) == owned);
+            reject(() => PathPolicy.ApprovedRoot(owned + "-outside", new[] { owned }));
+            reject(() => PathPolicy.ApprovedRoot(owned, new string[0]));
+            reject(() => PathPolicy.ApprovedRoot(Path.Combine(owned, "..", "outside"), new[] { owned }));
+            check(PathPolicy.TestPath(Path.Combine(owned, "nested", "path with spaces.json")) == Path.Combine(owned, "nested", "path with spaces.json"));
             Directory.CreateDirectory(owned);
             string target = Path.Combine(owned, "target");
             Directory.CreateDirectory(target);

@@ -48,13 +48,14 @@ internal static class NativeRendererTests
     [STAThread]
     public static int Main(string[] args)
     {
-        try { foreach(int p in new int[]{0,1,2})if(p<args.Length)args[p]=PathPolicy.TestPath(args[p]); } catch(System.IO.InvalidDataException error) { Console.Error.WriteLine(error.Message); return 2; }
+        string canonicalFile, sceneFile, outputDirectory;
+        try { if(args.Length<3||args.Length>4) return 2; canonicalFile=PathPolicy.TestPath(args[0]);sceneFile=PathPolicy.TestPath(args[1]);outputDirectory=PathPolicy.TestPath(args[2]); } catch(System.IO.InvalidDataException error) { Console.Error.WriteLine(error.Message); return 2; }
 
         try
         {
             Console.WriteLine("Native renderer runner architecture=" + (Environment.Is64BitProcess ? "x64" : "x86"));
-            canonical = File.ReadAllText(args[0]); scene = File.ReadAllText(args[1]);
-            if (args.Length == 4 && args[3] == "--interactive-office") { OfficeRoundtrip(args[2]); return 0; }
+            canonical = File.ReadAllText(canonicalFile); scene = File.ReadAllText(sceneFile);
+            if (args.Length == 4 && args[3] == "--interactive-office") { OfficeRoundtrip(outputDirectory); return 0; }
             Test("canonical projection snapshots match identity, raw values, geometry and style", () => {
                 var p = ClusteredProjection.Validate(canonical, scene); Require(p.Scene.Nodes.Count == 5 && p.Model.Revision == 4 && p.Model.Series[0].Values[0] == -1.25, "projection");
             });
@@ -111,7 +112,7 @@ internal static class NativeRendererTests
                 var decoded = RenderedChartMetadata.Decode(xml); Require(RenderedChartMetadata.Encode(decoded) == xml, "roundtrip");
                 Require(ChartCodec.Decode(decoded.CanonicalJson).Dataset.Categories[2].Label == "日本語", "Unicode");
                 Require(RenderedChartMetadata.NodeToken("a") != RenderedChartMetadata.NodeToken("A") && RenderedChartMetadata.NodeToken("a").All(c => "0123456789ABCDEF".Contains(c)), "uppercase-safe tokens");
-                File.WriteAllText(Path.Combine(args[2], "rendered-chart.v1.xml"), xml);
+                File.WriteAllText(Path.Combine(outputDirectory, "rendered-chart.v1.xml"), xml);
             });
             foreach (Action<XmlDocument> change in new Action<XmlDocument>[] {
                 d => d.DocumentElement.SetAttribute("version", "99"), d => d.DocumentElement.SetAttribute("chartId", Guid.NewGuid().ToString("D")),

@@ -1,0 +1,2105 @@
+{
+  "report": "C:\\Users\\srini\\Downloads\\Cx_ScanReport_2026-11-02_113655.md",
+  "report_sha256": "1a7a6505f6a3444767f95c1d14dcc16385ef057d5c83739feb4dad718494aa2b",
+  "scan_local_time": "2026-11-02 11:33 Asia/Dubai",
+  "summary_high": 95,
+  "detailed_records": 94,
+  "path_traversal": 85,
+  "stored_path_traversal": 2,
+  "other_detailed_records": 7,
+  "summary_only_supply_chain": 1,
+  "old_traversal_records": 111,
+  "matching_query_similarity_occurrences": 84,
+  "old_occurrences_not_in_latest": 27,
+  "new_occurrences_not_in_old": 3,
+  "findings": [
+    {
+      "query": "Path_Traversal",
+      "ordinal": 1,
+      "id": "320475186",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=AKCho5dsPGLP5p2q7nFg2Qt%2BFmM%3D)",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 12,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 91,
+        "code": "path=PathPolicy.ConfigFile(path);if(!File.Exists(path))return ServiceConnectionSettings.Empty();if(new FileInfo(path).Length>MaxFileBytes)throw new InvalidDataException(\"Saved configuration exceeds byte limit.\");return Decode(File.ReadAllText(path,new UTF8Encoding(false,true)));"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 2,
+      "id": "766328971",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=75XHHrNM1kEYcnKVw5Fxw8fzB30%3D)",
+      "source": {
+        "file": "/tests/compatibility/OfficeCompatibilityTests.cs",
+        "line": 19,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/src/Library.Core/PathPolicy.cs",
+        "line": 77,
+        "code": "if ((Directory.Exists(current) || File.Exists(current)) && (File.GetAttributes(current) & FileAttributes.ReparsePoint) != 0)"
+      },
+      "cwe": "22",
+      "control": "CLI paths are reconstructed from an independent repository/temp root and validated Path.GetFileName components before reparse-point metadata access.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 134
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 3,
+      "id": "1294326411",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=rB%2Byr9fyNOS8Vx4Wuc0Bi%2FrMHsI%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/ContextFormattingOfficeTests.cs",
+        "line": 10,
+        "code": "internal static void Run(PowerPoint.Application app,string outputDirectory){outputDirectory=PathPolicy.TestPath(outputDirectory);count=0;Directory.CreateDirectory(outputDirectory);string file=Path.Combine(Path.GetFullPath(outputDirectory),\"context-font-\"+Guid.NewGuid().ToString(\"N\")+\".pptx\");PowerPoint.Presentation deck=null;try{deck=app.Presentations.Add(Office.MsoTriState.msoTrue);deck.PageSetup.SlideWidth=960;deck.PageSetup.SlideHeight=540;deck.Windows[1].ViewType=PowerPoint.PpViewType.ppViewNormal;var slide=deck.Slides.Add(1,PowerPoint.PpSlideLayout.ppLayoutBlank);slide.Select();var a=slide.Shapes.AddTextbox(Office.MsoTextOrientation.msoTextOrientationHorizontal,50,50,250,70);a.TextFrame.TextRange.Text=\"ABCD\";a.TextFrame.TextRange.Font.Name=\"Arial\";a.TextFrame.TextRange.Font.Size=18;a.TextFrame.TextRange.Font.Bold=Office.MsoTriState.msoFalse;a.TextFrame.TextRange.Font.Italic=Office.MsoTriState.msoFalse;a.TextFrame.TextRange.Characters(2,1).Font.Bold=Office.MsoTriState.msoTrue;a.Select();var read=ContextFormatting.Read(app);Check(read.Family==\"Arial\"&&read.Size==18&&read.Bold==null&&read.Italic==false,\"read reports per-property mixed state without mutation\");a.TextFrame.TextRange.Characters(2,2).Select();ContextFormatting.ApplyFont(app,\"Calibri\",24,null,true);Check(a.TextFrame.TextRange.Characters(1,1).Font.Name==\"Arial\"&&a.TextFrame.TextRange.Characters(2,1).Font.Name==\"Calibri\"&&a.TextFrame.TextRange.Characters(4,1).Font.Size==18,\"selected-character scope preserved\");Check(a.TextFrame.TextRange.Characters(2,1).Font.Bold==Office.MsoTriState.msoTrue&&a.TextFrame.TextRange.Characters(3,1).Font.Bold==Office.MsoTriState.msoFalse,\"unrequested mixed bold formatting retained\");var b=slide.Shapes.AddShape(Office.MsoAutoShapeType.msoShapeRectangle,350,50,200,70);b.TextFrame.TextRange.Text=\"Second\";var group=slide.Shapes.Range(new object[]{a.Name,b.Name}).Group();int groupId=group.Id;group.Select();ContextFormatting.ApplyFont(app,\"Arial\",20,true,false);Check(group.GroupItems[1].TextFrame.TextRange.Font.Size==20&&group.GroupItems[2].TextFrame.TextRange.Font.Bold==Office.MsoTriState.msoTrue,\"bounded native group targets formatted\");var table=slide.Shapes.AddTable(2,2,50,200,300,140);for(int r=1;r<=2;r++)for(int c=1;c<=2;c++){table.Table.Cell(r,c).Shape.TextFrame.TextRange.Text=\"Cell\";table.Table.Cell(r,c).Shape.TextFrame.TextRange.Font.Size=12;}table.Select();ContextFormatting.ApplyFont(app,null,16,null,null);Check(table.Table.Cell(1,1).Shape.TextFrame.TextRange.Font.Size==16&&table.Table.Cell(2,2).Shape.TextFrame.TextRange.Font.Size==16,\"native table whole selection formatted\");var decoration=slide.Shapes.AddLine(600,50,650,50);var textLeaf=slide.Shapes.AddTextbox(Office.MsoTextOrientation.msoTextOrientationHorizontal,600,80,200,50);textLeaf.TextFrame.TextRange.Text=\"Diagram label\";var diagram=slide.Shapes.Range(new object[]{decoration.Name,textLeaf.Name}).Group();diagram.Select();ContextFormatting.ApplyFont(app,null,22,null,null);Check(diagram.GroupItems[2].TextFrame.TextRange.Font.Size==22,\"group nontext decoration skipped while editable text formatted\");var line=slide.Shapes.AddLine(10,450,100,450);slide.Shapes.Range(new object[]{group.Name,line.Name}).Select();bool refused=false;try{ContextFormatting.ApplyFont(app,null,32,null,null);}catch(InvalidOperationException){refused=true;}Check(refused&&group.GroupItems[1].TextFrame.TextRange.Font.Size==20,\"unsupported late target rejected before any mutation\");deck.SaveAs(file,PowerPoint.PpSaveAsFileType.ppSaveAsOpenXMLPresentation,Office.MsoTriState.msoFalse);deck.Close();deck=null;deck=app.Presentations.Open(file,Office.MsoTriState.msoFalse,Office.MsoTriState.msoFalse,Office.MsoTriState.msoTrue);group=deck.Slides[1].Shapes.Cast<PowerPoint.Shape>().Single(x=>x.Id==groupId);Check(group.GroupItems[1].TextFrame.TextRange.Font.Size==20&&group.GroupItems[2].TextFrame.TextRange.Font.Bold==Office.MsoTriState.msoTrue,\"native font edit survives save reopen\");Console.WriteLine(\"FONT \"+count+\" native assertions passed. Evidence deck: \"+file);}finally{if(deck!=null){deck.Saved=Office.MsoTriState.msoTrue;deck.Close();}}}"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 4,
+      "id": "-1686233768",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=wfeMPYws7ONlHtdksh1R%2BCghs1I%3D)",
+      "source": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 19,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 79,
+        "code": "if (expected) { model = SceneCodec.Decode(json); File.WriteAllText(SceneArtifactPath.Resolve(output, name), SceneCodec.Encode(model)); }"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 5,
+      "id": "1907694926",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=0v7H9BjbPW0J47BIFwDbURZxWiY%3D)",
+      "source": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 19,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 72,
+        "code": "var cases = JArray.Parse(File.ReadAllText(Path.Combine(corpus, \"cases.json\")));"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 6,
+      "id": "-753889073",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=TQvow0hNDkYx2TrtO9Ar9K1Tqps%3D)",
+      "source": {
+        "file": "/tests/library/TemplateLibraryTests.cs",
+        "line": 22,
+        "code": "[STAThread] public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/library/TemplateLibraryTests.cs",
+        "line": 52,
+        "code": "File.WriteAllLines(Path.Combine(output,\"catalog.tsv\"),rows);File.WriteAllLines(Path.Combine(output,\"duplicate-structures.txt\"),duplicates);"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 7,
+      "id": "1201223223",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=GDBObqXqnluvw3CgZjNPHpXodbQ%3D)",
+      "source": {
+        "file": "/tests/s3/NativeRendererTests.cs",
+        "line": 49,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s3/NativeRendererTests.cs",
+        "line": 114,
+        "code": "File.WriteAllText(Path.Combine(args[2], \"rendered-chart.v1.xml\"), xml);"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 8,
+      "id": "-457272103",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=pXWb24OlelQLAoc90AhquIn2PAM%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/LinkedChartDiagnostic.cs",
+        "line": 15,
+        "code": "Directory.CreateDirectory(output);string log=Path.Combine(output,\"linked-chart-stages.tsv\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 9,
+      "id": "-2135358301",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=NNrGOOLCfJkbKtr8x5g%2BGeS%2Bp7I%3D)",
+      "source": {
+        "file": "/tests/s3/NativeRendererTests.cs",
+        "line": 49,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s3/NativeRendererTests.cs",
+        "line": 56,
+        "code": "canonical = File.ReadAllText(args[0]); scene = File.ReadAllText(args[1]);"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 10,
+      "id": "1855789791",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=1Pa%2FW%2BZDnMOo9DT24h50oZVDaI0%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 39,
+        "code": "catch(Exception error){File.WriteAllText(Path.Combine(args[1],\"mapped-excel-result.txt\"),\"FAIL \"+error.GetType().Name+\" 0x\"+error.HResult.ToString(\"X8\"));Console.Error.WriteLine(error);return 1;}"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 11,
+      "id": "745660673",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=t5i8CN70zp8NYX59GSmoWvJghWk%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/ContextPropertiesOfficeTests.cs",
+        "line": 75,
+        "code": "File.WriteAllText(Path.Combine(output,\"context-properties-state.xml\"),State(api).OuterXml);Console.WriteLine(\"CONTEXT \"+count+\" native assertions passed; Office=\"+app.Version+\"; process=\"+(Environment.Is64BitProcess?\"x64\":\"x86\")+\". Color-picker visuals, every chart family and per-monitor DPI still need manual coverage.\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 12,
+      "id": "934697572",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=HwJOXhXwY5A6bjZEQa5ajtcYAmY%3D)",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 12,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 33,
+        "code": "var badSave=Valid();badSave.Profiles[0].Endpoint=\"https://example.invalid/?token=secret\";string preserved=File.ReadAllText(file);Reject(()=>ServiceConnections.Save(file,badSave),\"invalid save rejected\");Check(File.ReadAllText(file)==preserved,\"invalid save preserves previous config\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 13,
+      "id": "1027859451",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=eSSdj7oVM6CdGHnjZW3trwR%2BYLU%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoScenario.cs",
+        "line": 101,
+        "code": "File.WriteAllText(linkedSource,id==\"waterfall\"?\"Category,Change\\nA,137.5\\nB,-8\\nC,20\":\"Category,Actual,Plan\\n1,137.5,15\\n2,22,18\\n3,30,35\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 14,
+      "id": "-771679709",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=TrkVTN1ep5W2svzj%2BhhqHJnWFsA%3D)",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 12,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/ContextPropertiesTests.cs",
+        "line": 18,
+        "code": "Directory.CreateDirectory(output);int count=0;Action<bool,string> check=(ok,name)=>{if(!ok)throw new Exception(\"FAIL property box: \"+name);count++;};"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 15,
+      "id": "1739815605",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=dUri3XUeR0A%2FYyPXiQPd0SRHhd4%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 31,
+        "code": "Directory.CreateDirectory(args[1]);var rows=new List<string>{\"ToolId,Status,Evidence\"};"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 16,
+      "id": "-1654445831",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=G4vMWXLw55yecBeO82LhxlFZyXs%3D)",
+      "source": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 10,
+        "code": "[STAThread] public static int Main(string[] args){try{Run(args.Length==0?null:args[0]);return 0;}catch(Exception ex){Console.Error.WriteLine(ex);return 1;}}"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 91,
+        "code": "path=PathPolicy.ConfigFile(path);if(!File.Exists(path))return ServiceConnectionSettings.Empty();if(new FileInfo(path).Length>MaxFileBytes)throw new InvalidDataException(\"Saved configuration exceeds byte limit.\");return Decode(File.ReadAllText(path,new UTF8Encoding(false,true)));"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 17,
+      "id": "1398503197",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=hmbi%2FwlpCFVA3mcg8k%2FZw2tTz8g%3D)",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 12,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/DataSourceTests.cs",
+        "line": 19,
+        "code": "Directory.CreateDirectory(output);var registryPath=Path.Combine(PathPolicy.TestPath(output),\"registry-fixture.csv\");File.WriteAllText(registryPath,\"Category,Value\\r\\nFixture,1\\r\\n\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 18,
+      "id": "793367280",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=fDs1tL4e8USdRxFQZ6Qp0wKJY94%3D)",
+      "source": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 19,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 26,
+        "code": "string golden = File.ReadAllText(args[0]), output = args[1], corpus = args[2];"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 19,
+      "id": "-1926027703",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=wwKYWn7iLe5Rnu884sflIFPcGgw%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/WorkflowOfficeTests.cs",
+        "line": 43,
+        "code": "Directory.CreateDirectory(outputDirectory);assertions=0;"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 20,
+      "id": "361596616",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=mvB295aoNvMXrMmGAgAs%2FyfNEAk%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/LinkedChartDiagnostic.cs",
+        "line": 16,
+        "code": "File.WriteAllText(log,\"Stage\\tField\\tValue\\r\\n\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 21,
+      "id": "1335748697",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=G6LEINZqVVigiRiLNY6KrTLNU84%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/DataSourceTests.cs",
+        "line": 137,
+        "code": "File.WriteAllText(Path.Combine(output,\"data-sources-runtime.txt\"),\"PASS four source references, duplicate suppression, unchanged slide and native save/reopen. Native picker UI not exercised.\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 22,
+      "id": "-498998273",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=Wpqo8Q%2BM5OEXHHNsarC%2BM679Ke4%3D)",
+      "source": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 19,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 36,
+        "code": "File.WriteAllText(Path.Combine(output, \"all-primitives.v1.json\"), before);"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 23,
+      "id": "-152178112",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=bKFikf1C6QjBVJ3RV3hfC9vCFZw%3D)",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 12,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 32,
+        "code": "Check(ServiceConnections.Load(file).Profiles.All(p=>ServiceConnections.Status(p)==\"Not configured\")&&!Directory.Exists(root),\"read/cancel path creates no file or directory\");ServiceConnections.Save(file,Valid());string first=File.ReadAllText(file);Check(ServiceConnections.Encode(ServiceConnections.Load(file))==first,\"file round trip\");var changed=Valid();changed.Profiles[0].Deployment=\"second-approved-deployment\";ServiceConnections.Save(file,changed);Check(ServiceConnections.Load(file).Profiles[0].Deployment==\"second-approved-deployment\",\"existing config atomically replaced\");Check(Directory.GetFiles(root).Length==1,\"temporary files cleaned after save\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 24,
+      "id": "-86767479",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=cMxcAwFdKRtoQI2dJ9CfFaCLN9g%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/ContextPropertiesOfficeTests.cs",
+        "line": 26,
+        "code": "File.WriteAllText(Path.Combine(evidenceDirectory,\"context-properties-failure.xml\"),state.OuterXml);"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 25,
+      "id": "46418524",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=X4%2Ffk6VNflaikuOIC1TYAgopeyA%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/DataSourceTests.cs",
+        "line": 128,
+        "code": "string source=Path.GetFullPath(Path.Combine(directory,\"reference\"+option.Extensions[0]));File.WriteAllText(source,\"reference only\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 26,
+      "id": "-1176590899",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=oj20404uS1DwadrJDd0ZlkiJeh8%3D)",
+      "source": {
+        "file": "/tests/library/TemplateLibraryTests.cs",
+        "line": 22,
+        "code": "[STAThread] public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/library/TemplateLibraryTests.cs",
+        "line": 52,
+        "code": "File.WriteAllLines(Path.Combine(output,\"catalog.tsv\"),rows);File.WriteAllLines(Path.Combine(output,\"duplicate-structures.txt\"),duplicates);"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 27,
+      "id": "601440768",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=HMs7H0sXaJdd3hZaQU8yEmdxRHg%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoScenario.cs",
+        "line": 57,
+        "code": "if(!File.Exists(path))using(var image=new Bitmap(30,20)){using(var graphics=Graphics.FromImage(image))graphics.Clear(Color.Navy);image.Save(path,System.Drawing.Imaging.ImageFormat.Png);}"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 28,
+      "id": "507564216",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=OPjGqOIl3AaQEITVQbu1xEeTKKc%3D)",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 12,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 96,
+        "code": "try{File.WriteAllText(temp,xml,new UTF8Encoding(false,true));if(File.Exists(target))File.Replace(temp,target,null);else File.Move(temp,target);}finally{if(File.Exists(temp))File.Delete(temp);}"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 29,
+      "id": "1025575657",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=7OoImIR4VaF1Nf3P%2BZCLldag2MI%3D)",
+      "source": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 19,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 69,
+        "code": "File.WriteAllText(Path.Combine(output, \"csharp-produced.v1.json\"), SceneCodec.Encode(model));"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 30,
+      "id": "-56861040",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=o4vI79PDFFftOO52sbFWYrDXKn8%3D)",
+      "source": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 10,
+        "code": "[STAThread] public static int Main(string[] args){try{Run(args.Length==0?null:args[0]);return 0;}catch(Exception ex){Console.Error.WriteLine(ex);return 1;}}"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 96,
+        "code": "try{File.WriteAllText(temp,xml,new UTF8Encoding(false,true));if(File.Exists(target))File.Replace(temp,target,null);else File.Move(temp,target);}finally{if(File.Exists(temp))File.Delete(temp);}"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 31,
+      "id": "-419043739",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=DXdgYtcWP%2F8rGOZsnQzTwA1AEyA%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoScenario.cs",
+        "line": 181,
+        "code": "case \"export-json\":using(var stream=File.OpenRead(output)){var model=(ChartDocument)new DataContractJsonSerializer(typeof(ChartDocument)).ReadObject(stream);MetadataCodec.Validate(model);Check(model.ChartId==managedId,\"Exported chart identity\");}break;"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 32,
+      "id": "-1532911912",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=TNT3fp%2BDUJocP%2F9w8Db10%2FyDjXw%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/ContextPropertiesOfficeTests.cs",
+        "line": 56,
+        "code": "finally{File.WriteAllText(Path.Combine(evidenceDirectory,\"context-selection-probe-\"+checkpoint+\".xml\"),doc.OuterXml);}"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 33,
+      "id": "-661553133",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=SLsynS%2Bff2lWdvVfvfZbv072adQ%3D)",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 12,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/library/TemplateFidelityTests.cs",
+        "line": 82,
+        "code": "Directory.CreateDirectory(output);var rows=new List<string>{\"Index,Stage,SameDimensions,ExactPixels,WithinTolerance,ChangedPixels,MaxChannelDelta,AlphaChanges,NonEdgeChanges,AllowedPixels\"};int passed=0;"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 34,
+      "id": "-695368680",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=uFnJHOhlMjn2l4ar%2FcbKwWTRPLM%3D)",
+      "source": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 10,
+        "code": "[STAThread] public static int Main(string[] args){try{Run(args.Length==0?null:args[0]);return 0;}catch(Exception ex){Console.Error.WriteLine(ex);return 1;}}"
+      },
+      "destination": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 32,
+        "code": "Check(ServiceConnections.Load(file).Profiles.All(p=>ServiceConnections.Status(p)==\"Not configured\")&&!Directory.Exists(root),\"read/cancel path creates no file or directory\");ServiceConnections.Save(file,Valid());string first=File.ReadAllText(file);Check(ServiceConnections.Encode(ServiceConnections.Load(file))==first,\"file round trip\");var changed=Valid();changed.Profiles[0].Deployment=\"second-approved-deployment\";ServiceConnections.Save(file,changed);Check(ServiceConnections.Load(file).Profiles[0].Deployment==\"second-approved-deployment\",\"existing config atomically replaced\");Check(Directory.GetFiles(root).Length==1,\"temporary files cleaned after save\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 35,
+      "id": "-82668503",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=MpBVnRcRq8vt2LZ5anMdcvTqVic%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/LinkedChartDiagnostic.cs",
+        "line": 17,
+        "code": "Action<string,string,string> record=(stage,key,value)=>File.AppendAllText(log,stage+\"\\t\"+key+\"\\t\"+value.Replace('\\r',' ').Replace('\\n',' ')+\"\\r\\n\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 36,
+      "id": "2097746304",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=9kgiWwcgE%2F%2B4Su1O%2Fbl%2Fp3MCFO0%3D)",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 12,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 34,
+        "code": "string tooLarge=Path.Combine(root,\"oversize.xml\");File.WriteAllBytes(tooLarge,new byte[ServiceConnections.MaxFileBytes+1]);Reject(()=>ServiceConnections.Load(tooLarge),\"saved byte bound\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 37,
+      "id": "-1880250405",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=hLeRKMoF8Z8rhUQ26SxinVLp4gs%3D)",
+      "source": {
+        "file": "/tests/s1/DomainTests.cs",
+        "line": 19,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s1/DomainTests.cs",
+        "line": 30,
+        "code": "File.WriteAllText(args[1], encoded);"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 38,
+      "id": "-1549767052",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=XUL4vdvGntR03LaUFijA5j%2Bzxes%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/ChapterAgendaOfficeTests.cs",
+        "line": 22,
+        "code": "if(app==null)throw new ArgumentNullException(\"app\");Directory.CreateDirectory(outputDirectory);count=0;"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 39,
+      "id": "-1477818700",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=4CZ6Hf13ZwJI9QbQdvHV2Vp16pE%3D)",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 12,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 96,
+        "code": "try{File.WriteAllText(temp,xml,new UTF8Encoding(false,true));if(File.Exists(target))File.Replace(temp,target,null);else File.Move(temp,target);}finally{if(File.Exists(temp))File.Delete(temp);}"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 40,
+      "id": "-1477818700",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=npThPUdihNIfbr6vY81mwLd4qLw%3D)",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 12,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 96,
+        "code": "try{File.WriteAllText(temp,xml,new UTF8Encoding(false,true));if(File.Exists(target))File.Replace(temp,target,null);else File.Move(temp,target);}finally{if(File.Exists(temp))File.Delete(temp);}"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 41,
+      "id": "-1885568552",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=t6rvi7sWFI7JsZ5nJBhvYNC3%2BeQ%3D)",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 12,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/src/Library.Core/PiidxCatalog.cs",
+        "line": 35,
+        "code": "if((File.GetAttributes(IndexPath)&FileAttributes.ReparsePoint)!=0)throw new InvalidDataException(\"PIIDX index cannot be a reparse point.\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 42,
+      "id": "1703303725",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=tin5ct0tg9ZDhZU8RRLJevyPBLw%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/LinkedChartDiagnostic.cs",
+        "line": 46,
+        "code": "File.WriteAllText(source,\"Category,Actual,Plan\\r\\nA,42.5,150\\r\\nB,20,25\\r\\nC,30,35\\r\\n\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 43,
+      "id": "-315100207",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=jsMd%2Fav7dAV%2By8XQhSSz4fidJNY%3D)",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 12,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 91,
+        "code": "path=PathPolicy.ConfigFile(path);if(!File.Exists(path))return ServiceConnectionSettings.Empty();if(new FileInfo(path).Length>MaxFileBytes)throw new InvalidDataException(\"Saved configuration exceeds byte limit.\");return Decode(File.ReadAllText(path,new UTF8Encoding(false,true)));"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 44,
+      "id": "1144353721",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=o43tUvUSqMwkUtdyRbMXbt%2Fjzns%3D)",
+      "source": {
+        "file": "/tests/compatibility/OfficeCompatibilityTests.cs",
+        "line": 19,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/OfficeCompatibility.cs",
+        "line": 35,
+        "code": "if (!File.Exists(configurationPath)) return Parse(new NameValueCollection());"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 45,
+      "id": "596844632",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=B9aMjOw2E2f55EnB5GWaKv9evHc%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 34,
+        "code": "catch(Exception ex){if(args[0]==\"--interactive-properties\")rows.Add(\"context-properties-native,BLOCKED,\"+ex.GetType().Name);else if(agendaOnly)rows.Add(\"chapter-agenda-native,BLOCKED,\"+ex.GetType().Name);else if(args[0]==\"--interactive-elements\")foreach(var id in new[]{\"productivity-native\",\"text-elements-native\",\"process-grid-native\",\"indicators-native\",\"universal-connectors-native\"})rows.Add(id+\",BLOCKED,\"+ex.GetType().Name);else foreach(var tool in DemoTools.Catalog)rows.Add(tool.Id+\",BLOCKED,\"+ex.GetType().Name);File.WriteAllLines(Path.Combine(args[1],\"features.csv\"),rows);Console.Error.WriteLine(ex);return 1;}"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 46,
+      "id": "596844632",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=C2Rq%2BUruZsRl1Ql3jTJUfapMs4Q%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 42,
+        "code": "if(args[0]==\"--interactive-properties\"){try{ContextPropertiesOfficeTests.Run(app,args[1]);ContextFormattingOfficeTests.Run(app,args[1]);rows.Add(\"context-properties-native,PASS,Installed automatic property box scope native edits and save reopen\");File.WriteAllLines(Path.Combine(args[1],\"features.csv\"),rows);return 0;}catch(Exception error){rows.Add(\"context-properties-native,\"+(error is ContextTestForegroundUnavailableException?\"BLOCKED\":\"FAIL\")+\",\"+error.GetType().Name);File.WriteAllLines(Path.Combine(args[1],\"features.csv\"),rows);Console.Error.WriteLine(error);return 1;}}"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 47,
+      "id": "596844632",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=hjv6rF9NK0Vg0ibOsh0jibHdwNs%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 43,
+        "code": "if(agendaOnly){try{ChapterAgendaOfficeTests.Run(app,args[1]);rows.Add(\"chapter-agenda-native,PASS,Native chapter hierarchy edits moves copy split and persistence\");File.WriteAllLines(Path.Combine(args[1],\"features.csv\"),rows);return 0;}catch(Exception error){rows.Add(\"chapter-agenda-native,FAIL,\"+error.GetType().Name);File.WriteAllLines(Path.Combine(args[1],\"features.csv\"),rows);Console.Error.WriteLine(error);return 1;}}"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 48,
+      "id": "596844632",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=m7nFkSD9UG1BNgdRQ2%2F7ecmqi2Y%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 42,
+        "code": "if(args[0]==\"--interactive-properties\"){try{ContextPropertiesOfficeTests.Run(app,args[1]);ContextFormattingOfficeTests.Run(app,args[1]);rows.Add(\"context-properties-native,PASS,Installed automatic property box scope native edits and save reopen\");File.WriteAllLines(Path.Combine(args[1],\"features.csv\"),rows);return 0;}catch(Exception error){rows.Add(\"context-properties-native,\"+(error is ContextTestForegroundUnavailableException?\"BLOCKED\":\"FAIL\")+\",\"+error.GetType().Name);File.WriteAllLines(Path.Combine(args[1],\"features.csv\"),rows);Console.Error.WriteLine(error);return 1;}}"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 49,
+      "id": "596844632",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=Vq%2FVNKaKA8Dj6vuBsMkeP%2FIPbjc%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 43,
+        "code": "if(agendaOnly){try{ChapterAgendaOfficeTests.Run(app,args[1]);rows.Add(\"chapter-agenda-native,PASS,Native chapter hierarchy edits moves copy split and persistence\");File.WriteAllLines(Path.Combine(args[1],\"features.csv\"),rows);return 0;}catch(Exception error){rows.Add(\"chapter-agenda-native,FAIL,\"+error.GetType().Name);File.WriteAllLines(Path.Combine(args[1],\"features.csv\"),rows);Console.Error.WriteLine(error);return 1;}}"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 50,
+      "id": "596844632",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=VRUI1wiyVuv0ljZVjB8iau570UA%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 62,
+        "code": "if(disconnected){blockedCommands++;rows.Add(tool.Id+\",BLOCKED,Prior PowerPoint RPC disconnection; command not executed\");File.WriteAllLines(Path.Combine(args[1],\"features.csv\"),rows);continue;}"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 51,
+      "id": "-47860084",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=rS%2Fktc65X9%2BBsAHIlL2O8UeRkVk%3D)",
+      "source": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 10,
+        "code": "[STAThread] public static int Main(string[] args){try{Run(args.Length==0?null:args[0]);return 0;}catch(Exception ex){Console.Error.WriteLine(ex);return 1;}}"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 96,
+        "code": "try{File.WriteAllText(temp,xml,new UTF8Encoding(false,true));if(File.Exists(target))File.Replace(temp,target,null);else File.Move(temp,target);}finally{if(File.Exists(temp))File.Delete(temp);}"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 52,
+      "id": "-47860084",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=ww3tJSSFj17VRLzXLEvsXPBBBMQ%3D)",
+      "source": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 10,
+        "code": "[STAThread] public static int Main(string[] args){try{Run(args.Length==0?null:args[0]);return 0;}catch(Exception ex){Console.Error.WriteLine(ex);return 1;}}"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 96,
+        "code": "try{File.WriteAllText(temp,xml,new UTF8Encoding(false,true));if(File.Exists(target))File.Replace(temp,target,null);else File.Move(temp,target);}finally{if(File.Exists(temp))File.Delete(temp);}"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 53,
+      "id": "-293388255",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=EmicWnZneTqNxelAE9OxlPYsYbM%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 82,
+        "code": "rows.Add(tool.Id+\",\"+outcome+\",\"+evidence);File.WriteAllLines(Path.Combine(args[1],\"features.csv\"),rows);"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 54,
+      "id": "724762689",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=8taOvChUzb6PVNSXBJ1yiFRGmsE%3D)",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 12,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 73,
+        "code": "Directory.CreateDirectory(args[1]);document.Save(Path.Combine(args[1],\"demo-ribbon.xml\"));"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 55,
+      "id": "360136018",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=9MGlYARQksLD6al5Tssxkbl2ruU%3D)",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 12,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 75,
+        "code": "File.WriteAllLines(Path.Combine(args[1],\"demo-tool-ids.txt\"),tools.Select(t=>t.Id));"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 56,
+      "id": "-1657118664",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=35wmoRXLg8NJDN%2BDNQCG0FNBepo%3D)",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 12,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 32,
+        "code": "Check(ServiceConnections.Load(file).Profiles.All(p=>ServiceConnections.Status(p)==\"Not configured\")&&!Directory.Exists(root),\"read/cancel path creates no file or directory\");ServiceConnections.Save(file,Valid());string first=File.ReadAllText(file);Check(ServiceConnections.Encode(ServiceConnections.Load(file))==first,\"file round trip\");var changed=Valid();changed.Profiles[0].Deployment=\"second-approved-deployment\";ServiceConnections.Save(file,changed);Check(ServiceConnections.Load(file).Profiles[0].Deployment==\"second-approved-deployment\",\"existing config atomically replaced\");Check(Directory.GetFiles(root).Length==1,\"temporary files cleaned after save\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 57,
+      "id": "-2135577675",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=FgjpmNzPx5DA%2BJ0F0DyWAhd6Xwo%3D)",
+      "source": {
+        "file": "/tests/s0/HostIntegrationTests.cs",
+        "line": 51,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/HostIntegrationTests.cs",
+        "line": 95,
+        "code": "if (Directory.Exists(directory)) throw new IOException(\"Use a new fixture directory.\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 58,
+      "id": "661522298",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=Sib%2B2kJLI1sdVBrkPQkVi6uDU1Q%3D)",
+      "source": {
+        "file": "/tests/s1/DomainTests.cs",
+        "line": 19,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s1/DomainTests.cs",
+        "line": 25,
+        "code": "golden = File.ReadAllText(args[0]);"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 59,
+      "id": "-485459168",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=G3n3Vdn9WWynyF4BuguXWVgmEa4%3D)",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 12,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 32,
+        "code": "Check(ServiceConnections.Load(file).Profiles.All(p=>ServiceConnections.Status(p)==\"Not configured\")&&!Directory.Exists(root),\"read/cancel path creates no file or directory\");ServiceConnections.Save(file,Valid());string first=File.ReadAllText(file);Check(ServiceConnections.Encode(ServiceConnections.Load(file))==first,\"file round trip\");var changed=Valid();changed.Profiles[0].Deployment=\"second-approved-deployment\";ServiceConnections.Save(file,changed);Check(ServiceConnections.Load(file).Profiles[0].Deployment==\"second-approved-deployment\",\"existing config atomically replaced\");Check(Directory.GetFiles(root).Length==1,\"temporary files cleaned after save\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 60,
+      "id": "2129211647",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=sEh35nQHp6Gp3b%2BO1smc3s6MteU%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/LinkedChartDiagnostic.cs",
+        "line": 39,
+        "code": "string source=Path.Combine(PathPolicy.TestPath(output),\"diagnostic-fixture.csv\");File.WriteAllText(source,\"Category,Actual,Plan\\r\\nA,137.5,150\\r\\nB,20,25\\r\\nC,30,35\\r\\n\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 61,
+      "id": "-756336288",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=u8HJXBSqE2%2FLurPOpYGNLmyIXWo%3D)",
+      "source": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 10,
+        "code": "[STAThread] public static int Main(string[] args){try{Run(args.Length==0?null:args[0]);return 0;}catch(Exception ex){Console.Error.WriteLine(ex);return 1;}}"
+      },
+      "destination": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 32,
+        "code": "Check(ServiceConnections.Load(file).Profiles.All(p=>ServiceConnections.Status(p)==\"Not configured\")&&!Directory.Exists(root),\"read/cancel path creates no file or directory\");ServiceConnections.Save(file,Valid());string first=File.ReadAllText(file);Check(ServiceConnections.Encode(ServiceConnections.Load(file))==first,\"file round trip\");var changed=Valid();changed.Profiles[0].Deployment=\"second-approved-deployment\";ServiceConnections.Save(file,changed);Check(ServiceConnections.Load(file).Profiles[0].Deployment==\"second-approved-deployment\",\"existing config atomically replaced\");Check(Directory.GetFiles(root).Length==1,\"temporary files cleaned after save\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 62,
+      "id": "1188711609",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=nUXWOS6RzQPj1iL%2BHSeB6ay4JPc%3D)",
+      "source": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 10,
+        "code": "[STAThread] public static int Main(string[] args){try{Run(args.Length==0?null:args[0]);return 0;}catch(Exception ex){Console.Error.WriteLine(ex);return 1;}}"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 95,
+        "code": "string xml=Encode(settings);string target=PathPolicy.ConfigFile(path),directory=Path.GetDirectoryName(target);Directory.CreateDirectory(directory);string temp=PathPolicy.Within(directory,\".sc-\"+Guid.NewGuid().ToString(\"N\")+\".tmp\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 63,
+      "id": "758400680",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=cFOjw3vO14CUq2go4suGcq8mmBM%3D)",
+      "source": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 10,
+        "code": "[STAThread] public static int Main(string[] args){try{Run(args.Length==0?null:args[0]);return 0;}catch(Exception ex){Console.Error.WriteLine(ex);return 1;}}"
+      },
+      "destination": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 34,
+        "code": "string tooLarge=Path.Combine(root,\"oversize.xml\");File.WriteAllBytes(tooLarge,new byte[ServiceConnections.MaxFileBytes+1]);Reject(()=>ServiceConnections.Load(tooLarge),\"saved byte bound\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 64,
+      "id": "-1574684448",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=ayO64RcRfZYLw3mThOGT9LTB%2BKk%3D)",
+      "source": {
+        "file": "/tests/s3/NativeRendererTests.cs",
+        "line": 49,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s3/NativeRendererTests.cs",
+        "line": 56,
+        "code": "canonical = File.ReadAllText(args[0]); scene = File.ReadAllText(args[1]);"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 65,
+      "id": "-1153363084",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=5ISg%2BvUmaKpx4MXhubrDAy%2FToWM%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/ContextPropertiesOfficeTests.cs",
+        "line": 60,
+        "code": "Directory.CreateDirectory(output);evidenceDirectory=output;focusCheckpoint=0;count=0;var connections=app.COMAddIns.Cast<Office.COMAddIn>().Where(a=>(a.ProgId+\" \"+a.Description).Contains(\"PowerPointIntelligence\")||(a.ProgId+\" \"+a.Description).Contains(\"PowerPoint Intelligence\")).ToArray();if(connections.Length!=1||!connections[0].Connect)throw new InvalidOperationException(\"Install/connect the current PowerPoint Intelligence add-in before contextual UI validation.\");dynamic api=connections[0].Object;string build=(string)api.GetBuildInfo();if(!build.StartsWith(DemoRibbon.BuildMarker+\";\",StringComparison.Ordinal))throw new InvalidOperationException(\"Installed add-in is stale. Install the current source before testing its automatic property box.\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 66,
+      "id": "-1345387132",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=%2B6SWSl5m6vERz9ZwiStU6Mggpyk%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/ContextPropertiesOfficeTests.cs",
+        "line": 25,
+        "code": "var watch=System.Diagnostics.Stopwatch.StartNew();XmlElement state=null;do{Application.DoEvents();state=State(api);if(visible&&ContextSelectionBridge.GetForegroundWindow()!=expectedOwner){File.WriteAllText(Path.Combine(evidenceDirectory,\"context-properties-focus-lost.xml\"),state.OuterXml);throw new ContextTestForegroundUnavailableException(\"Foreground focus was lost during the \"+kind+\" panel assertion. This assertion is BLOCKED, not a panel failure or a pass. See context-properties-focus-lost.xml.\");}if(state.GetAttribute(\"refreshes\")!=\"0\"&&!String.IsNullOrEmpty(state.GetAttribute(\"refreshes\"))&&state.GetAttribute(\"visible\")== (visible?\"true\":\"false\")&&(!visible||state.GetAttribute(\"kind\")==kind&&state.GetAttribute(\"selectionMatches\")==\"true\"))return state;Thread.Sleep(75);}while(watch.ElapsedMilliseconds<8000);"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 67,
+      "id": "1966682696",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=7rewLZBKoGELQLg%2BbNOvQVT7N2I%3D)",
+      "source": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 10,
+        "code": "[STAThread] public static int Main(string[] args){try{Run(args.Length==0?null:args[0]);return 0;}catch(Exception ex){Console.Error.WriteLine(ex);return 1;}}"
+      },
+      "destination": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 32,
+        "code": "Check(ServiceConnections.Load(file).Profiles.All(p=>ServiceConnections.Status(p)==\"Not configured\")&&!Directory.Exists(root),\"read/cancel path creates no file or directory\");ServiceConnections.Save(file,Valid());string first=File.ReadAllText(file);Check(ServiceConnections.Encode(ServiceConnections.Load(file))==first,\"file round trip\");var changed=Valid();changed.Profiles[0].Deployment=\"second-approved-deployment\";ServiceConnections.Save(file,changed);Check(ServiceConnections.Load(file).Profiles[0].Deployment==\"second-approved-deployment\",\"existing config atomically replaced\");Check(Directory.GetFiles(root).Length==1,\"temporary files cleaned after save\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 68,
+      "id": "-169465736",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=iMEbQ%2BVg7OCNmcM5KxWxMCspclE%3D)",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 12,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 70,
+        "code": "string source=File.ReadAllText(args[0]);"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 69,
+      "id": "-1579543158",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=OVROfQJpN8e2umcgTkTvnE0Ve1E%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/DataSourceTests.cs",
+        "line": 122,
+        "code": "string directory=Path.Combine(output,\"data-source-reference-fixtures\");Directory.CreateDirectory(directory);"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 70,
+      "id": "-1612927088",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=%2FNWLGBLBbDxWhRyOwUNJ75vmHBQ%3D)",
+      "source": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 19,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 27,
+        "code": "Directory.CreateDirectory(output);"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 71,
+      "id": "1237596672",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=jJMFl%2FDovXYbT%2FViodTJraRZhW4%3D)",
+      "source": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 10,
+        "code": "[STAThread] public static int Main(string[] args){try{Run(args.Length==0?null:args[0]);return 0;}catch(Exception ex){Console.Error.WriteLine(ex);return 1;}}"
+      },
+      "destination": {
+        "file": "/tests/s0/ServiceConnectionTests.cs",
+        "line": 33,
+        "code": "var badSave=Valid();badSave.Profiles[0].Endpoint=\"https://example.invalid/?token=secret\";string preserved=File.ReadAllText(file);Reject(()=>ServiceConnections.Save(file,badSave),\"invalid save rejected\");Check(File.ReadAllText(file)==preserved,\"invalid save preserves previous config\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 72,
+      "id": "1552682661",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=XbSYvn04mi5714eXXphSgAm9K2U%3D)",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 12,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/DataSourceTests.cs",
+        "line": 19,
+        "code": "Directory.CreateDirectory(output);var registryPath=Path.Combine(PathPolicy.TestPath(output),\"registry-fixture.csv\");File.WriteAllText(registryPath,\"Category,Value\\r\\nFixture,1\\r\\n\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 73,
+      "id": "-1599453999",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=5jzR7ThnRN%2BuLncI8zhlmbvFXNY%3D)",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 12,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/library/TemplateFidelityTests.cs",
+        "line": 84,
+        "code": "File.WriteAllLines(Path.Combine(output,\"raster-replay.csv\"),rows);Console.WriteLine(\"PASS \"+passed+\" saved raster comparisons. This is an offline replay, not a new native Office/formatting pass.\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 74,
+      "id": "2145587874",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=%2F1fpFogktpDsQ0cuEowJBMqW9cs%3D)",
+      "source": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 19,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s3/SceneContractTests.cs",
+        "line": 84,
+        "code": "File.WriteAllText(Path.Combine(output, \"results.json\"), JsonConvert.SerializeObject(rows, Formatting.Indented));"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 75,
+      "id": "711231073",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=dV7TT4DbdoCueWfsrcLKEGiEqMk%3D)",
+      "source": {
+        "file": "/tests/s0/HostIntegrationTests.cs",
+        "line": 51,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/HostIntegrationTests.cs",
+        "line": 96,
+        "code": "Directory.CreateDirectory(directory);"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 76,
+      "id": "920427747",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=Yy3wJwylzEF6opmfvqNfkKKOaFw%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/ContextPropertiesOfficeTests.cs",
+        "line": 71,
+        "code": "var connector=UniversalConnectors.Create(app,new ConnectorSpec {Begin=new ConnectorEndpoint {ShapeId=text.Id,Site=1},End=new ConnectorEndpoint {ShapeId=rounded.Id,Site=1}});connector.Select();Wait(api,app,\"Connector\",true);Check(true,\"universal connector receives its own controls\");var connectorState=UniversalConnectors.Read(connector);Check(connectorState.Begin.ShapeId==text.Id&&connectorState.End.ShapeId==rounded.Id,\"context connector retains native endpoint bindings\");File.WriteAllText(Path.Combine(output,\"context-connector-geometry.xml\"),new XElement(\"connectorGeometry\",new XAttribute(\"rotation\",connector.Rotation),new XAttribute(\"width\",connector.Width),new XAttribute(\"height\",connector.Height),new XAttribute(\"flipH\",connector.HorizontalFlip),new XAttribute(\"flipV\",connector.VerticalFlip)).ToString());"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 77,
+      "id": "341466547",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=J3ao0ojHMDSlB3FdStxA%2Fsn0jgw%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 38,
+        "code": "try{MappedExcelOfficeTests.Run(app,args[1]);File.WriteAllText(Path.Combine(args[1],\"mapped-excel-result.txt\"),\"PASS\");return 0;}"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 78,
+      "id": "-1299226345",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=vsXsBu62%2FPZMbk%2FE2RlV%2BLNls9I%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoScenario.cs",
+        "line": 56,
+        "code": "var directory=Path.Combine(root,\"assets\");Directory.CreateDirectory(directory);var path=Path.Combine(directory,\"sample.png\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 79,
+      "id": "-1651521647",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=3x3fMviqKSxGHXtQPjabWCybYZY%3D)",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 12,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/apps/powerpoint-vsto/ServiceConnections.cs",
+        "line": 95,
+        "code": "string xml=Encode(settings);string target=PathPolicy.ConfigFile(path),directory=Path.GetDirectoryName(target);Directory.CreateDirectory(directory);string temp=PathPolicy.Within(directory,\".sc-\"+Guid.NewGuid().ToString(\"N\")+\".tmp\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 80,
+      "id": "955143290",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=nXK3wnNq1GVR3kcofI%2FZZ3B%2B6Cc%3D)",
+      "source": {
+        "file": "/tests/s0/DemoContractTests.cs",
+        "line": 12,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/src/Library.Core/PiidxCatalog.cs",
+        "line": 34,
+        "code": "if(!File.Exists(IndexPath))throw new FileNotFoundException(\"PIIDX index is missing.\",IndexPath);"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 81,
+      "id": "-1429002613",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=lm7sH5t3aS%2FV67npfU3BxaUG3Ms%3D)",
+      "source": {
+        "file": "/tests/library/TemplateLibraryTests.cs",
+        "line": 22,
+        "code": "[STAThread] public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/library/TemplateLibraryTests.cs",
+        "line": 158,
+        "code": "for(int i=0;i<assets.Length;i++){var slide=deck.Slides[i+2];bool exact=RenderHash(slide,Path.Combine(output,\"original-\"+i+\"-reopened.png\"),heights[i])==pixelHashes[i];var raster=TemplateFidelity.Files(Path.Combine(output,\"original-\"+i+\"-source.png\"),Path.Combine(output,\"original-\"+i+\"-reopened.png\"));bool geometry=Geometry(slide,Path.Combine(output,\"original-\"+i+\"-reopened-geometry.tsv\"))==nativeGeometry[i],format=TemplateFidelity.Formatting(slide,Path.Combine(output,\"original-\"+i+\"-reopened-format.txt\"))==nativeFormatting[i];fidelityRows.Add(i+\",reopen,\"+exact+\",\"+geometry+\",\"+format+\",,,\"+raster.Accepted+\",\"+raster.ChangedPixels+\",\"+raster.MaxChannelDelta+\",\"+raster.AlphaChanges+\",\"+raster.NonEdgeChanges+\",\"+raster.AllowedPixels);File.WriteAllLines(Path.Combine(output,\"original-fidelity.csv\"),fidelityRows);if(!raster.Accepted||!geometry||!format)fidelityFailures.Add(\"Reopen fidelity \"+i+\": tolerance=\"+raster.Accepted+\", geometry=\"+geometry+\", formatting=\"+format);Check(slide.TimeLine.MainSequence.Count==sourceEffects[i]&&slide.Tags[\"PPI_LIBRARY_ASSET_VERSION\"]==assets[i].Signature,\"Original builds/provenance lost on reopen\");}"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 82,
+      "id": "-1429002613",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=R8yLmVwv1PsqjmL8Hx7eW6pvNZc%3D)",
+      "source": {
+        "file": "/tests/library/TemplateLibraryTests.cs",
+        "line": 22,
+        "code": "[STAThread] public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/library/TemplateLibraryTests.cs",
+        "line": 153,
+        "code": "bool exactPixels=RenderHash(slide,Path.Combine(output,\"original-\"+i+\"-inserted.png\"),heights[i])==pixelHashes[i];bool exactGeometry=Geometry(slide,Path.Combine(output,\"original-\"+i+\"-inserted-geometry.tsv\"))==geometry;bool exactFormat=TemplateFidelity.Formatting(slide,Path.Combine(output,\"original-\"+i+\"-inserted-format.txt\"))==nativeFormatting[i];bool repeatSource=RenderHash(session.Source(item),Path.Combine(output,\"original-\"+i+\"-source-repeat.png\"),heights[i])==pixelHashes[i];var raster=TemplateFidelity.Files(Path.Combine(output,\"original-\"+i+\"-source.png\"),Path.Combine(output,\"original-\"+i+\"-inserted.png\"));var repeatRaster=TemplateFidelity.Files(Path.Combine(output,\"original-\"+i+\"-source.png\"),Path.Combine(output,\"original-\"+i+\"-source-repeat.png\"));fidelityRows.Add(i+\",insert,\"+exactPixels+\",\"+exactGeometry+\",\"+exactFormat+\",\"+repeatSource+\",\"+repeatRaster.Accepted+\",\"+raster.Accepted+\",\"+raster.ChangedPixels+\",\"+raster.MaxChannelDelta+\",\"+raster.AlphaChanges+\",\"+raster.NonEdgeChanges+\",\"+raster.AllowedPixels);File.WriteAllLines(Path.Combine(output,\"original-fidelity.csv\"),fidelityRows);if(!raster.Accepted||!repeatRaster.Accepted||!exactGeometry||!exactFormat)fidelityFailures.Add(\"Insertion fidelity \"+i+\": exactPixels=\"+exactPixels+\", tolerance=\"+raster.Accepted+\", geometry=\"+exactGeometry+\", formatting=\"+exactFormat+\", repeated source=\"+repeatSource);Check(slide.Tags[\"PPI_LIBRARY_FORMATTING\"]==\"KEEP_SOURCE\",\"Source provenance missing\");"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 83,
+      "id": "1407586478",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=VRdoDmcwBdbVunjAuR2YbreNG%2FY%3D)",
+      "source": {
+        "file": "/tests/library/TemplateLibraryTests.cs",
+        "line": 22,
+        "code": "[STAThread] public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/library/TemplateLibraryTests.cs",
+        "line": 135,
+        "code": "var rows=new List<string>();Action<PowerPoint.Shape,string> visit=null;visit=(shape,path)=>{string text=\"\";if(shape.HasTextFrame==Office.MsoTriState.msoTrue&&shape.TextFrame.HasText==Office.MsoTriState.msoTrue)using(var hash=SHA256.Create())text=BitConverter.ToString(hash.ComputeHash(Encoding.UTF8.GetBytes(shape.TextFrame.TextRange.Text)));rows.Add(path+\"\\t\"+shape.Type+\"\\t\"+String.Join(\"\\t\",new[]{shape.Left,shape.Top,shape.Width,shape.Height,shape.Rotation}.Select(x=>x.ToString(\"R\",CultureInfo.InvariantCulture)))+\"\\t\"+text);if(shape.Type==Office.MsoShapeType.msoGroup)for(int i=1;i<=shape.GroupItems.Count;i++)visit(shape.GroupItems[i],path+\".\"+i);};for(int i=1;i<=slide.Shapes.Count;i++)visit(slide.Shapes[i],i.ToString(CultureInfo.InvariantCulture));File.WriteAllLines(output,rows);return String.Join(\"\\n\",rows);"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 84,
+      "id": "1018546989",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=q8br0PTkp8JoaO3pw5D4ZEDrp0I%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 49,
+        "code": "File.WriteAllLines(Path.Combine(args[1],\"features.csv\"),rows);"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Path_Traversal",
+      "ordinal": 85,
+      "id": "-1719932254",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=dVJnr%2BnnVWaFkfzhPU%2FSwmHIq8M%3D)",
+      "source": {
+        "file": "/tests/s0/DemoOfficeTests.cs",
+        "line": 25,
+        "code": "public static int Main(string[] args)"
+      },
+      "destination": {
+        "file": "/tests/s0/ContextPropertiesOfficeTests.cs",
+        "line": 47,
+        "code": "var doc=new XmlDocument();var root=doc.CreateElement(\"testForeground\");doc.AppendChild(root);root.SetAttribute(\"checkpoint\",checkpoint);root.SetAttribute(\"initiallyForeground\",result.InitiallyForeground?\"true\":\"false\");root.SetAttribute(\"requestAccepted\",result.RequestAccepted?\"true\":\"false\");root.SetAttribute(\"verified\",result.Verified?\"true\":\"false\");root.SetAttribute(\"promptShown\",promptShown?\"true\":\"false\");root.SetAttribute(\"userStarted\",userStarted?\"true\":\"false\");root.SetAttribute(\"userRequestAccepted\",userRequestAccepted?\"true\":\"false\");File.WriteAllText(Path.Combine(evidenceDirectory,\"context-foreground-\"+checkpoint+\".xml\"),doc.OuterXml);"
+      },
+      "cwe": "22",
+      "control": "CLI source/output arguments use validated local variables rather than array mutation; paths are reconstructed from independent repository/temp roots with filename-only components and existing containment/device/reparse checks.",
+      "current_guard": {
+        "file": "src/Library.Core/PathPolicy.cs",
+        "line": 68
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Stored_Path_Traversal",
+      "ordinal": 1,
+      "id": "-1886406541",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=dsvNKllq1Hnl8645r8MnJpF%2FQNg%3D)",
+      "source": {
+        "file": "/src/Library.Core/LibraryConfiguration.cs",
+        "line": 85,
+        "code": "string root=LegacyFolder(File.ReadAllText(LegacyCachePath));if(!Directory.Exists(root))throw new DirectoryNotFoundException(\"Legacy library source folder is unavailable; original registration preserved.\");"
+      },
+      "destination": {
+        "file": "/src/Library.Core/PiidxCatalog.cs",
+        "line": 60,
+        "code": "root=Root(root);if(!Directory.Exists(root))throw new DirectoryNotFoundException(\"Library root is unavailable.\");"
+      },
+      "cwe": "22",
+      "control": "Legacy cache is a request only: root must equal a configured/registered authority, and the independently approved string is passed to IO. Unapproved roots require Add/configure library and are rejected before directory access.",
+      "current_guard": {
+        "file": "src/Library.Core/LibraryConfiguration.cs",
+        "line": 85
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    },
+    {
+      "query": "Stored_Path_Traversal",
+      "ordinal": 2,
+      "id": "531211230",
+      "severity": "High",
+      "url": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/68fa6f10-c0fc-485c-837e-e70c4c0d3104?resultId=CBjCaFFjGum3LkLNO4z26JiiKC8%3D)",
+      "source": {
+        "file": "/src/Library.Core/LibraryConfiguration.cs",
+        "line": 85,
+        "code": "string root=LegacyFolder(File.ReadAllText(LegacyCachePath));if(!Directory.Exists(root))throw new DirectoryNotFoundException(\"Legacy library source folder is unavailable; original registration preserved.\");"
+      },
+      "destination": {
+        "file": "/src/Library.Core/PiidxCatalog.cs",
+        "line": 61,
+        "code": "if((File.GetAttributes(root)&FileAttributes.ReparsePoint)!=0)throw new InvalidDataException(\"Register a direct library directory.\");"
+      },
+      "cwe": "22",
+      "control": "Legacy cache is a request only: root must equal a configured/registered authority, and the independently approved string is passed to IO. Unapproved roots require Add/configure library and are rejected before directory access.",
+      "current_guard": {
+        "file": "src/Library.Core/LibraryConfiguration.cs",
+        "line": 85
+      },
+      "status": "Revised source control and local verification; Checkmarx rescan pending"
+    }
+  ]
+}

@@ -18,7 +18,7 @@ internal static class OfficeCompatibilityTests
     }
     public static int Main(string[] args)
     {
-            if(args.Length>0)args[0]=PowerPointIntelligence.Security.PathPolicy.TestPath(args[0]);
+            string configurationFile=args.Length>0?PowerPointIntelligence.Security.PathPolicy.TestPath(args[0]):null;
 
         try
         {
@@ -63,7 +63,7 @@ internal static class OfficeCompatibilityTests
                 Require(result.Allowed && result.Message.Contains("edition not auto-detected"));
             });
             Test("shipped add-in config parses", () => {
-                var s = OfficeSettings.Load(args[0]); Require(s.Profile == "auto" && s.Architecture == "any");
+                var s = OfficeSettings.Load(configurationFile); Require(s.Profile == "auto" && s.Architecture == "any");
             });
             Test("missing configuration uses portable defaults", () => {
                 Require(OfficeSettings.Load(Path.Combine(Path.GetTempPath(), Guid.NewGuid() + ".config")).Profile == "auto");

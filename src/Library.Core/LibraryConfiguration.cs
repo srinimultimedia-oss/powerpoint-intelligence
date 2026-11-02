@@ -82,7 +82,7 @@ namespace PowerPointIntelligence.Library
             if(new FileInfo(LegacyCachePath).Length>40000000)throw new InvalidDataException("Legacy registration exceeds migration limits; original file preserved.");
             string hash=PresentationSource.Fingerprint(LegacyCachePath,cancellation),receipt=Path.Combine(Path.GetDirectoryName(catalog.IndexPath),"legacy-migration-"+hash+".xml");
             if(File.Exists(receipt))return null;
-            string root=LegacyFolder(File.ReadAllText(LegacyCachePath));if(!Directory.Exists(root))throw new DirectoryNotFoundException("Legacy library source folder is unavailable; original registration preserved.");
+            string requested=LegacyFolder(File.ReadAllText(LegacyCachePath));string root=PathPolicy.ApprovedRoot(requested,Sources.Select(source=>source.Root).Concat(catalog.Libraries().Select(library=>library.Root)));if(!Directory.Exists(root))throw new DirectoryNotFoundException("Legacy library source folder is unavailable; original registration preserved.");
             string id=catalog.Register(root,Path.GetFileName(root.TrimEnd(Path.DirectorySeparatorChar))+" (migrated)",true);catalog.Refresh(id,cancellation);catalog.VerifyIntegrity();
             if(PresentationSource.Fingerprint(LegacyCachePath,cancellation)!=hash)throw new IOException("Legacy registration changed while migrating; no receipt written.");
             var doc=new XDocument(new XElement("Migration",new XAttribute("version","1"),new XAttribute("source",LegacyCachePath),new XAttribute("sourceSha256",hash),new XAttribute("libraryId",id),new XAttribute("index",catalog.IndexPath),new XAttribute("root",root),new XAttribute("utc",DateTime.UtcNow.ToString("o",CultureInfo.InvariantCulture))));
