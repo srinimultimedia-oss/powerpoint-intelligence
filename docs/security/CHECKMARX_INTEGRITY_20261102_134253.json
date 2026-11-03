@@ -1,0 +1,166 @@
+{
+  "report": "C:\\Users\\srini\\Downloads\\Cx_ScanReport_2026-11-02_134253.md",
+  "report_sha256": "8ebf55258a25d11bc57b6bf2b85004e829c256ca708670b06a41a80e0fc91ca1",
+  "scan_id": "544cab95-7e5b-4d76-b64c-a4ba3244db44",
+  "scan_time": "2026-11-02 13:38 Asia/Dubai",
+  "created": "2026-11-02 13:42 Asia/Dubai",
+  "active_traversal": 0,
+  "high_summary": 7,
+  "detailed_sast": 6,
+  "scs_summary_only": 1,
+  "source_sha256": "6D4B966CB5F7A07544FE087842E325B14E06319FD208ED721CEC6B32D8737915",
+  "findings": [
+    {
+      "ordinal": 1,
+      "id": "-440452681",
+      "severity": "High",
+      "detail_query": "Inclusion of Functionality from Untrusted Control Sphere",
+      "detail_cwe": 829,
+      "link": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/544cab95-7e5b-4d76-b64c-a4ba3244db44?resultId=UwdWmtbzQ%2FNMvz4zdSW5HTco9nA%3D)",
+      "source": {
+        "file": "/scripts/Piidx-TestSuite.ps1",
+        "line": 11,
+        "code": "$prior=$null;if(Test-Path -LiteralPath $receipt){$prior=Get-Content -LiteralPath $receipt -Raw | ConvertFrom-Json}"
+      },
+      "destination": {
+        "file": "/scripts/Piidx-TestSuite.ps1",
+        "line": 26,
+        "code": "$null=[Reflection.Assembly]::LoadFrom($dll)"
+      },
+      "summary_classification": "Inclusion / CWE-829",
+      "assessment": "Confirmed cache authenticity gap",
+      "affected_changes": "scripts/Piidx-TestSuite.ps1; scripts/Build-Integrity.ps1",
+      "recommendation_and_change": "Reproduce current trusted source with authenticated Microsoft compiler, compare independent bytes, verify loaded state, load checked bytes instead of reopening a path. Existing missing/unreceipted/hash gates remain. Full PIIDX runtime blocked by historical missing DLL.",
+      "scanner_resolution": "Pending confirming scan / reviewer validation"
+    },
+    {
+      "ordinal": 2,
+      "id": "1619924552",
+      "severity": "High",
+      "detail_query": "Inclusion of Functionality from Untrusted Control Sphere",
+      "detail_cwe": 829,
+      "link": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/544cab95-7e5b-4d76-b64c-a4ba3244db44?resultId=ClcRZxCOdcTfMJDLj2AU1XFnAFY%3D)",
+      "source": {
+        "file": "/scripts/Source-Fingerprint.ps1",
+        "line": 18,
+        "code": "$files=@(Get-ChildItem (Join-Path $Root 'apps/powerpoint-vsto') -File -Recurse | Where-Object { $_.FullName -notmatch '[\\\\/](bin|obj)[\\\\/]' -and $_.Extension -in @('.cs','.csproj','.config','.json') }; Get-ChildItem (Join-Path $Root 'src/Chart.Domain') -File; Get-ChildItem (Join-Path $Root 'src/Chart.Renderers') -File; Get-ChildItem (Join-Path $Root 'src/Shared.Contracts') -File; Get-ChildItem (Join-Path $Root 'src/Library.Core') -File) | Sort-Object FullName"
+      },
+      "destination": {
+        "file": "/scripts/Source-Fingerprint.ps1",
+        "line": 19,
+        "code": "$lines=@($files | ForEach-Object { ($_.FullName.Substring($Root.Length+1))+'='+(Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash })"
+      },
+      "summary_classification": "Download / CWE-494",
+      "assessment": "Potential false positive: hashing, not code acquisition/execution",
+      "affected_changes": "scripts/Source-Fingerprint.ps1; scripts/Build-Integrity.ps1",
+      "recommendation_and_change": "These source filenames feed read-only SHA-256 fingerprinting, not download/evaluation/launch. Replaced path-based cmdlet hashing with locked stream hashing, preserving exact output. Fingerprints are not asserted to authenticate their own source. Scanner review/rescan required; no suppression.",
+      "scanner_resolution": "Pending confirming scan / reviewer validation"
+    },
+    {
+      "ordinal": 3,
+      "id": "1611841882",
+      "severity": "High",
+      "detail_query": "Inclusion of Functionality from Untrusted Control Sphere",
+      "detail_cwe": 829,
+      "link": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/544cab95-7e5b-4d76-b64c-a4ba3244db44?resultId=tZzaGQZ9RePuJraih8zd1V1E4tA%3D)",
+      "source": {
+        "file": "/scripts/Source-Fingerprint.ps1",
+        "line": 7,
+        "code": "$_.FullName.Substring($Root.Length+1) -notmatch '(^|[\\\\/])(bin|obj|node_modules|artifacts)[\\\\/]' -and $_.Extension -in @('.cs','.csproj','.ps1','.py','.json','.mjs','.ts','.tsx','.config','.xsd')"
+      },
+      "destination": {
+        "file": "/scripts/Source-Fingerprint.ps1",
+        "line": 10,
+        "code": "$records.Add($relative+'='+(Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash)"
+      },
+      "summary_classification": "Download / CWE-494",
+      "assessment": "Potential false positive: hashing, not code acquisition/execution",
+      "affected_changes": "scripts/Source-Fingerprint.ps1; scripts/Build-Integrity.ps1",
+      "recommendation_and_change": "Same data-read boundary for general source fingerprint: locked stream hashing; no download or executable sink. Retain for scanner review rather than declaring automatic resolution.",
+      "scanner_resolution": "Pending confirming scan / reviewer validation"
+    },
+    {
+      "ordinal": 4,
+      "id": "1735884981",
+      "severity": "High",
+      "detail_query": "Inclusion of Functionality from Untrusted Control Sphere",
+      "detail_cwe": 829,
+      "link": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/544cab95-7e5b-4d76-b64c-a4ba3244db44?resultId=CEgdOtszNx4zIWh5NfLbqcfoIN8%3D)",
+      "source": {
+        "file": "/scripts/Scene-RunnerCache.ps1",
+        "line": 15,
+        "code": "$receipt=Get-Content -LiteralPath $ReceiptPath -Raw | ConvertFrom-Json"
+      },
+      "destination": {
+        "file": "/scripts/Test-SceneContracts.ps1",
+        "line": 58,
+        "code": "& $executable tests/s3/fixtures/all-primitives.v1.json $roundtrip $corpus 2>&1 | Tee-Object -FilePath (Join-Path $results 'execution.log')"
+      },
+      "summary_classification": "Download / CWE-494",
+      "assessment": "Confirmed cache authenticity gap",
+      "affected_changes": "scripts/Test-SceneContracts.ps1; scripts/Scene-RunnerCache.ps1; scripts/Build-Integrity.ps1",
+      "recommendation_and_change": "Reproduce source/library/dependency outside the cache, compare independent results, hold cached files read-locked through launch; verify compiler and dependency publisher/identity. Apply the same pattern to the template runner. Keep quarantine/review gates.",
+      "scanner_resolution": "Pending confirming scan / reviewer validation"
+    },
+    {
+      "ordinal": 5,
+      "id": "-1447597795",
+      "severity": "High",
+      "detail_query": "Inclusion of Functionality from Untrusted Control Sphere",
+      "detail_cwe": 829,
+      "link": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/544cab95-7e5b-4d76-b64c-a4ba3244db44?resultId=N3iP3l9zlKd9tSsqYE%2B7mnyvVas%3D)",
+      "source": {
+        "file": "/easySetup/Build-EasySetup.ps1",
+        "line": 14,
+        "code": "$certificate=Get-Item ('Cert:\\CurrentUser\\My\\'+$CertificateThumbprint)"
+      },
+      "destination": {
+        "file": "/easySetup/Build-EasySetup.ps1",
+        "line": 78,
+        "code": "$signature=Set-AuthenticodeSignature -FilePath $pending -Certificate $certificate -HashAlgorithm SHA256"
+      },
+      "summary_classification": "Download / CWE-494",
+      "assessment": "Conditional signer authority; not a download flow",
+      "affected_changes": "easySetup/Build-EasySetup.ps1; scripts/Build-Integrity.ps1",
+      "recommendation_and_change": "Validate exact 40-hex thumbprint, typed CurrentUser/My lookup, current certificate/private key/explicit code-signing EKU and normal chain/revocation policy. Authenticate Microsoft build tools and preserve post-signature Valid check. Desktop private-key publishing pending.",
+      "scanner_resolution": "Pending confirming scan / reviewer validation"
+    },
+    {
+      "ordinal": 6,
+      "id": "156779163",
+      "severity": "High",
+      "detail_query": "Inclusion of Functionality from Untrusted Control Sphere",
+      "detail_cwe": 829,
+      "link": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/544cab95-7e5b-4d76-b64c-a4ba3244db44?resultId=WIQ%2FF4n%2FYFIX5YdyKEuzvBzTdaE%3D)",
+      "source": {
+        "file": "/easySetup/Build-EasySetup.ps1",
+        "line": 14,
+        "code": "$certificate=Get-Item ('Cert:\\CurrentUser\\My\\'+$CertificateThumbprint)"
+      },
+      "destination": {
+        "file": "/easySetup/Build-EasySetup.ps1",
+        "line": 27,
+        "code": "& (Join-Path $vs 'MSBuild/Current/Bin/MSBuild.exe') (Join-Path $repo 'apps/powerpoint-vsto/PowerPointIntelligence.csproj') /t:Build /p:Configuration=Release \"/p:Platform=$platform\" /p:SignManifests=true /p:UseSharedCompilation=false /p:PpiForcePayloadCompile=true /p:PpiEasySetupBuild=true \"/p:OutputPath=$output/\" \"/p:AppConfig=$configFile\" \"/p:ManifestCertificateThumbprint=$CertificateThumbprint\" \"/p:ApplicationVersion=$DeploymentVersion\" /v:minimal /nologo"
+      },
+      "summary_classification": "Download / CWE-494",
+      "assessment": "Conditional build property injection / signer authority",
+      "affected_changes": "easySetup/Build-EasySetup.ps1; scripts/Build-Integrity.ps1",
+      "recommendation_and_change": "Replace arbitrary certificate-provider path with exact typed lookup. Canonical certificate thumbprint is the MSBuild property; malformed values/semicolon property injection rejected before store access or build. Validate Microsoft tool role/signature. No trust import or unsigned fallback.",
+      "scanner_resolution": "Pending confirming scan / reviewer validation"
+    }
+  ],
+  "verification": {
+    "suite": "artifacts/validation-20261102-145526-7c15431e/results.json",
+    "passed": 23,
+    "failed_held": 1,
+    "failure": "piidx-engine: missing DLL despite existing receipt; no restoration",
+    "integrity_assertions": 20,
+    "setup_source_assertions": 8,
+    "resource_reader_assertions": 3,
+    "scene_per_architecture_assertions": 154,
+    "scene_per_architecture_roundtrips": 73,
+    "signed_private_key_publish": "Desktop validation pending",
+    "checkmarx_rescan": "Pending",
+    "supply_chain_summary": "Unidentified rule; supplied file names overlap known SAST records"
+  }
+}

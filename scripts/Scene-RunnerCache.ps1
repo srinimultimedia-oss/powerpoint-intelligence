@@ -1,6 +1,7 @@
-﻿function Get-PpiSceneBuildKey([string]$Root,[string]$Platform,[string]$Compiler,[string[]]$References,[string[]]$Sources,[string]$CacheKind='scene') {
+﻿. (Join-Path $PSScriptRoot 'Build-Integrity.ps1')
+function Get-PpiSceneBuildKey([string]$Root,[string]$Platform,[string]$Compiler,[string[]]$References,[string[]]$Sources,[string]$CacheKind='scene') {
     if(!$Sources){$Sources=@('src/Chart.Renderers/SceneContracts.cs','src/Chart.Renderers/SceneCodec.cs','src/Chart.Renderers/StrictSceneJson.cs','src/Shared.Contracts/BoundedJson.cs','tests/s3/SceneContractTests.cs','tests/s3/SceneArtifactPath.cs','src/Library.Core/PathPolicy.cs')}
-    $records=@("$CacheKind-runner-cache-v1",'net48','csharp73',$Platform)
+    $records=@("$CacheKind-runner-cache-v2",'net48','csharp73',$Platform)
     foreach($source in $sources){$records+=($source+'='+(Get-FileHash -LiteralPath (Join-Path $Root $source) -Algorithm SHA256).Hash)}
     $records+=('compiler='+(Get-FileHash -LiteralPath $Compiler -Algorithm SHA256).Hash)
     foreach($reference in $References){$records+=([IO.Path]::GetFileName($reference)+'='+(Get-FileHash -LiteralPath $reference -Algorithm SHA256).Hash)}
