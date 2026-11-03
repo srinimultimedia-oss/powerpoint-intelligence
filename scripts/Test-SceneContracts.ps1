@@ -7,10 +7,13 @@ $repo=Split-Path $PSScriptRoot -Parent
 if(!$RunnerRoot){$RunnerRoot=$repo}
 $RunnerRoot=(Resolve-Path -LiteralPath $RunnerRoot).ProviderPath
 Push-Location $repo
+$executionLeases=@();$referenceLease=$null
 try {
     $vswhere=Join-Path ${env:ProgramFiles(x86)} 'Microsoft Visual Studio/Installer/vswhere.exe'
+    Assert-PpiMicrosoftBuildTool $vswhere 'vswhere.exe'
     $vsPath=& $vswhere -latest -products '*' -property installationPath
     $compiler=Join-Path $vsPath 'MSBuild/Current/Bin/Roslyn/csc.exe'
+    Assert-PpiMicrosoftBuildTool $compiler 'csc.exe'
     $refs=Join-Path ${env:ProgramFiles(x86)} 'Reference Assemblies/Microsoft/Framework/.NETFramework/v4.8'
     if(!(Test-Path (Join-Path $refs 'mscorlib.dll'))) { throw '.NET Framework 4.8 targeting pack is required.' }
     $dependency=Join-Path $repo 'artifacts/refs/newtonsoft/lib/net45/Newtonsoft.Json.dll'
@@ -22,6 +25,16 @@ try {
     $receiptPath=Join-Path $output 'compiled.json'
     $files=[ordered]@{Executable=(Join-Path $output 'SceneContractTests.exe');Library=(Join-Path $output 'Chart.Renderers.Contracts.dll');Dependency=(Join-Path $output 'Newtonsoft.Json.dll')}
     $key=Get-PpiSceneBuildKey $repo $Platform $compiler @("$refs/mscorlib.dll","$refs/System.dll","$refs/System.Core.dll",$dependency)
+    $referenceLease=[IO.File]::Open($dependency,[IO.FileMode]::Open,[IO.FileAccess]::Read,[IO.FileShare]::Read)
+    Assert-PpiSceneDependency $dependency
+    $references=@('/nostdlib+',"/r:$refs/mscorlib.dll","/r:$refs/System.dll","/r:$refs/System.Core.dll","/r:$dependency")
+    $sourceBuild={param($targets)
+        Copy-Item -LiteralPath $dependency -Destination $targets.Dependency -Force
+        $buildOutput=& $compiler /nologo /deterministic+ /langversion:7.3 "/pathmap:$repo=/_/PowerPointIntelligence" "/platform:$Platform" /target:library "/out:$($targets.Library)" @references src/Chart.Renderers/SceneContracts.cs src/Chart.Renderers/SceneCodec.cs src/Chart.Renderers/StrictSceneJson.cs src/Shared.Contracts/BoundedJson.cs
+        if($LASTEXITCODE){throw ('Scene source library build failed. '+($buildOutput -join [Environment]::NewLine))}
+        $buildOutput=& $compiler /nologo /deterministic+ /langversion:7.3 "/pathmap:$repo=/_/PowerPointIntelligence" "/platform:$Platform" /target:exe "/out:$($targets.Executable)" @references "/r:$($targets.Library)" tests/s3/SceneContractTests.cs tests/s3/SceneArtifactPath.cs src/Library.Core/PathPolicy.cs
+        if($LASTEXITCODE){throw ('Scene source runner build failed. '+($buildOutput -join [Environment]::NewLine))}
+    }.GetNewClosure()
     $legacyAudit=$null
     if($ReviewLegacyReceipt){$legacyAudit=Start-PpiLegacySourceReview $receiptPath $files $ScannerEvidence $key $repo;$state='Build'}
     elseif($RebuildReviewedRunner){$state=Start-PpiReviewedRunnerBuild $receiptPath $files $ScannerEvidence -RecoverMissing:$RecoverMissingRunner}else{$state=Get-PpiSceneCacheState $receiptPath $key $files}
@@ -29,12 +42,7 @@ try {
     if(Test-Path -LiteralPath $priorLaunch){$prior=Get-Content -LiteralPath $priorLaunch -Raw | ConvertFrom-Json;if($prior.Status -ne 'PASS' -and ($null -eq $prior.ExitCode -or $prior.PresentAfter -eq $false)){throw 'Previous scene runner failed to launch or disappeared. Review its launch/scanner evidence before running it again. No replacement was created.'}}
     if($state -eq 'Build') {
         New-Item -ItemType Directory -Force $output | Out-Null
-        Copy-Item $dependency $files.Dependency
-        $references=@('/nostdlib+',"/r:$refs/mscorlib.dll","/r:$refs/System.dll","/r:$refs/System.Core.dll","/r:$dependency")
-        & $compiler /nologo /deterministic+ /langversion:7.3 "/platform:$Platform" /target:library "/out:$($files.Library)" @references src/Chart.Renderers/SceneContracts.cs src/Chart.Renderers/SceneCodec.cs src/Chart.Renderers/StrictSceneJson.cs src/Shared.Contracts/BoundedJson.cs
-        if($LASTEXITCODE){throw 'Scene library build failed.'}
-        & $compiler /nologo /deterministic+ /langversion:7.3 "/platform:$Platform" /target:exe "/out:$($files.Executable)" @references "/r:$($files.Library)" tests/s3/SceneContractTests.cs tests/s3/SceneArtifactPath.cs src/Library.Core/PathPolicy.cs
-        if($LASTEXITCODE){throw 'Scene runner build failed.'}
+        & $sourceBuild $files
         $hashes=[ordered]@{};foreach($name in $files.Keys){$hashes[$name]=(Get-FileHash -LiteralPath $files[$name] -Algorithm SHA256).Hash}
         if($ScannerEvidence){$report=Read-PpiReviewedScannerEvidence $ScannerEvidence;Assert-PpiRunnerScannerClear $report $files $hashes}
         [pscustomobject]@{BuildKey=$key;Platform=$Platform;TargetFramework='.NET Framework 4.8';Hashes=$hashes;ExecutableSha256=$hashes.Executable;LibrarySha256=$hashes.Library;LegacySourceReview=$legacyAudit;ScannerEvidence=$(if($legacyAudit){[IO.Path]::GetFullPath($ScannerEvidence)}else{$null});ScannerEvidenceSha256=$(if($legacyAudit){(Get-FileHash -LiteralPath $ScannerEvidence -Algorithm SHA256).Hash}else{$null});Time=(Get-Date).ToString('o')} | ConvertTo-Json -Depth 5 | Set-Content $receiptPath
@@ -47,6 +55,8 @@ try {
         $launchHashes=[ordered]@{};foreach($name in $files.Keys){$launchHashes[$name]=(Get-FileHash -LiteralPath $files[$name] -Algorithm SHA256).Hash}
         Assert-PpiRunnerScannerClear $report $files $launchHashes
     }
+    $executionLeases=Get-PpiReproducedArtifacts $files $sourceBuild
+    Write-Output 'PASS cached scene code and dependency match independently rebuilt current sources; execution files locked.'
     $executable=$files.Executable
     Write-Output "$state scene runner at stable path: $executable"
     New-Item -ItemType Directory -Force $results | Out-Null
@@ -89,4 +99,4 @@ try {
     $negativeRun=Start-Process -FilePath $executable -ArgumentList @(('"'+$golden+'"'),('"'+$negativeOutput+'"'),('"'+$negative+'"')) -WindowStyle Hidden -Wait -PassThru -RedirectStandardOutput (Join-Path $negative 'stdout.log') -RedirectStandardError (Join-Path $negative 'stderr.log')
     if($negativeRun.ExitCode -ne 1 -or [IO.File]::ReadAllText($sentinel) -ne 'owned sentinel' -or !(Select-String -LiteralPath (Join-Path $negative 'stderr.log') -Pattern 'Corpus name' -Quiet)){throw 'Real scene runner did not reject the unsafe corpus name without altering the sentinel.'}
     Write-Output 'PASS real scene runner rejects corpus traversal before outside-output mutation.'
-} finally { Pop-Location }
+} finally {foreach($lease in $executionLeases){$lease.Stream.Dispose()};if($referenceLease){$referenceLease.Dispose()}; Pop-Location }

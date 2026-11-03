@@ -27,5 +27,6 @@ Write-Output "PASS $count corpus-path policy assertions against the actual C# he
 Add-Type -Path @((Join-Path $repo 'src/Library.Core/PathPolicy.cs'),(Join-Path $repo 'tests/security/PathPolicyTests.cs'))
 $null=[PowerPointIntelligence.Tests.Security.PathPolicyTests]::Run($repo)
 & (Join-Path $PSScriptRoot 'Test-DiagnosticOutputPath.ps1')
+& (Join-Path $PSScriptRoot 'Test-BuildIntegrity.ps1')
 & $Python -B (Join-Path $repo 'tests/security/test_repair_template_alignment.py')
 if($LASTEXITCODE){throw 'Repair security regression tests failed.'}

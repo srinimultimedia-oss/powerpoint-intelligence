@@ -7,11 +7,16 @@ if(!$buildLock.WaitOne(0)){$buildLock.Dispose();throw 'Another easySetup build i
 try {
 $source=Get-EasySetupFingerprint $repo
 $vswhere=Join-Path ${env:ProgramFiles(x86)} 'Microsoft Visual Studio/Installer/vswhere.exe'
+Assert-PpiMicrosoftBuildTool $vswhere 'vswhere.exe'
 $vs=& $vswhere -latest -products '*' -property installationPath
 if(!$vs){throw 'Visual Studio with Office development tools is required on the build computer.'}
 $compiler=Join-Path $vs 'MSBuild/Current/Bin/Roslyn/csc.exe'
+$msbuild=Join-Path $vs 'MSBuild/Current/Bin/MSBuild.exe'
+Assert-PpiMicrosoftBuildTool $compiler 'csc.exe'
+Assert-PpiMicrosoftBuildTool $msbuild 'MSBuild.exe'
 if(!$CertificateThumbprint){$certificate=Get-ChildItem Cert:\CurrentUser\My -CodeSigningCert | Where-Object {$_.Subject -eq 'CN=PowerPoint Intelligence Local Development' -and $_.HasPrivateKey -and $_.NotAfter -gt (Get-Date).AddDays(1)} | Sort-Object NotAfter -Descending | Select-Object -First 1;if(!$certificate){throw 'No signing certificate is available. Supply -CertificateThumbprint for an approved code-signing certificate, or run Install-Local.ps1 in normal desktop PowerShell first.'};$CertificateThumbprint=$certificate.Thumbprint}
-$certificate=Get-Item ('Cert:\CurrentUser\My\'+$CertificateThumbprint)
+$certificate=Get-PpiApprovedSigningCertificate $CertificateThumbprint
+$CertificateThumbprint=$certificate.Thumbprint
 if(!$certificate.HasPrivateKey -or $certificate.NotAfter -le (Get-Date)){throw 'An unexpired signing certificate with its private key is required.'}
 if(!$DeploymentVersion){$versions=@([Version]'1.0.0.0');foreach($platform in @('x86','x64')){$file=Join-Path $repo "apps/powerpoint-vsto/bin/$platform/Release/PowerPointIntelligence.vsto";if(Test-Path $file){[xml]$xml=Get-Content $file -Raw;$versions+= [Version]$xml.SelectSingleNode("/*[local-name()='assembly']/*[local-name()='assemblyIdentity']").GetAttribute('version')}};$latest=$versions | Sort-Object -Descending | Select-Object -First 1;if($latest.Revision -ge 65535){throw 'Deployment revision exhausted.'};$DeploymentVersion=[Version]::new($latest.Major,$latest.Minor,$latest.Build,$latest.Revision+1).ToString()}
 $priorReceipt=Join-Path $PSScriptRoot 'build.json'
@@ -24,7 +29,7 @@ $config.SelectSingleNode("/configuration/appSettings/add[@key='TemplateLibraryFo
 $configFile=Join-Path $work 'App.config';$config.Save($configFile)
 foreach($platform in @('x86','x64')){
     $output=Join-Path $work $platform
-    & (Join-Path $vs 'MSBuild/Current/Bin/MSBuild.exe') (Join-Path $repo 'apps/powerpoint-vsto/PowerPointIntelligence.csproj') /t:Build /p:Configuration=Release "/p:Platform=$platform" /p:SignManifests=true /p:UseSharedCompilation=false /p:PpiForcePayloadCompile=true /p:PpiEasySetupBuild=true "/p:OutputPath=$output/" "/p:AppConfig=$configFile" "/p:ManifestCertificateThumbprint=$CertificateThumbprint" "/p:ApplicationVersion=$DeploymentVersion" /v:minimal /nologo
+    & $msbuild (Join-Path $repo 'apps/powerpoint-vsto/PowerPointIntelligence.csproj') /t:Build /p:Configuration=Release "/p:Platform=$platform" /p:SignManifests=true /p:UseSharedCompilation=false /p:PpiForcePayloadCompile=true /p:PpiEasySetupBuild=true "/p:OutputPath=$output/" "/p:AppConfig=$configFile" "/p:ManifestCertificateThumbprint=$CertificateThumbprint" "/p:ApplicationVersion=$DeploymentVersion" /v:minimal /nologo
     if($LASTEXITCODE){throw "Signed $platform build failed; no installer published."}
     & (Join-Path $repo 'scripts/Test-DemoPackage.ps1') -Platform $platform -OutputDirectory $output
     [xml]$manifest=Get-Content (Join-Path $output 'PowerPointIntelligence.dll.manifest') -Raw
