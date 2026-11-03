@@ -2,6 +2,7 @@
 $ErrorActionPreference='Stop'
 $repo=Split-Path $PSScriptRoot -Parent
 . (Join-Path $PSScriptRoot 'Common.ps1')
+. (Join-Path $repo 'scripts/Safe-Xml.ps1')
 $buildLock=New-Object Threading.Mutex($false,'Local\PowerPointIntelligence.EasySetup.Build.v1')
 if(!$buildLock.WaitOne(0)){$buildLock.Dispose();throw 'Another easySetup build is running.'}
 try {
@@ -18,13 +19,13 @@ if(!$CertificateThumbprint){$certificate=Get-ChildItem Cert:\CurrentUser\My -Cod
 $certificate=Get-PpiApprovedSigningCertificate $CertificateThumbprint
 $CertificateThumbprint=$certificate.Thumbprint
 if(!$certificate.HasPrivateKey -or $certificate.NotAfter -le (Get-Date)){throw 'An unexpired signing certificate with its private key is required.'}
-if(!$DeploymentVersion){$versions=@([Version]'1.0.0.0');foreach($platform in @('x86','x64')){$file=Join-Path $repo "apps/powerpoint-vsto/bin/$platform/Release/PowerPointIntelligence.vsto";if(Test-Path $file){[xml]$xml=Get-Content $file -Raw;$versions+= [Version]$xml.SelectSingleNode("/*[local-name()='assembly']/*[local-name()='assemblyIdentity']").GetAttribute('version')}};$latest=$versions | Sort-Object -Descending | Select-Object -First 1;if($latest.Revision -ge 65535){throw 'Deployment revision exhausted.'};$DeploymentVersion=[Version]::new($latest.Major,$latest.Minor,$latest.Build,$latest.Revision+1).ToString()}
+if(!$DeploymentVersion){$versions=@([Version]'1.0.0.0');foreach($platform in @('x86','x64')){$file=Join-Path $repo "apps/powerpoint-vsto/bin/$platform/Release/PowerPointIntelligence.vsto";if(Test-Path $file){$xml=Read-PpiSafeXml $file;$versions+= [Version]$xml.SelectSingleNode("/*[local-name()='assembly']/*[local-name()='assemblyIdentity']").GetAttribute('version')}};$latest=$versions | Sort-Object -Descending | Select-Object -First 1;if($latest.Revision -ge 65535){throw 'Deployment revision exhausted.'};$DeploymentVersion=[Version]::new($latest.Major,$latest.Minor,$latest.Build,$latest.Revision+1).ToString()}
 $priorReceipt=Join-Path $PSScriptRoot 'build.json'
 if(Test-Path $priorReceipt){$prior=Get-Content $priorReceipt -Raw | ConvertFrom-Json;$priorVersion=[Version]$prior.Version;if([Version]$DeploymentVersion -le $priorVersion){if($priorVersion.Revision -ge 65535){throw 'Deployment revision exhausted.'};$DeploymentVersion=[Version]::new($priorVersion.Major,$priorVersion.Minor,$priorVersion.Build,$priorVersion.Revision+1).ToString()}}
 $DeploymentVersion=([Version]$DeploymentVersion).ToString()
 $work=Join-Path $repo ('artifacts/easySetup-build-'+[Guid]::NewGuid().ToString('N'))
 $payload=Join-Path $work 'payload';New-Item -ItemType Directory -Force $payload | Out-Null
-[xml]$config=Get-Content (Join-Path $repo 'apps/powerpoint-vsto/App.config') -Raw
+$config=Read-PpiSafeXml (Join-Path $repo 'apps/powerpoint-vsto/App.config')
 $config.SelectSingleNode("/configuration/appSettings/add[@key='TemplateLibraryFolder']").SetAttribute('value','templates')
 $configFile=Join-Path $work 'App.config';$config.Save($configFile)
 foreach($platform in @('x86','x64')){
@@ -32,7 +33,7 @@ foreach($platform in @('x86','x64')){
     & $msbuild (Join-Path $repo 'apps/powerpoint-vsto/PowerPointIntelligence.csproj') /t:Build /p:Configuration=Release "/p:Platform=$platform" /p:SignManifests=true /p:UseSharedCompilation=false /p:PpiForcePayloadCompile=true /p:PpiEasySetupBuild=true "/p:OutputPath=$output/" "/p:AppConfig=$configFile" "/p:ManifestCertificateThumbprint=$CertificateThumbprint" "/p:ApplicationVersion=$DeploymentVersion" /v:minimal /nologo
     if($LASTEXITCODE){throw "Signed $platform build failed; no installer published."}
     & (Join-Path $repo 'scripts/Test-DemoPackage.ps1') -Platform $platform -OutputDirectory $output
-    [xml]$manifest=Get-Content (Join-Path $output 'PowerPointIntelligence.dll.manifest') -Raw
+    $manifest=Read-PpiSafeXml (Join-Path $output 'PowerPointIntelligence.dll.manifest')
     $templates=@(Get-ChildItem (Join-Path $repo 'apps/powerpoint-vsto/templates') -Recurse -File -Filter '*.potx')
     if(!$templates.Count){throw 'Licensed local template assets are missing.'}
     foreach($template in $templates){$relative=$template.FullName.Substring((Join-Path $repo 'apps/powerpoint-vsto').Length+1).Replace('\','/');$included=@($manifest.SelectNodes("//*[local-name()='file']") | Where-Object {$_.GetAttribute('name').Replace('\','/') -eq $relative});if($included.Count -ne 1){throw "Template is not covered by the signed application manifest: $relative"}}

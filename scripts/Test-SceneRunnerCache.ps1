@@ -1,6 +1,6 @@
-$ErrorActionPreference='Stop'
+﻿$ErrorActionPreference='Stop'
 . (Join-Path $PSScriptRoot 'Scene-RunnerCache.ps1')
-$root=Join-Path ([IO.Path]::GetTempPath()) ('ppi-cache-policy-'+[Guid]::NewGuid().ToString('N'))
+$root=Join-Path (Join-Path (Split-Path $PSScriptRoot -Parent) 'artifacts') ('ppi-cache-policy-'+[Guid]::NewGuid().ToString('N'))
 New-Item -ItemType Directory $root | Out-Null
 $receipt=Join-Path $root 'receipt.json'
 $files=[ordered]@{Executable=(Join-Path $root 'runner.bin');Library=(Join-Path $root 'library.bin');Dependency=(Join-Path $root 'dependency.bin')}

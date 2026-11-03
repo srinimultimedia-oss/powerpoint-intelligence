@@ -76,3 +76,8 @@ Final source `6D4B966CB5F7A07544FE087842E325B14E06319FD208ED721CEC6B32D8737915`,
 ## Fingerprint-flow review — report 09:13, 3 November 2026 Asia/Dubai
 
 The scan explicitly resolves all six prior PowerShell ID occurrences and reports one new High SAST record (1072025071, CWE-494) plus the unidentified 2ms summary. The remaining SAST source is enumeration in Get-PpiAddinFingerprint; its recorded sink is Get-PpiContentHash, whose implementation opens a read-only stream and returns SHA256. No download/load/execution of the selected file appears in this chain. Nine targeted regression assertions demonstrate digest correctness, mutation detection, exclusion behavior and no execution of inert source content. Existing security tests remain passing. No production rewrite, query exclusion, suppression or finding-state change was made. The SAST record remains To Verify, assessed as a potential false positive requiring Checkmarx reviewer/query validation; the SCS rule still lacks details. Evidence and exact original record: `CHECKMARX_FINGERPRINT_20261103_091304.md` / JSON. Full compliance is not claimed.
+
+## 3 November 2026, 11:35 Checkmarx export
+
+See CHECKMARX_20261103_113558_REMEDIATION.md and CHECKMARX_20261103_113558_EVIDENCE.json. Four recovery/XML flows hardened; recurrent local fingerprint hash-only flow assessed as potential false positive with additional source-root containment controls. All original five SAST similarity IDs retained. One undetailed High 2ms result deferred by owner. Scanner clearance requires a new scan; none of these records is claimed resolved in Checkmarx.
+

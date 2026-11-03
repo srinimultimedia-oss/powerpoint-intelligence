@@ -1,0 +1,109 @@
+{
+  "scan": "b66d0bb0-88c3-4a60-b1e5-dcc4ec0565e5",
+  "reportSHA256": "2B5FD18C118C72E8F7D0096B9F021DE7FF105F4B66A2A9C2409640CAF0E35FA0",
+  "originalSimilarityIDs": [
+    "-2018192911",
+    "-355656028",
+    "1923684989",
+    "1239593030",
+    "1072025071"
+  ],
+  "supplyChain": "Deferred by owner; one High 2ms result has no details in export",
+  "files": [
+    {
+      "path": "scripts/Artifact-Inputs.ps1",
+      "sha256": "3E58B36EE6765F3464BDF2455BFA2307B7B3083F4B070992E799879B279A0104",
+      "references": [
+        {
+          "line": 2,
+          "text": "function Resolve-PpiArtifactInput([string]$Path,[switch]$AllowMissing) {"
+        },
+        {
+          "line": 18,
+          "text": "function Read-PpiArtifactJsonText([string]$Path,[long]$Limit=1048576) {"
+        }
+      ]
+    },
+    {
+      "path": "scripts/Safe-Xml.ps1",
+      "sha256": "4496287C57B9C9523EE00BDE4F8EB88D05ACA6B79A2BAA930ACEDDED921D642F",
+      "references": [
+        {
+          "line": 1,
+          "text": "function Read-PpiSafeXml([string]$Path) {"
+        },
+        {
+          "line": 3,
+          "text": "$settings.DtdProcessing=[Xml.DtdProcessing]::Prohibit"
+        },
+        {
+          "line": 4,
+          "text": "$settings.XmlResolver=$null"
+        },
+        {
+          "line": 13,
+          "text": "$document.XmlResolver=$null"
+        }
+      ]
+    },
+    {
+      "path": "scripts/Piidx-Recovery.ps1",
+      "sha256": "169EF844240A90DC735746ECE56BBD1DCC131189127AE0F783309CE79AFA23B6",
+      "references": [
+        {
+          "line": 8,
+          "text": "$priorText=Read-PpiArtifactJsonText $ReceiptPath"
+        }
+      ]
+    },
+    {
+      "path": "scripts/Scene-RunnerCache.ps1",
+      "sha256": "19E4D1EDD1F49DBE19B481CC11E4C0B8857316D10EA1449564FF9AA144482037",
+      "references": [
+        {
+          "line": 74,
+          "text": "$report=ConvertFrom-Json -InputObject (Read-PpiArtifactJsonText $Path 16777216)"
+        }
+      ]
+    },
+    {
+      "path": "scripts/Source-Fingerprint.ps1",
+      "sha256": "BE14CB607D3CC1A68ECE19B1C57E5345BB4BB6922A89F44A5D0316E1FF8CA639",
+      "references": [
+        {
+          "line": 3,
+          "text": "function Get-PpiFingerprintFileHash([string]$Root,[string]$Path) {"
+        }
+      ]
+    },
+    {
+      "path": "scripts/Test-Checkmarx113558.ps1",
+      "sha256": "324D29F9EAC123094E1C8A23B9593157E543F93A53970186E89A4F531430FD80",
+      "references": []
+    },
+    {
+      "path": "scripts/Test-SceneRunnerCache.ps1",
+      "sha256": "CA3918BC6DA9E5BD6CD85F306C72E1289B559134CD17AE80EBA091D019573046",
+      "references": []
+    },
+    {
+      "path": "scripts/Test-SecurityRemediation.ps1",
+      "sha256": "3B81961891565FDBCDF33D2A43EBEF9BC45E68325AB50692F6871D7759F56142",
+      "references": []
+    },
+    {
+      "path": "easySetup/Build-EasySetup.ps1",
+      "sha256": "501221F3E38FC7234E226F85ECD1D0201F94F3C9DCF0DDF3A4670CEC7515EFFA",
+      "references": [
+        {
+          "line": 28,
+          "text": "$config=Read-PpiSafeXml (Join-Path $repo 'apps/powerpoint-vsto/App.config')"
+        },
+        {
+          "line": 36,
+          "text": "$manifest=Read-PpiSafeXml (Join-Path $output 'PowerPointIntelligence.dll.manifest')"
+        }
+      ]
+    }
+  ]
+}
