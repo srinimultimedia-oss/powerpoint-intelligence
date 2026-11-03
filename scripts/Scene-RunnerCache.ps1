@@ -1,4 +1,5 @@
-﻿. (Join-Path $PSScriptRoot 'Build-Integrity.ps1')
+﻿. (Join-Path $PSScriptRoot 'Artifact-Inputs.ps1')
+. (Join-Path $PSScriptRoot 'Build-Integrity.ps1')
 function Get-PpiSceneBuildKey([string]$Root,[string]$Platform,[string]$Compiler,[string[]]$References,[string[]]$Sources,[string]$CacheKind='scene') {
     if(!$Sources){$Sources=@('src/Chart.Renderers/SceneContracts.cs','src/Chart.Renderers/SceneCodec.cs','src/Chart.Renderers/StrictSceneJson.cs','src/Shared.Contracts/BoundedJson.cs','tests/s3/SceneContractTests.cs','tests/s3/SceneArtifactPath.cs','src/Library.Core/PathPolicy.cs')}
     $records=@("$CacheKind-runner-cache-v2",'net48','csharp73',$Platform)
@@ -25,7 +26,7 @@ function Get-PpiSceneCacheState([string]$ReceiptPath,[string]$BuildKey,[System.C
 function Start-PpiReviewedRunnerBuild([string]$ReceiptPath,[System.Collections.IDictionary]$Files,[string]$ScannerEvidence,[switch]$RecoverMissing) {
     if(!$ScannerEvidence -or !(Test-Path -LiteralPath $ScannerEvidence)){throw 'A scanner evidence JSON report is required for reviewed runner rebuild.'}
     Write-Host "REVIEW read scanner evidence"
-    $report=Get-Content -LiteralPath $ScannerEvidence -Raw | ConvertFrom-Json
+    $report=Read-PpiArtifactJsonText $ScannerEvidence 16777216 | ConvertFrom-Json
     if($report.Errors.Count -gt 0){throw 'Scanner evidence contains read errors; review it before rebuilding.'}
     $before=[ordered]@{}
     foreach($name in $Files.Keys){
@@ -34,7 +35,7 @@ function Start-PpiReviewedRunnerBuild([string]$ReceiptPath,[System.Collections.I
         if($missing){
             if(!$RecoverMissing){throw 'Runner file missing; default review does not restore missing files. Explicit recovery requires a prior hashed receipt and scanner evidence.'}
             if(!(Test-Path -LiteralPath $ReceiptPath)){throw 'Missing-runner recovery requires a prior receipt.'}
-            $prior=ConvertFrom-Json -InputObject ([IO.File]::ReadAllText([IO.Path]::GetFullPath($ReceiptPath)))
+            $prior=ConvertFrom-Json -InputObject ((Read-PpiArtifactJsonText $ReceiptPath))
             if(!$prior.BuildKey -or !$prior.Hashes -or !$prior.Hashes.PSObject.Properties[$name]){throw 'Missing-runner recovery requires prior build inputs and this file hash; legacy/unreceipted files cannot be recovered.'}
             $hash=[string]$prior.Hashes.PSObject.Properties[$name].Value
             if($hash -notmatch '^[0-9a-fA-F]{64}$'){throw 'Invalid prior hash; recovery refused.'}
@@ -54,7 +55,7 @@ function Start-PpiReviewedRunnerBuild([string]$ReceiptPath,[System.Collections.I
     $priorReceipt=$null
     if(Test-Path -LiteralPath $ReceiptPath){
         if((Get-Item -LiteralPath $ReceiptPath).Length -gt 1048576){throw 'Prior runner receipt exceeds the 1 MB review limit.'}
-        $priorReceipt=[IO.File]::ReadAllText([IO.Path]::GetFullPath($ReceiptPath))
+        $priorReceipt=(Read-PpiArtifactJsonText $ReceiptPath)
     }
     $evidencePath=[IO.Path]::GetFullPath($ScannerEvidence)
     $evidenceHash=(Get-FileHash -LiteralPath $evidencePath -Algorithm SHA256).Hash
@@ -70,7 +71,7 @@ function Start-PpiReviewedRunnerBuild([string]$ReceiptPath,[System.Collections.I
 function Read-PpiReviewedScannerEvidence([string]$Path) {
     if(!$Path -or !(Test-Path -LiteralPath $Path)){throw 'Scanner report is required.'}
     if((Get-Item -LiteralPath $Path).Length -gt 16777216){throw 'Scanner report exceeds review bounds.'}
-    $report=ConvertFrom-Json -InputObject ([IO.File]::ReadAllText([IO.Path]::GetFullPath($Path)))
+    $report=ConvertFrom-Json -InputObject (Read-PpiArtifactJsonText $Path 16777216)
     if(!$report.PSObject.Properties['Errors'] -or !$report.PSObject.Properties['McAfeeDetections'] -or $report.ReadOnly -ne $true -or @($report.Errors).Count -ne 0){throw 'Complete read-only scanner evidence without read errors is required.'}
     return $report
 }
@@ -86,7 +87,7 @@ function Start-PpiLegacySourceReview([string]$ReceiptPath,[System.Collections.ID
     if($BuildKey -notmatch '^[A-Fa-f0-9]{64}$'){throw 'Current source/toolchain build key is required.'}
     if(!(Test-Path -LiteralPath $ReceiptPath) -or (Get-Item -LiteralPath $ReceiptPath).Length -gt 1048576){throw 'Bounded legacy receipt is required.'}
     foreach($file in $Files.Values){if(Test-Path -LiteralPath $file){throw 'Legacy source review only supports absent outputs; no existing binary is adopted or overwritten.'}}
-    $priorText=[IO.File]::ReadAllText([IO.Path]::GetFullPath($ReceiptPath));$prior=ConvertFrom-Json -InputObject $priorText
+    $priorText=(Read-PpiArtifactJsonText $ReceiptPath);$prior=ConvertFrom-Json -InputObject $priorText
     if($prior.BuildKey -or $prior.Platform -ne 'x64' -or $prior.TargetFramework -ne '.NET Framework 4.8' -or $prior.ExecutableSha256 -notmatch '^[A-Fa-f0-9]{64}$' -or $prior.LibrarySha256 -notmatch '^[A-Fa-f0-9]{64}$'){throw 'Unsupported legacy receipt; not implicitly adopted.'}
     $report=Read-PpiReviewedScannerEvidence $ScannerEvidence
     $oldHashes=[ordered]@{Executable=[string]$prior.ExecutableSha256;Library=[string]$prior.LibrarySha256}

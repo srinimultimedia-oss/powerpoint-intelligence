@@ -1,8 +1,11 @@
-. (Join-Path $PSScriptRoot 'Scene-RunnerCache.ps1')
+﻿. (Join-Path $PSScriptRoot 'Scene-RunnerCache.ps1')
 function Start-PpiPiidxSourceRecovery([string]$ReceiptPath,[string]$AssemblyPath,[string]$ScannerEvidence,[object[]]$CurrentSources) {
+    $ReceiptPath=Resolve-PpiArtifactInput $ReceiptPath
+    $AssemblyPath=Resolve-PpiArtifactInput $AssemblyPath -AllowMissing
+    $ScannerEvidence=Resolve-PpiArtifactInput $ScannerEvidence
     if(Test-Path -LiteralPath $AssemblyPath){throw 'PIIDX recovery only accepts an absent output; existing code is never adopted or overwritten.'}
     if(!(Test-Path -LiteralPath $ReceiptPath) -or (Get-Item -LiteralPath $ReceiptPath).Length -gt 1048576){throw 'A bounded prior PIIDX receipt is required.'}
-    $priorText=[IO.File]::ReadAllText([IO.Path]::GetFullPath($ReceiptPath))
+    $priorText=Read-PpiArtifactJsonText $ReceiptPath
     $prior=ConvertFrom-Json -InputObject $priorText
     if($prior.InputSHA256 -notmatch '\A[A-Fa-f0-9]{64}\z' -or $prior.AssemblySHA256 -notmatch '\A[A-Fa-f0-9]{64}\z' -or @($prior.Sources).Count -eq 0 -or @($CurrentSources).Count -eq 0){throw 'PIIDX recovery requires historical and current source/hash provenance.'}
     foreach($source in @($prior.Sources)+@($CurrentSources)) {
