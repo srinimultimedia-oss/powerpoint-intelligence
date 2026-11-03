@@ -1,4 +1,4 @@
-using System.IO.Compression;
+﻿using System.IO.Compression;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -271,7 +271,7 @@ namespace PowerPointIntelligence.AddIn
         private bool updatingCategories,loadingFields;
         internal TemplateLibrary(PowerPoint.Application application)
         {
-            app=application;Text="Intelligence Library · 520 original layouts";Width=1480;Height=880;MinimumSize=new Size(1080,700);StartPosition=FormStartPosition.CenterScreen;Font=new Font("Segoe UI",10);
+            app=application;Text="NexWave Library · 520 original layouts";Width=1480;Height=880;MinimumSize=new Size(1080,700);StartPosition=FormStartPosition.CenterScreen;Font=new Font("Segoe UI",10);
             var split=new SplitContainer {Dock=DockStyle.Fill,Width=1440,SplitterDistance=240};var right=new SplitContainer {Dock=DockStyle.Fill,Width=1200,Orientation=Orientation.Vertical,SplitterDistance=680};
             var leftTitle=new Label {Text="LIBRARY\n520 layouts · 26 families",Dock=DockStyle.Top,Height=62,Padding=new Padding(8)};
             categories.Items.Add("All templates");foreach(var category in TemplateCatalog.Categories)categories.Items.Add(category);split.Panel1.Controls.Add(categories);split.Panel1.Controls.Add(leftTitle);

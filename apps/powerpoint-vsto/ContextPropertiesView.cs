@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -27,7 +27,7 @@ namespace PowerPointIntelligence.AddIn
         protected override bool ShowWithoutActivation {get{return true;}}
         internal ContextPropertiesView()
         {
-            Text="Element properties · Intelligence";FormBorderStyle=FormBorderStyle.FixedToolWindow;ShowInTaskbar=false;MaximizeBox=false;MinimizeBox=false;StartPosition=FormStartPosition.Manual;AutoScaleMode=AutoScaleMode.Dpi;ClientSize=new Size(316,300);BackColor=Color.White;Font=new Font("Segoe UI",9);KeyPreview=true;
+            Text="Element properties · NexWave";FormBorderStyle=FormBorderStyle.FixedToolWindow;ShowInTaskbar=false;MaximizeBox=false;MinimizeBox=false;StartPosition=FormStartPosition.Manual;AutoScaleMode=AutoScaleMode.Dpi;ClientSize=new Size(316,300);BackColor=Color.White;Font=new Font("Segoe UI",9);KeyPreview=true;
             var layout=new TableLayoutPanel {Dock=DockStyle.Fill,Padding=new Padding(10),ColumnCount=1,RowCount=7};layout.RowStyles.Add(new RowStyle(SizeType.Absolute,26));layout.RowStyles.Add(new RowStyle(SizeType.Absolute,34));layout.RowStyles.Add(new RowStyle(SizeType.Absolute,32));layout.RowStyles.Add(new RowStyle(SizeType.Absolute,34));layout.RowStyles.Add(new RowStyle(SizeType.Absolute,34));layout.RowStyles.Add(new RowStyle(SizeType.Percent,100));layout.RowStyles.Add(new RowStyle(SizeType.Absolute,36));
             title=new Label {Dock=DockStyle.Fill,Text="Element properties",AutoEllipsis=true,Font=new Font(Font,FontStyle.Bold)};layout.Controls.Add(title);
             var fontRow=new FlowLayoutPanel {Dock=DockStyle.Fill,WrapContents=false};family=new ComboBox {Width=176,AccessibleName="Font family",AutoCompleteMode=AutoCompleteMode.SuggestAppend,AutoCompleteSource=AutoCompleteSource.ListItems};using(var fonts=new System.Drawing.Text.InstalledFontCollection())family.Items.AddRange(fonts.Families.Select(f=>f.Name).Distinct().OrderBy(x=>x).Take(1000).Cast<object>().ToArray());size=new ComboBox {Width=76,AccessibleName="Font size in points"};size.Items.AddRange(new object[]{"8","10","12","14","16","18","20","24","28","32","36","44","48","60","72"});fontRow.Controls.AddRange(new Control[]{family,size});layout.Controls.Add(fontRow);

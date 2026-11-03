@@ -9,8 +9,8 @@
     <AssemblyName>PowerPointIntelligence</AssemblyName><TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <LangVersion>7.3</LangVersion><OfficeApplication>PowerPoint</OfficeApplication><OfficeVersion>15.0</OfficeVersion>
     <VSTO_HostIdentifier>PowerPoint</VSTO_HostIdentifier><VSTO_TrustAssembliesLocation>true</VSTO_TrustAssembliesLocation>
-    <LoadBehavior>3</LoadBehavior><FriendlyName>PowerPoint Intelligence</FriendlyName>
-    <Description>Editable charts, layout tools and local demonstration workspace</Description>
+    <LoadBehavior>3</LoadBehavior><FriendlyName>NexWave</FriendlyName><ProductName>NexWave</ProductName>
+    <Description>NexWave: editable charts, layout tools and slide library</Description>
     <SignManifests Condition="'$(ManifestKeyFile)' != ''">true</SignManifests>
     <ManifestKeyFile Condition="'$(ManifestKeyFile)' != ''">$(ManifestKeyFile)</ManifestKeyFile>
     <SignAssembly>false</SignAssembly><BootstrapperEnabled>true</BootstrapperEnabled>

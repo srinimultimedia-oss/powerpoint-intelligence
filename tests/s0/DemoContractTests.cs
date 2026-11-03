@@ -91,7 +91,7 @@ internal static class DemoContractTests
         using(var font=new Font("Segoe UI",10,GraphicsUnit.Pixel))
         using(var title=new Font("Segoe UI",17,FontStyle.Bold,GraphicsUnit.Pixel))
         {
-            graphics.Clear(Color.White);graphics.DrawString("Intelligence ribbon • original icons • 32 / 16 px on light and dark",title,Brushes.Black,8,8);
+            graphics.Clear(Color.White);graphics.DrawString("NexWave ribbon • original icons • 32 / 16 px on light and dark",title,Brushes.Black,8,8);
             for(int i=0;i<controls.Length;i++)
             {
                 var control=controls[i];string key=control.GetAttribute("image");
@@ -152,7 +152,7 @@ internal static class DemoContractTests
         var focus=document.SelectNodes("//r:group | //r:button[@onAction='RunWorkflowCommand' or @onAction='LinkDataSource' or @id='ppiTemplateLibrary' or @id='ppiTemplatePalette' or @id='ppiTemplateAlignment' or @id='ppiRenderShapes'] | //r:menu[@id='ppiCategoryCharts']",ns).Cast<XmlElement>().ToArray();
         using(var preview=new Bitmap(1000,44+((focus.Length+3)/4)*82))using(var g=Graphics.FromImage(preview))using(var font=new Font("Segoe UI",9))
         {
-            g.Clear(Color.White);g.DrawString("Intelligence · New ribbon icons · 32 px and 16 px · light / dark",font,Brushes.Black,12,10);
+            g.Clear(Color.White);g.DrawString("NexWave · New ribbon icons · 32 px and 16 px · light / dark",font,Brushes.Black,12,10);
             for(int i=0;i<focus.Length;i++)
             {
                 int x=i%4*250,y=44+i/4*82;string key=focus[i].GetAttribute("image"),icon=key.Substring(4,key.LastIndexOf('_')-4);

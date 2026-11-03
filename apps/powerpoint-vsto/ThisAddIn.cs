@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Diagnostics;
@@ -113,7 +113,7 @@ namespace PowerPointIntelligence.AddIn
             inspector = new Label { Dock = DockStyle.Fill, AutoSize = false, Padding = new Padding(0, 12, 0, 0), Text = "Select a chart to see its status.", AccessibleName = "Chart status" };
             layout.Controls.Add(inspector, 0, 3);
             control.Controls.Add(layout);
-            pane = CustomTaskPanes.Add(control, "PowerPoint Intelligence", Application.ActiveWindow);
+            pane = CustomTaskPanes.Add(control, "NexWave", Application.ActiveWindow);
             paneWindow=currentWindow;paneNeedsRefresh=false;
             pane.Width = 330;
             pane.Visible = true;
@@ -203,7 +203,7 @@ namespace PowerPointIntelligence.AddIn
                     inspector.Text = "Completed: " + tool.Name + ". Use PowerPoint Undo to revert slide edits.";
                 }));
                 inspector = workspace.Status;
-                pane = CustomTaskPanes.Add(workspace, "Intelligence • Demonstration", Application.ActiveWindow);
+                pane = CustomTaskPanes.Add(workspace, "NexWave • Demonstration", Application.ActiveWindow);
                 paneWindow=Application.ActiveWindow.HWND;paneNeedsRefresh=false;
                 pane.Width = 420; pane.Visible = true;
                 host.Status = text => inspector.Text = text;
@@ -216,7 +216,7 @@ namespace PowerPointIntelligence.AddIn
             if(id=="review"){RunWorkflow("quality-review");return;}
             if(id=="save-selected"){RunDemo("save-slides");return;}
             if(id=="selected-style"){RunDemo("style-file");return;}
-            Run(()=>{if(id=="help")MessageBox.Show("Element Controls provides native editable text shapes, process grids, universal connectors and vector indicators. Select an element and choose Edit selected element. Double-click our indicator group to advance; Indicator keyboard controls provides focused shortcuts. Process rows/columns are hidden with retained history. Tools offers selected-text decimal replacement, symbols, picture copies and chart-specific workbooks. Shared slide workbooks, external indicator links and proprietary object imports are not implemented. Native Office acceptance is pending.","PowerPoint Intelligence — Elements");else ProductivityTools.Run(Application,id);});
+            Run(()=>{if(id=="help")MessageBox.Show("Element Controls provides native editable text shapes, process grids, universal connectors and vector indicators. Select an element and choose Edit selected element. Double-click our indicator group to advance; Indicator keyboard controls provides focused shortcuts. Process rows/columns are hidden with retained history. Tools offers selected-text decimal replacement, symbols, picture copies and chart-specific workbooks. Shared slide workbooks, external indicator links and proprietary object imports are not implemented. Native Office acceptance is pending.","NexWave — Elements");else ProductivityTools.Run(Application,id);});
         }
         internal bool ElementEnabled(string id){return DataSourceCommandsEnabled&&ElementCommands.Enabled(Application,id);}
         internal void RunElement(string id){Run(()=>{ElementCommands.Run(Application,id);inspector.Text="Completed element command: "+id;});}

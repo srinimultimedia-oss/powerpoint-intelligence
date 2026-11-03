@@ -45,7 +45,7 @@ internal static class IntelligenceSetup
             string architecture=OfficeArchitecture();
             string installer=new[]{Environment.GetFolderPath(Environment.SpecialFolder.CommonProgramFiles),Environment.GetEnvironmentVariable("CommonProgramFiles(x86)")}.Where(x=>!String.IsNullOrEmpty(x)).Select(x=>Path.Combine(x,"microsoft shared","VSTO","10.0","VSTOInstaller.exe")).FirstOrDefault(File.Exists);
             if(installer==null)throw new FileNotFoundException("Microsoft Visual Studio 2010 Tools for Office Runtime is required. Install the Microsoft prerequisite, then retry.");
-            if(MessageBox.Show("Install PowerPoint Intelligence for "+architecture+" Office for this Windows user?\n\nThe included third-party templates are for your licensed computers only. A previous easySetup installation will be upgraded using the normal VSTO prompts.","PowerPoint Intelligence Setup",MessageBoxButtons.OKCancel,MessageBoxIcon.Information)!=DialogResult.OK)return 2;
+            if(MessageBox.Show("Install NexWave for "+architecture+" Office for this Windows user?\n\nThe included third-party templates are for your licensed computers only. A previous easySetup installation will be upgraded using the normal VSTO prompts.","NexWave Setup",MessageBoxButtons.OKCancel,MessageBoxIcon.Information)!=DialogResult.OK)return 2;
             phase="verify package";string destination=Path.Combine(home,"versions",BundleHash);
             using(var resource=Assembly.GetExecutingAssembly().GetManifestResourceStream("IntelligencePayload.zip")){
                 if(resource==null||Digest(resource)!=BundleHash)throw new InvalidDataException("Embedded package checksum mismatch.");resource.Position=0;
@@ -68,7 +68,7 @@ internal static class IntelligenceSetup
             try{RunVsto(installer,"/Install",manifest);File.WriteAllText(receipt,manifest);}
             catch{if(changing)try{RunVsto(installer,"/Install",previous);}catch(Exception rollback){File.AppendAllText(log,"Rollback failed: "+rollback.GetType().Name+Environment.NewLine);}throw;}
             File.AppendAllText(log,"PASS VSTO installation; architecture="+architecture+"; bundle="+BundleHash+Environment.NewLine);
-            MessageBox.Show("Installation completed. Open PowerPoint and check the Intelligence ribbon.\n\nRuntime functionality still requires validation.\nUninstall through Windows Apps / Programs and Features.\n\nLog: "+log,"PowerPoint Intelligence Setup");return 0;
-        }catch(Exception error){File.AppendAllText(log,"FAIL phase="+phase+"; exception="+error.GetType().Name+"; HRESULT=0x"+error.HResult.ToString("X8")+Environment.NewLine);MessageBox.Show(error.Message+"\n\nLog: "+log,"PowerPoint Intelligence Setup",MessageBoxButtons.OK,MessageBoxIcon.Error);return 1;}
+            MessageBox.Show("Installation completed. Open PowerPoint and check the NexWave ribbon.\n\nRuntime functionality still requires validation.\nUninstall through Windows Apps / Programs and Features.\n\nLog: "+log,"NexWave Setup");return 0;
+        }catch(Exception error){File.AppendAllText(log,"FAIL phase="+phase+"; exception="+error.GetType().Name+"; HRESULT=0x"+error.HResult.ToString("X8")+Environment.NewLine);MessageBox.Show(error.Message+"\n\nLog: "+log,"NexWave Setup",MessageBoxButtons.OK,MessageBoxIcon.Error);return 1;}
     }
 }

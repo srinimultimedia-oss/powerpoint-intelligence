@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -20,7 +20,7 @@ namespace PowerPointIntelligence.AddIn
         internal static void Show(PowerPoint.Application app)
         {
             var chart=NativeChartControls.Selected(app).Chart;var collection=(PowerPoint.SeriesCollection)chart.SeriesCollection();if(collection.Count<1||collection.Count>100)throw new InvalidOperationException("Choose a chart with 1–100 series.");
-            using(var form=new Form {Text="Series type and axis · Intelligence",Width=480,Height=250,StartPosition=FormStartPosition.CenterParent,FormBorderStyle=FormBorderStyle.FixedDialog,MinimizeBox=false,MaximizeBox=false})
+            using(var form=new Form {Text="Series type and axis · NexWave",Width=480,Height=250,StartPosition=FormStartPosition.CenterParent,FormBorderStyle=FormBorderStyle.FixedDialog,MinimizeBox=false,MaximizeBox=false})
             {
                 var series=new ComboBox {Left=135,Top=20,Width=310,DropDownStyle=ComboBoxStyle.DropDownList};var type=new ComboBox {Left=135,Top=65,Width=310,DropDownStyle=ComboBoxStyle.DropDownList};var secondary=new CheckBox {Left=135,Top=108,Width=310,Text="Use secondary value axis"};for(int seriesIndex=1;seriesIndex<=collection.Count;seriesIndex++){PowerPoint.Series item=collection.Item(seriesIndex);series.Items.Add(seriesIndex+" · "+item.Name);}type.Items.AddRange(new object[]{"Clustered column","Line","Line with markers","Area"});
                 series.SelectedIndexChanged+=(s,e)=>{var selected=collection.Item(series.SelectedIndex+1);type.SelectedIndex=Array.IndexOf(Allowed,selected.ChartType);secondary.Checked=selected.AxisGroup==PowerPoint.XlAxisGroup.xlSecondary;};series.SelectedIndex=0;

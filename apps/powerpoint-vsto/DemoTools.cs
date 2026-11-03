@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -362,7 +362,7 @@ namespace PowerPointIntelligence.AddIn
         private void AgendaCurrent(){ChapterAgenda.InsertContents(app);}
         private void StyleFile()
         {
-            var path=OpenFile("Intelligence demo style|*.json");
+            var path=OpenFile("NexWave demo style|*.json");
             {
                 if(path==null)return;if(new System.IO.FileInfo(path).Length>8192)throw new InvalidOperationException("Style file is too large.");
                 DemoStyle style;using(var input=System.IO.File.OpenRead(path))style=(DemoStyle)new System.Runtime.Serialization.Json.DataContractJsonSerializer(typeof(DemoStyle)).ReadObject(input);

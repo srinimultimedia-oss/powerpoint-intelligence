@@ -1,4 +1,4 @@
-﻿# PowerPoint Intelligence — easySetup
+﻿# NexWave — easySetup
 
 Version: 1.0.0.16
 Source SHA-256: B20FC8104133EDE8321229BEAC0E3752DCC2F253713B66553E0016CEC4C148BE

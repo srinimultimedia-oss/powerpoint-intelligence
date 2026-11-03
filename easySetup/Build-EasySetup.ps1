@@ -43,7 +43,7 @@ foreach($platform in @('x86','x64')){
 if($source -ne (Get-EasySetupFingerprint $repo)){throw 'Source changed during packaging; no installer published.'}
 $labels=@([regex]::Matches((Get-Content (Join-Path $repo 'apps/powerpoint-vsto/DemoTools.cs') -Raw),'add\("[^"]+","[^"]+","([^"]+)"') | ForEach-Object {$_.Groups[1].Value})
 $readme=@"
-# PowerPoint Intelligence — easySetup
+# NexWave — easySetup
 
 Version: $DeploymentVersion
 Source SHA-256: $source

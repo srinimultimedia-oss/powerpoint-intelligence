@@ -1,4 +1,4 @@
-# PowerPoint Intelligence — Codex Starter
+﻿# NexWave — Codex Starter
 
 **Status:** S0 accepted by the owner; Windows VSTO runtime tests remain unverified. S1 domain/contracts work has begun on explicit owner instruction. See [S0 evidence](docs/evidence/S0-2026-10-21.md), [S1 scope](docs/implementation/S1-domain-contracts.md) and [S1 evidence](docs/evidence/S1-2026-10-21.md).
 

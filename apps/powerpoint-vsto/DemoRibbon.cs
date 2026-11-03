@@ -8,14 +8,14 @@ namespace PowerPointIntelligence.AddIn
 {
     internal static class DemoRibbon
     {
-        internal const string BuildMarker = "PPI-DEMO-RIBBON-20261029-v17-piidx7-typed-series";
+        internal const string BuildMarker = "PPI-DEMO-RIBBON-20261103-v17-nexwave1";
         internal static string Create()
         {
             var text=new StringBuilder();
             using(var xml=XmlWriter.Create(text,new XmlWriterSettings{OmitXmlDeclaration=true}))
             {
                 xml.WriteStartElement("customUI","http://schemas.microsoft.com/office/2009/07/customui");xml.WriteAttributeString("onLoad","OnLoad");xml.WriteAttributeString("loadImage","LoadImage");
-                xml.WriteStartElement("ribbon");xml.WriteStartElement("tabs");xml.WriteStartElement("tab");xml.WriteAttributeString("id","ppiTab");xml.WriteAttributeString("label","Intelligence");xml.WriteAttributeString("keytip","PI");
+                xml.WriteStartElement("ribbon");xml.WriteStartElement("tabs");xml.WriteStartElement("tab");xml.WriteAttributeString("id","ppiTab");xml.WriteAttributeString("label","NexWave");xml.WriteAttributeString("keytip","NW");
                 Group(xml,"ppiStructure","Structure");
                 xml.WriteStartElement("menu");xml.WriteAttributeString("id","ppiAgenda");xml.WriteAttributeString("label","Agenda");xml.WriteAttributeString("size","large");xml.WriteAttributeString("image",RibbonIcons.Key("agenda-insert",32));
                 Workflow(xml,"agenda-insert","Chapter","agenda");Workflow(xml,"agenda-contents","Table of contents","agenda");Workflow(xml,"agenda-settings","Manage Agenda","agenda");Workflow(xml,"agenda-split","Split agenda here","agenda");Workflow(xml,"agenda-refresh","Update agenda","agenda");xml.WriteEndElement();

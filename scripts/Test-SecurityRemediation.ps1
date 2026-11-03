@@ -28,5 +28,6 @@ Add-Type -Path @((Join-Path $repo 'src/Library.Core/PathPolicy.cs'),(Join-Path $
 $null=[PowerPointIntelligence.Tests.Security.PathPolicyTests]::Run($repo)
 & (Join-Path $PSScriptRoot 'Test-DiagnosticOutputPath.ps1')
 & (Join-Path $PSScriptRoot 'Test-BuildIntegrity.ps1')
+& (Join-Path $PSScriptRoot 'Test-PiidxRecovery.ps1')
 & $Python -B (Join-Path $repo 'tests/security/test_repair_template_alignment.py')
 if($LASTEXITCODE){throw 'Repair security regression tests failed.'}
