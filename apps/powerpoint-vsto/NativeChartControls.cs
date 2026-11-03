@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -55,7 +55,7 @@ namespace PowerPointIntelligence.AddIn
         internal static void ShowAxis(PowerPoint.Application app)
         {
             var current=new Snapshot(Axis(Selected(app).Chart)).Settings;
-            using(var form=new Form {Text="Value axis · Intelligence",Width=430,Height=370,FormBorderStyle=FormBorderStyle.FixedDialog,StartPosition=FormStartPosition.CenterParent,MinimizeBox=false,MaximizeBox=false})
+            using(var form=new Form {Text="Value axis · NexWave",Width=430,Height=370,FormBorderStyle=FormBorderStyle.FixedDialog,StartPosition=FormStartPosition.CenterParent,MinimizeBox=false,MaximizeBox=false})
             {
                 var auto=new CheckBox {Text="Automatic bounds and interval",Checked=current.Automatic,Left=20,Top=20,Width=350};var log=new CheckBox {Text="Logarithmic (base 10)",Checked=current.Logarithmic,Left=20,Top=52,Width=350};var reverse=new CheckBox {Text="Reverse values",Checked=current.Reversed,Left=20,Top=84,Width=350};
                 var labels=new[]{"Minimum","Maximum","Major interval","Number format"};var boxes=new TextBox[4];var initial=new[]{current.Minimum.ToString("R",CultureInfo.InvariantCulture),current.Maximum.ToString("R",CultureInfo.InvariantCulture),current.Major.ToString("R",CultureInfo.InvariantCulture),current.NumberFormat};

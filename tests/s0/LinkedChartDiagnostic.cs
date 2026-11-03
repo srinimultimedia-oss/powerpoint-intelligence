@@ -32,7 +32,7 @@ internal static class LinkedChartDiagnostic
         };
         try{
             record("environment","office",app.Version);record("environment","os",Environment.OSVersion.ToString());var officeFile=Path.Combine(app.Path,"POWERPNT.EXE");if(File.Exists(officeFile)){var build=System.Diagnostics.FileVersionInfo.GetVersionInfo(officeFile);record("environment","office-file-version",build.FileVersion);record("environment","office-product-version",build.ProductVersion);}record("environment","runtime",Environment.Version.ToString());record("environment","process",Environment.Is64BitProcess?"x64":"x86");
-            var matches=app.COMAddIns.Cast<Office.COMAddIn>().Where(a=>(a.ProgId+" "+a.Description).Contains("PowerPointIntelligence")||(a.ProgId+" "+a.Description).Contains("PowerPoint Intelligence")).ToArray();
+            var matches=app.COMAddIns.Cast<Office.COMAddIn>().Where(a=>(a.ProgId+" "+a.Description).Contains("PowerPointIntelligence")||(a.ProgId+" "+a.Description).Contains("NexWave")).ToArray();
             record("environment","own-addin-matches",matches.Length.ToString());
             if(pauseOwnAddIn){if(matches.Length!=1)throw new InvalidOperationException("Own add-in identity is ambiguous; no add-in was paused.");paused=matches[0];reconnect=paused.Connect;if(reconnect)paused.Connect=false;record("environment","own-addin-paused",(!paused.Connect).ToString());}
             else record("environment","own-addin-paused","False");
@@ -69,7 +69,7 @@ internal static class LinkedChartDiagnostic
         }finally{
             LinkedChartData.WriteDiagnosticObserver=null;
             if(owned!=null)try{owned.Saved=Office.MsoTriState.msoTrue;owned.Close();}catch(Exception e){record("cleanup","exception",e.GetType().Name+" 0x"+e.HResult.ToString("X8"));}
-            if(reconnect)try{paused.Connect=true;record("cleanup","own-addin-restored",paused.Connect.ToString());}catch(Exception e){record("cleanup","own-addin-restore-failed",e.GetType().Name+" 0x"+e.HResult.ToString("X8"));Console.Error.WriteLine("PowerPoint became unavailable before add-in restoration. Re-enable PowerPoint Intelligence through PowerPoint COM Add-ins after restarting.");}
+            if(reconnect)try{paused.Connect=true;record("cleanup","own-addin-restored",paused.Connect.ToString());}catch(Exception e){record("cleanup","own-addin-restore-failed",e.GetType().Name+" 0x"+e.HResult.ToString("X8"));Console.Error.WriteLine("PowerPoint became unavailable before add-in restoration. Re-enable NexWave through PowerPoint COM Add-ins after restarting.");}
         }
     }
 }

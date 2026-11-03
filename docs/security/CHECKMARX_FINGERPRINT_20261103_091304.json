@@ -1,0 +1,45 @@
+{
+  "report": "C:\\Users\\srini\\Downloads\\Cx_ScanReport_2026-11-03_091304.md",
+  "report_sha256": "9bbc2e9d5c2987f44c17de115125252fdee57953c87f56e213c7eed7d5346f8b",
+  "scan_id": "927ce31c-f55d-4fd8-ba2a-3a4327d8549f",
+  "scan_time": "2026-11-03 09:07 Asia/Dubai",
+  "reported_high": 2,
+  "sast_high": 1,
+  "supply_chain_summary_high": 1,
+  "resolved_prior_ids": [
+    "-1447597795",
+    "156779163",
+    "1611841882",
+    "1619924552",
+    "1735884981",
+    "-440452681"
+  ],
+  "finding": {
+    "id": "1072025071",
+    "severity": "High",
+    "cwe": 494,
+    "query": "Download of Code Without Integrity Check",
+    "state": "To Verify",
+    "source": {
+      "file": "/scripts/Source-Fingerprint.ps1",
+      "line": 19,
+      "code": "$files=@(Get-ChildItem (Join-Path $Root 'apps/powerpoint-vsto') -File -Recurse | Where-Object { $_.FullName -notmatch '[\\\\/](bin|obj)[\\\\/]' -and $_.Extension -in @('.cs','.csproj','.config','.json') }; Get-ChildItem (Join-Path $Root 'src/Chart.Domain') -File; Get-ChildItem (Join-Path $Root 'src/Chart.Renderers') -File; Get-ChildItem (Join-Path $Root 'src/Shared.Contracts') -File; Get-ChildItem (Join-Path $Root 'src/Library.Core') -File) | Sort-Object FullName"
+    },
+    "destination": {
+      "file": "/scripts/Source-Fingerprint.ps1",
+      "line": 20,
+      "code": "$lines=@($files | ForEach-Object { ($_.FullName.Substring($Root.Length+1))+'='+(Get-PpiContentHash $_.FullName) })"
+    },
+    "assessment": "Potential false positive: reported sink only produces SHA256 over a read-only filesystem stream. Scanner/reviewer decision pending; no suppression or automatic resolution.",
+    "call_chain": [
+      "Source-Fingerprint.ps1:Get-PpiAddinFingerprint",
+      "Build-Integrity.ps1:Get-PpiContentHash",
+      "System.IO.File.Open(Open,Read,FileShare.Read)",
+      "SHA256.ComputeHash(Stream)",
+      "hex SHA256 string / aggregate SHA256"
+    ],
+    "result_link": "[Link](https://ind-2.ast.checkmarx.net/sast-results/f28c8294-b4b8-45e7-8792-500ce1e8d393/927ce31c-f55d-4fd8-ba2a-3a4327d8549f?resultId=DWDkFwqZDhqMyFUt7AZ9Qs0b%2FWY%3D)"
+  },
+  "evidence": "artifacts/source-fingerprint-flow-20261103.log",
+  "targeted_assertions": 9
+}

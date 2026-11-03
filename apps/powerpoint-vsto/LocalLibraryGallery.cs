@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -55,7 +55,7 @@ namespace PowerPointIntelligence.AddIn
         {
             workspaceToken=cancellation.Token;workspaceMode=app!=null||catalogOverride!=null;catalog=catalogOverride;profile=profileOverride;
             this.app=app;originalMode=originals;sourceSession=app==null?null:new SourceTemplateSession(app);this.previewProvider=previewProvider??(sourceSession==null?(Func<LocalSlideAsset,Bitmap>)null:sourceSession.Preview);
-            Text=originals?"Original template gallery · PowerPoint Intelligence":"Slide template gallery · PowerPoint Intelligence";Width=1440;Height=860;MinimumSize=new Size(1080,650);StartPosition=FormStartPosition.CenterScreen;Font=new Font("Segoe UI",9);
+            Text=originals?"Original template gallery · NexWave":"Slide template gallery · NexWave";Width=1440;Height=860;MinimumSize=new Size(1080,650);StartPosition=FormStartPosition.CenterScreen;Font=new Font("Segoe UI",9);
             gallery.LargeImageList=images;detailPanel.Controls.Add(details);detailPanel.Controls.Add(largePreview);
             var browse=new Button {Text="Choose folder",AutoSize=true};var refresh=new Button {Text="Refresh",AutoSize=true};var insert=new Button {Text="Insert selected slide",AutoSize=true};
             aspect.Items.AddRange(new object[]{"All","16:9","4:3"});aspect.SelectedIndex=0;sort.Items.AddRange(new object[]{"File / slide","Title","Newest first"});sort.SelectedIndex=0;size.Items.AddRange(new object[]{"Small","Medium","Large"});size.SelectedIndex=1;

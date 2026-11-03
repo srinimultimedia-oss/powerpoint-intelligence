@@ -60,7 +60,7 @@ internal sealed class DemoScenario
     private string ChooseFile(string filter)
     {
         if(filter.StartsWith("Images"))return Path.Combine(Assets(),"sample.png");
-        if(filter.StartsWith("Intelligence demo style"))return Path.GetFullPath("docs/demo/sample-style.json");
+        if(filter.StartsWith("NexWave demo style"))return Path.GetFullPath("docs/demo/sample-style.json");
         if(filter.StartsWith("S0 chart JSON"))return Path.GetFullPath("docs/demo/sample-chart.s0.json");
         if(filter.StartsWith("Excel workbook"))return Workbook();
         if(filter.StartsWith("PowerPoint template"))return SourceDeck(true);

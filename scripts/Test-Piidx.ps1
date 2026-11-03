@@ -1,8 +1,8 @@
-param([string]$LibraryFolder,[string]$RunnerRoot)
+param([string]$LibraryFolder,[string]$RunnerRoot,[switch]$RecoverMissingRunner,[string]$ScannerEvidence)
 $ErrorActionPreference='Stop'
 $repo=Split-Path $PSScriptRoot -Parent
 . (Join-Path $PSScriptRoot 'Piidx-TestSuite.ps1')
-$suite=Import-PpiPiidxSuite $repo $RunnerRoot
+$suite=Import-PpiPiidxSuite $repo $RunnerRoot -RecoverMissingRunner:$RecoverMissingRunner -ScannerEvidence $ScannerEvidence
 if(!$LibraryFolder){$LibraryFolder=Join-Path $repo 'apps/powerpoint-vsto/templates'}
 $output=Join-Path $repo ('artifacts/piidx/suite-'+[Guid]::NewGuid().ToString('N'));$null=New-Item -ItemType Directory -Path $output
 $results=New-Object System.Collections.Generic.List[object]

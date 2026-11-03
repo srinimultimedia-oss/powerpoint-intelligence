@@ -1,4 +1,4 @@
-param([ValidateSet('x86','x64')][string]$Platform = 'x64', [string]$CertificateThumbprint, [switch]$SkipBuild)
+﻿param([ValidateSet('x86','x64')][string]$Platform = 'x64', [string]$CertificateThumbprint, [switch]$SkipBuild)
 $ErrorActionPreference = 'Stop'
 $repo = Split-Path $PSScriptRoot -Parent
 . (Join-Path $PSScriptRoot 'Source-Fingerprint.ps1')
@@ -67,7 +67,7 @@ try {
     if ($installation.ExitCode -ne 0) { throw "VSTO installer failed: $($installation.ExitCode)." }
     [pscustomobject]@{Manifest=$manifest;SourceSha256=$sourceFingerprint;AssemblySha256=(Get-FileHash (Join-Path (Split-Path $manifest) 'PowerPointIntelligence.dll') -Algorithm SHA256).Hash;Version=$deploymentXml.SelectSingleNode("/*[local-name()='assembly']/*[local-name()='assemblyIdentity']").GetAttribute('version');InstallerExitCode=$installation.ExitCode;Time=(Get-Date).ToString('o')} |
         ConvertTo-Json | Set-Content (Join-Path $repo 'artifacts/installed-demo-receipt.json')
-    Write-Host 'VSTO installer succeeded. Open PowerPoint and check the Intelligence ribbon tab.'
+    Write-Host 'VSTO installer succeeded. Open PowerPoint and check the NexWave ribbon tab.'
     Write-Host 'Runtime loading and ribbon appearance still require verification in PowerPoint.'
 } finally {
     Pop-Location
