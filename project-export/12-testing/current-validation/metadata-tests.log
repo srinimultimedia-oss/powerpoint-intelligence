@@ -1,0 +1,18 @@
+PASS round trip preserves identity, revision, labels, signed and missing values
+PASS invalid GUID
+PASS empty GUID
+PASS unknown schema
+PASS unknown chart type
+PASS negative revision
+PASS dimension mismatch
+PASS duplicate series ID
+PASS NaN
+PASS infinity
+PASS empty categories
+PASS null series
+PASS missing metadata
+PASS malformed XML
+PASS DTD and external entities disabled
+PASS oversize bounded
+PASS unknown root namespace
+Metadata tests passed: 17

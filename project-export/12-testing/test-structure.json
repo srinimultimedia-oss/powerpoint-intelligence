@@ -1,0 +1,1685 @@
+[
+  {
+    "path": "tests/compatibility/OfficeCompatibilityTests.cs",
+    "lines": 101,
+    "classes": [
+      "OfficeCompatibilityTests"
+    ],
+    "imports": [
+      "System",
+      "System.Collections.Specialized",
+      "System.IO",
+      "PowerPointIntelligence.Compatibility"
+    ],
+    "assertions": [
+      {
+        "line": 37,
+        "assertion_description": "defaults choose common Office 16 API and either bitness"
+      },
+      {
+        "line": 41,
+        "assertion_description": "setting values normalize case and whitespace"
+      },
+      {
+        "line": 42,
+        "assertion_description": "invalid profile rejected"
+      },
+      {
+        "line": 43,
+        "assertion_description": "blank explicit profile rejected"
+      },
+      {
+        "line": 44,
+        "assertion_description": "invalid architecture rejected"
+      },
+      {
+        "line": 45,
+        "assertion_description": "minimum must stay on Office 16 API"
+      },
+      {
+        "line": 46,
+        "assertion_description": "malformed minimum rejected"
+      },
+      {
+        "line": 47,
+        "assertion_description": "x86 restriction permits x86 process"
+      },
+      {
+        "line": 48,
+        "assertion_description": "x86 restriction blocks x64 process"
+      },
+      {
+        "line": 49,
+        "assertion_description": "x64 restriction permits x64 process"
+      },
+      {
+        "line": 50,
+        "assertion_description": "x64 restriction blocks x86 process"
+      },
+      {
+        "line": 51,
+        "assertion_description": "Office 2013 API rejected"
+      },
+      {
+        "line": 52,
+        "assertion_description": "unknown future API rejected"
+      },
+      {
+        "line": 53,
+        "assertion_description": "invalid application version rejected"
+      },
+      {
+        "line": 54,
+        "assertion_description": "minimum build permits equal version"
+      },
+      {
+        "line": 55,
+        "assertion_description": "minimum build blocks older version"
+      },
+      {
+        "line": 56,
+        "assertion_description": "no full build cannot satisfy full minimum"
+      },
+      {
+        "line": 57,
+        "assertion_description": "even zero build floor requires known build"
+      },
+      {
+        "line": 58,
+        "assertion_description": "missing executable build can use API baseline"
+      },
+      {
+        "line": 59,
+        "assertion_description": "inconsistent executable version is not trusted"
+      },
+      {
+        "line": 60,
+        "assertion_description": "malformed executable version is not trusted"
+      },
+      {
+        "line": 61,
+        "assertion_description": "API major is not a product detector"
+      },
+      {
+        "line": 65,
+        "assertion_description": "shipped add-in config parses"
+      },
+      {
+        "line": 68,
+        "assertion_description": "missing configuration uses portable defaults"
+      },
+      {
+        "line": 71,
+        "assertion_description": "invalid deployed setting rejected"
+      },
+      {
+        "line": 78,
+        "assertion_description": "unknown deployed setting rejected"
+      },
+      {
+        "line": 85,
+        "assertion_description": "malformed deployed XML does not use defaults"
+      },
+      {
+        "line": 94,
+        "assertion_description": "test executable uses requested process architecture"
+      }
+    ],
+    "write_indicators": [
+      "File.Delete",
+      "File.WriteAllText"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/library/GalleryTests.cs",
+    "lines": 38,
+    "classes": [
+      "GalleryTests"
+    ],
+    "imports": [
+      "System",
+      "System.Drawing",
+      "System.IO",
+      "System.Linq",
+      "System.Windows.Forms",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      ".Save("
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/library/LegacyLibraryCacheFixture.cs",
+    "lines": 25,
+    "classes": [
+      "LocalLibraryCache"
+    ],
+    "imports": [
+      "System",
+      "System.Collections.Generic",
+      "System.Globalization",
+      "System.IO",
+      "System.Linq",
+      "System.Xml"
+    ],
+    "assertions": [],
+    "write_indicators": [],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/library/LibraryBrowserTests.cs",
+    "lines": 91,
+    "classes": [
+      "LibraryBrowserTests"
+    ],
+    "imports": [
+      "System",
+      "System.Collections.Generic",
+      "System.Linq",
+      "System.IO",
+      "System.IO.Compression",
+      "System.Text",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      ".Save(",
+      "Directory.CreateDirectory",
+      "File.Copy"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/library/piidx/PiidxCatalogTests.cs",
+    "lines": 85,
+    "classes": [
+      "PiidxCatalogTests",
+      "ImmediateProgress"
+    ],
+    "imports": [
+      "System",
+      "System.Collections.Generic",
+      "System.IO",
+      "System.Linq",
+      "System.Threading",
+      "PowerPointIntelligence.Library"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      "Directory.CreateDirectory",
+      "File.Delete",
+      "File.Move",
+      "File.WriteAllBytes",
+      "File.WriteAllText"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/library/piidx/PiidxCorpusTests.cs",
+    "lines": 28,
+    "classes": [
+      "PiidxCorpusTests"
+    ],
+    "imports": [
+      "System",
+      "System.Diagnostics",
+      "System.IO",
+      "System.Linq",
+      "System.Threading",
+      "System.Threading.Tasks",
+      "PowerPointIntelligence.Library"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      "Directory.CreateDirectory"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/library/piidx/PiidxEdgeTests.cs",
+    "lines": 33,
+    "classes": [
+      "PiidxEdgeTests"
+    ],
+    "imports": [
+      "System",
+      "System.IO",
+      "System.IO.Compression",
+      "System.Text",
+      "System.Threading",
+      "PowerPointIntelligence.Library"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      "Directory.CreateDirectory"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/library/piidx/PiidxPreviewTests.cs",
+    "lines": 37,
+    "classes": [
+      "PiidxPreviewTests"
+    ],
+    "imports": [
+      "System",
+      "System.IO",
+      "System.Linq",
+      "System.Threading",
+      "PowerPointIntelligence.Library"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      "Directory.CreateDirectory",
+      "File.Delete"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/library/piidx/PiidxSampleBuilder.cs",
+    "lines": 16,
+    "classes": [
+      "PiidxSampleBuilder"
+    ],
+    "imports": [
+      "System",
+      "System.IO",
+      "System.Threading",
+      "PowerPointIntelligence.Library"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      "Directory.CreateDirectory",
+      "File.Copy"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/library/piidx/PiidxSchemaTests.cs",
+    "lines": 80,
+    "classes": [
+      "PiidxSchemaTests"
+    ],
+    "imports": [
+      "System",
+      "System.IO",
+      "System.Linq",
+      "System.Threading",
+      "PowerPointIntelligence.Library"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      "Directory.CreateDirectory"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/library/piidx/PiidxSourceTests.cs",
+    "lines": 76,
+    "classes": [
+      "PiidxSourceTests"
+    ],
+    "imports": [
+      "System",
+      "System.IO",
+      "System.IO.Compression",
+      "System.Linq",
+      "System.Text",
+      "System.Threading",
+      "PowerPointIntelligence.Library"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      "Directory.CreateDirectory",
+      "File.WriteAllText"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/library/piidx/PiidxWorkspaceTests.cs",
+    "lines": 51,
+    "classes": [
+      "PiidxWorkspaceTests"
+    ],
+    "imports": [
+      "System",
+      "System.IO",
+      "System.Linq",
+      "System.Threading",
+      "System.Xml.Linq",
+      "PowerPointIntelligence.Library"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      "Directory.CreateDirectory",
+      "File.Copy"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/library/PiidxGalleryTests.cs",
+    "lines": 44,
+    "classes": [
+      "PiidxGalleryTests"
+    ],
+    "imports": [
+      "System",
+      "System.Drawing",
+      "System.IO",
+      "System.Linq",
+      "System.Threading",
+      "System.Windows.Forms",
+      "PowerPointIntelligence.AddIn",
+      "PowerPointIntelligence.Library"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      "Directory.CreateDirectory"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/library/TemplateFidelity.cs",
+    "lines": 133,
+    "classes": [
+      "TemplatePixelResult",
+      "TemplateFidelity"
+    ],
+    "imports": [
+      "PowerPointIntelligence.Security",
+      "System",
+      "System.Drawing",
+      "System.Globalization",
+      "System.IO",
+      "System.IO.Compression",
+      "System.Linq",
+      "System.Xml",
+      "System.Security.Cryptography",
+      "System.Text"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      "File.Delete",
+      "File.WriteAllText"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/library/TemplateFidelityTests.cs",
+    "lines": 86,
+    "classes": [
+      "TemplateFidelityTests"
+    ],
+    "imports": [
+      "PowerPointIntelligence.Security",
+      "System",
+      "System.Drawing",
+      "System.IO",
+      "System.IO.Compression",
+      "System.Text",
+      "System.Xml",
+      "System.Collections.Generic"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      "Directory.CreateDirectory",
+      "File.Delete",
+      "File.WriteAllLines"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/library/TemplateLibraryTests.cs",
+    "lines": 165,
+    "classes": [
+      "TemplateLibraryTests"
+    ],
+    "imports": [
+      "PowerPointIntelligence.Security",
+      "System",
+      "System.Collections.Generic",
+      "System.Drawing",
+      "System.Drawing.Imaging",
+      "System.Globalization",
+      "System.IO",
+      "System.Linq",
+      "System.Security.Cryptography",
+      "System.Text",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      ".Save(",
+      "Directory.CreateDirectory",
+      "File.WriteAllLines",
+      "SaveAs"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/ChapterAgendaOfficeTests.cs",
+    "lines": 71,
+    "classes": [
+      "ChapterAgendaOfficeTests"
+    ],
+    "imports": [
+      "PowerPointIntelligence.Security",
+      "System",
+      "System.Globalization",
+      "System.IO",
+      "System.Linq",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      ".Save(",
+      "Directory.CreateDirectory",
+      "SaveAs"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/ChapterAgendaTests.cs",
+    "lines": 66,
+    "classes": [
+      "ChapterAgendaTests"
+    ],
+    "imports": [
+      "System",
+      "System.Collections.Generic",
+      "System.IO",
+      "System.Linq",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/ChartAnnotationTests.cs",
+    "lines": 38,
+    "classes": [
+      "ChartAnnotationTests"
+    ],
+    "imports": [
+      "System",
+      "System.Collections.Generic",
+      "System.Drawing",
+      "System.Globalization",
+      "System.IO",
+      "System.Linq",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/ContextChartFormattingTests.cs",
+    "lines": 6,
+    "classes": [
+      "ContextChartFormattingTests"
+    ],
+    "imports": [
+      "System",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/ContextForegroundPolicy.cs",
+    "lines": 17,
+    "classes": [
+      "ContextForegroundResult",
+      "ContextForegroundPolicy"
+    ],
+    "imports": [
+      "System"
+    ],
+    "assertions": [],
+    "write_indicators": [],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/ContextForegroundPrompt.cs",
+    "lines": 18,
+    "classes": [
+      "ContextForegroundPrompt"
+    ],
+    "imports": [
+      "System",
+      "System.Drawing",
+      "System.Windows.Forms"
+    ],
+    "assertions": [],
+    "write_indicators": [],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/ContextFormattingOfficeTests.cs",
+    "lines": 12,
+    "classes": [
+      "ContextFormattingOfficeTests"
+    ],
+    "imports": [
+      "PowerPointIntelligence.Security",
+      "System",
+      "System.IO",
+      "System.Linq",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      "Directory.CreateDirectory",
+      "SaveAs"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/ContextFormattingTests.cs",
+    "lines": 8,
+    "classes": [
+      "ContextFormattingTests"
+    ],
+    "imports": [
+      "System",
+      "System.IO",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/ContextPanelModelTests.cs",
+    "lines": 45,
+    "classes": [
+      "ContextPanelModelTests"
+    ],
+    "imports": [
+      "System",
+      "System.Collections.Generic",
+      "System.Drawing",
+      "System.IO",
+      "System.Linq",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/ContextPropertiesOfficeTests.cs",
+    "lines": 78,
+    "classes": [
+      "ContextTestForegroundUnavailableException",
+      "ContextPropertiesOfficeTests"
+    ],
+    "imports": [
+      "PowerPointIntelligence.Security",
+      "System",
+      "System.IO",
+      "System.Linq",
+      "System.Runtime.InteropServices",
+      "System.Threading",
+      "System.Windows.Forms",
+      "System.Xml",
+      "System.Xml.Linq",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      "Directory.CreateDirectory",
+      "File.WriteAllText",
+      "SaveAs"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/ContextPropertiesTests.cs",
+    "lines": 56,
+    "classes": [
+      "ContextPropertiesTests"
+    ],
+    "imports": [
+      "PowerPointIntelligence.Security",
+      "System",
+      "System.Collections.Generic",
+      "System.Drawing",
+      "System.Drawing.Imaging",
+      "System.IO",
+      "System.Linq",
+      "System.Reflection",
+      "System.Windows.Forms",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      ".Save(",
+      "Directory.CreateDirectory"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/DataLinkManagerTests.cs",
+    "lines": 38,
+    "classes": [
+      "DataLinkManagerTests"
+    ],
+    "imports": [
+      "System",
+      "System.Collections.Generic",
+      "System.IO",
+      "System.Linq",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      "Directory.CreateDirectory",
+      "File.WriteAllText"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/DataSourceTests.cs",
+    "lines": 148,
+    "classes": [
+      "DataSourceTests",
+      "is",
+      "remains",
+      "WorkbookCloseFixture"
+    ],
+    "imports": [
+      "PowerPointIntelligence.Security",
+      "System",
+      "System.IO",
+      "System.Linq",
+      "System.Xml",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      ".Save(",
+      "Directory.CreateDirectory",
+      "File.Delete",
+      "File.WriteAllText",
+      "SaveAs"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/DemoContractTests.cs",
+    "lines": 170,
+    "classes": [
+      "DemoContractTests"
+    ],
+    "imports": [
+      "PowerPointIntelligence.Security",
+      "System",
+      "System.IO",
+      "System.Linq",
+      "System.Xml",
+      "System.Drawing",
+      "System.Drawing.Imaging",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      ".Save(",
+      "Directory.CreateDirectory",
+      "File.WriteAllLines"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/DemoOfficeTests.cs",
+    "lines": 91,
+    "classes": [
+      "DemoOfficeTests"
+    ],
+    "imports": [
+      "PowerPointIntelligence.Security",
+      "System",
+      "System.Collections.Generic",
+      "System.Globalization",
+      "System.IO",
+      "System.Windows.Forms",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      "Directory.CreateDirectory",
+      "File.WriteAllLines",
+      "File.WriteAllText",
+      "SaveAs"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/DemoScenario.cs",
+    "lines": 206,
+    "classes": [
+      "DemoScenario"
+    ],
+    "imports": [
+      "PowerPointIntelligence.Security",
+      "System",
+      "System.Collections.Generic",
+      "System.Drawing",
+      "System.Globalization",
+      "System.IO",
+      "System.Linq",
+      "System.Runtime.Serialization.Json",
+      "System.Windows.Forms",
+      "PowerPointIntelligence.AddIn",
+      "PowerPointIntelligence.Host"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      ".Save(",
+      "Directory.CreateDirectory",
+      "File.WriteAllText",
+      "SaveAs"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/ExcelRangeMappingTests.cs",
+    "lines": 22,
+    "classes": [
+      "ExcelRangeMappingTests"
+    ],
+    "imports": [
+      "System",
+      "System.IO",
+      "System.Linq",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/HostIntegrationTests.cs",
+    "lines": 231,
+    "classes": [
+      "HostIntegrationTests"
+    ],
+    "imports": [
+      "PowerPointIntelligence.Security",
+      "System",
+      "System.IO",
+      "System.Linq",
+      "PowerPointIntelligence.Host"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      ".Save(",
+      "Directory.CreateDirectory",
+      "SaveAs"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/IndicatorElementTests.cs",
+    "lines": 11,
+    "classes": [
+      "IndicatorElementTests"
+    ],
+    "imports": [
+      "System",
+      "System.IO",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/IndicatorOfficeTests.cs",
+    "lines": 16,
+    "classes": [
+      "IndicatorOfficeTests"
+    ],
+    "imports": [
+      "System",
+      "System.IO",
+      "System.Linq",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      ".Save(",
+      "Directory.CreateDirectory",
+      "SaveAs"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/LinkedChartDiagnostic.cs",
+    "lines": 75,
+    "classes": [
+      "LinkedChartDiagnostic"
+    ],
+    "imports": [
+      "PowerPointIntelligence.Security",
+      "System",
+      "System.Collections.Generic",
+      "System.Globalization",
+      "System.IO",
+      "System.Linq",
+      "PowerPointIntelligence.AddIn",
+      "PowerPointIntelligence.Host"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      ".Save(",
+      "Directory.CreateDirectory",
+      "File.WriteAllText",
+      "SaveAs"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/MappedExcelOfficeTests.cs",
+    "lines": 29,
+    "classes": [
+      "MappedExcelOfficeTests"
+    ],
+    "imports": [
+      "System",
+      "System.IO",
+      "System.Linq",
+      "System.Globalization",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      ".Save(",
+      "SaveAs"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/MetadataTests.cs",
+    "lines": 49,
+    "classes": [
+      "MetadataTests"
+    ],
+    "imports": [
+      "System",
+      "System.IO",
+      "PowerPointIntelligence.Host"
+    ],
+    "assertions": [
+      {
+        "line": 20,
+        "assertion_description": "round trip preserves identity, revision, labels, signed and missing values"
+      },
+      {
+        "line": 29,
+        "assertion_description": "invalid GUID"
+      },
+      {
+        "line": 30,
+        "assertion_description": "empty GUID"
+      },
+      {
+        "line": 31,
+        "assertion_description": "unknown schema"
+      },
+      {
+        "line": 32,
+        "assertion_description": "unknown chart type"
+      },
+      {
+        "line": 33,
+        "assertion_description": "negative revision"
+      },
+      {
+        "line": 34,
+        "assertion_description": "dimension mismatch"
+      },
+      {
+        "line": 35,
+        "assertion_description": "duplicate series ID"
+      },
+      {
+        "line": 36,
+        "assertion_description": "NaN"
+      },
+      {
+        "line": 37,
+        "assertion_description": "infinity"
+      },
+      {
+        "line": 38,
+        "assertion_description": "empty categories"
+      },
+      {
+        "line": 39,
+        "assertion_description": "null series"
+      },
+      {
+        "line": 40,
+        "assertion_description": "missing metadata"
+      },
+      {
+        "line": 41,
+        "assertion_description": "malformed XML"
+      },
+      {
+        "line": 42,
+        "assertion_description": "DTD and external entities disabled"
+      },
+      {
+        "line": 43,
+        "assertion_description": "oversize bounded"
+      },
+      {
+        "line": 44,
+        "assertion_description": "unknown root namespace"
+      }
+    ],
+    "write_indicators": [],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/NativeChartControlTests.cs",
+    "lines": 18,
+    "classes": [
+      "NativeChartControlTests"
+    ],
+    "imports": [
+      "System",
+      "System.IO",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/NativeFormattingTests.cs",
+    "lines": 19,
+    "classes": [
+      "NativeFormattingTests"
+    ],
+    "imports": [
+      "System",
+      "System.Drawing",
+      "System.IO",
+      "System.Collections.Generic",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/PresentationAgendaTests.cs",
+    "lines": 47,
+    "classes": [
+      "PresentationAgendaTests"
+    ],
+    "imports": [
+      "System",
+      "System.Collections.Generic",
+      "System.IO",
+      "System.Linq",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/PresentationQualityTests.cs",
+    "lines": 29,
+    "classes": [
+      "PresentationQualityTests"
+    ],
+    "imports": [
+      "System",
+      "System.Linq",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/ProcessFlowOfficeTests.cs",
+    "lines": 42,
+    "classes": [
+      "ProcessFlowOfficeTests"
+    ],
+    "imports": [
+      "System",
+      "System.Globalization",
+      "System.IO",
+      "System.Linq",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      ".Save(",
+      "Directory.CreateDirectory",
+      "SaveAs"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/ProcessFlowTests.cs",
+    "lines": 31,
+    "classes": [
+      "ProcessFlowTests"
+    ],
+    "imports": [
+      "System",
+      "System.IO",
+      "System.Linq",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/ProductivityToolOfficeTests.cs",
+    "lines": 22,
+    "classes": [
+      "ProductivityToolOfficeTests"
+    ],
+    "imports": [
+      "System",
+      "System.IO",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      "Directory.CreateDirectory",
+      "SaveAs"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/ProductivityToolTests.cs",
+    "lines": 17,
+    "classes": [
+      "ProductivityToolTests"
+    ],
+    "imports": [
+      "System",
+      "System.IO",
+      "System.Linq",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/ServiceConnectionTests.cs",
+    "lines": 38,
+    "classes": [
+      "ServiceConnectionTests"
+    ],
+    "imports": [
+      "PowerPointIntelligence.Security",
+      "System",
+      "System.IO",
+      "System.Linq",
+      "System.Xml",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      ".Save(",
+      "File.WriteAllBytes"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/TextShapeElementTests.cs",
+    "lines": 33,
+    "classes": [
+      "TextShapeElementTests"
+    ],
+    "imports": [
+      "System",
+      "System.Drawing",
+      "System.IO",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/TextShapeOfficeTests.cs",
+    "lines": 46,
+    "classes": [
+      "TextShapeOfficeTests"
+    ],
+    "imports": [
+      "System",
+      "System.Drawing",
+      "System.Globalization",
+      "System.IO",
+      "System.Linq",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      ".Save(",
+      "Directory.CreateDirectory",
+      "SaveAs"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/UniversalConnectorOfficeTests.cs",
+    "lines": 49,
+    "classes": [
+      "UniversalConnectorOfficeTests"
+    ],
+    "imports": [
+      "System",
+      "System.Drawing",
+      "System.IO",
+      "System.Linq",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      ".Save(",
+      "Directory.CreateDirectory",
+      "File.WriteAllLines",
+      "SaveAs"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/UniversalConnectorTests.cs",
+    "lines": 54,
+    "classes": [
+      "UniversalConnectorTests"
+    ],
+    "imports": [
+      "System",
+      "System.Drawing",
+      "System.IO",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/WorkflowOfficeTests.cs",
+    "lines": 127,
+    "classes": [
+      "WorkflowOfficeTests"
+    ],
+    "imports": [
+      "PowerPointIntelligence.Security",
+      "System",
+      "System.Globalization",
+      "System.IO",
+      "System.Linq",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      ".Save(",
+      "Directory.CreateDirectory",
+      "SaveAs"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s0/XmlPartUpdateTests.cs",
+    "lines": 44,
+    "classes": [
+      "XmlPartUpdateTests"
+    ],
+    "imports": [
+      "System",
+      "System.IO",
+      "System.Xml",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [],
+    "write_indicators": [],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s1/DomainTests.cs",
+    "lines": 97,
+    "classes": [
+      "DomainTests"
+    ],
+    "imports": [
+      "PowerPointIntelligence.Security",
+      "System",
+      "System.IO",
+      "System.Globalization",
+      "Newtonsoft.Json.Linq",
+      "PowerPointIntelligence.Domain"
+    ],
+    "assertions": [
+      {
+        "line": 27,
+        "assertion_description": "golden JSON round trip preserves every field"
+      },
+      {
+        "line": 33,
+        "assertion_description": "culture invariant wire format"
+      },
+      {
+        "line": 60,
+        "assertion_description": "NaN rejected before serialization"
+      },
+      {
+        "line": 61,
+        "assertion_description": "integer-valued JSON number follows JSON Schema semantics"
+      },
+      {
+        "line": 64,
+        "assertion_description": "infinite layout rejected"
+      },
+      {
+        "line": 65,
+        "assertion_description": "Unicode length follows schema code-point semantics"
+      },
+      {
+        "line": 71,
+        "assertion_description": "malformed JSON"
+      },
+      {
+        "line": 72,
+        "assertion_description": "duplicate JSON property"
+      },
+      {
+        "line": 73,
+        "assertion_description": "comments rejected"
+      },
+      {
+        "line": 74,
+        "assertion_description": "trailing document rejected"
+      },
+      {
+        "line": 75,
+        "assertion_description": "oversized metadata rejected"
+      },
+      {
+        "line": 76,
+        "assertion_description": "S0 migration is deterministic and nonmutating"
+      },
+      {
+        "line": 87,
+        "assertion_description": "S0 migration refuses missing formatting inputs"
+      },
+      {
+        "line": 88,
+        "assertion_description": "S0 future schema preserved by rejection"
+      }
+    ],
+    "write_indicators": [
+      "File.WriteAllText"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s3/NativeRendererTests.cs",
+    "lines": 197,
+    "classes": [
+      "NativeRendererTests",
+      "FakeSurface",
+      "FailPersist"
+    ],
+    "imports": [
+      "PowerPointIntelligence.Security",
+      "System",
+      "System.Collections.Generic",
+      "System.IO",
+      "System.Linq",
+      "System.Threading",
+      "System.Xml",
+      "PowerPointIntelligence.Domain",
+      "PowerPointIntelligence.Rendering",
+      "PowerPointIntelligence.AddIn"
+    ],
+    "assertions": [
+      {
+        "line": 59,
+        "assertion_description": "canonical projection snapshots match identity, raw values, geometry and style"
+      },
+      {
+        "line": 67,
+        "assertion_description": "mismatched but correctly hashed projection rejects before mutation"
+      },
+      {
+        "line": 69,
+        "assertion_description": "canonical data tampering and non-JSON extensions reject before mutation"
+      },
+      {
+        "line": 74,
+        "assertion_description": "new chart owns only new objects and records zero bars without inventing geometry"
+      },
+      {
+        "line": 83,
+        "assertion_description": "rollback preserves user object at operation "
+      },
+      {
+        "line": 89,
+        "assertion_description": "incomplete rollback remains an explicit failed outcome"
+      },
+      {
+        "line": 94,
+        "assertion_description": "reentrant mutation is rejected"
+      },
+      {
+        "line": 99,
+        "assertion_description": "non-owner thread rejects before mutation"
+      },
+      {
+        "line": 105,
+        "assertion_description": "persistence XML conforms to the published v1 structural schema"
+      },
+      {
+        "line": 111,
+        "assertion_description": "versioned XML retains canonical numbers, Unicode, scene and stable tokens"
+      },
+      {
+        "line": 123,
+        "assertion_description": "malformed or ambiguous mapping metadata rejects"
+      },
+      {
+        "line": 125,
+        "assertion_description": "DTD and oversized metadata reject"
+      }
+    ],
+    "write_indicators": [
+      ".Save(",
+      "File.WriteAllText",
+      "SaveAs"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s3/RendererRibbonTests.cs",
+    "lines": 42,
+    "classes": [
+      "RendererRibbonTests"
+    ],
+    "imports": [
+      "System",
+      "System.Linq",
+      "PowerPointIntelligence.AddIn",
+      "PowerPointIntelligence.Domain",
+      "PowerPointIntelligence.Rendering"
+    ],
+    "assertions": [],
+    "write_indicators": [],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s3/scene-fixtures.mjs",
+    "lines": 109,
+    "classes": [],
+    "imports": [],
+    "assertions": [],
+    "write_indicators": [
+      "mkdir",
+      "writeFileSync"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s3/SceneArtifactPath.cs",
+    "lines": 42,
+    "classes": [
+      "SceneArtifactPath"
+    ],
+    "imports": [
+      "System",
+      "System.Collections.Generic",
+      "System.IO",
+      "System.Linq"
+    ],
+    "assertions": [],
+    "write_indicators": [],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s3/SceneContractTests.cs",
+    "lines": 92,
+    "classes": [
+      "SceneContractTests"
+    ],
+    "imports": [
+      "PowerPointIntelligence.Security",
+      "System",
+      "System.Collections.Generic",
+      "System.Globalization",
+      "System.IO",
+      "System.Linq",
+      "Newtonsoft.Json",
+      "Newtonsoft.Json.Linq",
+      "PowerPointIntelligence.Rendering",
+      "PowerPointIntelligence.Tests.Security"
+    ],
+    "assertions": [
+      {
+        "line": 28,
+        "assertion_description": "invalid corpus characters produce a domain rejection "
+      },
+      {
+        "line": 31,
+        "assertion_description": "all six geometry types decode to whitelisted DTOs"
+      },
+      {
+        "line": 36,
+        "assertion_description": "golden hash verified without mutating payload"
+      },
+      {
+        "line": 41,
+        "assertion_description": "culture invariant wire and hash"
+      },
+      {
+        "line": 46,
+        "assertion_description": "changed geometry and revision cannot reuse a hash"
+      },
+      {
+        "line": 51,
+        "assertion_description": "typed models cannot bypass structural validation"
+      },
+      {
+        "line": 57,
+        "assertion_description": "unsealed drafts require a computed hash before encoding"
+      },
+      {
+        "line": 61,
+        "assertion_description": "size and nesting caps"
+      },
+      {
+        "line": 65,
+        "assertion_description": "C# producer independently seals changed doubles and Unicode"
+      },
+      {
+        "line": 80,
+        "assertion_description": "shared fixture "
+      }
+    ],
+    "write_indicators": [
+      "Directory.CreateDirectory",
+      "File.WriteAllText"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/s3/validate-roundtrip.mjs",
+    "lines": 23,
+    "classes": [],
+    "imports": [],
+    "assertions": [],
+    "write_indicators": [],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/security/PathPolicyTests.cs",
+    "lines": 42,
+    "classes": [
+      "PathPolicyTests"
+    ],
+    "imports": [
+      "System",
+      "System.IO",
+      "PowerPointIntelligence.Security"
+    ],
+    "assertions": [],
+    "write_indicators": [
+      "Directory.CreateDirectory"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/security/test_artifact_maintenance.py",
+    "lines": 76,
+    "classes": [
+      "MaintenanceTests"
+    ],
+    "imports": [],
+    "assertions": [
+      {
+        "line": 21,
+        "assertion_description": "def test_archive_then_remove_only_selected_artifacts"
+      },
+      {
+        "line": 67,
+        "assertion_description": "def test_boundary_refuses_root_and_sibling"
+      }
+    ],
+    "write_indicators": [
+      "TemporaryDirectory",
+      "mkdir",
+      "subprocess.run",
+      "write_bytes",
+      "write_text"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  },
+  {
+    "path": "tests/security/test_repair_template_alignment.py",
+    "lines": 205,
+    "classes": [
+      "RepairSecurityTests"
+    ],
+    "imports": [],
+    "assertions": [
+      {
+        "line": 60,
+        "assertion_description": "def test_preserves_text_source_untouched_parts_and_native_effects"
+      },
+      {
+        "line": 76,
+        "assertion_description": "def test_existing_deck_not_overwritten"
+      },
+      {
+        "line": 81,
+        "assertion_description": "def test_existing_sidecar_not_overwritten"
+      },
+      {
+        "line": 88,
+        "assertion_description": "def test_input_output_identity_refused"
+      },
+      {
+        "line": 93,
+        "assertion_description": "def test_duplicate_members_rejected"
+      },
+      {
+        "line": 99,
+        "assertion_description": "def test_member_count_budget"
+      },
+      {
+        "line": 103,
+        "assertion_description": "def test_member_bytes_budget"
+      },
+      {
+        "line": 107,
+        "assertion_description": "def test_total_inflated_budget"
+      },
+      {
+        "line": 111,
+        "assertion_description": "def test_xml_bytes_budget"
+      },
+      {
+        "line": 115,
+        "assertion_description": "def test_xml_node_budget"
+      },
+      {
+        "line": 119,
+        "assertion_description": "def test_xml_depth_budget"
+      },
+      {
+        "line": 123,
+        "assertion_description": "def test_actual_processed_bytes_budget"
+      },
+      {
+        "line": 127,
+        "assertion_description": "def test_small_compressed_bomb_rejected_before_inflating"
+      },
+      {
+        "line": 135,
+        "assertion_description": "def test_source_mutation_prevents_publication"
+      },
+      {
+        "line": 144,
+        "assertion_description": "def test_box_label_fit_geometry_matches_existing_alignment_contract"
+      },
+      {
+        "line": 163,
+        "assertion_description": "def test_work_budget"
+      },
+      {
+        "line": 167,
+        "assertion_description": "def test_elapsed_budget"
+      },
+      {
+        "line": 172,
+        "assertion_description": "def test_dtd_rejected_without_fetching"
+      },
+      {
+        "line": 177,
+        "assertion_description": "def test_unsafe_member_name_rejected_without_extraction"
+      },
+      {
+        "line": 184,
+        "assertion_description": "def test_validation_failure_never_publishes"
+      },
+      {
+        "line": 189,
+        "assertion_description": "def test_second_publication_failure_rolls_back_own_deck"
+      },
+      {
+        "line": 198,
+        "assertion_description": "def test_preservation_validation_remains_enabled_under_optimized_python"
+      }
+    ],
+    "write_indicators": [
+      "TemporaryDirectory",
+      "mkdir",
+      "subprocess.run",
+      "write_bytes",
+      "write_text"
+    ],
+    "inspection": "full-text lexical test-structure review; descriptions are not executed case count"
+  }
+]

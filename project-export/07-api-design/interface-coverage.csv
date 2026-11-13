@@ -1,0 +1,13 @@
+interface_id,boundary,source,implementation_status,documentation
+API-01,IDemoAutomation,apps/powerpoint-vsto/DemoApi.cs,implemented local COM,internal-interfaces.md
+API-02,IPowerPointHost,apps/powerpoint-vsto/Contracts.cs,implemented managed adapter,internal-interfaces.md
+API-03,IEditableSceneSurface,src/Chart.Renderers/NativeRenderingCore.cs,implemented managed renderer surface,internal-interfaces.md
+API-04,IRibbonExtensibility/callbacks,apps/powerpoint-vsto/ThisAddIn.cs,implemented Office callbacks,internal-interfaces.md
+API-05,Office PowerPoint/Excel COM,apps/powerpoint-vsto/DemoLinks.cs,implemented native external object models,external-interfaces.md
+API-06,Win32 and SQLite PInvoke,src/Library.Core/NativeSqlite.cs,implemented OS-native boundary,native-event-declarations.md
+API-07,Linked source files,apps/powerpoint-vsto/DataSources.cs,implemented file contracts,external-interfaces.md
+API-08,PIIDX catalog/configuration,src/Library.Core/PiidxCatalog.cs,implemented local persistence boundary,request-response-contracts.md
+API-09,CustomXML metadata,apps/powerpoint-vsto/MetadataCodec.cs,implemented presentation metadata,request-response-contracts.md
+API-10,VSTO installation process,easySetup/Bootstrapper.cs,implemented deployment boundary,external-interfaces.md
+API-11,Service profiles,apps/powerpoint-vsto/ServiceConnections.cs,implemented metadata only no network,request-response-contracts.md
+API-12,AIActionPlan,services/ai-gateway/action-plan.schema.json,planned schema only no executor,request-response-contracts.md

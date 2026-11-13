@@ -1,0 +1,4464 @@
+[
+  {
+    "path": "apps/powerpoint-vsto/App.config",
+    "declarations": []
+  },
+  {
+    "path": "apps/powerpoint-vsto/ChapterAgenda.cs",
+    "declarations": [
+      {
+        "name": "ChapterAgenda",
+        "line": 12,
+        "kind": "class"
+      },
+      {
+        "name": "Stamp",
+        "line": 16,
+        "kind": "class"
+      },
+      {
+        "name": "ViewState",
+        "line": 18,
+        "kind": "class"
+      },
+      {
+        "name": "CaptureState",
+        "line": 19,
+        "kind": "class"
+      },
+      {
+        "name": "Active",
+        "line": 20,
+        "kind": "method"
+      },
+      {
+        "name": "IsManaged",
+        "line": 22,
+        "kind": "method"
+      },
+      {
+        "name": "GroupContainsOwned",
+        "line": 23,
+        "kind": "method"
+      },
+      {
+        "name": "Fields",
+        "line": 28,
+        "kind": "method"
+      },
+      {
+        "name": "Capture",
+        "line": 33,
+        "kind": "method"
+      },
+      {
+        "name": "NewField",
+        "line": 48,
+        "kind": "method"
+      },
+      {
+        "name": "Retain",
+        "line": 52,
+        "kind": "method"
+      },
+      {
+        "name": "Apply",
+        "line": 57,
+        "kind": "method"
+      },
+      {
+        "name": "RefreshAll",
+        "line": 70,
+        "kind": "method"
+      },
+      {
+        "name": "InsertChapter",
+        "line": 84,
+        "kind": "method"
+      },
+      {
+        "name": "InsertContents",
+        "line": 85,
+        "kind": "method"
+      },
+      {
+        "name": "Insert",
+        "line": 86,
+        "kind": "method"
+      },
+      {
+        "name": "SplitHere",
+        "line": 95,
+        "kind": "method"
+      },
+      {
+        "name": "Read",
+        "line": 97,
+        "kind": "method"
+      },
+      {
+        "name": "ChangeChapter",
+        "line": 98,
+        "kind": "method"
+      },
+      {
+        "name": "ShowManager",
+        "line": 105,
+        "kind": "method"
+      },
+      {
+        "name": "Move",
+        "line": 120,
+        "kind": "method"
+      },
+      {
+        "name": "Automatic",
+        "line": 125,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/ChapterAgendaModel.cs",
+    "declarations": [
+      {
+        "name": "ChapterRecord",
+        "line": 10,
+        "kind": "class"
+      },
+      {
+        "name": "AgendaView",
+        "line": 11,
+        "kind": "class"
+      },
+      {
+        "name": "ChapterCaptionEdit",
+        "line": 12,
+        "kind": "class"
+      },
+      {
+        "name": "ChapterAgendaState",
+        "line": 13,
+        "kind": "class"
+      },
+      {
+        "name": "ChapterAgendaEntry",
+        "line": 18,
+        "kind": "class"
+      },
+      {
+        "name": "ChapterAgendaPlan",
+        "line": 25,
+        "kind": "class"
+      },
+      {
+        "name": "ChapterMovePlan",
+        "line": 26,
+        "kind": "class"
+      },
+      {
+        "name": "ChapterAgendaPlanner",
+        "line": 27,
+        "kind": "class"
+      },
+      {
+        "name": "Move",
+        "line": 29,
+        "kind": "method"
+      },
+      {
+        "name": "Caption",
+        "line": 52,
+        "kind": "method"
+      },
+      {
+        "name": "Validate",
+        "line": 58,
+        "kind": "method"
+      },
+      {
+        "name": "Build",
+        "line": 66,
+        "kind": "method"
+      },
+      {
+        "name": "ResolveEdits",
+        "line": 82,
+        "kind": "method"
+      },
+      {
+        "name": "ChapterAgendaCodec",
+        "line": 90,
+        "kind": "class"
+      },
+      {
+        "name": "State",
+        "line": 94,
+        "kind": "method"
+      },
+      {
+        "name": "Encode",
+        "line": 98,
+        "kind": "method"
+      },
+      {
+        "name": "Shape",
+        "line": 102,
+        "kind": "method"
+      },
+      {
+        "name": "Number",
+        "line": 106,
+        "kind": "method"
+      },
+      {
+        "name": "Decode",
+        "line": 107,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/ChartAnnotations.cs",
+    "declarations": [
+      {
+        "name": "ChartAnnotationSpec",
+        "line": 11,
+        "kind": "class"
+      },
+      {
+        "name": "Validate",
+        "line": 14,
+        "kind": "method"
+      },
+      {
+        "name": "Tags",
+        "line": 15,
+        "kind": "method"
+      },
+      {
+        "name": "Read",
+        "line": 16,
+        "kind": "method"
+      },
+      {
+        "name": "ChartAnnotationPlan",
+        "line": 18,
+        "kind": "class"
+      },
+      {
+        "name": "Number",
+        "line": 21,
+        "kind": "method"
+      },
+      {
+        "name": "Finite",
+        "line": 22,
+        "kind": "method"
+      },
+      {
+        "name": "Bounds",
+        "line": 23,
+        "kind": "method"
+      },
+      {
+        "name": "Position",
+        "line": 24,
+        "kind": "method"
+      },
+      {
+        "name": "Reference",
+        "line": 25,
+        "kind": "method"
+      },
+      {
+        "name": "Difference",
+        "line": 26,
+        "kind": "method"
+      },
+      {
+        "name": "ChartAnnotations",
+        "line": 28,
+        "kind": "class"
+      },
+      {
+        "name": "Context",
+        "line": 31,
+        "kind": "class"
+      },
+      {
+        "name": "Selected",
+        "line": 32,
+        "kind": "method"
+      },
+      {
+        "name": "Inspect",
+        "line": 33,
+        "kind": "method"
+      },
+      {
+        "name": "Values",
+        "line": 38,
+        "kind": "method"
+      },
+      {
+        "name": "Plan",
+        "line": 39,
+        "kind": "method"
+      },
+      {
+        "name": "Canvas",
+        "line": 40,
+        "kind": "method"
+      },
+      {
+        "name": "Draw",
+        "line": 41,
+        "kind": "method"
+      },
+      {
+        "name": "Reference",
+        "line": 45,
+        "kind": "method"
+      },
+      {
+        "name": "Difference",
+        "line": 46,
+        "kind": "method"
+      },
+      {
+        "name": "Insert",
+        "line": 47,
+        "kind": "method"
+      },
+      {
+        "name": "RefreshSelected",
+        "line": 51,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/ContextActionRouter.cs",
+    "declarations": [
+      {
+        "name": "ContextActionRouter",
+        "line": 7,
+        "kind": "class"
+      },
+      {
+        "name": "Run",
+        "line": 9,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/ContextChartFormatting.cs",
+    "declarations": [
+      {
+        "name": "ContextChartFontPlan",
+        "line": 8,
+        "kind": "class"
+      },
+      {
+        "name": "Family",
+        "line": 9,
+        "kind": "method"
+      },
+      {
+        "name": "Size",
+        "line": 10,
+        "kind": "method"
+      },
+      {
+        "name": "Flag",
+        "line": 11,
+        "kind": "method"
+      },
+      {
+        "name": "Color",
+        "line": 12,
+        "kind": "method"
+      },
+      {
+        "name": "ContextChartFormatting",
+        "line": 14,
+        "kind": "class"
+      },
+      {
+        "name": "Read",
+        "line": 16,
+        "kind": "method"
+      },
+      {
+        "name": "ApplyFont",
+        "line": 17,
+        "kind": "method"
+      },
+      {
+        "name": "ReadTextColor",
+        "line": 19,
+        "kind": "method"
+      },
+      {
+        "name": "ApplyColor",
+        "line": 20,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/ContextFormatting.cs",
+    "declarations": [
+      {
+        "name": "FontSelectionState",
+        "line": 8,
+        "kind": "class"
+      },
+      {
+        "name": "ContextFontPlan",
+        "line": 9,
+        "kind": "class"
+      },
+      {
+        "name": "Validate",
+        "line": 10,
+        "kind": "method"
+      },
+      {
+        "name": "Merge",
+        "line": 11,
+        "kind": "method"
+      },
+      {
+        "name": "ContextFormatting",
+        "line": 13,
+        "kind": "class"
+      },
+      {
+        "name": "Collector",
+        "line": 14,
+        "kind": "class"
+      },
+      {
+        "name": "Read",
+        "line": 20,
+        "kind": "method"
+      },
+      {
+        "name": "ApplyFont",
+        "line": 21,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/ContextPanelModel.cs",
+    "declarations": [
+      {
+        "name": "ContextKind",
+        "line": 10,
+        "kind": "enum"
+      },
+      {
+        "name": "ContextDescriptor",
+        "line": 11,
+        "kind": "class"
+      },
+      {
+        "name": "ContextSnapshot",
+        "line": 19,
+        "kind": "class"
+      },
+      {
+        "name": "MixedValueKind",
+        "line": 31,
+        "kind": "enum"
+      },
+      {
+        "name": "MixedValue",
+        "line": 32,
+        "kind": "class"
+      },
+      {
+        "name": "From",
+        "line": 39,
+        "kind": "method"
+      },
+      {
+        "name": "ContextPanelModel",
+        "line": 44,
+        "kind": "class"
+      },
+      {
+        "name": "Managed",
+        "line": 49,
+        "kind": "method"
+      },
+      {
+        "name": "Classify",
+        "line": 50,
+        "kind": "method"
+      },
+      {
+        "name": "Actions",
+        "line": 57,
+        "kind": "method"
+      },
+      {
+        "name": "Build",
+        "line": 62,
+        "kind": "method"
+      },
+      {
+        "name": "SelectionKey",
+        "line": 74,
+        "kind": "method"
+      },
+      {
+        "name": "IsCurrent",
+        "line": 79,
+        "kind": "method"
+      },
+      {
+        "name": "CanExecute",
+        "line": 80,
+        "kind": "method"
+      },
+      {
+        "name": "RectangleBounds",
+        "line": 81,
+        "kind": "method"
+      },
+      {
+        "name": "Clamp",
+        "line": 85,
+        "kind": "method"
+      },
+      {
+        "name": "Area",
+        "line": 86,
+        "kind": "method"
+      },
+      {
+        "name": "Place",
+        "line": 87,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/ContextPropertiesController.cs",
+    "declarations": [
+      {
+        "name": "ContextPropertiesController",
+        "line": 9,
+        "kind": "class"
+      },
+      {
+        "name": "Owner",
+        "line": 27,
+        "kind": "class"
+      },
+      {
+        "name": "Request",
+        "line": 30,
+        "kind": "method"
+      },
+      {
+        "name": "Hide",
+        "line": 31,
+        "kind": "method"
+      },
+      {
+        "name": "ShowCurrent",
+        "line": 32,
+        "kind": "method"
+      },
+      {
+        "name": "Refresh",
+        "line": 33,
+        "kind": "method"
+      },
+      {
+        "name": "IsInspectionFailure",
+        "line": 57,
+        "kind": "method"
+      },
+      {
+        "name": "Failure",
+        "line": 58,
+        "kind": "method"
+      },
+      {
+        "name": "Apply",
+        "line": 59,
+        "kind": "method"
+      },
+      {
+        "name": "PublishObservation",
+        "line": 84,
+        "kind": "method"
+      },
+      {
+        "name": "AutomationState",
+        "line": 88,
+        "kind": "method"
+      },
+      {
+        "name": "Dispose",
+        "line": 89,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/ContextPropertiesView.cs",
+    "declarations": [
+      {
+        "name": "PropertySwatch",
+        "line": 8,
+        "kind": "class"
+      },
+      {
+        "name": "OnPaint",
+        "line": 11,
+        "kind": "method"
+      },
+      {
+        "name": "ContextPropertiesView",
+        "line": 13,
+        "kind": "class"
+      },
+      {
+        "name": "Choices",
+        "line": 42,
+        "kind": "method"
+      },
+      {
+        "name": "SizeCommand",
+        "line": 43,
+        "kind": "method"
+      },
+      {
+        "name": "Send",
+        "line": 44,
+        "kind": "method"
+      },
+      {
+        "name": "Dismiss",
+        "line": 45,
+        "kind": "method"
+      },
+      {
+        "name": "Select",
+        "line": 46,
+        "kind": "method"
+      },
+      {
+        "name": "Render",
+        "line": 47,
+        "kind": "method"
+      },
+      {
+        "name": "Preview",
+        "line": 54,
+        "kind": "method"
+      },
+      {
+        "name": "Descendants",
+        "line": 64,
+        "kind": "method"
+      },
+      {
+        "name": "Error",
+        "line": 65,
+        "kind": "method"
+      },
+      {
+        "name": "Caption",
+        "line": 66,
+        "kind": "method"
+      },
+      {
+        "name": "Dispose",
+        "line": 67,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/ContextSelectionBridge.cs",
+    "declarations": [
+      {
+        "name": "ContextNativeState",
+        "line": 12,
+        "kind": "class"
+      },
+      {
+        "name": "ContextSelectionBridge",
+        "line": 22,
+        "kind": "class"
+      },
+      {
+        "name": "Rect",
+        "line": 25,
+        "kind": "struct"
+      },
+      {
+        "name": "Shapes",
+        "line": 29,
+        "kind": "method"
+      },
+      {
+        "name": "ObjectKey",
+        "line": 30,
+        "kind": "method"
+      },
+      {
+        "name": "Key",
+        "line": 31,
+        "kind": "method"
+      },
+      {
+        "name": "Ensure",
+        "line": 39,
+        "kind": "method"
+      },
+      {
+        "name": "Targets",
+        "line": 40,
+        "kind": "class"
+      },
+      {
+        "name": "TargetsOf",
+        "line": 41,
+        "kind": "method"
+      },
+      {
+        "name": "Common",
+        "line": 51,
+        "kind": "method"
+      },
+      {
+        "name": "Common",
+        "line": 52,
+        "kind": "method"
+      },
+      {
+        "name": "Frame",
+        "line": 53,
+        "kind": "method"
+      },
+      {
+        "name": "Paragraph",
+        "line": 54,
+        "kind": "method"
+      },
+      {
+        "name": "Vertical",
+        "line": 55,
+        "kind": "method"
+      },
+      {
+        "name": "Direction",
+        "line": 56,
+        "kind": "method"
+      },
+      {
+        "name": "Capture",
+        "line": 57,
+        "kind": "method"
+      },
+      {
+        "name": "ApplyColor",
+        "line": 86,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/Contracts.cs",
+    "declarations": [
+      {
+        "name": "IPowerPointHost",
+        "line": 7,
+        "kind": "interface"
+      },
+      {
+        "name": "ChartDocument",
+        "line": 17,
+        "kind": "class"
+      },
+      {
+        "name": "ChartSeries",
+        "line": 27,
+        "kind": "class"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/DataLinkManager.cs",
+    "declarations": [
+      {
+        "name": "LocalLinkFileState",
+        "line": 12,
+        "kind": "enum"
+      },
+      {
+        "name": "LocalLinkFileStatus",
+        "line": 13,
+        "kind": "class"
+      },
+      {
+        "name": "LinkObjectReference",
+        "line": 19,
+        "kind": "class"
+      },
+      {
+        "name": "LocalLinkSource",
+        "line": 28,
+        "kind": "class"
+      },
+      {
+        "name": "CanRefresh",
+        "line": 35,
+        "kind": "method"
+      },
+      {
+        "name": "LocalLinkInventory",
+        "line": 38,
+        "kind": "class"
+      },
+      {
+        "name": "DataLinkInventory",
+        "line": 45,
+        "kind": "class"
+      },
+      {
+        "name": "Same",
+        "line": 48,
+        "kind": "method"
+      },
+      {
+        "name": "DecodeReferences",
+        "line": 50,
+        "kind": "method"
+      },
+      {
+        "name": "Copy",
+        "line": 56,
+        "kind": "method"
+      },
+      {
+        "name": "Key",
+        "line": 57,
+        "kind": "method"
+      },
+      {
+        "name": "Build",
+        "line": 58,
+        "kind": "method"
+      },
+      {
+        "name": "ProbeLocal",
+        "line": 75,
+        "kind": "method"
+      },
+      {
+        "name": "Capture",
+        "line": 84,
+        "kind": "method"
+      },
+      {
+        "name": "Find",
+        "line": 96,
+        "kind": "method"
+      },
+      {
+        "name": "DataLinkManager",
+        "line": 101,
+        "kind": "class"
+      },
+      {
+        "name": "Grid",
+        "line": 111,
+        "kind": "method"
+      },
+      {
+        "name": "Rescan",
+        "line": 121,
+        "kind": "method"
+      },
+      {
+        "name": "ShowObjects",
+        "line": 127,
+        "kind": "method"
+      },
+      {
+        "name": "UpdateEnabled",
+        "line": 131,
+        "kind": "method"
+      },
+      {
+        "name": "Locate",
+        "line": 132,
+        "kind": "method"
+      },
+      {
+        "name": "RefreshObject",
+        "line": 137,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/DataSources.cs",
+    "declarations": [
+      {
+        "name": "LinkedTable",
+        "line": 15,
+        "kind": "class"
+      },
+      {
+        "name": "Number",
+        "line": 19,
+        "kind": "method"
+      },
+      {
+        "name": "Validate",
+        "line": 25,
+        "kind": "method"
+      },
+      {
+        "name": "LinkedTableProjection",
+        "line": 32,
+        "kind": "class"
+      },
+      {
+        "name": "Cells",
+        "line": 34,
+        "kind": "method"
+      },
+      {
+        "name": "LinkedChartData",
+        "line": 39,
+        "kind": "class"
+      },
+      {
+        "name": "SelectColumns",
+        "line": 41,
+        "kind": "method"
+      },
+      {
+        "name": "ChooseColumns",
+        "line": 48,
+        "kind": "method"
+      },
+      {
+        "name": "PickMappedColumns",
+        "line": 55,
+        "kind": "method"
+      },
+      {
+        "name": "PickColumns",
+        "line": 56,
+        "kind": "method"
+      },
+      {
+        "name": "Choose",
+        "line": 84,
+        "kind": "method"
+      },
+      {
+        "name": "Load",
+        "line": 94,
+        "kind": "method"
+      },
+      {
+        "name": "FromRows",
+        "line": 114,
+        "kind": "method"
+      },
+      {
+        "name": "Csv",
+        "line": 116,
+        "kind": "method"
+      },
+      {
+        "name": "Excel",
+        "line": 127,
+        "kind": "method"
+      },
+      {
+        "name": "WorkbookValues",
+        "line": 133,
+        "kind": "method"
+      },
+      {
+        "name": "ValidateWorkbookValues",
+        "line": 141,
+        "kind": "method"
+      },
+      {
+        "name": "EmbeddedSourceAddress",
+        "line": 152,
+        "kind": "method"
+      },
+      {
+        "name": "AwaitEmbeddedWorkbook",
+        "line": 157,
+        "kind": "method"
+      },
+      {
+        "name": "ObserveWrite",
+        "line": 165,
+        "kind": "method"
+      },
+      {
+        "name": "Write",
+        "line": 166,
+        "kind": "method"
+      },
+      {
+        "name": "CloseNativeWorkbook",
+        "line": 200,
+        "kind": "method"
+      },
+      {
+        "name": "CloseWorkbook",
+        "line": 206,
+        "kind": "method"
+      },
+      {
+        "name": "WaitForChartValues",
+        "line": 215,
+        "kind": "method"
+      },
+      {
+        "name": "Persist",
+        "line": 233,
+        "kind": "method"
+      },
+      {
+        "name": "DataSourceOption",
+        "line": 240,
+        "kind": "class"
+      },
+      {
+        "name": "DataSourceLink",
+        "line": 254,
+        "kind": "class"
+      },
+      {
+        "name": "DataSources",
+        "line": 262,
+        "kind": "class"
+      },
+      {
+        "name": "Option",
+        "line": 272,
+        "kind": "method"
+      },
+      {
+        "name": "Require",
+        "line": 274,
+        "kind": "method"
+      },
+      {
+        "name": "Validate",
+        "line": 275,
+        "kind": "method"
+      },
+      {
+        "name": "Create",
+        "line": 286,
+        "kind": "method"
+      },
+      {
+        "name": "ChooseAndLink",
+        "line": 297,
+        "kind": "method"
+      },
+      {
+        "name": "PickFile",
+        "line": 303,
+        "kind": "method"
+      },
+      {
+        "name": "Encode",
+        "line": 310,
+        "kind": "method"
+      },
+      {
+        "name": "Decode",
+        "line": 325,
+        "kind": "method"
+      },
+      {
+        "name": "Read",
+        "line": 349,
+        "kind": "method"
+      },
+      {
+        "name": "ReadRegistry",
+        "line": 365,
+        "kind": "method"
+      },
+      {
+        "name": "Save",
+        "line": 371,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/DemoApi.cs",
+    "declarations": [
+      {
+        "name": "IDemoAutomation",
+        "line": 12,
+        "kind": "interface"
+      },
+      {
+        "name": "DemoAutomation",
+        "line": 22,
+        "kind": "class"
+      },
+      {
+        "name": "GetVersion",
+        "line": 29,
+        "kind": "method"
+      },
+      {
+        "name": "GetBuildInfo",
+        "line": 30,
+        "kind": "method"
+      },
+      {
+        "name": "GetRibbonXml",
+        "line": 31,
+        "kind": "method"
+      },
+      {
+        "name": "GetRibbonLoaded",
+        "line": 32,
+        "kind": "method"
+      },
+      {
+        "name": "GetContextPropertiesState",
+        "line": 34,
+        "kind": "method"
+      },
+      {
+        "name": "InsertChartJson",
+        "line": 35,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/DemoInputs.cs",
+    "declarations": [
+      {
+        "name": "DemoInputs",
+        "line": 9,
+        "kind": "class"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/DemoLinks.cs",
+    "declarations": [
+      {
+        "name": "DemoWorkbookLink",
+        "line": 13,
+        "kind": "class"
+      },
+      {
+        "name": "DemoLinks",
+        "line": 14,
+        "kind": "class"
+      },
+      {
+        "name": "Insert",
+        "line": 17,
+        "kind": "method"
+      },
+      {
+        "name": "Selected",
+        "line": 32,
+        "kind": "method"
+      },
+      {
+        "name": "Refresh",
+        "line": 38,
+        "kind": "method"
+      },
+      {
+        "name": "Describe",
+        "line": 45,
+        "kind": "method"
+      },
+      {
+        "name": "Transfer",
+        "line": 50,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/DemoRibbon.cs",
+    "declarations": [
+      {
+        "name": "DemoRibbon",
+        "line": 9,
+        "kind": "class"
+      },
+      {
+        "name": "Create",
+        "line": 12,
+        "kind": "method"
+      },
+      {
+        "name": "ProductivityMenu",
+        "line": 49,
+        "kind": "method"
+      },
+      {
+        "name": "ElementMenu",
+        "line": 55,
+        "kind": "method"
+      },
+      {
+        "name": "Workflow",
+        "line": 67,
+        "kind": "method"
+      },
+      {
+        "name": "Tools",
+        "line": 68,
+        "kind": "method"
+      },
+      {
+        "name": "Group",
+        "line": 75,
+        "kind": "method"
+      },
+      {
+        "name": "Button",
+        "line": 94,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/DemoTools.cs",
+    "declarations": [
+      {
+        "name": "GridPlanner",
+        "line": 11,
+        "kind": "class"
+      },
+      {
+        "name": "Plan",
+        "line": 13,
+        "kind": "method"
+      },
+      {
+        "name": "Finite",
+        "line": 27,
+        "kind": "method"
+      },
+      {
+        "name": "DemoTool",
+        "line": 29,
+        "kind": "class"
+      },
+      {
+        "name": "ToString",
+        "line": 33,
+        "kind": "method"
+      },
+      {
+        "name": "DemoTools",
+        "line": 38,
+        "kind": "class"
+      },
+      {
+        "name": "Selected",
+        "line": 44,
+        "kind": "method"
+      },
+      {
+        "name": "Chart",
+        "line": 52,
+        "kind": "method"
+      },
+      {
+        "name": "BuildCatalog",
+        "line": 59,
+        "kind": "method"
+      },
+      {
+        "name": "Execute",
+        "line": 138,
+        "kind": "method"
+      },
+      {
+        "name": "CreateTour",
+        "line": 139,
+        "kind": "method"
+      },
+      {
+        "name": "Source",
+        "line": 151,
+        "kind": "method"
+      },
+      {
+        "name": "Text",
+        "line": 153,
+        "kind": "method"
+      },
+      {
+        "name": "Box",
+        "line": 159,
+        "kind": "method"
+      },
+      {
+        "name": "InsertChart",
+        "line": 165,
+        "kind": "method"
+      },
+      {
+        "name": "InsertCombo",
+        "line": 186,
+        "kind": "method"
+      },
+      {
+        "name": "GroupNew",
+        "line": 187,
+        "kind": "method"
+      },
+      {
+        "name": "ProcessFlow",
+        "line": 196,
+        "kind": "method"
+      },
+      {
+        "name": "Diagram",
+        "line": 197,
+        "kind": "method"
+      },
+      {
+        "name": "InsertGantt",
+        "line": 219,
+        "kind": "method"
+      },
+      {
+        "name": "InsertMekko",
+        "line": 220,
+        "kind": "method"
+      },
+      {
+        "name": "InsertWaterfall",
+        "line": 221,
+        "kind": "method"
+      },
+      {
+        "name": "Arrange",
+        "line": 222,
+        "kind": "method"
+      },
+      {
+        "name": "Grid",
+        "line": 245,
+        "kind": "method"
+      },
+      {
+        "name": "InsertTable",
+        "line": 252,
+        "kind": "method"
+      },
+      {
+        "name": "Agenda",
+        "line": 258,
+        "kind": "method"
+      },
+      {
+        "name": "PasteText",
+        "line": 259,
+        "kind": "method"
+      },
+      {
+        "name": "Font",
+        "line": 260,
+        "kind": "method"
+      },
+      {
+        "name": "SwitchDecimals",
+        "line": 261,
+        "kind": "method"
+      },
+      {
+        "name": "Language",
+        "line": 262,
+        "kind": "method"
+      },
+      {
+        "name": "ChartStyle",
+        "line": 263,
+        "kind": "method"
+      },
+      {
+        "name": "ValueLine",
+        "line": 264,
+        "kind": "method"
+      },
+      {
+        "name": "Difference",
+        "line": 265,
+        "kind": "method"
+      },
+      {
+        "name": "Cagr",
+        "line": 266,
+        "kind": "method"
+      },
+      {
+        "name": "Scan",
+        "line": 267,
+        "kind": "method"
+      },
+      {
+        "name": "InsertImage",
+        "line": 268,
+        "kind": "method"
+      },
+      {
+        "name": "ImportSlides",
+        "line": 269,
+        "kind": "method"
+      },
+      {
+        "name": "ApplyTemplate",
+        "line": 270,
+        "kind": "method"
+      },
+      {
+        "name": "ExportSlide",
+        "line": 271,
+        "kind": "method"
+      },
+      {
+        "name": "Brand",
+        "line": 272,
+        "kind": "method"
+      },
+      {
+        "name": "AxisTitle",
+        "line": 273,
+        "kind": "method"
+      },
+      {
+        "name": "CleanComments",
+        "line": 274,
+        "kind": "method"
+      },
+      {
+        "name": "SaveSlides",
+        "line": 280,
+        "kind": "method"
+      },
+      {
+        "name": "RoundData",
+        "line": 292,
+        "kind": "method"
+      },
+      {
+        "name": "StyleSheet",
+        "line": 301,
+        "kind": "method"
+      },
+      {
+        "name": "ImportJson",
+        "line": 302,
+        "kind": "method"
+      },
+      {
+        "name": "ExportJson",
+        "line": 314,
+        "kind": "method"
+      },
+      {
+        "name": "MiniToolbar",
+        "line": 321,
+        "kind": "method"
+      },
+      {
+        "name": "TableData",
+        "line": 328,
+        "kind": "method"
+      },
+      {
+        "name": "Library",
+        "line": 348,
+        "kind": "method"
+      },
+      {
+        "name": "AgendaCurrent",
+        "line": 362,
+        "kind": "method"
+      },
+      {
+        "name": "StyleFile",
+        "line": 363,
+        "kind": "method"
+      },
+      {
+        "name": "ExcelCagr",
+        "line": 373,
+        "kind": "method"
+      },
+      {
+        "name": "Prompt",
+        "line": 379,
+        "kind": "method"
+      },
+      {
+        "name": "OpenFile",
+        "line": 389,
+        "kind": "method"
+      },
+      {
+        "name": "SaveFile",
+        "line": 394,
+        "kind": "method"
+      },
+      {
+        "name": "ChooseFolder",
+        "line": 399,
+        "kind": "method"
+      },
+      {
+        "name": "Confirm",
+        "line": 404,
+        "kind": "method"
+      },
+      {
+        "name": "Notify",
+        "line": 406,
+        "kind": "method"
+      },
+      {
+        "name": "InsertAsset",
+        "line": 408,
+        "kind": "method"
+      },
+      {
+        "name": "DemoStyle",
+        "line": 416,
+        "kind": "class"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/DemoWorkspace.cs",
+    "declarations": [
+      {
+        "name": "DemoWorkspace",
+        "line": 8,
+        "kind": "class"
+      },
+      {
+        "name": "RefreshList",
+        "line": 40,
+        "kind": "method"
+      },
+      {
+        "name": "Selection",
+        "line": 53,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/ElementCommands.cs",
+    "declarations": [
+      {
+        "name": "ElementCommands",
+        "line": 11,
+        "kind": "class"
+      },
+      {
+        "name": "Enabled",
+        "line": 15,
+        "kind": "method"
+      },
+      {
+        "name": "Run",
+        "line": 20,
+        "kind": "method"
+      },
+      {
+        "name": "Stripe",
+        "line": 48,
+        "kind": "method"
+      },
+      {
+        "name": "Resize",
+        "line": 50,
+        "kind": "method"
+      },
+      {
+        "name": "IndicatorKeys",
+        "line": 52,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/ExcelRangeMapping.cs",
+    "declarations": [
+      {
+        "name": "ExcelRangeMapping",
+        "line": 13,
+        "kind": "class"
+      },
+      {
+        "name": "Validate",
+        "line": 19,
+        "kind": "method"
+      },
+      {
+        "name": "Dimensions",
+        "line": 26,
+        "kind": "method"
+      },
+      {
+        "name": "Project",
+        "line": 33,
+        "kind": "method"
+      },
+      {
+        "name": "Write",
+        "line": 40,
+        "kind": "method"
+      },
+      {
+        "name": "Read",
+        "line": 42,
+        "kind": "method"
+      },
+      {
+        "name": "MappedExcelData",
+        "line": 50,
+        "kind": "class"
+      },
+      {
+        "name": "Read",
+        "line": 52,
+        "kind": "method"
+      },
+      {
+        "name": "ReadRange",
+        "line": 61,
+        "kind": "method"
+      },
+      {
+        "name": "Choose",
+        "line": 65,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/FeatureInventory.cs",
+    "declarations": [
+      {
+        "name": "FeatureInventoryEntry",
+        "line": 2,
+        "kind": "class"
+      },
+      {
+        "name": "FeatureInventory",
+        "line": 3,
+        "kind": "class"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/IndicatorElements.cs",
+    "declarations": [
+      {
+        "name": "IndicatorSpec",
+        "line": 11,
+        "kind": "class"
+      },
+      {
+        "name": "Copy",
+        "line": 13,
+        "kind": "method"
+      },
+      {
+        "name": "Validate",
+        "line": 14,
+        "kind": "method"
+      },
+      {
+        "name": "Step",
+        "line": 16,
+        "kind": "method"
+      },
+      {
+        "name": "Shortcut",
+        "line": 17,
+        "kind": "method"
+      },
+      {
+        "name": "IndicatorCodec",
+        "line": 19,
+        "kind": "class"
+      },
+      {
+        "name": "Encode",
+        "line": 21,
+        "kind": "method"
+      },
+      {
+        "name": "Decode",
+        "line": 22,
+        "kind": "method"
+      },
+      {
+        "name": "IndicatorElements",
+        "line": 25,
+        "kind": "class"
+      },
+      {
+        "name": "IsIndicator",
+        "line": 27,
+        "kind": "method"
+      },
+      {
+        "name": "Read",
+        "line": 29,
+        "kind": "method"
+      },
+      {
+        "name": "Insert",
+        "line": 30,
+        "kind": "method"
+      },
+      {
+        "name": "Configure",
+        "line": 32,
+        "kind": "method"
+      },
+      {
+        "name": "Step",
+        "line": 33,
+        "kind": "method"
+      },
+      {
+        "name": "SetShortcut",
+        "line": 34,
+        "kind": "method"
+      },
+      {
+        "name": "CycleSelected",
+        "line": 35,
+        "kind": "method"
+      },
+      {
+        "name": "ConvertSelected",
+        "line": 36,
+        "kind": "method"
+      },
+      {
+        "name": "SetValueSelected",
+        "line": 37,
+        "kind": "method"
+      },
+      {
+        "name": "Edit",
+        "line": 38,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/LocalLibraryGallery.cs",
+    "declarations": [
+      {
+        "name": "LibraryGallery",
+        "line": 16,
+        "kind": "class"
+      },
+      {
+        "name": "Caption",
+        "line": 19,
+        "kind": "method"
+      },
+      {
+        "name": "Page",
+        "line": 21,
+        "kind": "method"
+      },
+      {
+        "name": "LocalLibraryForm",
+        "line": 24,
+        "kind": "class"
+      },
+      {
+        "name": "ShowAssets",
+        "line": 79,
+        "kind": "method"
+      },
+      {
+        "name": "Filter",
+        "line": 88,
+        "kind": "method"
+      },
+      {
+        "name": "MovePage",
+        "line": 94,
+        "kind": "method"
+      },
+      {
+        "name": "Key",
+        "line": 96,
+        "kind": "method"
+      },
+      {
+        "name": "Frame",
+        "line": 97,
+        "kind": "method"
+      },
+      {
+        "name": "ShowPage",
+        "line": 106,
+        "kind": "method"
+      },
+      {
+        "name": "UpdateDetails",
+        "line": 116,
+        "kind": "method"
+      },
+      {
+        "name": "RememberThumbnail",
+        "line": 121,
+        "kind": "method"
+      },
+      {
+        "name": "RenderNextPreview",
+        "line": 126,
+        "kind": "method"
+      },
+      {
+        "name": "RefreshIndex",
+        "line": 135,
+        "kind": "method"
+      },
+      {
+        "name": "Insert",
+        "line": 136,
+        "kind": "method"
+      },
+      {
+        "name": "Dispose",
+        "line": 143,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/LocalLibraryWorkspace.cs",
+    "declarations": [
+      {
+        "name": "LocalLibraryForm",
+        "line": 14,
+        "kind": "class"
+      },
+      {
+        "name": "UiAwaiter",
+        "line": 17,
+        "kind": "struct"
+      },
+      {
+        "name": "GetAwaiter",
+        "line": 21,
+        "kind": "method"
+      },
+      {
+        "name": "GetResult",
+        "line": 23,
+        "kind": "method"
+      },
+      {
+        "name": "OnCompleted",
+        "line": 24,
+        "kind": "method"
+      },
+      {
+        "name": "LibraryChoice",
+        "line": 46,
+        "kind": "class"
+      },
+      {
+        "name": "ToString",
+        "line": 49,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/MappedLinkOperations.cs",
+    "declarations": [
+      {
+        "name": "MappedLinkOperations",
+        "line": 10,
+        "kind": "class"
+      },
+      {
+        "name": "Parts",
+        "line": 12,
+        "kind": "method"
+      },
+      {
+        "name": "ValidateRefresh",
+        "line": 14,
+        "kind": "method"
+      },
+      {
+        "name": "Refresh",
+        "line": 22,
+        "kind": "method"
+      },
+      {
+        "name": "RelinkSelected",
+        "line": 34,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/MetadataCodec.cs",
+    "declarations": [
+      {
+        "name": "MetadataCodec",
+        "line": 10,
+        "kind": "class"
+      },
+      {
+        "name": "Validate",
+        "line": 16,
+        "kind": "method"
+      },
+      {
+        "name": "Encode",
+        "line": 34,
+        "kind": "method"
+      },
+      {
+        "name": "Decode",
+        "line": 46,
+        "kind": "method"
+      },
+      {
+        "name": "Sample",
+        "line": 60,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/NativeChartControls.cs",
+    "declarations": [
+      {
+        "name": "NativeAxisSettings",
+        "line": 10,
+        "kind": "class"
+      },
+      {
+        "name": "Validate",
+        "line": 15,
+        "kind": "method"
+      },
+      {
+        "name": "Finite",
+        "line": 22,
+        "kind": "method"
+      },
+      {
+        "name": "ValidateLogValues",
+        "line": 23,
+        "kind": "method"
+      },
+      {
+        "name": "NativeChartControls",
+        "line": 29,
+        "kind": "class"
+      },
+      {
+        "name": "Selected",
+        "line": 31,
+        "kind": "method"
+      },
+      {
+        "name": "Axis",
+        "line": 33,
+        "kind": "method"
+      },
+      {
+        "name": "Snapshot",
+        "line": 35,
+        "kind": "class"
+      },
+      {
+        "name": "Restore",
+        "line": 39,
+        "kind": "method"
+      },
+      {
+        "name": "Apply",
+        "line": 41,
+        "kind": "method"
+      },
+      {
+        "name": "SetAxis",
+        "line": 49,
+        "kind": "method"
+      },
+      {
+        "name": "ShowAxis",
+        "line": 55,
+        "kind": "method"
+      },
+      {
+        "name": "MatchScales",
+        "line": 69,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/NativeFormatting.cs",
+    "declarations": [
+      {
+        "name": "NativeFormattingPlan",
+        "line": 12,
+        "kind": "class"
+      },
+      {
+        "name": "ColorKind",
+        "line": 15,
+        "kind": "method"
+      },
+      {
+        "name": "TextMode",
+        "line": 16,
+        "kind": "method"
+      },
+      {
+        "name": "ColorValue",
+        "line": 17,
+        "kind": "method"
+      },
+      {
+        "name": "Rgb",
+        "line": 18,
+        "kind": "method"
+      },
+      {
+        "name": "Bounds",
+        "line": 19,
+        "kind": "method"
+      },
+      {
+        "name": "HorizontalAlignment",
+        "line": 20,
+        "kind": "method"
+      },
+      {
+        "name": "VerticalAlignment",
+        "line": 21,
+        "kind": "method"
+      },
+      {
+        "name": "Paragraph",
+        "line": 22,
+        "kind": "method"
+      },
+      {
+        "name": "Anchor",
+        "line": 23,
+        "kind": "method"
+      },
+      {
+        "name": "Orientation",
+        "line": 24,
+        "kind": "method"
+      },
+      {
+        "name": "NativeFormattingChange",
+        "line": 26,
+        "kind": "class"
+      },
+      {
+        "name": "NativeFormattingTransaction",
+        "line": 31,
+        "kind": "class"
+      },
+      {
+        "name": "Run",
+        "line": 33,
+        "kind": "method"
+      },
+      {
+        "name": "NativeFormatting",
+        "line": 40,
+        "kind": "class"
+      },
+      {
+        "name": "Owner",
+        "line": 42,
+        "kind": "class"
+      },
+      {
+        "name": "Target",
+        "line": 43,
+        "kind": "class"
+      },
+      {
+        "name": "SelectionPlan",
+        "line": 44,
+        "kind": "class"
+      },
+      {
+        "name": "ColorState",
+        "line": 45,
+        "kind": "class"
+      },
+      {
+        "name": "Restore",
+        "line": 49,
+        "kind": "method"
+      },
+      {
+        "name": "CanApply",
+        "line": 51,
+        "kind": "method"
+      },
+      {
+        "name": "SelectedShapes",
+        "line": 53,
+        "kind": "method"
+      },
+      {
+        "name": "Selection",
+        "line": 54,
+        "kind": "method"
+      },
+      {
+        "name": "Geometry",
+        "line": 56,
+        "kind": "method"
+      },
+      {
+        "name": "Add",
+        "line": 58,
+        "kind": "method"
+      },
+      {
+        "name": "Collect",
+        "line": 66,
+        "kind": "method"
+      },
+      {
+        "name": "Color",
+        "line": 72,
+        "kind": "method"
+      },
+      {
+        "name": "ApplyColor",
+        "line": 76,
+        "kind": "method"
+      },
+      {
+        "name": "Outline",
+        "line": 86,
+        "kind": "method"
+      },
+      {
+        "name": "Text",
+        "line": 88,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/NativeSeriesControls.cs",
+    "declarations": [
+      {
+        "name": "NativeSeriesControls",
+        "line": 9,
+        "kind": "class"
+      },
+      {
+        "name": "Validate",
+        "line": 12,
+        "kind": "method"
+      },
+      {
+        "name": "Apply",
+        "line": 13,
+        "kind": "method"
+      },
+      {
+        "name": "Show",
+        "line": 20,
+        "kind": "method"
+      },
+      {
+        "name": "NativePdfExport",
+        "line": 31,
+        "kind": "class"
+      },
+      {
+        "name": "Export",
+        "line": 33,
+        "kind": "method"
+      },
+      {
+        "name": "Show",
+        "line": 39,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/OfficeCompatibility.cs",
+    "declarations": [
+      {
+        "name": "OfficeSettings",
+        "line": 9,
+        "kind": "class"
+      },
+      {
+        "name": "Parse",
+        "line": 15,
+        "kind": "method"
+      },
+      {
+        "name": "Load",
+        "line": 31,
+        "kind": "method"
+      },
+      {
+        "name": "OfficeCompatibilityResult",
+        "line": 50,
+        "kind": "class"
+      },
+      {
+        "name": "OfficeCompatibility",
+        "line": 59,
+        "kind": "class"
+      },
+      {
+        "name": "Evaluate",
+        "line": 61,
+        "kind": "method"
+      },
+      {
+        "name": "Normalize",
+        "line": 88,
+        "kind": "method"
+      },
+      {
+        "name": "Deny",
+        "line": 90,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/PowerPointHost.cs",
+    "declarations": [
+      {
+        "name": "OfficeMutationLease",
+        "line": 14,
+        "kind": "class"
+      },
+      {
+        "name": "GetWindowThreadProcessId",
+        "line": 19,
+        "kind": "method"
+      },
+      {
+        "name": "TryEnter",
+        "line": 20,
+        "kind": "method"
+      },
+      {
+        "name": "ForAutomation",
+        "line": 27,
+        "kind": "method"
+      },
+      {
+        "name": "Dispose",
+        "line": 32,
+        "kind": "method"
+      },
+      {
+        "name": "OfficeEventBoundary",
+        "line": 34,
+        "kind": "class"
+      },
+      {
+        "name": "Run",
+        "line": 37,
+        "kind": "method"
+      },
+      {
+        "name": "PowerPointHost",
+        "line": 48,
+        "kind": "class"
+      },
+      {
+        "name": "CheckThread",
+        "line": 58,
+        "kind": "method"
+      },
+      {
+        "name": "GetSelectedSlideId",
+        "line": 65,
+        "kind": "method"
+      },
+      {
+        "name": "GetSelectedObjectIds",
+        "line": 66,
+        "kind": "method"
+      },
+      {
+        "name": "Shapes",
+        "line": 80,
+        "kind": "method"
+      },
+      {
+        "name": "Part",
+        "line": 90,
+        "kind": "method"
+      },
+      {
+        "name": "Read",
+        "line": 105,
+        "kind": "method"
+      },
+      {
+        "name": "Write",
+        "line": 116,
+        "kind": "method"
+      },
+      {
+        "name": "InsertEditableChart",
+        "line": 166,
+        "kind": "method"
+      },
+      {
+        "name": "SetData",
+        "line": 185,
+        "kind": "method"
+      },
+      {
+        "name": "Find",
+        "line": 220,
+        "kind": "method"
+      },
+      {
+        "name": "ReadChartMetadata",
+        "line": 226,
+        "kind": "method"
+      },
+      {
+        "name": "CopyEditableChartToActiveSlide",
+        "line": 231,
+        "kind": "method"
+      },
+      {
+        "name": "SaveChartMetadata",
+        "line": 275,
+        "kind": "method"
+      },
+      {
+        "name": "UpdateEditableChart",
+        "line": 282,
+        "kind": "method"
+      },
+      {
+        "name": "Capture",
+        "line": 296,
+        "kind": "method"
+      },
+      {
+        "name": "NativeSeriesValues",
+        "line": 331,
+        "kind": "method"
+      },
+      {
+        "name": "SeriesVector",
+        "line": 335,
+        "kind": "method"
+      },
+      {
+        "name": "RetryRejectedCall",
+        "line": 345,
+        "kind": "method"
+      },
+      {
+        "name": "InspectAndRecover",
+        "line": 360,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/PowerPointIntelligence.csproj",
+    "declarations": []
+  },
+  {
+    "path": "apps/powerpoint-vsto/PresentationAgenda.cs",
+    "declarations": [
+      {
+        "name": "AgendaSlideInfo",
+        "line": 10,
+        "kind": "class"
+      },
+      {
+        "name": "AgendaSectionInfo",
+        "line": 16,
+        "kind": "class"
+      },
+      {
+        "name": "AgendaEntry",
+        "line": 21,
+        "kind": "class"
+      },
+      {
+        "name": "AgendaPlan",
+        "line": 29,
+        "kind": "class"
+      },
+      {
+        "name": "AgendaPlanner",
+        "line": 35,
+        "kind": "class"
+      },
+      {
+        "name": "Build",
+        "line": 37,
+        "kind": "method"
+      },
+      {
+        "name": "Entry",
+        "line": 55,
+        "kind": "method"
+      },
+      {
+        "name": "Finite",
+        "line": 57,
+        "kind": "method"
+      },
+      {
+        "name": "PresentationAgenda",
+        "line": 59,
+        "kind": "class"
+      },
+      {
+        "name": "Capture",
+        "line": 62,
+        "kind": "method"
+      },
+      {
+        "name": "Insert",
+        "line": 69,
+        "kind": "method"
+      },
+      {
+        "name": "RefreshSelected",
+        "line": 75,
+        "kind": "method"
+      },
+      {
+        "name": "Active",
+        "line": 79,
+        "kind": "method"
+      },
+      {
+        "name": "ContainsOwnedField",
+        "line": 81,
+        "kind": "method"
+      },
+      {
+        "name": "Apply",
+        "line": 83,
+        "kind": "method"
+      },
+      {
+        "name": "Upsert",
+        "line": 96,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/PresentationQuality.cs",
+    "declarations": [
+      {
+        "name": "QualityInspectionOptions",
+        "line": 10,
+        "kind": "class"
+      },
+      {
+        "name": "Validate",
+        "line": 14,
+        "kind": "method"
+      },
+      {
+        "name": "QualityShapeSnapshot",
+        "line": 16,
+        "kind": "class"
+      },
+      {
+        "name": "QualitySlideSnapshot",
+        "line": 23,
+        "kind": "class"
+      },
+      {
+        "name": "QualityIssue",
+        "line": 30,
+        "kind": "class"
+      },
+      {
+        "name": "QualityInspectionReport",
+        "line": 35,
+        "kind": "class"
+      },
+      {
+        "name": "PresentationQuality",
+        "line": 42,
+        "kind": "class"
+      },
+      {
+        "name": "Evaluate",
+        "line": 44,
+        "kind": "method"
+      },
+      {
+        "name": "Finite",
+        "line": 74,
+        "kind": "method"
+      },
+      {
+        "name": "Add",
+        "line": 75,
+        "kind": "method"
+      },
+      {
+        "name": "Inspect",
+        "line": 80,
+        "kind": "method"
+      },
+      {
+        "name": "Capture",
+        "line": 99,
+        "kind": "method"
+      },
+      {
+        "name": "ShowInspection",
+        "line": 127,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/ProcessFlowTools.cs",
+    "declarations": [
+      {
+        "name": "ProcessGridCell",
+        "line": 13,
+        "kind": "class"
+      },
+      {
+        "name": "ProcessGridSpec",
+        "line": 14,
+        "kind": "class"
+      },
+      {
+        "name": "Copy",
+        "line": 19,
+        "kind": "method"
+      },
+      {
+        "name": "ProcessGridPlan",
+        "line": 21,
+        "kind": "class"
+      },
+      {
+        "name": "Validate",
+        "line": 23,
+        "kind": "method"
+      },
+      {
+        "name": "Kind",
+        "line": 29,
+        "kind": "method"
+      },
+      {
+        "name": "Bounds",
+        "line": 30,
+        "kind": "method"
+      },
+      {
+        "name": "Create",
+        "line": 31,
+        "kind": "method"
+      },
+      {
+        "name": "Change",
+        "line": 35,
+        "kind": "method"
+      },
+      {
+        "name": "Resize",
+        "line": 44,
+        "kind": "method"
+      },
+      {
+        "name": "Stripe",
+        "line": 48,
+        "kind": "method"
+      },
+      {
+        "name": "ProcessGridCodec",
+        "line": 50,
+        "kind": "class"
+      },
+      {
+        "name": "Encode",
+        "line": 53,
+        "kind": "method"
+      },
+      {
+        "name": "F",
+        "line": 54,
+        "kind": "method"
+      },
+      {
+        "name": "I",
+        "line": 55,
+        "kind": "method"
+      },
+      {
+        "name": "N",
+        "line": 56,
+        "kind": "method"
+      },
+      {
+        "name": "Fields",
+        "line": 57,
+        "kind": "method"
+      },
+      {
+        "name": "Decode",
+        "line": 58,
+        "kind": "method"
+      },
+      {
+        "name": "ProcessFlowTools",
+        "line": 63,
+        "kind": "class"
+      },
+      {
+        "name": "Context",
+        "line": 66,
+        "kind": "class"
+      },
+      {
+        "name": "Saved",
+        "line": 67,
+        "kind": "class"
+      },
+      {
+        "name": "Active",
+        "line": 68,
+        "kind": "method"
+      },
+      {
+        "name": "TextPart",
+        "line": 69,
+        "kind": "method"
+      },
+      {
+        "name": "Read",
+        "line": 70,
+        "kind": "method"
+      },
+      {
+        "name": "Place",
+        "line": 74,
+        "kind": "method"
+      },
+      {
+        "name": "Tags",
+        "line": 75,
+        "kind": "method"
+      },
+      {
+        "name": "CopyColor",
+        "line": 76,
+        "kind": "method"
+      },
+      {
+        "name": "CopyCellStyle",
+        "line": 78,
+        "kind": "method"
+      },
+      {
+        "name": "New",
+        "line": 90,
+        "kind": "method"
+      },
+      {
+        "name": "Create",
+        "line": 95,
+        "kind": "method"
+      },
+      {
+        "name": "Change",
+        "line": 100,
+        "kind": "method"
+      },
+      {
+        "name": "Resize",
+        "line": 111,
+        "kind": "method"
+      },
+      {
+        "name": "AddRow",
+        "line": 112,
+        "kind": "method"
+      },
+      {
+        "name": "AddColumn",
+        "line": 113,
+        "kind": "method"
+      },
+      {
+        "name": "DeleteSelectedRowOrColumn",
+        "line": 114,
+        "kind": "method"
+      },
+      {
+        "name": "ReorderColumn",
+        "line": 115,
+        "kind": "method"
+      },
+      {
+        "name": "Refresh",
+        "line": 116,
+        "kind": "method"
+      },
+      {
+        "name": "Stripe",
+        "line": 117,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/ProductivityTools.cs",
+    "declarations": [
+      {
+        "name": "ProductivitySymbol",
+        "line": 11,
+        "kind": "class"
+      },
+      {
+        "name": "ToString",
+        "line": 15,
+        "kind": "method"
+      },
+      {
+        "name": "DecimalCharacterChange",
+        "line": 17,
+        "kind": "class"
+      },
+      {
+        "name": "ProductivityTools",
+        "line": 21,
+        "kind": "class"
+      },
+      {
+        "name": "SearchSymbols",
+        "line": 27,
+        "kind": "method"
+      },
+      {
+        "name": "DecimalChanges",
+        "line": 29,
+        "kind": "method"
+      },
+      {
+        "name": "Run",
+        "line": 34,
+        "kind": "method"
+      },
+      {
+        "name": "ActiveSlide",
+        "line": 39,
+        "kind": "method"
+      },
+      {
+        "name": "InsertSymbol",
+        "line": 44,
+        "kind": "method"
+      },
+      {
+        "name": "ShowSymbols",
+        "line": 50,
+        "kind": "method"
+      },
+      {
+        "name": "TextEdit",
+        "line": 59,
+        "kind": "class"
+      },
+      {
+        "name": "CollectText",
+        "line": 60,
+        "kind": "method"
+      },
+      {
+        "name": "SwitchDecimals",
+        "line": 66,
+        "kind": "method"
+      },
+      {
+        "name": "RasterCopy",
+        "line": 79,
+        "kind": "method"
+      },
+      {
+        "name": "WorkbookItem",
+        "line": 90,
+        "kind": "class"
+      },
+      {
+        "name": "ToString",
+        "line": 93,
+        "kind": "method"
+      },
+      {
+        "name": "ShowWorkbooks",
+        "line": 95,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/RendererRibbonCommand.cs",
+    "declarations": [
+      {
+        "name": "RendererRibbonCommand",
+        "line": 11,
+        "kind": "class"
+      },
+      {
+        "name": "Resource",
+        "line": 13,
+        "kind": "method"
+      },
+      {
+        "name": "Prepare",
+        "line": 21,
+        "kind": "method"
+      },
+      {
+        "name": "Insert",
+        "line": 35,
+        "kind": "method"
+      },
+      {
+        "name": "Prepare",
+        "line": 44,
+        "kind": "method"
+      },
+      {
+        "name": "Insert",
+        "line": 60,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/RibbonIcons.cs",
+    "declarations": [
+      {
+        "name": "RibbonIcons",
+        "line": 13,
+        "kind": "class"
+      },
+      {
+        "name": "Key",
+        "line": 22,
+        "kind": "method"
+      },
+      {
+        "name": "Load",
+        "line": 23,
+        "kind": "method"
+      },
+      {
+        "name": "PictureBridge",
+        "line": 44,
+        "kind": "class"
+      },
+      {
+        "name": "Convert",
+        "line": 47,
+        "kind": "method"
+      },
+      {
+        "name": "Render",
+        "line": 49,
+        "kind": "method"
+      },
+      {
+        "name": "Line",
+        "line": 65,
+        "kind": "method"
+      },
+      {
+        "name": "Rect",
+        "line": 67,
+        "kind": "method"
+      },
+      {
+        "name": "Outline",
+        "line": 69,
+        "kind": "method"
+      },
+      {
+        "name": "Circle",
+        "line": 71,
+        "kind": "method"
+      },
+      {
+        "name": "Polygon",
+        "line": 73,
+        "kind": "method"
+      },
+      {
+        "name": "Letter",
+        "line": 75,
+        "kind": "method"
+      },
+      {
+        "name": "Arrow",
+        "line": 81,
+        "kind": "method"
+      },
+      {
+        "name": "Axes",
+        "line": 91,
+        "kind": "method"
+      },
+      {
+        "name": "Chart",
+        "line": 92,
+        "kind": "method"
+      },
+      {
+        "name": "Grid",
+        "line": 151,
+        "kind": "method"
+      },
+      {
+        "name": "Document",
+        "line": 158,
+        "kind": "method"
+      },
+      {
+        "name": "Slides",
+        "line": 160,
+        "kind": "method"
+      },
+      {
+        "name": "Folder",
+        "line": 162,
+        "kind": "method"
+      },
+      {
+        "name": "Palette",
+        "line": 164,
+        "kind": "method"
+      },
+      {
+        "name": "Refresh",
+        "line": 166,
+        "kind": "method"
+      },
+      {
+        "name": "Magnify",
+        "line": 168,
+        "kind": "method"
+      },
+      {
+        "name": "Chain",
+        "line": 170,
+        "kind": "method"
+      },
+      {
+        "name": "Align",
+        "line": 172,
+        "kind": "method"
+      },
+      {
+        "name": "TextLines",
+        "line": 189,
+        "kind": "method"
+      },
+      {
+        "name": "TextFrameIcon",
+        "line": 194,
+        "kind": "method"
+      },
+      {
+        "name": "Gallery",
+        "line": 206,
+        "kind": "method"
+      },
+      {
+        "name": "Gear",
+        "line": 211,
+        "kind": "method"
+      },
+      {
+        "name": "WorkflowIcon",
+        "line": 216,
+        "kind": "method"
+      },
+      {
+        "name": "Draw",
+        "line": 246,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/ServiceConnections.cs",
+    "declarations": [
+      {
+        "name": "ConnectionService",
+        "line": 12,
+        "kind": "enum"
+      },
+      {
+        "name": "ConnectionAuthentication",
+        "line": 13,
+        "kind": "enum"
+      },
+      {
+        "name": "ServiceConnectionProfile",
+        "line": 14,
+        "kind": "class"
+      },
+      {
+        "name": "Copy",
+        "line": 20,
+        "kind": "method"
+      },
+      {
+        "name": "ServiceConnectionSettings",
+        "line": 22,
+        "kind": "class"
+      },
+      {
+        "name": "Empty",
+        "line": 26,
+        "kind": "method"
+      },
+      {
+        "name": "ServiceConnections",
+        "line": 31,
+        "kind": "class"
+      },
+      {
+        "name": "AllowedAuthentication",
+        "line": 36,
+        "kind": "method"
+      },
+      {
+        "name": "Validate",
+        "line": 38,
+        "kind": "method"
+      },
+      {
+        "name": "ValidateProfile",
+        "line": 45,
+        "kind": "method"
+      },
+      {
+        "name": "Status",
+        "line": 53,
+        "kind": "method"
+      },
+      {
+        "name": "Encode",
+        "line": 58,
+        "kind": "method"
+      },
+      {
+        "name": "Attributes",
+        "line": 67,
+        "kind": "method"
+      },
+      {
+        "name": "Elements",
+        "line": 71,
+        "kind": "method"
+      },
+      {
+        "name": "Decode",
+        "line": 75,
+        "kind": "method"
+      },
+      {
+        "name": "Load",
+        "line": 89,
+        "kind": "method"
+      },
+      {
+        "name": "Save",
+        "line": 93,
+        "kind": "method"
+      },
+      {
+        "name": "ShowConfiguration",
+        "line": 98,
+        "kind": "method"
+      },
+      {
+        "name": "Label",
+        "line": 119,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/TemplateCatalog.cs",
+    "declarations": [
+      {
+        "name": "LibraryDrafts",
+        "line": 7,
+        "kind": "class"
+      },
+      {
+        "name": "Load",
+        "line": 10,
+        "kind": "method"
+      },
+      {
+        "name": "Save",
+        "line": 16,
+        "kind": "method"
+      },
+      {
+        "name": "TemplateTheme",
+        "line": 23,
+        "kind": "class"
+      },
+      {
+        "name": "Binding",
+        "line": 26,
+        "kind": "method"
+      },
+      {
+        "name": "TemplateAlignment",
+        "line": 35,
+        "kind": "class"
+      },
+      {
+        "name": "Validate",
+        "line": 39,
+        "kind": "method"
+      },
+      {
+        "name": "Prepare",
+        "line": 41,
+        "kind": "method"
+      },
+      {
+        "name": "TemplatePalette",
+        "line": 55,
+        "kind": "class"
+      },
+      {
+        "name": "ToString",
+        "line": 59,
+        "kind": "method"
+      },
+      {
+        "name": "TemplatePalettes",
+        "line": 61,
+        "kind": "class"
+      },
+      {
+        "name": "Get",
+        "line": 86,
+        "kind": "method"
+      },
+      {
+        "name": "Map",
+        "line": 87,
+        "kind": "method"
+      },
+      {
+        "name": "Luminance",
+        "line": 94,
+        "kind": "method"
+      },
+      {
+        "name": "Contrast",
+        "line": 96,
+        "kind": "method"
+      },
+      {
+        "name": "TextColor",
+        "line": 97,
+        "kind": "method"
+      },
+      {
+        "name": "Apply",
+        "line": 99,
+        "kind": "method"
+      },
+      {
+        "name": "TemplateNode",
+        "line": 112,
+        "kind": "class"
+      },
+      {
+        "name": "SlideTemplate",
+        "line": 120,
+        "kind": "class"
+      },
+      {
+        "name": "Build",
+        "line": 124,
+        "kind": "method"
+      },
+      {
+        "name": "ToString",
+        "line": 125,
+        "kind": "method"
+      },
+      {
+        "name": "TemplateCatalog",
+        "line": 129,
+        "kind": "class"
+      },
+      {
+        "name": "Create",
+        "line": 162,
+        "kind": "method"
+      },
+      {
+        "name": "Search",
+        "line": 169,
+        "kind": "method"
+      },
+      {
+        "name": "Build",
+        "line": 175,
+        "kind": "method"
+      },
+      {
+        "name": "Validate",
+        "line": 278,
+        "kind": "method"
+      },
+      {
+        "name": "Composer",
+        "line": 284,
+        "kind": "class"
+      },
+      {
+        "name": "Text",
+        "line": 287,
+        "kind": "method"
+      },
+      {
+        "name": "Shape",
+        "line": 288,
+        "kind": "method"
+      },
+      {
+        "name": "Line",
+        "line": 289,
+        "kind": "method"
+      },
+      {
+        "name": "Polygon",
+        "line": 290,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/TemplateLibrary.cs",
+    "declarations": [
+      {
+        "name": "TemplatePreview",
+        "line": 19,
+        "kind": "class"
+      },
+      {
+        "name": "ColorOf",
+        "line": 21,
+        "kind": "method"
+      },
+      {
+        "name": "Render",
+        "line": 22,
+        "kind": "method"
+      },
+      {
+        "name": "TemplateInserter",
+        "line": 60,
+        "kind": "class"
+      },
+      {
+        "name": "Insert",
+        "line": 63,
+        "kind": "method"
+      },
+      {
+        "name": "ApplyTheme",
+        "line": 122,
+        "kind": "method"
+      },
+      {
+        "name": "ThemeColor",
+        "line": 127,
+        "kind": "method"
+      },
+      {
+        "name": "Paragraph",
+        "line": 131,
+        "kind": "method"
+      },
+      {
+        "name": "Anchor",
+        "line": 132,
+        "kind": "method"
+      },
+      {
+        "name": "ChangeAlignment",
+        "line": 133,
+        "kind": "method"
+      },
+      {
+        "name": "CollectAll",
+        "line": 152,
+        "kind": "method"
+      },
+      {
+        "name": "ChangePalette",
+        "line": 153,
+        "kind": "method"
+      },
+      {
+        "name": "SelectedInstance",
+        "line": 195,
+        "kind": "method"
+      },
+      {
+        "name": "Collect",
+        "line": 203,
+        "kind": "method"
+      },
+      {
+        "name": "Rgb",
+        "line": 211,
+        "kind": "method"
+      },
+      {
+        "name": "AlignmentPicker",
+        "line": 213,
+        "kind": "class"
+      },
+      {
+        "name": "Choose",
+        "line": 215,
+        "kind": "method"
+      },
+      {
+        "name": "PalettePicker",
+        "line": 226,
+        "kind": "class"
+      },
+      {
+        "name": "Configure",
+        "line": 228,
+        "kind": "method"
+      },
+      {
+        "name": "Choose",
+        "line": 234,
+        "kind": "method"
+      },
+      {
+        "name": "TemplateLibrary",
+        "line": 245,
+        "kind": "class"
+      },
+      {
+        "name": "SaveDraft",
+        "line": 292,
+        "kind": "method"
+      },
+      {
+        "name": "Filter",
+        "line": 293,
+        "kind": "method"
+      },
+      {
+        "name": "ShowPage",
+        "line": 302,
+        "kind": "method"
+      },
+      {
+        "name": "SelectTemplate",
+        "line": 311,
+        "kind": "method"
+      },
+      {
+        "name": "ShowTemplate",
+        "line": 313,
+        "kind": "method"
+      },
+      {
+        "name": "Values",
+        "line": 318,
+        "kind": "method"
+      },
+      {
+        "name": "ReplacePreview",
+        "line": 319,
+        "kind": "method"
+      },
+      {
+        "name": "UpdatePreview",
+        "line": 320,
+        "kind": "method"
+      },
+      {
+        "name": "Insert",
+        "line": 321,
+        "kind": "method"
+      },
+      {
+        "name": "Dispose",
+        "line": 327,
+        "kind": "method"
+      },
+      {
+        "name": "LocalSlideAsset",
+        "line": 334,
+        "kind": "class"
+      },
+      {
+        "name": "ToString",
+        "line": 341,
+        "kind": "method"
+      },
+      {
+        "name": "LocalSlideIndex",
+        "line": 343,
+        "kind": "class"
+      },
+      {
+        "name": "Read",
+        "line": 345,
+        "kind": "method"
+      },
+      {
+        "name": "SlideText",
+        "line": 351,
+        "kind": "method"
+      },
+      {
+        "name": "Value",
+        "line": 357,
+        "kind": "method"
+      },
+      {
+        "name": "Resolve",
+        "line": 358,
+        "kind": "method"
+      },
+      {
+        "name": "Relation",
+        "line": 363,
+        "kind": "method"
+      },
+      {
+        "name": "IsWithin",
+        "line": 367,
+        "kind": "method"
+      },
+      {
+        "name": "Discover",
+        "line": 368,
+        "kind": "method"
+      },
+      {
+        "name": "ReadFile",
+        "line": 374,
+        "kind": "method"
+      },
+      {
+        "name": "Filter",
+        "line": 390,
+        "kind": "method"
+      },
+      {
+        "name": "LayoutRule",
+        "line": 400,
+        "kind": "class"
+      },
+      {
+        "name": "Encode",
+        "line": 404,
+        "kind": "method"
+      },
+      {
+        "name": "Decode",
+        "line": 405,
+        "kind": "method"
+      },
+      {
+        "name": "Validate",
+        "line": 406,
+        "kind": "method"
+      },
+      {
+        "name": "Horizontal",
+        "line": 407,
+        "kind": "method"
+      },
+      {
+        "name": "Edge",
+        "line": 408,
+        "kind": "method"
+      },
+      {
+        "name": "Position",
+        "line": 409,
+        "kind": "method"
+      },
+      {
+        "name": "LibraryLayoutLinks",
+        "line": 411,
+        "kind": "class"
+      },
+      {
+        "name": "Rect",
+        "line": 414,
+        "kind": "method"
+      },
+      {
+        "name": "Set",
+        "line": 415,
+        "kind": "method"
+      },
+      {
+        "name": "Reflow",
+        "line": 428,
+        "kind": "method"
+      },
+      {
+        "name": "Controls",
+        "line": 435,
+        "kind": "method"
+      },
+      {
+        "name": "TemplateSources",
+        "line": 444,
+        "kind": "class"
+      },
+      {
+        "name": "ReadFolderSetting",
+        "line": 446,
+        "kind": "method"
+      },
+      {
+        "name": "ResolveFolder",
+        "line": 450,
+        "kind": "method"
+      },
+      {
+        "name": "RequireSameSize",
+        "line": 459,
+        "kind": "method"
+      },
+      {
+        "name": "SourceTemplateSession",
+        "line": 462,
+        "kind": "class"
+      },
+      {
+        "name": "Source",
+        "line": 476,
+        "kind": "method"
+      },
+      {
+        "name": "Preview",
+        "line": 484,
+        "kind": "method"
+      },
+      {
+        "name": "InsertOriginal",
+        "line": 489,
+        "kind": "method"
+      },
+      {
+        "name": "Dispose",
+        "line": 499,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/TextShapeElements.cs",
+    "declarations": [
+      {
+        "name": "TextEdgeLocks",
+        "line": 15,
+        "kind": "enum"
+      },
+      {
+        "name": "TextShapeSpec",
+        "line": 16,
+        "kind": "class"
+      },
+      {
+        "name": "Copy",
+        "line": 22,
+        "kind": "method"
+      },
+      {
+        "name": "TextShapePlan",
+        "line": 24,
+        "kind": "class"
+      },
+      {
+        "name": "Kind",
+        "line": 26,
+        "kind": "method"
+      },
+      {
+        "name": "Finite",
+        "line": 32,
+        "kind": "method"
+      },
+      {
+        "name": "Validate",
+        "line": 33,
+        "kind": "method"
+      },
+      {
+        "name": "ParseLength",
+        "line": 34,
+        "kind": "method"
+      },
+      {
+        "name": "Fit",
+        "line": 45,
+        "kind": "method"
+      },
+      {
+        "name": "TextShapeCodec",
+        "line": 55,
+        "kind": "class"
+      },
+      {
+        "name": "Encode",
+        "line": 58,
+        "kind": "method"
+      },
+      {
+        "name": "Decode",
+        "line": 59,
+        "kind": "method"
+      },
+      {
+        "name": "TextShapeElements",
+        "line": 68,
+        "kind": "class"
+      },
+      {
+        "name": "IsManaged",
+        "line": 71,
+        "kind": "method"
+      },
+      {
+        "name": "Active",
+        "line": 72,
+        "kind": "method"
+      },
+      {
+        "name": "Selected",
+        "line": 73,
+        "kind": "method"
+      },
+      {
+        "name": "Geometry",
+        "line": 74,
+        "kind": "method"
+      },
+      {
+        "name": "Native",
+        "line": 75,
+        "kind": "method"
+      },
+      {
+        "name": "Part",
+        "line": 76,
+        "kind": "method"
+      },
+      {
+        "name": "Read",
+        "line": 77,
+        "kind": "method"
+      },
+      {
+        "name": "Bounds",
+        "line": 78,
+        "kind": "method"
+      },
+      {
+        "name": "Bounds",
+        "line": 79,
+        "kind": "method"
+      },
+      {
+        "name": "Adjust",
+        "line": 80,
+        "kind": "method"
+      },
+      {
+        "name": "Measure",
+        "line": 81,
+        "kind": "method"
+      },
+      {
+        "name": "Plan",
+        "line": 89,
+        "kind": "method"
+      },
+      {
+        "name": "InitializeNewShape",
+        "line": 90,
+        "kind": "method"
+      },
+      {
+        "name": "Insert",
+        "line": 103,
+        "kind": "method"
+      },
+      {
+        "name": "PreflightGridGeometry",
+        "line": 107,
+        "kind": "method"
+      },
+      {
+        "name": "Configure",
+        "line": 117,
+        "kind": "method"
+      },
+      {
+        "name": "FitSelected",
+        "line": 121,
+        "kind": "method"
+      },
+      {
+        "name": "DuplicateSelected",
+        "line": 126,
+        "kind": "method"
+      },
+      {
+        "name": "ConvertSelected",
+        "line": 134,
+        "kind": "method"
+      },
+      {
+        "name": "FitSnapshot",
+        "line": 139,
+        "kind": "method"
+      },
+      {
+        "name": "AutoReflow",
+        "line": 141,
+        "kind": "method"
+      },
+      {
+        "name": "DialogAction",
+        "line": 145,
+        "kind": "method"
+      },
+      {
+        "name": "Edit",
+        "line": 146,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/ThisAddIn.cs",
+    "declarations": [
+      {
+        "name": "ThisAddIn",
+        "line": 13,
+        "kind": "class"
+      },
+      {
+        "name": "RequestComAddInAutomationService",
+        "line": 29,
+        "kind": "method"
+      },
+      {
+        "name": "OnStartup",
+        "line": 37,
+        "kind": "method"
+      },
+      {
+        "name": "ConfigureCompatibility",
+        "line": 52,
+        "kind": "method"
+      },
+      {
+        "name": "OnShutdown",
+        "line": 77,
+        "kind": "method"
+      },
+      {
+        "name": "EnsurePane",
+        "line": 88,
+        "kind": "method"
+      },
+      {
+        "name": "RemovePane",
+        "line": 122,
+        "kind": "method"
+      },
+      {
+        "name": "Run",
+        "line": 133,
+        "kind": "method"
+      },
+      {
+        "name": "InsertRenderedShapes",
+        "line": 152,
+        "kind": "method"
+      },
+      {
+        "name": "Insert",
+        "line": 175,
+        "kind": "method"
+      },
+      {
+        "name": "LinkDataSource",
+        "line": 176,
+        "kind": "method"
+      },
+      {
+        "name": "ChangeTemplatePalette",
+        "line": 190,
+        "kind": "method"
+      },
+      {
+        "name": "ChangeTemplateAlignment",
+        "line": 195,
+        "kind": "method"
+      },
+      {
+        "name": "OpenTemplateLibrary",
+        "line": 196,
+        "kind": "method"
+      },
+      {
+        "name": "OpenDemo",
+        "line": 197,
+        "kind": "method"
+      },
+      {
+        "name": "ShowContextProperties",
+        "line": 212,
+        "kind": "method"
+      },
+      {
+        "name": "RunProductivity",
+        "line": 213,
+        "kind": "method"
+      },
+      {
+        "name": "ElementEnabled",
+        "line": 221,
+        "kind": "method"
+      },
+      {
+        "name": "RunElement",
+        "line": 222,
+        "kind": "method"
+      },
+      {
+        "name": "ElementDoubleClick",
+        "line": 223,
+        "kind": "method"
+      },
+      {
+        "name": "WorkflowEnabled",
+        "line": 229,
+        "kind": "method"
+      },
+      {
+        "name": "RunWorkflow",
+        "line": 242,
+        "kind": "method"
+      },
+      {
+        "name": "RunDemo",
+        "line": 270,
+        "kind": "method"
+      },
+      {
+        "name": "OpenLayoutControls",
+        "line": 276,
+        "kind": "method"
+      },
+      {
+        "name": "OpenWorkspace",
+        "line": 277,
+        "kind": "method"
+      },
+      {
+        "name": "Inspect",
+        "line": 278,
+        "kind": "method"
+      },
+      {
+        "name": "ShowCompatibility",
+        "line": 279,
+        "kind": "method"
+      },
+      {
+        "name": "ShowSelection",
+        "line": 286,
+        "kind": "method"
+      },
+      {
+        "name": "SelectionChanged",
+        "line": 296,
+        "kind": "method"
+      },
+      {
+        "name": "RunHostEvent",
+        "line": 301,
+        "kind": "method"
+      },
+      {
+        "name": "Opened",
+        "line": 308,
+        "kind": "method"
+      },
+      {
+        "name": "Activated",
+        "line": 310,
+        "kind": "method"
+      },
+      {
+        "name": "Closed",
+        "line": 316,
+        "kind": "method"
+      },
+      {
+        "name": "BeforeSave",
+        "line": 318,
+        "kind": "method"
+      },
+      {
+        "name": "CreateRibbonExtensibilityObject",
+        "line": 326,
+        "kind": "method"
+      },
+      {
+        "name": "InternalStartup",
+        "line": 328,
+        "kind": "method"
+      },
+      {
+        "name": "IntelligenceRibbon",
+        "line": 332,
+        "kind": "class"
+      },
+      {
+        "name": "GetCustomUI",
+        "line": 338,
+        "kind": "method"
+      },
+      {
+        "name": "LoadImage",
+        "line": 339,
+        "kind": "method"
+      },
+      {
+        "name": "InsertRenderedShapes",
+        "line": 340,
+        "kind": "method"
+      },
+      {
+        "name": "InsertSample",
+        "line": 341,
+        "kind": "method"
+      },
+      {
+        "name": "LinkDataSource",
+        "line": 342,
+        "kind": "method"
+      },
+      {
+        "name": "GetDataSourceEnabled",
+        "line": 343,
+        "kind": "method"
+      },
+      {
+        "name": "InspectChart",
+        "line": 344,
+        "kind": "method"
+      },
+      {
+        "name": "ShowCompatibility",
+        "line": 345,
+        "kind": "method"
+      },
+      {
+        "name": "ShowWorkspace",
+        "line": 346,
+        "kind": "method"
+      },
+      {
+        "name": "ChangeTemplatePalette",
+        "line": 347,
+        "kind": "method"
+      },
+      {
+        "name": "ChangeTemplateAlignment",
+        "line": 348,
+        "kind": "method"
+      },
+      {
+        "name": "ShowLibraryLayout",
+        "line": 349,
+        "kind": "method"
+      },
+      {
+        "name": "ShowTemplateLibrary",
+        "line": 350,
+        "kind": "method"
+      },
+      {
+        "name": "ShowContextProperties",
+        "line": 351,
+        "kind": "method"
+      },
+      {
+        "name": "ShowDemo",
+        "line": 352,
+        "kind": "method"
+      },
+      {
+        "name": "GetWorkflowEnabled",
+        "line": 353,
+        "kind": "method"
+      },
+      {
+        "name": "RunWorkflowCommand",
+        "line": 354,
+        "kind": "method"
+      },
+      {
+        "name": "RunProductivityTool",
+        "line": 355,
+        "kind": "method"
+      },
+      {
+        "name": "GetElementEnabled",
+        "line": 356,
+        "kind": "method"
+      },
+      {
+        "name": "RunElementCommand",
+        "line": 357,
+        "kind": "method"
+      },
+      {
+        "name": "RunDemoTool",
+        "line": 358,
+        "kind": "method"
+      },
+      {
+        "name": "GetCommandEnabled",
+        "line": 359,
+        "kind": "method"
+      },
+      {
+        "name": "OnLoad",
+        "line": 360,
+        "kind": "method"
+      },
+      {
+        "name": "Refresh",
+        "line": 361,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/ThisAddIn.Designer.cs",
+    "declarations": [
+      {
+        "name": "ThisAddIn",
+        "line": 9,
+        "kind": "class"
+      },
+      {
+        "name": "Initialize",
+        "line": 19,
+        "kind": "method"
+      },
+      {
+        "name": "FinishInitialization",
+        "line": 26,
+        "kind": "method"
+      },
+      {
+        "name": "InitializeDataBindings",
+        "line": 28,
+        "kind": "method"
+      },
+      {
+        "name": "OnShutdown",
+        "line": 35,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/ThisAddIn.Designer.xml",
+    "declarations": []
+  },
+  {
+    "path": "apps/powerpoint-vsto/UniversalConnectors.cs",
+    "declarations": [
+      {
+        "name": "ConnectorEndpoint",
+        "line": 14,
+        "kind": "class"
+      },
+      {
+        "name": "Copy",
+        "line": 19,
+        "kind": "method"
+      },
+      {
+        "name": "Validate",
+        "line": 20,
+        "kind": "method"
+      },
+      {
+        "name": "ConnectorSpec",
+        "line": 22,
+        "kind": "class"
+      },
+      {
+        "name": "Finite",
+        "line": 29,
+        "kind": "method"
+      },
+      {
+        "name": "Validate",
+        "line": 30,
+        "kind": "method"
+      },
+      {
+        "name": "Copy",
+        "line": 31,
+        "kind": "method"
+      },
+      {
+        "name": "AnchorAt",
+        "line": 32,
+        "kind": "method"
+      },
+      {
+        "name": "ConnectorCodec",
+        "line": 35,
+        "kind": "class"
+      },
+      {
+        "name": "Encode",
+        "line": 39,
+        "kind": "method"
+      },
+      {
+        "name": "Shape",
+        "line": 41,
+        "kind": "method"
+      },
+      {
+        "name": "Decode",
+        "line": 42,
+        "kind": "method"
+      },
+      {
+        "name": "ConnectorBindingPlan",
+        "line": 47,
+        "kind": "class"
+      },
+      {
+        "name": "Reconcile",
+        "line": 49,
+        "kind": "method"
+      },
+      {
+        "name": "ConnectorGeometryPlan",
+        "line": 60,
+        "kind": "class"
+      },
+      {
+        "name": "Position",
+        "line": 62,
+        "kind": "method"
+      },
+      {
+        "name": "UniversalConnectors",
+        "line": 70,
+        "kind": "class"
+      },
+      {
+        "name": "Active",
+        "line": 72,
+        "kind": "method"
+      },
+      {
+        "name": "IsManaged",
+        "line": 73,
+        "kind": "method"
+      },
+      {
+        "name": "Read",
+        "line": 74,
+        "kind": "method"
+      },
+      {
+        "name": "Find",
+        "line": 75,
+        "kind": "method"
+      },
+      {
+        "name": "Locate",
+        "line": 76,
+        "kind": "method"
+      },
+      {
+        "name": "Route",
+        "line": 81,
+        "kind": "method"
+      },
+      {
+        "name": "Arrow",
+        "line": 82,
+        "kind": "method"
+      },
+      {
+        "name": "Style",
+        "line": 83,
+        "kind": "method"
+      },
+      {
+        "name": "Geometry",
+        "line": 84,
+        "kind": "method"
+      },
+      {
+        "name": "Bounds",
+        "line": 89,
+        "kind": "method"
+      },
+      {
+        "name": "Position",
+        "line": 90,
+        "kind": "method"
+      },
+      {
+        "name": "Live",
+        "line": 95,
+        "kind": "method"
+      },
+      {
+        "name": "Snapshot",
+        "line": 101,
+        "kind": "method"
+      },
+      {
+        "name": "Part",
+        "line": 105,
+        "kind": "method"
+      },
+      {
+        "name": "Saved",
+        "line": 106,
+        "kind": "class"
+      },
+      {
+        "name": "Capture",
+        "line": 111,
+        "kind": "method"
+      },
+      {
+        "name": "Restore",
+        "line": 112,
+        "kind": "method"
+      },
+      {
+        "name": "Create",
+        "line": 114,
+        "kind": "method"
+      },
+      {
+        "name": "Selected",
+        "line": 118,
+        "kind": "method"
+      },
+      {
+        "name": "Update",
+        "line": 119,
+        "kind": "method"
+      },
+      {
+        "name": "Reflow",
+        "line": 123,
+        "kind": "method"
+      },
+      {
+        "name": "Insert",
+        "line": 132,
+        "kind": "method"
+      },
+      {
+        "name": "Edit",
+        "line": 133,
+        "kind": "method"
+      },
+      {
+        "name": "EndpointEditor",
+        "line": 134,
+        "kind": "class"
+      },
+      {
+        "name": "Read",
+        "line": 144,
+        "kind": "method"
+      },
+      {
+        "name": "Show",
+        "line": 146,
+        "kind": "method"
+      }
+    ]
+  },
+  {
+    "path": "apps/powerpoint-vsto/XmlPartUpdates.cs",
+    "declarations": [
+      {
+        "name": "XmlPartUpdates",
+        "line": 11,
+        "kind": "class"
+      },
+      {
+        "name": "Validate",
+        "line": 13,
+        "kind": "method"
+      },
+      {
+        "name": "Add",
+        "line": 15,
+        "kind": "method"
+      },
+      {
+        "name": "SamePartId",
+        "line": 17,
+        "kind": "method"
+      },
+      {
+        "name": "Content",
+        "line": 19,
+        "kind": "method"
+      },
+      {
+        "name": "AttributeKey",
+        "line": 25,
+        "kind": "method"
+      },
+      {
+        "name": "Equivalent",
+        "line": 26,
+        "kind": "method"
+      },
+      {
+        "name": "Has",
+        "line": 35,
+        "kind": "method"
+      },
+      {
+        "name": "AttachedParts",
+        "line": 47,
+        "kind": "method"
+      },
+      {
+        "name": "RootNamespace",
+        "line": 52,
+        "kind": "method"
+      },
+      {
+        "name": "VerifyAttachment",
+        "line": 59,
+        "kind": "method"
+      },
+      {
+        "name": "Shape",
+        "line": 63,
+        "kind": "method"
+      },
+      {
+        "name": "Deck",
+        "line": 76,
+        "kind": "method"
+      }
+    ]
+  }
+]

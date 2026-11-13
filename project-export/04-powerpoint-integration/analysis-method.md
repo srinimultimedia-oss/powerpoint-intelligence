@@ -1,0 +1,7 @@
+# VSTO analysis method and explicit coverage boundary
+
+Forty-nine top-level application source/project/config/designer files were read in full by text indexing and declaration/import/error extraction. The implementation review used targeted bodies/branches by module, with full reads for smaller contracts/adapters; it is not a claim of line-by-line human proof of every generated template geometry or icon draw operation. Every file has a module design and a SHA-256 review row. Ten test files were additionally read completely and reviewed semantically; no native Office test was executed by this leaf.
+
+The declaration JSON contains names/kinds/line numbers only, not implementation bodies. Symbol extraction is a conservative lexical navigator: overloaded constructors, local lambdas, field initializer helpers and compressed one-line declarations can require direct source inspection. Feature extraction expands explicit command arrays and reconciles one direct alias; cross-cutting UI capabilities are separately labeled. Related test-file references are candidate regression mappings, not instrumented feature coverage.
+
+Design accuracy relies on actual behavior of native adapters plus their preflight/rollback code, not historical feature labels. The103 FeatureInventory records are preserved as descriptive requirements. Current execution evidence belongs to the parent export test-results document. The catalog190entries measure172routes+18 capabilities; they do not establish complete parity with another product or190independent business features.

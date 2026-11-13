@@ -1,0 +1,14 @@
+2026-11-13T05:46:40.075Z dispatch analysis-1 opened: leaf-1, leaf-2, leaf-3
+2026-11-13T05:47:47.720Z dispatch analysis-1 started leaf-1 as /root/export_vsto
+2026-11-13T05:47:47.804Z dispatch analysis-1 started leaf-2 as /root/export_core
+2026-11-13T05:47:47.888Z dispatch analysis-1 started leaf-3 as /root/export_operations
+2026-11-13T05:47:47.974Z dispatch analysis-1 sealed
+2026-11-13T06:11:03.106Z dispatch analysis-1 returned leaf-2
+2026-11-13T06:11:03.186Z dispatch analysis-1 returned leaf-3
+2026-11-13T06:13:26.649Z dispatch analysis-2 opened: leaf-4, leaf-5
+2026-11-13T06:14:02.738Z dispatch analysis-2 started leaf-4 as /root/export_core
+2026-11-13T06:14:02.829Z dispatch analysis-2 started leaf-5 as /root/export_operations
+2026-11-13T06:14:02.916Z dispatch analysis-2 sealed
+2026-11-13T06:14:03.003Z dispatch analysis-1 returned leaf-1
+2026-11-13T06:22:58.403Z dispatch analysis-2 returned leaf-4
+2026-11-13T06:22:58.511Z dispatch analysis-2 returned leaf-5

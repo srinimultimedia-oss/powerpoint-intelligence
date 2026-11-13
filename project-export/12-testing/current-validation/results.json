@@ -1,0 +1,83 @@
+[
+  {
+    "name": "chart-core",
+    "start_utc": "2026-11-13T05:51:18.733255+00:00",
+    "end_utc": "2026-11-13T05:51:18.900159+00:00",
+    "command": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "--test",
+      "test\\calculations.test.mjs"
+    ],
+    "cwd": "C:\\Srini\\powerpoint-intelligence\\powerpoint-intelligence\\packages\\chart-core",
+    "exit_code": 0,
+    "status": "PASS",
+    "counts": {
+      "tests": 6,
+      "pass": 6,
+      "fail": 0,
+      "skipped": 0
+    },
+    "log": "12-testing/current-validation/chart-core.log"
+  },
+  {
+    "name": "chart-domain",
+    "start_utc": "2026-11-13T05:51:18.900159+00:00",
+    "end_utc": "2026-11-13T05:51:19.170510+00:00",
+    "command": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "--test",
+      "test\\contracts.test.mjs"
+    ],
+    "cwd": "C:\\Srini\\powerpoint-intelligence\\powerpoint-intelligence\\packages\\chart-domain",
+    "exit_code": 0,
+    "status": "PASS",
+    "counts": {
+      "tests": 25,
+      "pass": 25,
+      "fail": 0,
+      "skipped": 0
+    },
+    "log": "12-testing/current-validation/chart-domain.log"
+  },
+  {
+    "name": "chart-engine",
+    "start_utc": "2026-11-13T05:51:19.170510+00:00",
+    "end_utc": "2026-11-13T05:51:19.932274+00:00",
+    "command": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "--test",
+      "test\\basic-charts.test.mjs",
+      "test\\canonical-scene.test.mjs",
+      "test\\scene-contract.test.mjs",
+      "test\\scene-schema.test.mjs",
+      "test\\svg-preview.test.mjs"
+    ],
+    "cwd": "C:\\Srini\\powerpoint-intelligence\\powerpoint-intelligence\\packages\\chart-engine",
+    "exit_code": 0,
+    "status": "PASS",
+    "counts": {
+      "tests": 178,
+      "pass": 178,
+      "fail": 0,
+      "skipped": 0
+    },
+    "log": "12-testing/current-validation/chart-engine.log"
+  },
+  {
+    "name": "typescript-noemit",
+    "start_utc": "2026-11-13T05:51:19.932274+00:00",
+    "end_utc": "2026-11-13T05:51:20.419689+00:00",
+    "command": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Srini\\powerpoint-intelligence\\powerpoint-intelligence\\packages\\chart-engine\\node_modules\\typescript\\bin\\tsc",
+      "--noEmit",
+      "-p",
+      "C:\\Srini\\powerpoint-intelligence\\powerpoint-intelligence\\packages\\chart-engine\\tsconfig.json"
+    ],
+    "cwd": "C:\\Srini\\powerpoint-intelligence\\powerpoint-intelligence",
+    "exit_code": 0,
+    "status": "PASS",
+    "counts": {},
+    "log": "12-testing/current-validation/typescript-noemit.log"
+  }
+]

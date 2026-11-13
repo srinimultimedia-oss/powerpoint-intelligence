@@ -1,0 +1,8 @@
+path,sha256,line_count,review_scope
+apps/powerpoint-vsto/App.config,4FD7E79FE78B278A0A66A44010ED6A727C71CA96B4F08AD51C770CE13DBE205E,18,full text source boundary review; owned module documentation elsewhere
+apps/powerpoint-vsto/OfficeCompatibility.cs,13FDFFCF021A60054987AA4C954A4032D13414FC3A9C03D514664805D722C370,93,full text source boundary review; owned module documentation elsewhere
+apps/powerpoint-vsto/ThisAddIn.cs,87F4EC0F7CE9FDE1963B1F91FC1ADE4FA83D84DD4777586F679F25FD1CF6C388,363,full text source boundary review; owned module documentation elsewhere
+apps/powerpoint-vsto/DemoLinks.cs,301AC5F75F3B03B0423C80B642861C4BDA98B432085800E98E7564119CD66ECD,77,full text source boundary review; owned module documentation elsewhere
+apps/powerpoint-vsto/MetadataCodec.cs,338A927EEB6313CE20E9176186B31299349F06EE35FFA0CAB9D1711AC39A3B71,71,full text source boundary review; owned module documentation elsewhere
+src/Library.Core/PathPolicy.cs,624AFB460CC974AA1627245D134C3FD41DE3DC73172478FAD26DD7CC85ECF73A,150,full text source boundary review; owned module documentation elsewhere
+src/Shared.Contracts/BoundedJson.cs,01746CCD918C1F73AE600EB158BDDB05A802CE6A19506978CE126BB207A43F8C,130,full text source boundary review; owned module documentation elsewhere
