@@ -1,0 +1,252 @@
+[
+  {
+    "File": "scripts\\Artifact-Inputs.ps1",
+    "Errors": [],
+    "FunctionCount": 2
+  },
+  {
+    "File": "scripts\\Build-Integrity.ps1",
+    "Errors": [],
+    "FunctionCount": 7
+  },
+  {
+    "File": "scripts\\Check-Process.ps1",
+    "Errors": [],
+    "FunctionCount": 2
+  },
+  {
+    "File": "scripts\\Clean-Workspace.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "scripts\\Collect-SceneThreatEvidence.ps1",
+    "Errors": [],
+    "FunctionCount": 1
+  },
+  {
+    "File": "scripts\\Diagnose-PowerPointActivation.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "scripts\\Diagnostic-OutputPath.ps1",
+    "Errors": [],
+    "FunctionCount": 3
+  },
+  {
+    "File": "scripts\\Install-Local.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "scripts\\New-PiidxSample.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "scripts\\Package-Content.ps1",
+    "Errors": [],
+    "FunctionCount": 1
+  },
+  {
+    "File": "scripts\\Piidx-Recovery.ps1",
+    "Errors": [],
+    "FunctionCount": 1
+  },
+  {
+    "File": "scripts\\Piidx-TestSuite.ps1",
+    "Errors": [],
+    "FunctionCount": 2
+  },
+  {
+    "File": "scripts\\Restore-LockedDependencies.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "scripts\\Safe-Xml.ps1",
+    "Errors": [],
+    "FunctionCount": 1
+  },
+  {
+    "File": "scripts\\Scene-RunnerCache.ps1",
+    "Errors": [],
+    "FunctionCount": 6
+  },
+  {
+    "File": "scripts\\Source-Fingerprint.ps1",
+    "Errors": [],
+    "FunctionCount": 3
+  },
+  {
+    "File": "scripts\\Test-All.ps1",
+    "Errors": [],
+    "FunctionCount": 1
+  },
+  {
+    "File": "scripts\\Test-BuildIntegrity.ps1",
+    "Errors": [],
+    "FunctionCount": 2
+  },
+  {
+    "File": "scripts\\Test-Checkmarx113558.ps1",
+    "Errors": [],
+    "FunctionCount": 2
+  },
+  {
+    "File": "scripts\\Test-CheckProcess.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "scripts\\Test-DemoFeatures.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "scripts\\Test-DemoPackage.ps1",
+    "Errors": [],
+    "FunctionCount": 1
+  },
+  {
+    "File": "scripts\\Test-DiagnosticOutputPath.ps1",
+    "Errors": [],
+    "FunctionCount": 2
+  },
+  {
+    "File": "scripts\\Test-InstalledRibbon.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "scripts\\Test-NativeRenderer.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "scripts\\Test-OfficeCompatibility.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "scripts\\Test-PackageMarker.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "scripts\\Test-PayloadRecompile.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "scripts\\Test-Piidx.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "scripts\\Test-PiidxCatalog.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "scripts\\Test-PiidxCorpus.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "scripts\\Test-PiidxFoundation.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "scripts\\Test-PiidxIsolation.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "scripts\\Test-PiidxPreviews.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "scripts\\Test-PiidxRecovery.ps1",
+    "Errors": [],
+    "FunctionCount": 3
+  },
+  {
+    "File": "scripts\\Test-PiidxSourceReader.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "scripts\\Test-PiidxSqliteCapability.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "scripts\\Test-Ribbon.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "scripts\\Test-S0.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "scripts\\Test-S1.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "scripts\\Test-SceneContracts.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "scripts\\Test-SceneRunnerCache.ps1",
+    "Errors": [],
+    "FunctionCount": 2
+  },
+  {
+    "File": "scripts\\Test-SecurityRemediation.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "scripts\\Test-SourceFingerprint.ps1",
+    "Errors": [],
+    "FunctionCount": 2
+  },
+  {
+    "File": "scripts\\Test-TemplateLibrary.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "easySetup\\Build-EasySetup.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "easySetup\\Common.ps1",
+    "Errors": [],
+    "FunctionCount": 2
+  },
+  {
+    "File": "easySetup\\Test-EasySetup.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "easySetup\\Test-ResourceReader.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  },
+  {
+    "File": "easySetup\\Watch-EasySetup.ps1",
+    "Errors": [],
+    "FunctionCount": 0
+  }
+]

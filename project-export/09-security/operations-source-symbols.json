@@ -1,0 +1,702 @@
+[
+  {
+    "path": "apps/powerpoint-vsto/ServiceConnections.cs",
+    "module_id": "OPS-01",
+    "module": "service-profiles",
+    "sha256": "63A4D3EA0C9DA305478AE8D1D62C6CDFDF47A6AA8C45891D52762D92BDA8BA0B",
+    "line_count": "123",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "20:internal ServiceConnectionProfile Copy(); 26:internal static ServiceConnectionSettings Empty(); 36:internal static ConnectionAuthentication[] AllowedAuthentication(ConnectionService service); 38:internal static void Validate(ServiceConnectionSettings settings); 45:private static void ValidateProfile(ServiceConnectionProfile profile); 53:internal static string Status(ServiceConnectionProfile profile); 58:internal static string Encode(ServiceConnectionSettings settings); 67:private static void Attributes(XmlElement element,params string[] allowed); 71:private static XmlElement[] Elements(XmlElement element); 75:internal static ServiceConnectionSettings Decode(string xml); 89:internal static ServiceConnectionSettings Load(string path); 93:internal static void Save(string path,ServiceConnectionSettings settings); 98:internal static void ShowConfiguration(); 119:private static string Label(ConnectionService service)",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "services/ai-gateway/README.md",
+    "module_id": "OPS-01",
+    "module": "service-profiles",
+    "sha256": "A15A562A4A4C8967646E0F05D8A5A8E3E56FF0F7D42740D8AAD91C9316665505",
+    "line_count": "7",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "services/ai-gateway/action-plan.schema.json",
+    "module_id": "OPS-01",
+    "module": "service-profiles",
+    "sha256": "3B7E6D758F2121CC4B55C9C0F24A3597DF95B353E60F12BB2495C1ED93735580",
+    "line_count": "68",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "tests/s0/ServiceConnectionTests.cs",
+    "module_id": "OPS-01",
+    "module": "service-profiles",
+    "sha256": "C5D27A8F3D6F244EBD6180B85E872573A3B702BA7A121301F3CF2F591A055875",
+    "line_count": "38",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "11:private static void Check(bool condition,string name); 12:private static void Reject(Action action,string name); 13:private static ServiceConnectionSettings Valid(); 17:internal static void Run(string temporaryParent=null)",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "apps/powerpoint-vsto/DemoApi.cs",
+    "module_id": "OPS-02",
+    "module": "com-automation",
+    "sha256": "9A385F8438D1C58C7BA9C0624A92DF6CDE4CE257A9E7D7C00E7947ED4560F675",
+    "line_count": "45",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "28:internal DemoAutomation(PowerPoint.Application app,Func<bool> ribbonLoaded=null,Func<string> contextProperties=null); 29:public string GetVersion(); 30:public string GetBuildInfo(); tools=\"+DemoTools.Catalog.Length+\"; mvid=\"+typeof(DemoAutomation).Module.ModuleVersionId+\"; assembly=\"+typeof(DemoAutomation).Assembly.Location;}; 31:public string GetRibbonXml(); 32:public bool GetRibbonLoaded(); 34:public string GetContextPropertiesState(); 35:public string InsertChartJson(string json)",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "apps/powerpoint-vsto/Contracts.cs",
+    "module_id": "OPS-02",
+    "module": "com-automation",
+    "sha256": "22AE9375E69C3B4473F249AF66F1087D1C5381BE9E1AE9ECB86E33D26C501640",
+    "line_count": "33",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "easySetup/Build-EasySetup.ps1",
+    "module_id": "OPS-03",
+    "module": "packaging-build",
+    "sha256": "501221F3E38FC7234E226F85ECD1D0201F94F3C9DCF0DDF3A4670CEC7515EFFA",
+    "line_count": "93",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "easySetup/Common.ps1",
+    "module_id": "OPS-03",
+    "module": "packaging-build",
+    "sha256": "B9CEA46E287D326051954F4BA84052710A8F6B344DF4631743EFC41C1D5FCFD2",
+    "line_count": "17",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "2:function Get-EasySetupEmbeddedPayloadHash([byte[]]$AssemblyBytes); 12:function Get-EasySetupFingerprint([string]$Root)",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "easySetup/Watch-EasySetup.ps1",
+    "module_id": "OPS-03",
+    "module": "packaging-build",
+    "sha256": "F5E11A628A9D88ACB7C1D964ADEF95571C5D3AC5D86429818A7A2637D5E7017B",
+    "line_count": "16",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "easySetup/Test-EasySetup.ps1",
+    "module_id": "OPS-03",
+    "module": "packaging-build",
+    "sha256": "155632118D904FAD2CAD5D1E9597905662C49ABE4B1835581C0300996273F30C",
+    "line_count": "44",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "easySetup/Test-ResourceReader.ps1",
+    "module_id": "OPS-03",
+    "module": "packaging-build",
+    "sha256": "F6DB0F7C4146A57A69A53750C6B59BECC9751AF2959C357EF4BE7D78C5F34096",
+    "line_count": "34",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "easySetup/SetupPolicyTests.cs",
+    "module_id": "OPS-03",
+    "module": "packaging-build",
+    "sha256": "62AEE4B1947D5015644A6D06102457251DBC60DBEE8C12C0D35D0A31CE41D908",
+    "line_count": "8",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "5:private static void Check(bool value); 6:private static void Reject(string root,string name); 7:public static int Main(); no Office activation or installation performed.\");return 0;}",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Install-Local.ps1",
+    "module_id": "OPS-03",
+    "module": "packaging-build",
+    "sha256": "84D4FAC3801E2449886E4C83CBD2545B4BF3ED600729857D006AC1BE87C503D9",
+    "line_count": "76",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Package-Content.ps1",
+    "module_id": "OPS-03",
+    "module": "packaging-build",
+    "sha256": "00A94BA2B1149B4DEB8EF5BA28BBC04E3A07C12D5C307C23D5B36A73E019AC7B",
+    "line_count": "16",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "1:function Test-PpiPayloadMarker",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-DemoPackage.ps1",
+    "module_id": "OPS-03",
+    "module": "packaging-build",
+    "sha256": "7824054ED44BBDF7C4664B7AF2D848A89E78C23829470156AF38AA026213255A",
+    "line_count": "34",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "17:function Assert-IdentityHash([xml]$Manifest,[string]$Codebase)",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-PackageMarker.ps1",
+    "module_id": "OPS-03",
+    "module": "packaging-build",
+    "sha256": "AC166AE90423AE449C9B623A580058B4081C3ADD53E059280A820A30F2246969",
+    "line_count": "19",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-PayloadRecompile.ps1",
+    "module_id": "OPS-03",
+    "module": "packaging-build",
+    "sha256": "F557DE0F47D5B0BC0B8DCA4E9717396DB69D47AC99577E8EC57B9D7C6700B989",
+    "line_count": "34",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "apps/powerpoint-vsto/PowerPointIntelligence.csproj",
+    "module_id": "OPS-03",
+    "module": "packaging-build",
+    "sha256": "E3783FC987BB015758647A53F98D66221DF349BBD69F7008492AAF064F64E1B7",
+    "line_count": "80",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "easySetup/Bootstrapper.cs",
+    "module_id": "OPS-04",
+    "module": "deployment-bootstrap",
+    "sha256": "A9C5A98F14489AD4B252E4510460613EEFFC1200D2DE88E51CD07E9AFABD0AD4",
+    "line_count": "74",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "14:internal static string Digest(Stream input); }; 15:internal static string SafePath(string root,string relative); 20:internal static string OfficeArchitecture(); 33:private static void RunVsto(string installer,string operation,string manifest)",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Build-Integrity.ps1",
+    "module_id": "OPS-05",
+    "module": "build-provenance",
+    "sha256": "B074DECB4BD37B216D577C66F4D11403141D7C92C6A42055CF4413E90A24EE4A",
+    "line_count": "100",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "1:function Get-PpiContentHash([string]$Path); 10:function Assert-PpiMicrosoftBuildTool([string]$Path,[ValidateSet('csc.exe','MSBuild.exe','vswhere.exe')][string]$Name); 21:function Get-PpiVerifiedArtifact([string]$Path,[string]$RebuiltPath); 39:function Assert-PpiSigningCertificate([Security.Cryptography.X509Certificates.X509Certificate2]$Certificate,[string]$Thumbprint); 57:function Get-PpiApprovedSigningCertificate([string]$Thumbprint); 70:function Get-PpiReproducedArtifacts([Collections.IDictionary]$Files,[scriptblock]$Build); 91:function Assert-PpiSceneDependency([string]$Path)",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Scene-RunnerCache.ps1",
+    "module_id": "OPS-05",
+    "module": "build-provenance",
+    "sha256": "19E4D1EDD1F49DBE19B481CC11E4C0B8857316D10EA1449564FF9AA144482037",
+    "line_count": "99",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "3:function Get-PpiSceneBuildKey([string]$Root,[string]$Platform,[string]$Compiler,[string[]]$References,[string[]]$Sources,[string]$CacheKind='scene'); 12:function Get-PpiSceneCacheState([string]$ReceiptPath,[string]$BuildKey,[System.Collections.IDictionary]$Files); 26:function Start-PpiReviewedRunnerBuild([string]$ReceiptPath,[System.Collections.IDictionary]$Files,[string]$ScannerEvidence,[switch]$RecoverMissing); 71:function Read-PpiReviewedScannerEvidence([string]$Path); 78:function Assert-PpiRunnerScannerClear($Report,[System.Collections.IDictionary]$Files,[System.Collections.IDictionary]$Hashes); 86:function Start-PpiLegacySourceReview([string]$ReceiptPath,[System.Collections.IDictionary]$Files,[string]$ScannerEvidence,[string]$BuildKey,[string]$SourceRoot)",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Piidx-Recovery.ps1",
+    "module_id": "OPS-05",
+    "module": "build-provenance",
+    "sha256": "169EF844240A90DC735746ECE56BBD1DCC131189127AE0F783309CE79AFA23B6",
+    "line_count": "24",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "2:function Start-PpiPiidxSourceRecovery([string]$ReceiptPath,[string]$AssemblyPath,[string]$ScannerEvidence,[object[]]$CurrentSources)",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Artifact-Inputs.ps1",
+    "module_id": "OPS-05",
+    "module": "build-provenance",
+    "sha256": "3E58B36EE6765F3464BDF2455BFA2307B7B3083F4B070992E799879B279A0104",
+    "line_count": "27",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "2:function Resolve-PpiArtifactInput([string]$Path,[switch]$AllowMissing); 18:function Read-PpiArtifactJsonText([string]$Path,[long]$Limit=1048576)",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Source-Fingerprint.ps1",
+    "module_id": "OPS-05",
+    "module": "build-provenance",
+    "sha256": "BE14CB607D3CC1A68ECE19B1C57E5345BB4BB6922A89F44A5D0316E1FF8CA639",
+    "line_count": "36",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "3:function Get-PpiFingerprintFileHash([string]$Root,[string]$Path); 14:function Get-PpiSourceFingerprint([string]$Root); 30:function Get-PpiAddinFingerprint([string]$Root)",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Safe-Xml.ps1",
+    "module_id": "OPS-05",
+    "module": "build-provenance",
+    "sha256": "4496287C57B9C9523EE00BDE4F8EB88D05ACA6B79A2BAA930ACEDDED921D642F",
+    "line_count": "19",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "1:function Read-PpiSafeXml([string]$Path)",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Piidx-TestSuite.ps1",
+    "module_id": "OPS-05",
+    "module": "build-provenance",
+    "sha256": "355D6F1034464F9D23D2BAAC9F9C8CB867FE7305DFD3D7C966CA9D95EE27B6BD",
+    "line_count": "47",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "2:function Import-PpiPiidxSuite; 44:function Assert-PpiPiidxSources",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Restore-LockedDependencies.ps1",
+    "module_id": "OPS-05",
+    "module": "build-provenance",
+    "sha256": "B6D603D05C6EDA5D5D1BDD0F0C759735D52E1D06597CF1F47BA54346A40EE4F6",
+    "line_count": "10",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-BuildIntegrity.ps1",
+    "module_id": "OPS-05",
+    "module": "build-provenance",
+    "sha256": "18F31DD906C931B7311F7660DAFDAC16BEA2A3A8BF94F3C4A1244C144543C602",
+    "line_count": "45",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "7:function Check([bool]$Value,[string]$Name); 8:function Reject([scriptblock]$Action,[string]$Message)",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-Checkmarx113558.ps1",
+    "module_id": "OPS-05",
+    "module": "build-provenance",
+    "sha256": "324D29F9EAC123094E1C8A23B9593157E543F93A53970186E89A4F531430FD80",
+    "line_count": "38",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "9:function Check($ok,$name); 10:function Reject([scriptblock]$action,$name)",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-PiidxRecovery.ps1",
+    "module_id": "OPS-05",
+    "module": "build-provenance",
+    "sha256": "7B4A17B08D294FCF7B6E48D41DCD8A08CB48425C24CC3CAAE3041C7C1A7FBA9C",
+    "line_count": "35",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "10:function Evidence($Time,$Detections,$Errors); 12:function Check([bool]$Value); 13:function Reject([scriptblock]$Action)",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-SourceFingerprint.ps1",
+    "module_id": "OPS-05",
+    "module": "build-provenance",
+    "sha256": "D926CF2357B8BB5CCC0C143639C31E5D7A1077C46C2DC4648401773AC33589F7",
+    "line_count": "37",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "6:function Check([bool]$Condition,[string]$Name); 7:function Digest([string]$Text)",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-SceneRunnerCache.ps1",
+    "module_id": "OPS-05",
+    "module": "build-provenance",
+    "sha256": "CA3918BC6DA9E5BD6CD85F306C72E1289B559134CD17AE80EBA091D019573046",
+    "line_count": "92",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "8:function Check([bool]$Condition,[string]$Name); 9:function Reject([scriptblock]$Action,[string]$Name)",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Collect-SceneThreatEvidence.ps1",
+    "module_id": "OPS-06",
+    "module": "diagnostics",
+    "sha256": "A22F68BBF08BD7024A782A0B9078773AADA24B4C6AD4B619CFB78796591D5F55",
+    "line_count": "96",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "10:function Record-ReadFailure([string]$Source,$Record)",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Diagnostic-OutputPath.ps1",
+    "module_id": "OPS-06",
+    "module": "diagnostics",
+    "sha256": "DF65B39DBDD4DD03861A9163056D7EBB8DB4B51CF62321F5A5D132071B95DB88",
+    "line_count": "69",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "1:function Assert-PpiDiagnosticDirectPath([string]$Path); 18:function Get-PpiDiagnosticOutputDirectory([string]$Requested,[string]$RepositoryRoot); 65:function Get-PpiDiagnosticReportPath([string]$Directory)",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Diagnose-PowerPointActivation.ps1",
+    "module_id": "OPS-06",
+    "module": "diagnostics",
+    "sha256": "FCC8BFE6F16ADCA997D48A91D14507EE7767D1D521801CDD13FBBFC2FFF7D9F3",
+    "line_count": "41",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "9:public static int Read(IntPtr h,int c); if(!GetTokenInformation(h,c,out v,4,out n)) throw new System.ComponentModel.Win32Exception(); return v; }",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-DiagnosticOutputPath.ps1",
+    "module_id": "OPS-06",
+    "module": "diagnostics",
+    "sha256": "4085DBA61B82B5F54A6E2E4A03274C7E55FD71246CEE145741ED46177E53D488",
+    "line_count": "48",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "5:function Check([bool]$Condition,[string]$Name); 9:function Reject([string]$Value)",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Check-Process.ps1",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "6FE9C15D644FEA30FD4720777A03202E6A83FFCCE0A2F9DA64C9FF421355DC35",
+    "line_count": "28",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "2:function ConvertTo-PpiNativeArgument([string]$Value); 6:function Invoke-PpiCheckProcess([string]$Executable,[string[]]$Arguments,[string]$Log,[int]$TimeoutSeconds=300)",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/New-PiidxSample.ps1",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "40BA80203894CBA8350F1E4563FCB5FB653B07F76AF219B520A18C32745DF6F3",
+    "line_count": "12",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-All.ps1",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "425195DF585F2B7CA64678E531209FFCACBC4A67E7C8E5F9465BE7E4C0FB5E74",
+    "line_count": "136",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "44:function Invoke-Check([string]$Name, [string]$Executable, [string[]]$Arguments)",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-CheckProcess.ps1",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "7140085971AAD92A9A9424EEF0645AD10CDF59AE3DA627B796CE6C85123D89B6",
+    "line_count": "16",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-DemoFeatures.ps1",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "BF153999A0EFB6E67930591E3966F6111B66D691EEA1DFBB458EC9385FD1A411",
+    "line_count": "38",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-InstalledRibbon.ps1",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "CC711563AE21EC5E9E48E97E4D060F8CC0F0DE129016864BF122DEB9AA7E1715",
+    "line_count": "68",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-NativeRenderer.ps1",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "3E6D1EAA3E6BAFF11A4FA441002D10ECE22BE7AE25BE90B5EE074E226A358A6F",
+    "line_count": "33",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-OfficeCompatibility.ps1",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "F21237302676ADF976A060ECD40A9BE50A305DD9E221F13C1C61778FC9D49C6C",
+    "line_count": "22",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-Piidx.ps1",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "CFED1C28CF988B897AFD7CE3B5279E0C68E8FA3A0FC38DAA52D85B01C472C998",
+    "line_count": "28",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-PiidxCatalog.ps1",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "A4A2F75679092538E98157506DBBE6166A4DB471FA50C5D1FB96270BA48E6994",
+    "line_count": "10",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-PiidxCorpus.ps1",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "364E9B0AB362E61098FCF061AC2FAA4900BE9D4DAFDC3475018C1C10596D9581",
+    "line_count": "10",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-PiidxFoundation.ps1",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "CA54339D93EEC88C6633E075B0C4E710035E88B0589416F3906192DE78D7055F",
+    "line_count": "10",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-PiidxIsolation.ps1",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "179FED30A41A36AF772B2E0A1B2F45061B9ACFA1D0077C56540CAC75F0BA5345",
+    "line_count": "15",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-PiidxPreviews.ps1",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "5D12349FE1E328354183AC6644F6D58BFA625B839BBA0B1309783BC68E184708",
+    "line_count": "10",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-PiidxSourceReader.ps1",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "59FA798A03BDD75FF93EC7DA93D0D2AF2A7C23E7734B8FDB556F3870DFDC1E25",
+    "line_count": "10",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-PiidxSqliteCapability.ps1",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "7982D5DB09FBB2E93740EDB4CDCAA450C7B034462D58E90C6A8B4088D28BD29B",
+    "line_count": "21",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-Ribbon.ps1",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "BE94216638E1BDFC4C1F9EE02EFEA63EF26AB67800CB4570E2ECB5AA681C6E7E",
+    "line_count": "18",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-S0.ps1",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "056F30ED660BB99A8679C310CAAAEB707BEA1BC04A0D60A56492B827606E6634",
+    "line_count": "51",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-S1.ps1",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "D97D4AFCFD465DA264A2B1D2DDADED74A7DEAE25D0F36A15A1F6765949DE4427",
+    "line_count": "29",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-SceneContracts.ps1",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "AB89E610C284FE4E22352B20D61BC3A7159778455A35E0588A20EED537E13428",
+    "line_count": "102",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-SecurityRemediation.ps1",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "3B81961891565FDBCDF33D2A43EBEF9BC45E68325AB50692F6871D7759F56142",
+    "line_count": "35",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Test-TemplateLibrary.ps1",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "02E04DDCDB7687287A90B2B3E0B4013D843076FB1FD923465C4C4C2FD73FEB78",
+    "line_count": "61",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": ".github/workflows/chart-core.yml",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "BEEE7727C355168DDC861EF9B42094A4DB1D960ACF515CF4775425AFD52A71DB",
+    "line_count": "12",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": ".github/workflows/office-compatibility.yml",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "EFDCEB7CB362B108B2B75B987C478D9FA2BB3E6CB7C67135EC76DE0554DCDD2B",
+    "line_count": "15",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": ".github/workflows/s0-metadata.yml",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "3F067525CFB2F1C170383AD3DCE5D7AA08CA7CA892DFE4797AC69BB2E3990EE1",
+    "line_count": "12",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": ".github/workflows/s1-domain.yml",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "B437FD545BE3C02150305F87C3B4E18944EF32729889157C3C2E0EDB435A46CF",
+    "line_count": "31",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "chart-core.yml",
+    "module_id": "OPS-07",
+    "module": "validation-orchestration",
+    "sha256": "BEEE7727C355168DDC861EF9B42094A4DB1D960ACF515CF4775425AFD52A71DB",
+    "line_count": "12",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Repair-TemplateAlignment.py",
+    "module_id": "OPS-08",
+    "module": "offline-alignment-repair",
+    "sha256": "F396A619B755090DA27EF2A2278F5DF80416DED93CF1AA438616F3B8349380DB",
+    "line_count": "48",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "8:def bounds(shape):; 12:def has_text(shape):return bool(shape.findall('.//a:t',NS)); 13:def contains(box,frame):; 17:def fix_slide(data,budget=None):; 45:def repair(source,output,limits=None):",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/RepairTemplateSafety.py",
+    "module_id": "OPS-08",
+    "module": "offline-alignment-repair",
+    "sha256": "91FB01407BA7D1DBE7B324FC89309390D150E6113AB38601233FAFB305C96E7F",
+    "line_count": "248",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "20:def require(valid, message):; 39:def __post_init__(self):; 50:def __init__(self, limits):; 56:def check(self, work=0, processed=0):; 64:def fingerprint(path, budget):; 76:def preflight_zip(path, budget):; 114:def inspect_archive(archive, budget):; 135:def read_member(archive, item, budget):; 150:def parse_xml(data, budget):; 175:def validate_repair(source, staged, budget):; 197:def publish_new(staged, target):; 206:def repair(source, output, transform, limits=None):",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "tests/security/test_repair_template_alignment.py",
+    "module_id": "OPS-08",
+    "module": "offline-alignment-repair",
+    "sha256": "48B4641A32047355D754890DBAB250966C473FD12F3445D7BFB79E126860BDF1",
+    "line_count": "205",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "25:def setUp(self):; 35:def clean_temp(self):; 42:def make_source(self, slide=SLIDE, extra=()):; 51:def run_repair(self, **kwargs):; 55:def require_clean(self):; 60:def test_preserves_text_source_untouched_parts_and_native_effects(self):; 76:def test_existing_deck_not_overwritten(self):; 81:def test_existing_sidecar_not_overwritten(self):; 88:def test_input_output_identity_refused(self):; 93:def test_duplicate_members_rejected(self):; 99:def test_member_count_budget(self):; 103:def test_member_bytes_budget(self):; 107:def test_total_inflated_budget(self):; 111:def test_xml_bytes_budget(self):; 115:def test_xml_node_budget(self):; 119:def test_xml_depth_budget(self):; 123:def test_actual_processed_bytes_budget(self):; 127:def test_small_compressed_bomb_rejected_before_inflating(self):; 135:def test_source_mutation_prevents_publication(self):; 137:def mutate_after_validation(source, staged, budget):; 144:def test_box_label_fit_geometry_matches_existing_alignment_contract(self):; 163:def test_work_budget(self):; 167:def test_elapsed_budget(self):; 172:def test_dtd_rejected_without_fetching(self):; 177:def test_unsafe_member_name_rejected_without_extraction(self):; 184:def test_validation_failure_never_publishes(self):; 189:def test_second_publication_failure_rolls_back_own_deck(self):; 191:def fail_sidecar(staged, target):; 198:def test_preservation_validation_remains_enabled_under_optimized_python(self):",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Clean-Workspace.ps1",
+    "module_id": "OPS-09",
+    "module": "artifact-maintenance",
+    "sha256": "8321B15825B57952BB3F2AA85CDFD72E4E1F1EDA9047924784ED2B29947FEEE7",
+    "line_count": "31",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/Maintain-Artifacts.py",
+    "module_id": "OPS-09",
+    "module": "artifact-maintenance",
+    "sha256": "0AE30E289B440482BD2805585FA34FBBDC827706518DE7C0D350C3BFF70D2BA2",
+    "line_count": "174",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "16:def digest(path):; 24:def linked(path):; 28:def confined(path, root):; 40:def files_under(directory):; 49:def main():; 66:def old_group(parent, pattern, relative_child=None, keep=None):",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "scripts/audit-library-dependencies.py",
+    "module_id": "OPS-09",
+    "module": "artifact-maintenance",
+    "sha256": "0B19276C0E11CE715947BCA17B8745DCE204000FB480DB543D6760F344B18E87",
+    "line_count": "57",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "6:def git(*args):",
+    "execution": "not executed by this leaf"
+  },
+  {
+    "path": "tests/security/test_artifact_maintenance.py",
+    "module_id": "OPS-09",
+    "module": "artifact-maintenance",
+    "sha256": "5005888EB1BB51527C678E06FD8D1E51B7B540B28BB4F8B1170E564AB71156EA",
+    "line_count": "76",
+    "review_level": "complete text plus source-specific control-flow/interface/side-effect review; not execution",
+    "functions": "21:def test_archive_then_remove_only_selected_artifacts(self):; 67:def test_boundary_refuses_root_and_sibling(self):",
+    "execution": "not executed by this leaf"
+  }
+]

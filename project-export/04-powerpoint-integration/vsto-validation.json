@@ -1,0 +1,18 @@
+{
+  "documents": 31,
+  "module_designs": 19,
+  "vsto_files_mapped": 49,
+  "feature_entries": 190,
+  "source_references_checked": 1905,
+  "invalid_source_references": [],
+  "invalid_internal_links": [],
+  "mermaid_blocks": 7,
+  "diagram_syntax_status": "not parsed by this leaf; parent parser validation required",
+  "application_writes": "none; export only",
+  "review_passes": [
+    "implementation drafting",
+    "source-specific expert reread",
+    "negative/consistency/reference defect check",
+    "final ports/units polish and rerun"
+  ]
+}

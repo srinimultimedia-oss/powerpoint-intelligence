@@ -1,0 +1,3778 @@
+{
+  "documents": 23,
+  "source_references": [
+    {
+      "document": "08-data-design/class-diagrams.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 8,
+      "end": 8,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/class-diagrams.md",
+      "source": "src/Chart.Domain/ChartCodec.cs",
+      "line": 15,
+      "end": 15,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/class-diagrams.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 7,
+      "end": 7,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/class-diagrams.md",
+      "source": "src/Chart.Renderers/NativeRenderingCore.cs",
+      "line": 136,
+      "end": 136,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/class-diagrams.md",
+      "source": "src/Chart.Renderers/PowerPointSceneSurface.cs",
+      "line": 15,
+      "end": 15,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/class-diagrams.md",
+      "source": "src/Library.Core/PiidxCatalog.cs",
+      "line": 14,
+      "end": 14,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/class-diagrams.md",
+      "source": "src/Library.Core/PresentationSource.cs",
+      "line": 17,
+      "end": 17,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/class-diagrams.md",
+      "source": "src/Library.Core/LibraryModels.cs",
+      "line": 55,
+      "end": 55,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 10,
+      "end": 10,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 11,
+      "end": 11,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 12,
+      "end": 12,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 13,
+      "end": 13,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 14,
+      "end": 14,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 15,
+      "end": 15,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 16,
+      "end": 16,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 17,
+      "end": 17,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 23,
+      "end": 23,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 24,
+      "end": 24,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 29,
+      "end": 29,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 30,
+      "end": 30,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 35,
+      "end": 35,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 36,
+      "end": 36,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 37,
+      "end": 37,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 42,
+      "end": 42,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 43,
+      "end": 43,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 44,
+      "end": 44,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 45,
+      "end": 45,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 50,
+      "end": 50,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 51,
+      "end": 51,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 52,
+      "end": 52,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 53,
+      "end": 53,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 54,
+      "end": 54,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 59,
+      "end": 59,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 60,
+      "end": 60,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 8,
+      "end": 8,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 9,
+      "end": 9,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 10,
+      "end": 10,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 11,
+      "end": 11,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 12,
+      "end": 12,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 13,
+      "end": 13,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 14,
+      "end": 14,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 15,
+      "end": 15,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 16,
+      "end": 16,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 17,
+      "end": 17,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 22,
+      "end": 22,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 23,
+      "end": 23,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 24,
+      "end": 24,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 28,
+      "end": 28,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 31,
+      "end": 31,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 35,
+      "end": 35,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 36,
+      "end": 36,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 41,
+      "end": 41,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 42,
+      "end": 42,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 46,
+      "end": 46,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 9,
+      "end": 9,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 10,
+      "end": 10,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 11,
+      "end": 11,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 12,
+      "end": 12,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 13,
+      "end": 13,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 14,
+      "end": 14,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 15,
+      "end": 15,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 23,
+      "end": 23,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 24,
+      "end": 24,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 25,
+      "end": 25,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 26,
+      "end": 26,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 27,
+      "end": 27,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 32,
+      "end": 32,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 33,
+      "end": 33,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 34,
+      "end": 34,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 39,
+      "end": 39,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 40,
+      "end": 40,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 41,
+      "end": 41,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 42,
+      "end": 42,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 47,
+      "end": 47,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 48,
+      "end": 48,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 52,
+      "end": 52,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 56,
+      "end": 56,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 57,
+      "end": 57,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 58,
+      "end": 58,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 59,
+      "end": 59,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 64,
+      "end": 64,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 65,
+      "end": 65,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 66,
+      "end": 66,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 67,
+      "end": 67,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 71,
+      "end": 71,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 75,
+      "end": 75,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 76,
+      "end": 76,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 81,
+      "end": 81,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 82,
+      "end": 82,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 83,
+      "end": 83,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 84,
+      "end": 84,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 85,
+      "end": 85,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 15,
+      "end": 15,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 15,
+      "end": 15,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 15,
+      "end": 15,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 15,
+      "end": 15,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 15,
+      "end": 15,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 15,
+      "end": 15,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 15,
+      "end": 15,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 15,
+      "end": 15,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 15,
+      "end": 15,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 16,
+      "end": 16,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 16,
+      "end": 16,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 16,
+      "end": 16,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 16,
+      "end": 16,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 16,
+      "end": 16,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 16,
+      "end": 16,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 16,
+      "end": 16,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 17,
+      "end": 17,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 17,
+      "end": 17,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 17,
+      "end": 17,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 17,
+      "end": 17,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 17,
+      "end": 17,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 17,
+      "end": 17,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 17,
+      "end": 17,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 17,
+      "end": 17,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 17,
+      "end": 17,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 17,
+      "end": 17,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 17,
+      "end": 17,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 19,
+      "end": 19,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 19,
+      "end": 19,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 19,
+      "end": 19,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 19,
+      "end": 19,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 19,
+      "end": 19,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 19,
+      "end": 19,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 19,
+      "end": 19,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 19,
+      "end": 19,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 20,
+      "end": 20,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 20,
+      "end": 20,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 20,
+      "end": 20,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 20,
+      "end": 20,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 21,
+      "end": 21,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 21,
+      "end": 21,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 21,
+      "end": 21,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 21,
+      "end": 21,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 21,
+      "end": 21,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 21,
+      "end": 21,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 21,
+      "end": 21,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 21,
+      "end": 21,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 21,
+      "end": 21,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 22,
+      "end": 22,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 22,
+      "end": 22,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 22,
+      "end": 22,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 22,
+      "end": 22,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 23,
+      "end": 23,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 23,
+      "end": 23,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 23,
+      "end": 23,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 23,
+      "end": 23,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 23,
+      "end": 23,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 23,
+      "end": 23,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 23,
+      "end": 23,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 23,
+      "end": 23,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 24,
+      "end": 24,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 24,
+      "end": 24,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 24,
+      "end": 24,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 24,
+      "end": 24,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 24,
+      "end": 24,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 24,
+      "end": 24,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 24,
+      "end": 24,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "apps/powerpoint-vsto/ExcelRangeMapping.cs",
+      "line": 14,
+      "end": 14,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-dictionary.md",
+      "source": "apps/powerpoint-vsto/DataSources.cs",
+      "line": 254,
+      "end": 254,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-models.md",
+      "source": "apps/powerpoint-vsto/Contracts.cs",
+      "line": 17,
+      "end": 17,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-models.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 8,
+      "end": 8,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-models.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 6,
+      "end": 6,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-models.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 7,
+      "end": 7,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-models.md",
+      "source": "src/Chart.Renderers/NativeRenderingCore.cs",
+      "line": 65,
+      "end": 65,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-models.md",
+      "source": "src/Library.Core/PresentationSource.cs",
+      "line": 16,
+      "end": 16,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-models.md",
+      "source": "src/Library.Core/LibraryModels.cs",
+      "line": 54,
+      "end": 54,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-models.md",
+      "source": "src/Library.Core/LibraryConfiguration.cs",
+      "line": 20,
+      "end": 20,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-models.md",
+      "source": "apps/powerpoint-vsto/DataSources.cs",
+      "line": 254,
+      "end": 254,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-models.md",
+      "source": "apps/powerpoint-vsto/ChapterAgendaModel.cs",
+      "line": 13,
+      "end": 13,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-models.md",
+      "source": "apps/powerpoint-vsto/TextShapeElements.cs",
+      "line": 16,
+      "end": 16,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-models.md",
+      "source": "apps/powerpoint-vsto/ProcessFlowTools.cs",
+      "line": 14,
+      "end": 14,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-models.md",
+      "source": "apps/powerpoint-vsto/IndicatorElements.cs",
+      "line": 11,
+      "end": 11,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-models.md",
+      "source": "apps/powerpoint-vsto/UniversalConnectors.cs",
+      "line": 14,
+      "end": 14,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/data-models.md",
+      "source": "apps/powerpoint-vsto/TemplateLibrary.cs",
+      "line": 114,
+      "end": 114,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/persistence-design.md",
+      "source": "apps/powerpoint-vsto/MetadataCodec.cs",
+      "line": 12,
+      "end": 12,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/persistence-design.md",
+      "source": "src/Chart.Renderers/PowerPointSceneSurface.cs",
+      "line": 99,
+      "end": 99,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/persistence-design.md",
+      "source": "src/Chart.Renderers/PowerPointSceneSurface.cs",
+      "line": 16,
+      "end": 16,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/persistence-design.md",
+      "source": "apps/powerpoint-vsto/DataSources.cs",
+      "line": 162,
+      "end": 162,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/persistence-design.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 10,
+      "end": 10,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/persistence-design.md",
+      "source": "src/Library.Core/PiidxCatalog.cs",
+      "line": 40,
+      "end": 40,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/persistence-design.md",
+      "source": "src/Library.Core/LibraryConfiguration.cs",
+      "line": 30,
+      "end": 30,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/persistence-design.md",
+      "source": "src/Library.Core/LibraryConfiguration.cs",
+      "line": 78,
+      "end": 78,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/persistence-design.md",
+      "source": "src/Library.Core/PresentationSource.cs",
+      "line": 121,
+      "end": 121,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/serialization-contracts.md",
+      "source": "apps/powerpoint-vsto/MetadataCodec.cs",
+      "line": 12,
+      "end": 12,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/serialization-contracts.md",
+      "source": "src/Chart.Domain/ChartCodec.cs",
+      "line": 17,
+      "end": 17,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/serialization-contracts.md",
+      "source": "src/Chart.Domain/ChartV3Codec.cs",
+      "line": 16,
+      "end": 16,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/serialization-contracts.md",
+      "source": "src/Chart.Renderers/SceneCodec.cs",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/serialization-contracts.md",
+      "source": "src/Chart.Renderers/NativeRenderingCore.cs",
+      "line": 65,
+      "end": 65,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/serialization-contracts.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 12,
+      "end": 12,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/serialization-contracts.md",
+      "source": "src/Library.Core/LibraryConfiguration.cs",
+      "line": 55,
+      "end": 55,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/serialization-contracts.md",
+      "source": "tests/s1/fixtures/clustered-column.v2.json",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/serialization-contracts.md",
+      "source": "src/Chart.Renderers/SceneCodec.cs",
+      "line": 125,
+      "end": 125,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/serialization-contracts.md",
+      "source": "packages/chart-engine/src/scene-contract.ts",
+      "line": 99,
+      "end": 99,
+      "valid": true
+    },
+    {
+      "document": "08-data-design/serialization-contracts.md",
+      "source": "tests/s3/scene-fixtures.mjs",
+      "line": 8,
+      "end": 8,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog-query.md",
+      "source": "src/Library.Core/LibraryModels.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog-query.md",
+      "source": "src/Library.Core/PiidxSearch.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog-query.md",
+      "source": "src/Library.Core/PiidxNavigation.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog-query.md",
+      "source": "src/Library.Core/LibraryModels.cs",
+      "line": 5,
+      "end": 5,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog-query.md",
+      "source": "src/Library.Core/LibraryModels.cs",
+      "line": 14,
+      "end": 14,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog-query.md",
+      "source": "src/Library.Core/LibraryModels.cs",
+      "line": 22,
+      "end": 22,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog-query.md",
+      "source": "src/Library.Core/LibraryModels.cs",
+      "line": 30,
+      "end": 30,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog-query.md",
+      "source": "src/Library.Core/LibraryModels.cs",
+      "line": 51,
+      "end": 51,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog-query.md",
+      "source": "src/Library.Core/LibraryModels.cs",
+      "line": 52,
+      "end": 52,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog-query.md",
+      "source": "src/Library.Core/LibraryModels.cs",
+      "line": 53,
+      "end": 53,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog-query.md",
+      "source": "src/Library.Core/LibraryModels.cs",
+      "line": 54,
+      "end": 54,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog-query.md",
+      "source": "src/Library.Core/LibraryModels.cs",
+      "line": 72,
+      "end": 72,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog-query.md",
+      "source": "src/Library.Core/PiidxSearch.cs",
+      "line": 11,
+      "end": 11,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog-query.md",
+      "source": "src/Library.Core/PiidxNavigation.cs",
+      "line": 7,
+      "end": 7,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog-query.md",
+      "source": "src/Library.Core/PiidxNavigation.cs",
+      "line": 12,
+      "end": 12,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog-query.md",
+      "source": "src/Library.Core/PiidxNavigation.cs",
+      "line": 20,
+      "end": 20,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog-query.md",
+      "source": "src/Library.Core/PiidxSearch.cs",
+      "line": 30,
+      "end": 30,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog-query.md",
+      "source": "src/Library.Core/PiidxSearch.cs",
+      "line": 84,
+      "end": 84,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog-query.md",
+      "source": "src/Library.Core/PiidxSearch.cs",
+      "line": 98,
+      "end": 98,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog-query.md",
+      "source": "src/Library.Core/PiidxNavigation.cs",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog-query.md",
+      "source": "src/Library.Core/PiidxNavigation.cs",
+      "line": 22,
+      "end": 22,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog-query.md",
+      "source": "src/Library.Core/PiidxNavigation.cs",
+      "line": 26,
+      "end": 26,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog-query.md",
+      "source": "tests/library/piidx/PiidxCatalogTests.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog-query.md",
+      "source": "tests/library/piidx/PiidxWorkspaceTests.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog.md",
+      "source": "src/Library.Core/PiidxCatalog.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog.md",
+      "source": "src/Library.Core/PiidxCatalog.cs",
+      "line": 13,
+      "end": 13,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog.md",
+      "source": "src/Library.Core/PiidxCatalog.cs",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog.md",
+      "source": "src/Library.Core/PiidxCatalog.cs",
+      "line": 24,
+      "end": 24,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog.md",
+      "source": "src/Library.Core/PiidxCatalog.cs",
+      "line": 54,
+      "end": 54,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog.md",
+      "source": "src/Library.Core/PiidxCatalog.cs",
+      "line": 58,
+      "end": 58,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog.md",
+      "source": "src/Library.Core/PiidxCatalog.cs",
+      "line": 77,
+      "end": 77,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog.md",
+      "source": "src/Library.Core/PiidxCatalog.cs",
+      "line": 84,
+      "end": 84,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog.md",
+      "source": "src/Library.Core/PiidxCatalog.cs",
+      "line": 152,
+      "end": 152,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog.md",
+      "source": "tests/library/piidx/PiidxCatalogTests.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/catalog.md",
+      "source": "tests/library/piidx/PiidxCorpusTests.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-core/src/calculations.mjs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-core/package.json",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-engine/src/basic-charts.ts",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-engine/package.json",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-engine/tsconfig.json",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-engine/src/basic-charts.ts",
+      "line": 2,
+      "end": 2,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-engine/src/basic-charts.ts",
+      "line": 3,
+      "end": 3,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-engine/src/basic-charts.ts",
+      "line": 4,
+      "end": 4,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-engine/src/basic-charts.ts",
+      "line": 5,
+      "end": 5,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-engine/src/basic-charts.ts",
+      "line": 6,
+      "end": 6,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-engine/src/basic-charts.ts",
+      "line": 7,
+      "end": 7,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-engine/src/basic-charts.ts",
+      "line": 12,
+      "end": 12,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-engine/src/basic-charts.ts",
+      "line": 13,
+      "end": 13,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-engine/src/basic-charts.ts",
+      "line": 14,
+      "end": 14,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-engine/src/basic-charts.ts",
+      "line": 135,
+      "end": 135,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-core/src/calculations.mjs",
+      "line": 2,
+      "end": 2,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-core/src/calculations.mjs",
+      "line": 14,
+      "end": 14,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-core/src/calculations.mjs",
+      "line": 21,
+      "end": 21,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-core/src/calculations.mjs",
+      "line": 38,
+      "end": 38,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-engine/src/basic-charts.ts",
+      "line": 33,
+      "end": 33,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-engine/src/basic-charts.ts",
+      "line": 51,
+      "end": 51,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-engine/src/basic-charts.ts",
+      "line": 82,
+      "end": 82,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-engine/src/basic-charts.ts",
+      "line": 98,
+      "end": 98,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-engine/src/basic-charts.ts",
+      "line": 102,
+      "end": 102,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-engine/src/basic-charts.ts",
+      "line": 159,
+      "end": 159,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-core/test/calculations.test.mjs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+      "source": "packages/chart-engine/test/basic-charts.test.mjs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v2.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v2.md",
+      "source": "src/Chart.Domain/ChartCodec.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v2.md",
+      "source": "src/Chart.Domain/S0Migration.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v2.md",
+      "source": "src/Chart.Domain/Chart.Domain.csproj",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v2.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 8,
+      "end": 8,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v2.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 21,
+      "end": 21,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v2.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 27,
+      "end": 27,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v2.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 33,
+      "end": 33,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v2.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 40,
+      "end": 40,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v2.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 48,
+      "end": 48,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v2.md",
+      "source": "src/Chart.Domain/ChartDocument.cs",
+      "line": 57,
+      "end": 57,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v2.md",
+      "source": "src/Chart.Domain/ChartCodec.cs",
+      "line": 13,
+      "end": 13,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v2.md",
+      "source": "src/Chart.Domain/ChartCodec.cs",
+      "line": 141,
+      "end": 141,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v2.md",
+      "source": "src/Chart.Domain/S0Migration.cs",
+      "line": 8,
+      "end": 8,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v2.md",
+      "source": "src/Chart.Domain/ChartCodec.cs",
+      "line": 41,
+      "end": 41,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v2.md",
+      "source": "src/Chart.Domain/ChartCodec.cs",
+      "line": 48,
+      "end": 48,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v2.md",
+      "source": "src/Chart.Domain/ChartCodec.cs",
+      "line": 84,
+      "end": 84,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v2.md",
+      "source": "src/Chart.Domain/ChartCodec.cs",
+      "line": 91,
+      "end": 91,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v2.md",
+      "source": "src/Chart.Domain/ChartCodec.cs",
+      "line": 110,
+      "end": 110,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v2.md",
+      "source": "src/Chart.Domain/ChartCodec.cs",
+      "line": 143,
+      "end": 143,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v2.md",
+      "source": "src/Chart.Domain/ChartCodec.cs",
+      "line": 144,
+      "end": 144,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v2.md",
+      "source": "src/Chart.Domain/S0Migration.cs",
+      "line": 12,
+      "end": 12,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v2.md",
+      "source": "tests/s1/DomainTests.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v2.md",
+      "source": "packages/chart-domain/test/contracts.test.mjs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v3.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v3.md",
+      "source": "src/Chart.Domain/ChartV3Codec.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v3.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 6,
+      "end": 6,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v3.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 20,
+      "end": 20,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v3.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 27,
+      "end": 27,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v3.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 30,
+      "end": 30,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v3.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 33,
+      "end": 33,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v3.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 39,
+      "end": 39,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v3.md",
+      "source": "src/Chart.Domain/ChartDocumentV3.cs",
+      "line": 45,
+      "end": 45,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v3.md",
+      "source": "src/Chart.Domain/ChartV3Codec.cs",
+      "line": 13,
+      "end": 13,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v3.md",
+      "source": "src/Chart.Domain/ChartV3Codec.cs",
+      "line": 86,
+      "end": 86,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v3.md",
+      "source": "src/Chart.Domain/ChartV3Codec.cs",
+      "line": 36,
+      "end": 36,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v3.md",
+      "source": "src/Chart.Domain/ChartV3Codec.cs",
+      "line": 65,
+      "end": 65,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v3.md",
+      "source": "src/Chart.Domain/ChartV3Codec.cs",
+      "line": 71,
+      "end": 71,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v3.md",
+      "source": "src/Chart.Domain/ChartV3Codec.cs",
+      "line": 79,
+      "end": 79,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v3.md",
+      "source": "src/Chart.Domain/ChartV3Codec.cs",
+      "line": 89,
+      "end": 89,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v3.md",
+      "source": "src/Chart.Domain/ChartV3Codec.cs",
+      "line": 90,
+      "end": 90,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v3.md",
+      "source": "src/Chart.Domain/ChartV3Codec.cs",
+      "line": 92,
+      "end": 92,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/domain-v3.md",
+      "source": "packages/chart-engine/test/basic-charts.test.mjs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/library-config.md",
+      "source": "src/Library.Core/LibraryConfiguration.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/library-config.md",
+      "source": "src/Library.Core/LibraryConfiguration.cs",
+      "line": 13,
+      "end": 13,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/library-config.md",
+      "source": "src/Library.Core/LibraryConfiguration.cs",
+      "line": 20,
+      "end": 20,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/library-config.md",
+      "source": "src/Library.Core/LibraryConfiguration.cs",
+      "line": 32,
+      "end": 32,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/library-config.md",
+      "source": "src/Library.Core/LibraryConfiguration.cs",
+      "line": 55,
+      "end": 55,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/library-config.md",
+      "source": "src/Library.Core/LibraryConfiguration.cs",
+      "line": 70,
+      "end": 70,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/library-config.md",
+      "source": "src/Library.Core/LibraryConfiguration.cs",
+      "line": 79,
+      "end": 79,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/library-config.md",
+      "source": "tests/library/piidx/PiidxWorkspaceTests.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/library-refresh.md",
+      "source": "src/Library.Core/LibraryRefreshMonitor.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/library-refresh.md",
+      "source": "src/Library.Core/LibraryRefreshMonitor.cs",
+      "line": 10,
+      "end": 10,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/library-refresh.md",
+      "source": "src/Library.Core/LibraryRefreshMonitor.cs",
+      "line": 16,
+      "end": 16,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/library-refresh.md",
+      "source": "src/Library.Core/LibraryRefreshMonitor.cs",
+      "line": 32,
+      "end": 32,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/library-refresh.md",
+      "source": "src/Library.Core/LibraryRefreshMonitor.cs",
+      "line": 37,
+      "end": 37,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/library-refresh.md",
+      "source": "src/Library.Core/LibraryRefreshMonitor.cs",
+      "line": 59,
+      "end": 59,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/library-refresh.md",
+      "source": "src/Library.Core/LibraryRefreshMonitor.cs",
+      "line": 60,
+      "end": 60,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/library-refresh.md",
+      "source": "src/Library.Core/LibraryRefreshMonitor.cs",
+      "line": 92,
+      "end": 92,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/library-refresh.md",
+      "source": "tests/library/piidx/PiidxWorkspaceTests.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/NativeRenderingCore.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/PowerPointSceneSurface.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/NativeRenderingCore.cs",
+      "line": 13,
+      "end": 13,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/NativeRenderingCore.cs",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/NativeRenderingCore.cs",
+      "line": 59,
+      "end": 59,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/NativeRenderingCore.cs",
+      "line": 65,
+      "end": 65,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/NativeRenderingCore.cs",
+      "line": 71,
+      "end": 71,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/NativeRenderingCore.cs",
+      "line": 136,
+      "end": 136,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/NativeRenderingCore.cs",
+      "line": 147,
+      "end": 147,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/NativeRenderingCore.cs",
+      "line": 152,
+      "end": 152,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/NativeRenderingCore.cs",
+      "line": 158,
+      "end": 158,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/PowerPointSceneSurface.cs",
+      "line": 14,
+      "end": 14,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/NativeRenderingCore.cs",
+      "line": 23,
+      "end": 23,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/NativeRenderingCore.cs",
+      "line": 56,
+      "end": 56,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/NativeRenderingCore.cs",
+      "line": 75,
+      "end": 75,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/NativeRenderingCore.cs",
+      "line": 78,
+      "end": 78,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/NativeRenderingCore.cs",
+      "line": 91,
+      "end": 91,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/NativeRenderingCore.cs",
+      "line": 109,
+      "end": 109,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/NativeRenderingCore.cs",
+      "line": 156,
+      "end": 156,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/NativeRenderingCore.cs",
+      "line": 162,
+      "end": 162,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/NativeRenderingCore.cs",
+      "line": 163,
+      "end": 163,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/PowerPointSceneSurface.cs",
+      "line": 26,
+      "end": 26,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/PowerPointSceneSurface.cs",
+      "line": 28,
+      "end": 28,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/PowerPointSceneSurface.cs",
+      "line": 32,
+      "end": 32,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/PowerPointSceneSurface.cs",
+      "line": 54,
+      "end": 54,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/PowerPointSceneSurface.cs",
+      "line": 60,
+      "end": 60,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/PowerPointSceneSurface.cs",
+      "line": 79,
+      "end": 79,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/PowerPointSceneSurface.cs",
+      "line": 94,
+      "end": 94,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/PowerPointSceneSurface.cs",
+      "line": 104,
+      "end": 104,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/PowerPointSceneSurface.cs",
+      "line": 122,
+      "end": 122,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "src/Chart.Renderers/PowerPointSceneSurface.cs",
+      "line": 147,
+      "end": 147,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "tests/s3/NativeRendererTests.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/native-renderer.md",
+      "source": "tests/s3/RendererRibbonTests.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/path-policy.md",
+      "source": "src/Library.Core/PathPolicy.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/path-policy.md",
+      "source": "src/Library.Core/PathPolicy.cs",
+      "line": 12,
+      "end": 12,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/path-policy.md",
+      "source": "src/Library.Core/PathPolicy.cs",
+      "line": 35,
+      "end": 35,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/path-policy.md",
+      "source": "src/Library.Core/PathPolicy.cs",
+      "line": 48,
+      "end": 48,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/path-policy.md",
+      "source": "src/Library.Core/PathPolicy.cs",
+      "line": 56,
+      "end": 56,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/path-policy.md",
+      "source": "src/Library.Core/PathPolicy.cs",
+      "line": 76,
+      "end": 76,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/path-policy.md",
+      "source": "src/Library.Core/PathPolicy.cs",
+      "line": 89,
+      "end": 89,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/path-policy.md",
+      "source": "src/Library.Core/PathPolicy.cs",
+      "line": 94,
+      "end": 94,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/path-policy.md",
+      "source": "src/Library.Core/PathPolicy.cs",
+      "line": 124,
+      "end": 124,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/path-policy.md",
+      "source": "src/Library.Core/PathPolicy.cs",
+      "line": 141,
+      "end": 141,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/path-policy.md",
+      "source": "tests/security/PathPolicyTests.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/path-policy.md",
+      "source": "tests/s3/SceneArtifactPath.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/piidx-schema.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/piidx-schema.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 9,
+      "end": 9,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/piidx-schema.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 42,
+      "end": 42,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/piidx-schema.md",
+      "source": "src/Library.Core/PiidxSchema.cs",
+      "line": 59,
+      "end": 59,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/piidx-schema.md",
+      "source": "tests/library/piidx/PiidxSchemaTests.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/preview-cache.md",
+      "source": "src/Library.Core/PiidxPreviewCache.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/preview-cache.md",
+      "source": "src/Library.Core/PiidxPreviewCache.cs",
+      "line": 8,
+      "end": 8,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/preview-cache.md",
+      "source": "src/Library.Core/PiidxPreviewCache.cs",
+      "line": 24,
+      "end": 24,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/preview-cache.md",
+      "source": "src/Library.Core/PiidxPreviewCache.cs",
+      "line": 43,
+      "end": 43,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/preview-cache.md",
+      "source": "src/Library.Core/PiidxPreviewCache.cs",
+      "line": 16,
+      "end": 16,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/preview-cache.md",
+      "source": "src/Library.Core/PiidxPreviewCache.cs",
+      "line": 41,
+      "end": 41,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/preview-cache.md",
+      "source": "src/Library.Core/PiidxPreviewCache.cs",
+      "line": 45,
+      "end": 45,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/preview-cache.md",
+      "source": "src/Library.Core/PiidxPreviewCache.cs",
+      "line": 64,
+      "end": 64,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/preview-cache.md",
+      "source": "tests/library/piidx/PiidxPreviewTests.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/published-schemas.md",
+      "source": "packages/chart-domain/schema/chart-document.v2.schema.json",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/published-schemas.md",
+      "source": "packages/chart-engine/schema/render-result.v1.schema.json",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/published-schemas.md",
+      "source": "packages/chart-engine/schema/rendered-chart.v1.xsd",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/published-schemas.md",
+      "source": "packages/chart-domain/test/contracts.test.mjs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/published-schemas.md",
+      "source": "packages/chart-engine/test/scene-schema.test.mjs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/published-schemas.md",
+      "source": "tests/s3/NativeRendererTests.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/SceneCodec.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/StrictSceneJson.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 7,
+      "end": 7,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 21,
+      "end": 21,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 30,
+      "end": 30,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 37,
+      "end": 37,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 45,
+      "end": 45,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 51,
+      "end": 51,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 54,
+      "end": 54,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 62,
+      "end": 62,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 70,
+      "end": 70,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 73,
+      "end": 73,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/SceneContracts.cs",
+      "line": 79,
+      "end": 79,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/SceneCodec.cs",
+      "line": 14,
+      "end": 14,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/SceneCodec.cs",
+      "line": 164,
+      "end": 164,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/StrictSceneJson.cs",
+      "line": 5,
+      "end": 5,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/StrictSceneJson.cs",
+      "line": 9,
+      "end": 9,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/SceneCodec.cs",
+      "line": 106,
+      "end": 106,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/SceneCodec.cs",
+      "line": 113,
+      "end": 113,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/SceneCodec.cs",
+      "line": 120,
+      "end": 120,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/SceneCodec.cs",
+      "line": 125,
+      "end": 125,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/SceneCodec.cs",
+      "line": 167,
+      "end": 167,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/SceneCodec.cs",
+      "line": 168,
+      "end": 168,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/SceneCodec.cs",
+      "line": 181,
+      "end": 181,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/StrictSceneJson.cs",
+      "line": 7,
+      "end": 7,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/StrictSceneJson.cs",
+      "line": 11,
+      "end": 11,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "src/Chart.Renderers/StrictSceneJson.cs",
+      "line": 12,
+      "end": 12,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "tests/s3/SceneContractTests.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "tests/s3/validate-roundtrip.mjs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "packages/chart-engine/test/scene-schema.test.mjs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/scene-contract.md",
+      "source": "packages/chart-engine/test/scene-contract.test.mjs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/source-extraction.md",
+      "source": "src/Library.Core/PresentationSource.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/source-extraction.md",
+      "source": "src/Library.Core/PresentationSource.cs",
+      "line": 16,
+      "end": 16,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/source-extraction.md",
+      "source": "src/Library.Core/PresentationSource.cs",
+      "line": 23,
+      "end": 23,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/source-extraction.md",
+      "source": "src/Library.Core/PresentationSource.cs",
+      "line": 31,
+      "end": 31,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/source-extraction.md",
+      "source": "src/Library.Core/PresentationSource.cs",
+      "line": 39,
+      "end": 39,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/source-extraction.md",
+      "source": "src/Library.Core/PresentationSource.cs",
+      "line": 46,
+      "end": 46,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/source-extraction.md",
+      "source": "src/Library.Core/PresentationSource.cs",
+      "line": 57,
+      "end": 57,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/source-extraction.md",
+      "source": "src/Library.Core/PresentationSource.cs",
+      "line": 127,
+      "end": 127,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/source-extraction.md",
+      "source": "tests/library/piidx/PiidxSourceTests.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/source-extraction.md",
+      "source": "tests/library/piidx/PiidxEdgeTests.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/source-extraction.md",
+      "source": "tests/library/piidx/PiidxCorpusTests.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 11,
+      "end": 11,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 16,
+      "end": 16,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 21,
+      "end": 21,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 27,
+      "end": 27,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 52,
+      "end": 52,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 59,
+      "end": 59,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 14,
+      "end": 14,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 23,
+      "end": 23,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 30,
+      "end": 30,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 31,
+      "end": 31,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 32,
+      "end": 32,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 33,
+      "end": 33,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 34,
+      "end": 34,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 35,
+      "end": 35,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 36,
+      "end": 36,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 37,
+      "end": 37,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 38,
+      "end": 38,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 39,
+      "end": 39,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 40,
+      "end": 40,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 41,
+      "end": 41,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 42,
+      "end": 42,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 43,
+      "end": 43,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 44,
+      "end": 44,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 45,
+      "end": 45,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 46,
+      "end": 46,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 47,
+      "end": 47,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 48,
+      "end": 48,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 49,
+      "end": 49,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 50,
+      "end": 50,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 62,
+      "end": 62,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 63,
+      "end": 63,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 65,
+      "end": 65,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 72,
+      "end": 72,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 75,
+      "end": 75,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 127,
+      "end": 127,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 135,
+      "end": 135,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 158,
+      "end": 158,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "tests/library/piidx/PiidxSchemaTests.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/sqlite.md",
+      "source": "scripts/Test-PiidxSqliteCapability.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/strict-json.md",
+      "source": "src/Shared.Contracts/BoundedJson.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/strict-json.md",
+      "source": "src/Shared.Contracts/BoundedJson.cs",
+      "line": 11,
+      "end": 11,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/strict-json.md",
+      "source": "src/Shared.Contracts/BoundedJson.cs",
+      "line": 108,
+      "end": 108,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/strict-json.md",
+      "source": "src/Shared.Contracts/BoundedJson.cs",
+      "line": 19,
+      "end": 19,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/strict-json.md",
+      "source": "src/Shared.Contracts/BoundedJson.cs",
+      "line": 110,
+      "end": 110,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/strict-json.md",
+      "source": "src/Shared.Contracts/BoundedJson.cs",
+      "line": 122,
+      "end": 122,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/strict-json.md",
+      "source": "tests/s3/SceneContractTests.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/strict-json.md",
+      "source": "packages/chart-engine/test/scene-schema.test.mjs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/strict-json.md",
+      "source": "tests/s3/scene-fixtures.mjs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/svg-preview.md",
+      "source": "packages/chart-engine/src/svg-preview.ts",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/svg-preview.md",
+      "source": "packages/chart-engine/README.md",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/svg-preview.md",
+      "source": "packages/chart-engine/src/svg-preview.ts",
+      "line": 4,
+      "end": 4,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/svg-preview.md",
+      "source": "packages/chart-engine/src/svg-preview.ts",
+      "line": 14,
+      "end": 14,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/svg-preview.md",
+      "source": "packages/chart-engine/test/svg-preview.test.mjs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/src/scene-builder.ts",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/src/scene-contract.ts",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/src/strict-scene-json.ts",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/tools/render-chart-v2.mjs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-domain/src/validate.mjs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-domain/package.json",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/src/scene-builder.ts",
+      "line": 6,
+      "end": 6,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/src/scene-builder.ts",
+      "line": 7,
+      "end": 7,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/src/scene-contract.ts",
+      "line": 6,
+      "end": 6,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/src/scene-contract.ts",
+      "line": 7,
+      "end": 7,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/src/scene-contract.ts",
+      "line": 12,
+      "end": 12,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/src/scene-contract.ts",
+      "line": 13,
+      "end": 13,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/src/scene-contract.ts",
+      "line": 14,
+      "end": 14,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/src/scene-contract.ts",
+      "line": 15,
+      "end": 15,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/src/scene-contract.ts",
+      "line": 19,
+      "end": 19,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/src/scene-builder.ts",
+      "line": 13,
+      "end": 13,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/src/scene-contract.ts",
+      "line": 43,
+      "end": 43,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/src/scene-contract.ts",
+      "line": 44,
+      "end": 44,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/src/scene-contract.ts",
+      "line": 45,
+      "end": 45,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/src/scene-contract.ts",
+      "line": 92,
+      "end": 92,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/src/scene-contract.ts",
+      "line": 130,
+      "end": 130,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/src/scene-contract.ts",
+      "line": 136,
+      "end": 136,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/src/scene-contract.ts",
+      "line": 143,
+      "end": 143,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/src/scene-contract.ts",
+      "line": 144,
+      "end": 144,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/src/strict-scene-json.ts",
+      "line": 5,
+      "end": 5,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/tools/render-chart-v2.mjs",
+      "line": 9,
+      "end": 9,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-domain/src/validate.mjs",
+      "line": 7,
+      "end": 7,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/test/scene-contract.test.mjs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/test/canonical-scene.test.mjs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "packages/chart-engine/test/scene-schema.test.mjs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/core/ts-scene.md",
+      "source": "tests/s3/validate-roundtrip.mjs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    }
+  ],
+  "diagrams": [
+    {
+      "document": "08-data-design/class-diagrams.md",
+      "number": 1,
+      "type": "classDiagram",
+      "sha256": "33876c0861ad7ffde7665ce032866ec4f8d0db50ebf5848be83db3ae1dddceec",
+      "structural_valid": true,
+      "parser_validated": false
+    },
+    {
+      "document": "08-data-design/class-diagrams.md",
+      "number": 2,
+      "type": "classDiagram",
+      "sha256": "ddaf93f341675f46af5c2fa6933fbaf32e2ab7e4a74762316921c910734a859c",
+      "structural_valid": true,
+      "parser_validated": false
+    },
+    {
+      "document": "08-data-design/class-diagrams.md",
+      "number": 3,
+      "type": "classDiagram",
+      "sha256": "c010bb449f4c32f96e4325babed2d1bd1baaed0aeac086c7d79508f954698d9e",
+      "structural_valid": true,
+      "parser_validated": false
+    },
+    {
+      "document": "08-data-design/persistence-design.md",
+      "number": 1,
+      "type": "erDiagram",
+      "sha256": "6f1c58edc7219927eaee02eea8107f8d163cb5fb100d7d863c84134147d1d516",
+      "structural_valid": true,
+      "parser_validated": false
+    },
+    {
+      "document": "08-data-design/persistence-design.md",
+      "number": 2,
+      "type": "sequenceDiagram",
+      "sha256": "19744b7c1f8e2ba2f76f23d04113bf1b42c74cfcd7227c1157019b8914713a3d",
+      "structural_valid": true,
+      "parser_validated": false
+    },
+    {
+      "document": "08-data-design/serialization-contracts.md",
+      "number": 1,
+      "type": "flowchart TD",
+      "sha256": "b7a27399b6bb400f163eb4dc7ab6d6050ad86dac1b292087184bd77074cfb003",
+      "structural_valid": true,
+      "parser_validated": false
+    }
+  ],
+  "links": [],
+  "errors": [],
+  "limitations": [
+    "Mermaid parser/runtime unavailable locally; structural checks are not syntax/render validation.",
+    "Source reference checks prove file/line range, not semantic truth of prose."
+  ]
+}

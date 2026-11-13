@@ -1,0 +1,1189 @@
+{
+  "head": "ffaec352cbdca666f69f3c402d334108e4115933",
+  "tracked_files": 339,
+  "working_byte_differences": [
+    {
+      "path": ".github/workflows/chart-core.yml",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": ".gitignore",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "AGENTS.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "README.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/App.config",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/ChapterAgenda.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/ChapterAgendaModel.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/ChartAnnotations.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/ContextActionRouter.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/ContextChartFormatting.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/ContextFormatting.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/ContextPanelModel.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/ContextPropertiesController.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/ContextPropertiesView.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/ContextSelectionBridge.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/Contracts.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/DataLinkManager.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/DataSources.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/DemoApi.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/DemoLinks.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/DemoRibbon.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/DemoTools.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/ElementCommands.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/ExcelRangeMapping.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/FeatureInventory.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/IndicatorElements.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/LocalLibraryGallery.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/LocalLibraryWorkspace.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/MappedLinkOperations.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/NativeChartControls.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/NativeFormatting.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/NativeSeriesControls.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/OfficeCompatibility.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/PowerPointHost.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/PowerPointIntelligence.csproj",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/PresentationAgenda.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/PresentationQuality.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/ProcessFlowTools.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/ProductivityTools.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/RendererRibbonCommand.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/RibbonIcons.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/ServiceConnections.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/TemplateCatalog.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/TemplateLibrary.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/TextShapeElements.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/ThisAddIn.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/UniversalConnectors.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "apps/powerpoint-vsto/XmlPartUpdates.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "chart-core.yml",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/DECISIONS.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/demo/coverage.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/demo/sample-chart.s0.json",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/demo/sample-style.json",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/evidence/S0-native-capture-diagnostic-2026-10-22.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/evidence/comprehensive-validation-2026-10-22.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/evidence/demo-build-2026-10-22.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/evidence/mcafee-review-request-draft-2026-10-22.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/evidence/production-baseline-s2-2026-10-22.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/evidence/renderer-integration-blockers-2026-10-22.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/evidence/revert-v17.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/evidence/ribbon-deployment-regression-2026-10-22.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/evidence/scene-antivirus-investigation-2026-10-22.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/evidence/v17-icons1.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/evidence/v17-icons2.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/evidence/v17-package-freshness-fix.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/S0-feasibility.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/agenda-reference-study.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/artifact-maintenance-20261103.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/blocker-followup-20261029.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/chapter-agenda.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/context-properties-reference.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/context-properties.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/data-source-links.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/desktop-suite-followup-20261029.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/easySetup-20261101.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/element-controls.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/elements-reference-study.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/embedded-binding-20261029.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/library-palettes.csv",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/nexwave-branding-20261103.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/office-regression-elements2.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/parity-v17-validation.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/ribbon-experience.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/template-fidelity-policy.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/template-library.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/thinkcell-feature-parity.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/thinkcell-observable-study.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/typed-native-series-20261029.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/workbook-handoff-observation-20261029.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/workspace-cleanup.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/implementation/x64-reviewed-recovery-20261029.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/migration/MIGRATION_STATUS.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/migration/REPOSITORY_FILE_INVENTORY.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/migration/baseline/dependency-findings.csv",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/migration/baseline/inventory-summary.json",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/migration/baseline/repository-files.csv",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/migration/dependency-findings.csv",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/migration/inventory-summary.json",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/migration/repository-files.csv",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/requirements/FEATURES.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/requirements/demo-feature-inventory.json",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/requirements/production-requirement-traceability.json",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/research/tcidx-stream-observations.json",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/security/CHECKMARX_20261103_113558_EVIDENCE.json",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/security/CHECKMARX_20261103_113558_REMEDIATION.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/security/CHECKMARX_FINDINGS.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/security/CHECKMARX_FINGERPRINT_20261103_091304.json",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/security/CHECKMARX_FINGERPRINT_20261103_091304.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/security/CHECKMARX_INTEGRITY_20261102_134253.json",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/security/CHECKMARX_INTEGRITY_20261102_134253.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/security/CHECKMARX_PATH_TRAVERSAL_20261102.json",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/security/CHECKMARX_PATH_TRAVERSAL_20261102.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/security/CHECKMARX_PATH_TRAVERSAL_20261102_113655.json",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/security/CHECKMARX_PATH_TRAVERSAL_20261102_113655.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/security/CHECKMARX_PATH_TRAVERSAL_20261102_121110.json",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/security/CHECKMARX_PATH_TRAVERSAL_20261102_121110.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/security/CODEX_REMEDIATION_INSTRUCTIONS.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/security/PATH_TRAVERSAL_VALIDATION_20261102.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/security/PATH_TRAVERSAL_VALIDATION_20261102_113655.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/security/SECURITY_BOOTSTRAP_ENCODING_20261102.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/security/SECURITY_CORPUS_NET48_20261102.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/security/SECURITY_REMEDIATION_PLAN.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "docs/security/SECURITY_REMEDIATION_STATUS.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "easySetup/Bootstrapper.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "easySetup/Build-EasySetup.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "easySetup/Common.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "easySetup/README.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": false
+    },
+    {
+      "path": "easySetup/SetupPolicyTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "easySetup/Test-EasySetup.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "easySetup/Watch-EasySetup.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "packages/chart-core/package.json",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "packages/chart-core/src/calculations.mjs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "packages/chart-core/test/calculations.test.mjs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Artifact-Inputs.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Check-Process.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Clean-Workspace.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Diagnose-PowerPointActivation.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Diagnostic-OutputPath.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Install-Local.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Maintain-Artifacts.py",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Piidx-Recovery.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Piidx-TestSuite.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Repair-TemplateAlignment.py",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/RepairTemplateSafety.py",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Safe-Xml.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Scene-RunnerCache.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Source-Fingerprint.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Test-All.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Test-CheckProcess.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Test-Checkmarx113558.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Test-DemoFeatures.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Test-DemoPackage.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Test-DiagnosticOutputPath.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Test-InstalledRibbon.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Test-NativeRenderer.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Test-OfficeCompatibility.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Test-PayloadRecompile.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Test-Piidx.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Test-PiidxCatalog.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Test-PiidxCorpus.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Test-PiidxFoundation.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Test-PiidxPreviews.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Test-PiidxSourceReader.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Test-Ribbon.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Test-S0.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Test-S1.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Test-SceneContracts.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Test-SceneRunnerCache.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Test-SecurityRemediation.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "scripts/Test-TemplateLibrary.ps1",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "services/ai-gateway/README.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "services/ai-gateway/action-plan.schema.json",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "src/Library.Core/LibraryConfiguration.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "src/Library.Core/LibraryModels.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "src/Library.Core/LibraryRefreshMonitor.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "src/Library.Core/NativeSqlite.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "src/Library.Core/PathPolicy.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "src/Library.Core/PiidxCatalog.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "src/Library.Core/PiidxPreviewCache.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "src/Library.Core/PiidxSchema.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "src/Library.Core/PiidxSearch.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "src/Library.Core/PresentationSource.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/compatibility/OfficeCompatibilityTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/library/GalleryTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/library/LegacyLibraryCacheFixture.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/library/LibraryBrowserTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/library/PiidxGalleryTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/library/TemplateFidelity.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/library/TemplateFidelityTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/library/TemplateLibraryTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/library/piidx/PiidxCatalogTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/library/piidx/PiidxPreviewTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/library/piidx/PiidxSchemaTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/library/piidx/PiidxSourceTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/ChapterAgendaOfficeTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/ChapterAgendaTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/ChartAnnotationTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/ContextChartFormattingTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/ContextFormattingOfficeTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/ContextFormattingTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/ContextPanelModelTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/ContextPropertiesOfficeTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/ContextPropertiesTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/DataLinkManagerTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/DataSourceTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/DemoContractTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/DemoOfficeTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/DemoScenario.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/ExcelRangeMappingTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/HostIntegrationTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/IndicatorElementTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/IndicatorOfficeTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/LinkedChartDiagnostic.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/MappedExcelOfficeTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/NativeChartControlTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/NativeFormattingTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/PresentationAgendaTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/PresentationQualityTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/ProcessFlowOfficeTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/ProcessFlowTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/ProductivityToolOfficeTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/ProductivityToolTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/ServiceConnectionTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/TextShapeElementTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/TextShapeOfficeTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/UniversalConnectorOfficeTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/UniversalConnectorTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/WorkflowOfficeTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s0/XmlPartUpdateTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s1/DomainTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s3/NativeRendererTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s3/SceneArtifactPath.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/s3/SceneContractTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/security/PathPolicyTests.cs",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    },
+    {
+      "path": "tests/security/test_repair_template_alignment.py",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": true
+    }
+  ],
+  "note": "Byte comparison against Git blobs; CRLF normalization differences are included, not silently equated to semantic edits. No index refresh/write.",
+  "non_eol_differences": [
+    {
+      "path": "easySetup/README.md",
+      "status": "different-bytes-vs-HEAD",
+      "crlf_only_vs_HEAD": false
+    }
+  ]
+}

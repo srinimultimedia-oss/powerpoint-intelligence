@@ -1,0 +1,279 @@
+[
+  [
+    "lifecycle-host",
+    "VSTO lifecycle, compatibility and S0 native host",
+    [
+      "ThisAddIn.cs",
+      "ThisAddIn.Designer.cs",
+      "ThisAddIn.Designer.xml",
+      "OfficeCompatibility.cs",
+      "PowerPointHost.cs",
+      "Contracts.cs",
+      "MetadataCodec.cs",
+      "PowerPointIntelligence.csproj",
+      "App.config"
+    ],
+    "Create the in-process add-in, gate Office capabilities, manage per-window task panes and retain S0 clustered-column identity while preserving supported native edits.",
+    "Startup creates PowerPointHost, a 750 ms layout timer and 650 ms debounced agenda/element timer. Compatibility loads the add-in DLL config and compares Office 16.0 API/build and process bitness. It subscribes selection/double-click/open/save/activation/close; Shutdown unsubscribes/disposes. Run acquires a process-specific named mutation lease, creates/rebinds the active-window pane, applies compatibility gating and catches failures. S0 AddChart2 writes literal-label embedded workbook values and attaches XML/identity. Check & Sync captures native edits and repairs valid duplicate GUIDs. BeforeSave only processes the active deck.",
+    "Input: Office Application/selection, config, validated S0 ChartDocument. Output: chart, pane/status, CustomerData XML and PPI_CHART_ID tag. Dependencies: Office/VSTO PIAs, .NET Framework4.8, WinForms, System.Configuration and routed modules.",
+    "OfficeProfile auto/office2016/office2019/microsoft365, OfficeArchitecture any/x86/x64, OfficeMinimumVersion16.0. Profiles express policy, not automatic edition discovery. Project embeds Office15 interop types but runtime gates on16.0. STA enforced in host; explicitly rejected COM calls0x80010001 retry at100ms. Event exceptions contained; damaged metadata preserved.",
+    "S0 supports clustered-column only, <=1000 categories, <=100 series, <=1MiB XML and top-level shape traversal. Structural native type/count/category changes are not migrated. Compensation can fail; use Undo. No separate command-bus/API service startup is wired by this module.",
+    "Extend versioned host contracts with active-deck/UI-STA enforcement and native roundtrip tests; named mutex coordination is not an authorization boundary."
+  ],
+  [
+    "commands-ribbon",
+    "Ribbon catalog, dispatch, icons, browser and automation facade",
+    [
+      "DemoRibbon.cs",
+      "DemoTools.cs",
+      "RibbonIcons.cs",
+      "DemoWorkspace.cs",
+      "FeatureInventory.cs",
+      "DemoInputs.cs",
+      "DemoApi.cs"
+    ],
+    "Expose NexWave commands and searchable local tools while keeping descriptive requirements separate from executable commands.",
+    "DemoRibbon.Create builds Office2009 customUI XML; IntelligenceRibbon forwards callbacks/tags. DemoTools.BuildCatalog binds IDs/delegates and generated arrange modes; Execute opens a native undo boundary. DemoWorkspace displays tools and requirement statuses. RibbonIcons draws local16/32px bitmap glyphs and bridges IPictureDisp. DemoInputs supplies per-instance fixture/UI ports. IDemoAutomation exposes build/version/ribbon/immutable properties state and bounded S0 JSON insertion, not HTTP.",
+    "Inputs: command tags, current selection, prompts/files or fixture delegates and S0 JSON. Outputs: native edits, forms, local exports and COM observation. Dependencies: managed element/data/template/format/quality adapters and S0 host.",
+    "BuildMarker is deployment freshness data. GetContextPropertiesState reads a volatile UI-published string. InsertChartJson requires the creating UI STA, validates <=1MiB JSON/model and assigns fresh GUID/revision. No arbitrary AI-to-COM dispatch is present.",
+    "FeatureInventory labels are historical descriptive claims, not runtime proof. Simple arrange operations may rely on Undo rather than complete per-object rollback. Linked report adds seven chart slides to the same active deck with one linked source and no sample fallback. Office JavaScript/HTML task pane and SmartArt authoring are absent from the compiled graph.",
+    "Add catalog/callback/icon/test entries together. Maintain separate counts for executable routes and requirement inventory; preserve stable internal names while visible brand is NexWave."
+  ],
+  [
+    "linked-data",
+    "Linked files, Excel mapping and source manager",
+    [
+      "DataSources.cs",
+      "ExcelRangeMapping.cs",
+      "MappedLinkOperations.cs",
+      "DataLinkManager.cs",
+      "DemoLinks.cs"
+    ],
+    "Link local files, select categories/series, render native editable objects and explicitly refresh eligible mapped charts.",
+    "Data Source saves format/path/UTC/GUID after an extension-specific picker without parsing file data. At chart creation Load reads CSV, JSON headers/rows, XML table/header/row/cell or read-only Excel. Unmapped Excel reads first-sheet UsedRange then asks category/series; mapped Excel persists worksheet/A1 rectangle/header signature/zero-based columns. Write activates embedded workbook, performs a single Value2 matrix write, checks cells, binds source and waits for real native series values before and after close. Manager inventories registry/object references including groups, damaged/ambiguous states and local-file metadata; it locates and explicitly refreshes eligible objects. Relink confirms the replacement and retains old registry records.",
+    "Inputs: Excel/CSV/JSON/XML path, LinkedTable, mapping and native chart. Outputs: registered and shape-attached DataSourceLink, embedded workbook or native table/diagram. Dependencies: PathPolicy, Excel/PowerPoint COM, XmlPartUpdates and DataLinkInventory. Legacy DemoLinks uses a separate first-sheet .xlsx WorkbookLink namespace.",
+    "Source <=20MiB,1–49 data rows,2–15 columns, <=256 source records; mapped rectangle2–50 rows including headers; table<=400cells. Current Excel reader is hidden/read-only, AutomationSecurity=3 and UpdateLinks=0. Labels are literal text. XML DTD/resolver disabled. Manager does not probe UNC/network drives. Chart acknowledgement bounded to8sec.",
+    "Mapped refresh rejects unmapped/old orientation metadata, tables/diagrams, XY/bubble/pie/doughnut and mixed/secondary-axis charts. Changed headers/dimensions stop refresh, never guess relinking. Registry separates attached XML parts after reopen. Child Excel RCWs are not uniformly explicitly released; cleanup is not a proven process-leak guarantee.",
+    "Introduce additional projections only with exact typed mappings, explicit confirmation, formatting retention and native save/reopen/rollback acceptance. Never equate file metadata availability with successful refresh."
+  ],
+  [
+    "native-chart-controls",
+    "Native axes, series and annotations",
+    [
+      "NativeChartControls.cs",
+      "NativeSeriesControls.cs",
+      "ChartAnnotations.cs"
+    ],
+    "Edit native axes/series and add editable reference/difference annotations without flattening charts.",
+    "Axis settings snapshot primary axis, validate finite bounds/number format and positive log data, reset auto bounds then apply and restore on error. MatchScales preflights2–30charts with matching linear/log type and preserves individual reversal/format. Series controls allow existing unstacked2D column/line/line-markers/area with primary/secondary grouping, but reject S0 metadata. Annotations map reference value or selected point differences through native plot/axis geometry, draw owned groups and refresh explicitly. NativePdfExport exports all slides with ExportAsFixedFormat.",
+    "Inputs: selected charts, NativeAxisSettings, series index/type/group, annotation value/indices or PDF destination. Outputs: native chart settings, editable annotation shapes or PDF. Dependencies: PowerPoint Chart/Axis/SeriesCollection, geometry plans and rollback patterns.",
+    "NumberFormat1–100chars; series<=100; scale matching2–30charts. Log preflight requires all present primary values positive. Native chart capabilities determine axis availability. StartNewUndoEntry precedes mutation.",
+    "Unsupported types/axes, date-category difference geometry and out-of-range annotations are rejected. Annotations are grouped shapes, not chart-internal adornments, and require refresh. Complete automatic label collision/layout optimization is not implemented. Rollback errors aggregate and request Undo.",
+    "Extend explicit capability predicates and pure plans before widening native adapters; add geometry, rollback, secondary-axis and save/reopen scenarios."
+  ],
+  [
+    "context-properties",
+    "Selection-aware floating property box",
+    [
+      "ContextPanelModel.cs",
+      "ContextSelectionBridge.cs",
+      "ContextPropertiesController.cs",
+      "ContextPropertiesView.cs",
+      "ContextFormatting.cs",
+      "ContextChartFormatting.cs",
+      "ContextActionRouter.cs"
+    ],
+    "Inspect live selection and expose applicable native properties/actions without stealing focus or editing stale targets.",
+    "A300ms UI timer plus selection dirtiness checks availability/foreground. Selection identity includes presentation IUnknown/window/slide/shapes/text or table cells. Capture aggregates capabilities/mixed values, rechecks identity and places an owned modeless form within monitor/window bounds. Every property edit revalidates the key, including after ColorDialog. Managed indicator/connector color changes update their canonical state; chart fonts/fill use chart-specific adapters. Only requested font properties are mutated; volatile XML observation is produced on UI and read from automation without COM.",
+    "Inputs: selection, owner/foreground metrics and user edits. Outputs: ContextSnapshot/ContextNativeState, floating WinForms controls and native changes. Dependencies: user32 geometry/foreground calls, balanced IUnknown pointer release, NativeFormatting and managed adapters.",
+    "Inspection<=500native parts/selected objects, group depth16,<=2000text characters and<=400tablecells. Read-only/slideshow/no-supported-selection hides or disables controls. Mixed property values stay mixed. Exceptions report type/HRESULT/stage rather than document values.",
+    "Per-monitor DPI, native color picker, every chart family and all focus interactions need desktop manual coverage. Overview fallback may classify while withholding edits. Inspection bounds can make larger selections noneditable; this is not complete reference-product contextual-toolbar parity.",
+    "Add descriptors/capabilities/collection/action routing consistently and test stale selection, read-only, mixed state, native formatting and focus preservation."
+  ],
+  [
+    "native-formatting",
+    "Native formatting plans and restoration transactions",
+    [
+      "NativeFormatting.cs"
+    ],
+    "Apply alignment/orientation/color to bounded native text/group/table selections while retaining unrequested formatting.",
+    "Collect preflights selected character ranges, group leaves and table selected cells (or whole table if none selected). Text modes map horizontal, vertical and direction settings. Color supports solid fills, outlines and per-character text color; snapshots preserve theme/tint and table borders. NativeFormattingTransaction applies changes and restores prior changes after failure.",
+    "Inputs: native selection, text mode or RGB. Outputs: formatting under one Undo boundary. Dependencies: PowerPoint TextFrame/TextRange/Cell/LineFormat/FillFormat; reused by context and ribbon.",
+    "NativeFormattingPlan bounds nodes/characters/depth and limits selection500targets. RGB0–0xFFFFFF. Unsupported/mixed nonrestorable states are rejected before mutation where possible; incomplete restoration directs Undo.",
+    "SmartArt, arbitrary embedded objects, gradient/pattern/texture fills and advanced rich-text document serialization are not implemented as generic conversions.",
+    "Add properties as validated snapshot/apply/restore operations with group/table/selected-character tests."
+  ],
+  [
+    "managed-text",
+    "Text box, pentagon, chevron and rounded native elements",
+    [
+      "TextShapeElements.cs",
+      "ElementCommands.cs"
+    ],
+    "Provide editable shapes with canonical geometry/edge locks, fit, convert, adjacent duplication and contextual settings.",
+    "Insert creates a centered200x70pt native AutoShape, SegoeUI20, center/middle alignment, manual sizing/margins and canonical shape XML/tag. Configure validates kind/adjustment and measures text against unlocked edges and slide bounds, then replaces XML and geometry with rollback. FitSelected precomputes1–100managed shape plans. Conversion/duplication preserve supported native formatting and independent metadata. ElementCommands gates Normal-view/current ownership; automatic fit runs via add-in timer.",
+    "Inputs: kind, TextShapeSpec, edge locks/adjustment/autofit and selection. Outputs: native editable shape, PPI_TEXT_ELEMENT and versioned XML. Dependencies: TextShapePlan/Codec, native metrics, XmlPartUpdates and lifecycle timers.",
+    "Edge flags Left/Right/Top/Bottom; adjustment.05–.5. Geometry must be supported unrotated/unflipped/native orientation. All-locked fit requires content to fit existing bounds. Temporary preflight duplicates never attach canonical metadata.",
+    "Rotated/flipped/manually changed-kind objects and copied grid cells can fail closed. Text layout uses native metrics, not independent typography. Missing/ambiguous XML and unfittable geometry are preserved/rejected; incomplete rollback surfaces Undo.",
+    "Add shape kinds through native mapping, spec/codec, fit/convert geometry, commands/icons and native persistence tests."
+  ],
+  [
+    "process-grid",
+    "Process-grid layout and retained structural history",
+    [
+      "ProcessFlowTools.cs"
+    ],
+    "Compose process layouts from managed native text cells with row/column operations and explicit retained history.",
+    "Planner creates bounded rows/columns/geometry and cell assignments. Create inserts cells, copies supported style before attaching new XML and stores deck registry. Change verifies exact ownership/coordinates/visibility, preflights geometry on temporary native duplicates, snapshots native state and applies new cells/state. Hide operations retain inactive invisible cells; move swaps columns. Resize adjusts whole grid; striping uses rollback transactions.",
+    "Inputs: ProcessGridSpec/cell selection, structural action or geometry/colors. Outputs: native cell shapes, deck XML and grid/row/column tags. Dependencies: TextShapeElements, XmlPartUpdates and NativeFormattingTransaction.",
+    "<=12columns,<=100grids/deck, decoded<=1000cells, XML<=150000chars; lookup<=2000slide shapes. Last row/column cannot be hidden. Cell style transfer copies supported properties rather than PickUp/Apply (which can transfer CustomerData).",
+    "Independent manual geometry changes must be undone before grid editing. Copied grids need fresh registry. Inactive history increases content until a separately designed compaction. Missing/foreign cells or changed history stop edits; failure restores geometry/XML/tags or explicitly requests Undo.",
+    "Add structural actions to pure planner before adapters; verify active/inactive history, source-style metadata isolation and save/reopen."
+  ],
+  [
+    "indicators",
+    "Harvey-ball and checkbox editable vectors",
+    [
+      "IndicatorElements.cs"
+    ],
+    "Render editable grouped indicators with typed canonical state, conversion, colors, rotation and focused keyboard shortcuts.",
+    "Render creates owned native background/outline/freeform-sector or checkbox strokes/text, groups and attaches IndicatorCodec XML. Configure renders replacement at supported original bounds and then removes old group. Step clamps Harvey fill or cycles three checkbox states. Numeric shortcuts map fill/state; focused keyboard controls re-find original slide/shape; double-click intercepts only owned indicators.",
+    "Inputs: IndicatorSpec and native group selection. Output: tagged editable group and XML. Dependencies: native shapes/freeform/grouping, XmlPartUpdates attachment lookup and ElementCommands keyboard form.",
+    "Segments1–100,fill0–segments,checkbox0/1/2,size6–720pt,rotation[0,360),customsymbol<=8printablechars,RGB24bit; groups expect2–6ownedchildren. Bounds must fit slide.",
+    "Canonical updates replace managed group, not foreign child content. External data-linked indicators are absent; SetValueSelected is a direct local helper. Unowned children/ambiguous XML fail preserved; incomplete replacement cleanup retains objects and requests Undo.",
+    "Add indicator kinds through versioned state/owned vectors/keyboard semantics and conversion/native-persistence tests."
+  ],
+  [
+    "connectors",
+    "Universal connector geometry and endpoint bindings",
+    [
+      "UniversalConnectors.cs"
+    ],
+    "Create native straight/elbow/curve connectors with canonical endpoint/style state and explicit reflow.",
+    "Create validates ConnectorSpec, resolves site/chart-point/free endpoints and slide bounds, inserts native connector, binds sites and attaches XML/tag. Live capture reconciles native connections with prior metadata and transforms native rotated/flipped geometry into slide coordinates. Reflow preflights all managed connectors, snapshots geometry/bindings/XML and applies/restores updates. Native rotation is retained during capture.",
+    "Inputs: endpoint shape/site/series/point/free coordinate, route/dash/arrows/color/weight. Outputs: native ConnectorFormat bindings and ConnectorCodec XML. Dependencies: PowerPoint chart point/shape geometry, pure binding/geometry plans, XmlPartUpdates.",
+    "Anchors center/top/right/bottom/left; site<=1024,series<=100,point<=10000; explicit allowed routes/styles and finite coordinates inside slide. Endpoint target identities must resolve uniquely.",
+    "Only owned connectors reflow. Unsupported geometry/missing targets/ambiguous metadata reject without guessing. Chart-point anchors depend on supported accessible chart geometry. Automatic obstacle avoidance and arbitrary routing constraints are not implemented. Compensating restoration can fail and requests Undo.",
+    "Extend pure geometry/binding plans before native adapters; test rotated/flipped attached endpoints and XML after save/reopen."
+  ],
+  [
+    "agendas",
+    "Managed chapters/contents and legacy presentation agenda",
+    [
+      "ChapterAgenda.cs",
+      "ChapterAgendaModel.cs",
+      "PresentationAgenda.cs"
+    ],
+    "Keep editable agenda slides synchronized with chapter hierarchy, page references, hyperlinks, scope and native formatting.",
+    "ChapterAgenda captures schema2managed chapter/views, resolves caption changes against baseline and validates owned fields. RefreshAll plans all views before writes, applies rows/page/hyperlink changes and verifies deck registry; immediate parent-child agenda ordering can auto-hide parent chapter views. Insert duplicates a managed prototype with new owner or creates blank using active Design. Manager edits captions/levels/show-all/layout frame and moves chapter/content subtrees. SplitHere marks a separate non-agenda divider. Legacy schema1 PresentationAgenda derives from slide titles/sections and refreshes through a separate dispatch path.",
+    "Inputs: managed slides/field captions, hierarchy1–4, scope divider/order. Outputs: editable fields, native hyperlinks, slide tags and deck-level ChapterAgendaCodec XML. Dependencies: pure planners/codecs, XmlPartUpdates, slide duplicate/move and add-in debounce/BeforeSave.",
+    "Caption<=240chars; <=4000synchronized fields; layout frame must fit slide/minimum geometry. Automatic refresh skips active text editing. Scope anchors use stable native SlideID, not slide index alone.",
+    "Caption conflicts, owned fields grouped/foreign/missing and invalid hierarchy/layout fail closed. Two agenda schemas coexist. Moves/updates compensate ordering/fields/XML; incomplete restoration directs Undo. Full reference-product agenda parity is not established.",
+    "Extend hierarchy/planner and schema migration first; test copied views, conflicts, scopes, page/hyperlink updates, formatting, movement rollback and save/reopen."
+  ],
+  [
+    "template-catalog",
+    "Designed template layouts, editable fields and palettes",
+    [
+      "TemplateCatalog.cs"
+    ],
+    "Generate deterministic native-oriented layout specifications, fields and palettes separately from licensed original slide packages.",
+    "Catalog enumerates categories/variants and composes text/box/line/polygon nodes on960x540canvas, with unique IDs/field keys and staged builds. Validators check geometry/bounds/keys. Palette mapping remaps semantic colors and derives text contrast against inferred background; default is Executive Slate01. Draft values are per-template form-lifetime state. Alignment validation/preparation distinguishes horizontal and vertical modes.",
+    "Inputs: template/palette and draft field values. Outputs: SlideTemplate/TemplateNode geometry for preview/native insertion. Dependencies: TemplateLibrary/Inserter and System.Drawing preview; no COM in pure catalog.",
+    "Twenty supplied palettes; default ID01; contrast target4.5 uses local-node background heuristic. Node validators constrain supported primitives/points; insertion fields<=2000chars.",
+    "Historical tests enumerate520layouts and10400palette/layout combinations; this leaf does not re-run tests. Distinct IDs/geometry do not prove every layout has a unique business function or source-original fidelity. Drafts are not a durable remote template service.",
+    "Add unique IDs/fields and explicit layout geometry, bounds/preview/contrast tests and independent semantic design review. Do not inflate feature counts with palette variations."
+  ],
+  [
+    "template-insertion",
+    "Template insertion, source-original sessions and layout links",
+    [
+      "TemplateLibrary.cs"
+    ],
+    "Insert editable designed templates or licensed original slides and expose palette/alignment/native-animation controls.",
+    "Designed insertion validates fields/options and scales960x540nodes into active presentation. New slide follows active Design; native text/shapes/freeforms get instance/node/field tags and XML. Optional grouped stages use click-triggered Fade/Wipe/Fly-in0.35s; transitions None/Fade/Wipe, click advance only. Object-only mode groups into active slide and rejects staged builds. Palette updates target instance/whole designed slide while preserving text; alignment updates native paragraphs/anchors. SourceTemplateSession opens owned hidden read-only source, rejects destination/already-user-open source, validates fingerprint/native identity and exports PNG. Keep-source insertion requires matching size, uses InsertFromFile, clones Design and retains CustomLayout/background. Layout links encode edge/offset dependency rules and reflow followers.",
+    "Inputs: catalog template/fields/palette/alignment/build options or LocalSlideAsset; outputs: editable slide/group, provenance/XML and optional native effects. Dependencies: TemplateCatalog, Office Slides/Shapes/Designs, PIIDX references and System.Drawing.",
+    "TemplateLibraryFolder resolves beside DLL or explicitly configured folder; no vendor-install fallback. Keep-source size tolerance.05pt. Original assets require the owner license. Preview temp PNG is removed; Dispose closes only owned hidden source.",
+    "Palette/alignment features target generated tagged templates, not arbitrary originals. Source changes/layout mismatch stop insertion; rollback deletes only owned inserted slide/design/group and reports incomplete cleanup. Grouped stage ownership/fidelity requires native testing across assets; historical16slide fidelity sample is not universal certification.",
+    "Add modes only with explicit source/destination ownership, native editability and design/layout/hash/save-reopen regression tests."
+  ],
+  [
+    "library-gallery",
+    "Thumbnail gallery and PIIDX workspace UI",
+    [
+      "LocalLibraryGallery.cs",
+      "LocalLibraryWorkspace.cs"
+    ],
+    "Browse indexed local slides with thumbnails, filters/navigation and controlled insertion in the current presentation.",
+    "LocalLibraryForm uses large-icon ListView/paging and selected larger preview. Workspace loads profile/catalog, indexes configured sources on background tasks and exposes library/presentation/search/tag controls and coalesced refresh signals. Catalog/file work uses cancellation and background tasks; native preview/insertion returns to captured UI thread through explicit awaiter. Queue renders one preview at a time, caches up to96thumbnails and shows placeholders/errors. Insertion revalidates fingerprint and selection before keep-source/destination-design path. Dispose cancels work and releases monitor/catalog/source/images/timers.",
+    "Inputs: local configured sources, search/filter/page selections and SourceReference. Outputs: gallery, catalog/navigation changes and inserted native slides. Dependencies: Library.Core PIIDX/source/preview/refresh APIs and SourceTemplateSession; no proprietary index runtime.",
+    "LibraryIndexPath, LibrarySourcesConfig, LibraryRefreshSeconds, LibraryWatchRootLimit and TemplateLibraryFolder. Cache identities include source revisions. Native preview uses Office; indexed metadata alone does not establish rendering.",
+    "Disposal/UI-thread fallback races need stress tests. File watchers are hints, not atomic snapshots. Native previews can be denied under restricted token. Cancellation/source revision mismatch prevents stale navigation/insertion; errors remain explicit per-thumbnail.",
+    "Extend typed search modes/pagination with cancellation and STA-boundary tests; retain distinction between package extraction and native Office rendering."
+  ],
+  [
+    "productivity",
+    "Local symbol, decimal, picture-copy and chart workbook tools",
+    [
+      "ProductivityTools.cs"
+    ],
+    "Provide bounded local selection tools with explicit user intent and original-object retention.",
+    "Symbol picker searches finite Unicode catalog and inserts/replaces selected text or adds textbox. Decimal tool plans digit-adjacent dots/commas across selected text/group leaves, confirms, changes individual characters and restores on failure. RasterCopy accepts one unrotated object/group, exports/validates PNG, embeds picture at same bounds and retains original. Workbook list navigates top-level chart objects and opens each separate embedded Edit Data workbook. Routed manager/style/save/review aliases are handled elsewhere.",
+    "Inputs: symbol/query, native selection/confirmation. Outputs: editable text, picture copy or open embedded chart workbook. Dependencies: PowerPoint COM, System.Drawing and dialogs; no email/cloud asset service.",
+    "Query<=100chars; decimal<=20000chars/100shape visits/depth8; image<=4096px/side and64MiB; chart list<=500slides/2000shapes. Temporary raster folder is removed when possible.",
+    "Table cells/chart labels excluded from decimal substitution; digit-separated dates/thousands separators also change after confirmation. Raster is intentionally a picture copy. No shared slide workbook exists. Cleanup/rollback failures are visible rather than swallowed as successful edits.",
+    "Add tools with explicit budgets/selection semantics, retention/confirmation policy and native/source regression tests."
+  ],
+  [
+    "quality",
+    "Read-only presentation heuristics and navigation",
+    [
+      "PresentationQuality.cs"
+    ],
+    "Inspect bounded native content for review hints without automatic repair or accessibility certification.",
+    "Inspect captures bounded slide/shape snapshots and Evaluate emits hidden-slide, off-slide, empty-text, small-text, image-alt-text and font-scan-limit issues. Unrotated top-level geometry uses.5pt tolerance; group recursion/sample limits mark Truncated. WinForms grid supports threshold/rescan/locate; nested findings locate containing parent group.",
+    "Inputs: presentation/QualityInspectionOptions. Outputs: report/issues/limitations and native navigation. Dependencies: native shape/text reads and pure evaluator.",
+    "Default font10pt,<=500slides,20000shapes,depth8,256sampledcharacters,2000issues. Options validate bounded alternate limits. Native COM read errors log HRESULT-only limitations.",
+    "Masters,notes,chart-internal text,SmartArt,tablecells and rotated/group-child off-slide extents not inspected. Absence of findings is not a complete deck review; no automatic repair/contrast/brand/accessibility certification.",
+    "Add pure snapshot rules plus bounded native capture/tests and retain explicit incomplete scan status."
+  ],
+  [
+    "xml-attachments",
+    "Canonical XML ownership and compensating replacement",
+    [
+      "XmlPartUpdates.cs"
+    ],
+    "Update shape/deck XML without trusting stale COM namespace proxies or losing shared copied owners.",
+    "Validate size/DTD first. AttachedParts normalizes GUIDs, resolves every unique part through live owner collection and extracts namespace from serialized XML. Equivalent compares namespaced nodes/attributes/text while respecting significant whitespace. Shape preflights the canonical attachment, scans shared owners, detaches/adds/verifies target and restores copied owners. Deck requires one current registry, replaces/verifies it and restores on failure. ReplaceAttachment aggregates cleanup/restoration exceptions.",
+    "Inputs: live owner, previous CustomXMLPart and new XML; output: verified current part or explicit compensating failure. Dependencies: Office CustomerData/CustomXMLPart and System.Xml; shared by managed text/grid/agenda/connectors.",
+    "XML<=1000000chars,<=64parts/shape,owner scan<=10000objects/depth8,XMLcomparisonancestor depth<=128. Namespace cannot change via replacement. Messages report phase/counts, not XML content.",
+    "COM compensation is not an atomic OOXML package transaction. Supported shape XML update requires ungrouped owner. Copied shared-part/restoration quirks require native regression tests; incomplete restore directs Undo.",
+    "Use helper for existing mutable parts rather than blind LoadXML; add positive/negative semantic-equivalence and shared-owner native tests."
+  ],
+  [
+    "service-config",
+    "Nonsecret external-service configuration UI",
+    [
+      "ServiceConnections.cs"
+    ],
+    "Persist endpoint/deployment/authentication intent for future services without claiming working connectivity.",
+    "Exactly three profiles are supported: AzureOpenAI, OnPremDataService and AssetProvider. Validator requires HTTPS URI without credentials/query/fragment, bounded deployment only for Azure and allowed auth enums. Form reports Not configured or Configured, not connectivity-tested. XML Load returns defaults if absent; Save writes bounded UTF8 temp file and atomically replaces existing config.",
+    "Inputs: nonsecret endpoint/deployment/auth choice. Outputs: version1 local XML/status. Dependencies: PathPolicy.ConfigFile, System.Xml and WinForms; no HTTP client, authentication SDK or credential store.",
+    "Endpoint<=2048,deployment<=128,XML<=16384chars/file65536bytes; user LocalAppData/PowerPointIntelligence/service-connections.v1.xml. DTD/resolver disabled; malformed load warns replacement-on-save and Cancel preserves prior data.",
+    "Live Azure/data/assets,token acquisition,Windows auth negotiation,prompt orchestration,retries/usage/billing and secret storage are NOT IMPLEMENTED here. An auth enum is not authentication.",
+    "Add authenticated typed connectors and reviewed credential/privacy controls; never equate saved profile completeness with tested service availability."
+  ],
+  [
+    "renderer-bridge",
+    "Native scene-renderer ribbon adapter",
+    [
+      "RendererRibbonCommand.cs"
+    ],
+    "Adapt validated canonical data into a deterministic clustered-column scene and insert native editable grouped primitives.",
+    "Prepare() validates the embedded canonical/scene pair before assigning new identity, remaps node/diagnostic IDs and recomputes render hash. The active ribbon path calls Prepare(model): validates the supplied linked v2 model, computes signed value bounds including zero, skips missing values, emits rectangle bars and diagnostics, then validates model/scene consistency. Insert binds NativeSceneRenderer to a PowerPointSceneSurface for the existing active deck/slide; no new presentation is created.",
+    "Inputs: embedded fixture pair for explicit sample/helper or linked ChartDocument. Outputs: ValidatedProjection and NativeRenderOutcome. Dependencies: ChartCodec, ClusteredProjection, SceneCodec, NativeSceneRenderer, PowerPointSceneSurface.",
+    "Finite numeric range required. Scene/model IDs/revision/units/hash must agree. Current insertion requires an active Normal-view slide. Metadata is owned by core rendering surface, not the S0 chart CustomerData contract.",
+    "Active linked renderer emits AXES_NOT_RENDERED and optionally LEGEND_NOT_RENDERED. The native object is a shape group, not a PowerPoint Chart. Embedded sample Prepare() remains an internal helper/test route and should not be confused with the user-linked ribbon path. Not every canonical chart type is projected here.",
+    "Add new chart-family projections only with canonical-scene equivalence, primitive render/hash and native edit/save-reopen acceptance."
+  ]
+]

@@ -1,0 +1,184 @@
+[
+  {
+    "id": "VSTO-01",
+    "name": "VSTO lifecycle, compatibility and S0 native host",
+    "document": "03-modules/individual-module-designs/vsto/lifecycle-host.md",
+    "sources": [
+      "apps/powerpoint-vsto/ThisAddIn.cs",
+      "apps/powerpoint-vsto/ThisAddIn.Designer.cs",
+      "apps/powerpoint-vsto/ThisAddIn.Designer.xml",
+      "apps/powerpoint-vsto/OfficeCompatibility.cs",
+      "apps/powerpoint-vsto/PowerPointHost.cs",
+      "apps/powerpoint-vsto/Contracts.cs",
+      "apps/powerpoint-vsto/MetadataCodec.cs",
+      "apps/powerpoint-vsto/PowerPointIntelligence.csproj",
+      "apps/powerpoint-vsto/App.config"
+    ]
+  },
+  {
+    "id": "VSTO-02",
+    "name": "Ribbon catalog, dispatch, icons, browser and automation facade",
+    "document": "03-modules/individual-module-designs/vsto/commands-ribbon.md",
+    "sources": [
+      "apps/powerpoint-vsto/DemoRibbon.cs",
+      "apps/powerpoint-vsto/DemoTools.cs",
+      "apps/powerpoint-vsto/RibbonIcons.cs",
+      "apps/powerpoint-vsto/DemoWorkspace.cs",
+      "apps/powerpoint-vsto/FeatureInventory.cs",
+      "apps/powerpoint-vsto/DemoInputs.cs",
+      "apps/powerpoint-vsto/DemoApi.cs"
+    ]
+  },
+  {
+    "id": "VSTO-03",
+    "name": "Linked files, Excel mapping and source manager",
+    "document": "03-modules/individual-module-designs/vsto/linked-data.md",
+    "sources": [
+      "apps/powerpoint-vsto/DataSources.cs",
+      "apps/powerpoint-vsto/ExcelRangeMapping.cs",
+      "apps/powerpoint-vsto/MappedLinkOperations.cs",
+      "apps/powerpoint-vsto/DataLinkManager.cs",
+      "apps/powerpoint-vsto/DemoLinks.cs"
+    ]
+  },
+  {
+    "id": "VSTO-04",
+    "name": "Native axes, series and annotations",
+    "document": "03-modules/individual-module-designs/vsto/native-chart-controls.md",
+    "sources": [
+      "apps/powerpoint-vsto/NativeChartControls.cs",
+      "apps/powerpoint-vsto/NativeSeriesControls.cs",
+      "apps/powerpoint-vsto/ChartAnnotations.cs"
+    ]
+  },
+  {
+    "id": "VSTO-05",
+    "name": "Selection-aware floating property box",
+    "document": "03-modules/individual-module-designs/vsto/context-properties.md",
+    "sources": [
+      "apps/powerpoint-vsto/ContextPanelModel.cs",
+      "apps/powerpoint-vsto/ContextSelectionBridge.cs",
+      "apps/powerpoint-vsto/ContextPropertiesController.cs",
+      "apps/powerpoint-vsto/ContextPropertiesView.cs",
+      "apps/powerpoint-vsto/ContextFormatting.cs",
+      "apps/powerpoint-vsto/ContextChartFormatting.cs",
+      "apps/powerpoint-vsto/ContextActionRouter.cs"
+    ]
+  },
+  {
+    "id": "VSTO-06",
+    "name": "Native formatting plans and restoration transactions",
+    "document": "03-modules/individual-module-designs/vsto/native-formatting.md",
+    "sources": [
+      "apps/powerpoint-vsto/NativeFormatting.cs"
+    ]
+  },
+  {
+    "id": "VSTO-07",
+    "name": "Text box, pentagon, chevron and rounded native elements",
+    "document": "03-modules/individual-module-designs/vsto/managed-text.md",
+    "sources": [
+      "apps/powerpoint-vsto/TextShapeElements.cs",
+      "apps/powerpoint-vsto/ElementCommands.cs"
+    ]
+  },
+  {
+    "id": "VSTO-08",
+    "name": "Process-grid layout and retained structural history",
+    "document": "03-modules/individual-module-designs/vsto/process-grid.md",
+    "sources": [
+      "apps/powerpoint-vsto/ProcessFlowTools.cs"
+    ]
+  },
+  {
+    "id": "VSTO-09",
+    "name": "Harvey-ball and checkbox editable vectors",
+    "document": "03-modules/individual-module-designs/vsto/indicators.md",
+    "sources": [
+      "apps/powerpoint-vsto/IndicatorElements.cs"
+    ]
+  },
+  {
+    "id": "VSTO-10",
+    "name": "Universal connector geometry and endpoint bindings",
+    "document": "03-modules/individual-module-designs/vsto/connectors.md",
+    "sources": [
+      "apps/powerpoint-vsto/UniversalConnectors.cs"
+    ]
+  },
+  {
+    "id": "VSTO-11",
+    "name": "Managed chapters/contents and legacy presentation agenda",
+    "document": "03-modules/individual-module-designs/vsto/agendas.md",
+    "sources": [
+      "apps/powerpoint-vsto/ChapterAgenda.cs",
+      "apps/powerpoint-vsto/ChapterAgendaModel.cs",
+      "apps/powerpoint-vsto/PresentationAgenda.cs"
+    ]
+  },
+  {
+    "id": "VSTO-12",
+    "name": "Designed template layouts, editable fields and palettes",
+    "document": "03-modules/individual-module-designs/vsto/template-catalog.md",
+    "sources": [
+      "apps/powerpoint-vsto/TemplateCatalog.cs"
+    ]
+  },
+  {
+    "id": "VSTO-13",
+    "name": "Template insertion, source-original sessions and layout links",
+    "document": "03-modules/individual-module-designs/vsto/template-insertion.md",
+    "sources": [
+      "apps/powerpoint-vsto/TemplateLibrary.cs"
+    ]
+  },
+  {
+    "id": "VSTO-14",
+    "name": "Thumbnail gallery and PIIDX workspace UI",
+    "document": "03-modules/individual-module-designs/vsto/library-gallery.md",
+    "sources": [
+      "apps/powerpoint-vsto/LocalLibraryGallery.cs",
+      "apps/powerpoint-vsto/LocalLibraryWorkspace.cs"
+    ]
+  },
+  {
+    "id": "VSTO-15",
+    "name": "Local symbol, decimal, picture-copy and chart workbook tools",
+    "document": "03-modules/individual-module-designs/vsto/productivity.md",
+    "sources": [
+      "apps/powerpoint-vsto/ProductivityTools.cs"
+    ]
+  },
+  {
+    "id": "VSTO-16",
+    "name": "Read-only presentation heuristics and navigation",
+    "document": "03-modules/individual-module-designs/vsto/quality.md",
+    "sources": [
+      "apps/powerpoint-vsto/PresentationQuality.cs"
+    ]
+  },
+  {
+    "id": "VSTO-17",
+    "name": "Canonical XML ownership and compensating replacement",
+    "document": "03-modules/individual-module-designs/vsto/xml-attachments.md",
+    "sources": [
+      "apps/powerpoint-vsto/XmlPartUpdates.cs"
+    ]
+  },
+  {
+    "id": "VSTO-18",
+    "name": "Nonsecret external-service configuration UI",
+    "document": "03-modules/individual-module-designs/vsto/service-config.md",
+    "sources": [
+      "apps/powerpoint-vsto/ServiceConnections.cs"
+    ]
+  },
+  {
+    "id": "VSTO-19",
+    "name": "Native scene-renderer ribbon adapter",
+    "document": "03-modules/individual-module-designs/vsto/renderer-bridge.md",
+    "sources": [
+      "apps/powerpoint-vsto/RendererRibbonCommand.cs"
+    ]
+  }
+]

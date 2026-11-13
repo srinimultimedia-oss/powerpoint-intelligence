@@ -1,0 +1,528 @@
+[
+  {
+    "id": "VSTO-01",
+    "name": "VSTO lifecycle, compatibility and S0 native host",
+    "document": "03-modules/individual-module-designs/vsto/lifecycle-host.md",
+    "sources": [
+      "apps/powerpoint-vsto/ThisAddIn.cs",
+      "apps/powerpoint-vsto/ThisAddIn.Designer.cs",
+      "apps/powerpoint-vsto/ThisAddIn.Designer.xml",
+      "apps/powerpoint-vsto/OfficeCompatibility.cs",
+      "apps/powerpoint-vsto/PowerPointHost.cs",
+      "apps/powerpoint-vsto/Contracts.cs",
+      "apps/powerpoint-vsto/MetadataCodec.cs",
+      "apps/powerpoint-vsto/PowerPointIntelligence.csproj",
+      "apps/powerpoint-vsto/App.config"
+    ],
+    "group": "vsto"
+  },
+  {
+    "id": "VSTO-02",
+    "name": "Ribbon catalog, dispatch, icons, browser and automation facade",
+    "document": "03-modules/individual-module-designs/vsto/commands-ribbon.md",
+    "sources": [
+      "apps/powerpoint-vsto/DemoRibbon.cs",
+      "apps/powerpoint-vsto/DemoTools.cs",
+      "apps/powerpoint-vsto/RibbonIcons.cs",
+      "apps/powerpoint-vsto/DemoWorkspace.cs",
+      "apps/powerpoint-vsto/FeatureInventory.cs",
+      "apps/powerpoint-vsto/DemoInputs.cs",
+      "apps/powerpoint-vsto/DemoApi.cs"
+    ],
+    "group": "vsto"
+  },
+  {
+    "id": "VSTO-03",
+    "name": "Linked files, Excel mapping and source manager",
+    "document": "03-modules/individual-module-designs/vsto/linked-data.md",
+    "sources": [
+      "apps/powerpoint-vsto/DataSources.cs",
+      "apps/powerpoint-vsto/ExcelRangeMapping.cs",
+      "apps/powerpoint-vsto/MappedLinkOperations.cs",
+      "apps/powerpoint-vsto/DataLinkManager.cs",
+      "apps/powerpoint-vsto/DemoLinks.cs"
+    ],
+    "group": "vsto"
+  },
+  {
+    "id": "VSTO-04",
+    "name": "Native axes, series and annotations",
+    "document": "03-modules/individual-module-designs/vsto/native-chart-controls.md",
+    "sources": [
+      "apps/powerpoint-vsto/NativeChartControls.cs",
+      "apps/powerpoint-vsto/NativeSeriesControls.cs",
+      "apps/powerpoint-vsto/ChartAnnotations.cs"
+    ],
+    "group": "vsto"
+  },
+  {
+    "id": "VSTO-05",
+    "name": "Selection-aware floating property box",
+    "document": "03-modules/individual-module-designs/vsto/context-properties.md",
+    "sources": [
+      "apps/powerpoint-vsto/ContextPanelModel.cs",
+      "apps/powerpoint-vsto/ContextSelectionBridge.cs",
+      "apps/powerpoint-vsto/ContextPropertiesController.cs",
+      "apps/powerpoint-vsto/ContextPropertiesView.cs",
+      "apps/powerpoint-vsto/ContextFormatting.cs",
+      "apps/powerpoint-vsto/ContextChartFormatting.cs",
+      "apps/powerpoint-vsto/ContextActionRouter.cs"
+    ],
+    "group": "vsto"
+  },
+  {
+    "id": "VSTO-06",
+    "name": "Native formatting plans and restoration transactions",
+    "document": "03-modules/individual-module-designs/vsto/native-formatting.md",
+    "sources": [
+      "apps/powerpoint-vsto/NativeFormatting.cs"
+    ],
+    "group": "vsto"
+  },
+  {
+    "id": "VSTO-07",
+    "name": "Text box, pentagon, chevron and rounded native elements",
+    "document": "03-modules/individual-module-designs/vsto/managed-text.md",
+    "sources": [
+      "apps/powerpoint-vsto/TextShapeElements.cs",
+      "apps/powerpoint-vsto/ElementCommands.cs"
+    ],
+    "group": "vsto"
+  },
+  {
+    "id": "VSTO-08",
+    "name": "Process-grid layout and retained structural history",
+    "document": "03-modules/individual-module-designs/vsto/process-grid.md",
+    "sources": [
+      "apps/powerpoint-vsto/ProcessFlowTools.cs"
+    ],
+    "group": "vsto"
+  },
+  {
+    "id": "VSTO-09",
+    "name": "Harvey-ball and checkbox editable vectors",
+    "document": "03-modules/individual-module-designs/vsto/indicators.md",
+    "sources": [
+      "apps/powerpoint-vsto/IndicatorElements.cs"
+    ],
+    "group": "vsto"
+  },
+  {
+    "id": "VSTO-10",
+    "name": "Universal connector geometry and endpoint bindings",
+    "document": "03-modules/individual-module-designs/vsto/connectors.md",
+    "sources": [
+      "apps/powerpoint-vsto/UniversalConnectors.cs"
+    ],
+    "group": "vsto"
+  },
+  {
+    "id": "VSTO-11",
+    "name": "Managed chapters/contents and legacy presentation agenda",
+    "document": "03-modules/individual-module-designs/vsto/agendas.md",
+    "sources": [
+      "apps/powerpoint-vsto/ChapterAgenda.cs",
+      "apps/powerpoint-vsto/ChapterAgendaModel.cs",
+      "apps/powerpoint-vsto/PresentationAgenda.cs"
+    ],
+    "group": "vsto"
+  },
+  {
+    "id": "VSTO-12",
+    "name": "Designed template layouts, editable fields and palettes",
+    "document": "03-modules/individual-module-designs/vsto/template-catalog.md",
+    "sources": [
+      "apps/powerpoint-vsto/TemplateCatalog.cs"
+    ],
+    "group": "vsto"
+  },
+  {
+    "id": "VSTO-13",
+    "name": "Template insertion, source-original sessions and layout links",
+    "document": "03-modules/individual-module-designs/vsto/template-insertion.md",
+    "sources": [
+      "apps/powerpoint-vsto/TemplateLibrary.cs"
+    ],
+    "group": "vsto"
+  },
+  {
+    "id": "VSTO-14",
+    "name": "Thumbnail gallery and PIIDX workspace UI",
+    "document": "03-modules/individual-module-designs/vsto/library-gallery.md",
+    "sources": [
+      "apps/powerpoint-vsto/LocalLibraryGallery.cs",
+      "apps/powerpoint-vsto/LocalLibraryWorkspace.cs"
+    ],
+    "group": "vsto"
+  },
+  {
+    "id": "VSTO-15",
+    "name": "Local symbol, decimal, picture-copy and chart workbook tools",
+    "document": "03-modules/individual-module-designs/vsto/productivity.md",
+    "sources": [
+      "apps/powerpoint-vsto/ProductivityTools.cs"
+    ],
+    "group": "vsto"
+  },
+  {
+    "id": "VSTO-16",
+    "name": "Read-only presentation heuristics and navigation",
+    "document": "03-modules/individual-module-designs/vsto/quality.md",
+    "sources": [
+      "apps/powerpoint-vsto/PresentationQuality.cs"
+    ],
+    "group": "vsto"
+  },
+  {
+    "id": "VSTO-17",
+    "name": "Canonical XML ownership and compensating replacement",
+    "document": "03-modules/individual-module-designs/vsto/xml-attachments.md",
+    "sources": [
+      "apps/powerpoint-vsto/XmlPartUpdates.cs"
+    ],
+    "group": "vsto"
+  },
+  {
+    "id": "VSTO-18",
+    "name": "Nonsecret external-service configuration UI",
+    "document": "03-modules/individual-module-designs/vsto/service-config.md",
+    "sources": [
+      "apps/powerpoint-vsto/ServiceConnections.cs"
+    ],
+    "group": "vsto"
+  },
+  {
+    "id": "VSTO-19",
+    "name": "Native scene-renderer ribbon adapter",
+    "document": "03-modules/individual-module-designs/vsto/renderer-bridge.md",
+    "sources": [
+      "apps/powerpoint-vsto/RendererRibbonCommand.cs"
+    ],
+    "group": "vsto"
+  },
+  {
+    "id": "domain-v2",
+    "name": "Canonical chart v2 and explicit S0 migration",
+    "document": "03-modules/individual-module-designs/core/domain-v2.md",
+    "sources": [
+      "src/Chart.Domain/ChartDocument.cs",
+      "src/Chart.Domain/ChartCodec.cs",
+      "src/Chart.Domain/S0Migration.cs",
+      "src/Chart.Domain/Chart.Domain.csproj"
+    ],
+    "group": "core"
+  },
+  {
+    "id": "domain-v3",
+    "name": "Authored chart v3 options and codec",
+    "document": "03-modules/individual-module-designs/core/domain-v3.md",
+    "sources": [
+      "src/Chart.Domain/ChartDocumentV3.cs",
+      "src/Chart.Domain/ChartV3Codec.cs"
+    ],
+    "group": "core"
+  },
+  {
+    "id": "strict-json",
+    "name": "Bounded JSON and Unicode utilities",
+    "document": "03-modules/individual-module-designs/core/strict-json.md",
+    "sources": [
+      "src/Shared.Contracts/BoundedJson.cs"
+    ],
+    "group": "core"
+  },
+  {
+    "id": "scene-contract",
+    "name": "Scene DTOs and cross-language hash boundary",
+    "document": "03-modules/individual-module-designs/core/scene-contract.md",
+    "sources": [
+      "src/Chart.Renderers/SceneContracts.cs",
+      "src/Chart.Renderers/SceneCodec.cs",
+      "src/Chart.Renderers/StrictSceneJson.cs"
+    ],
+    "group": "core"
+  },
+  {
+    "id": "native-renderer",
+    "name": "Canonical projection and owned native shape renderer",
+    "document": "03-modules/individual-module-designs/core/native-renderer.md",
+    "sources": [
+      "src/Chart.Renderers/NativeRenderingCore.cs",
+      "src/Chart.Renderers/PowerPointSceneSurface.cs"
+    ],
+    "group": "core"
+  },
+  {
+    "id": "sqlite",
+    "name": "Windows native SQLite bridge",
+    "document": "03-modules/individual-module-designs/core/sqlite.md",
+    "sources": [
+      "src/Library.Core/NativeSqlite.cs"
+    ],
+    "group": "core"
+  },
+  {
+    "id": "piidx-schema",
+    "name": "Versioned independent PIIDX schema",
+    "document": "03-modules/individual-module-designs/core/piidx-schema.md",
+    "sources": [
+      "src/Library.Core/PiidxSchema.cs"
+    ],
+    "group": "core"
+  },
+  {
+    "id": "source-extraction",
+    "name": "Read-only PPTX/POTX metadata extraction",
+    "document": "03-modules/individual-module-designs/core/source-extraction.md",
+    "sources": [
+      "src/Library.Core/PresentationSource.cs"
+    ],
+    "group": "core"
+  },
+  {
+    "id": "catalog",
+    "name": "Transactional PIIDX registration and refresh",
+    "document": "03-modules/individual-module-designs/core/catalog.md",
+    "sources": [
+      "src/Library.Core/PiidxCatalog.cs"
+    ],
+    "group": "core"
+  },
+  {
+    "id": "catalog-query",
+    "name": "PIIDX query models, search and navigation",
+    "document": "03-modules/individual-module-designs/core/catalog-query.md",
+    "sources": [
+      "src/Library.Core/LibraryModels.cs",
+      "src/Library.Core/PiidxSearch.cs",
+      "src/Library.Core/PiidxNavigation.cs"
+    ],
+    "group": "core"
+  },
+  {
+    "id": "preview-cache",
+    "name": "Validated PNG derivative cache",
+    "document": "03-modules/individual-module-designs/core/preview-cache.md",
+    "sources": [
+      "src/Library.Core/PiidxPreviewCache.cs"
+    ],
+    "group": "core"
+  },
+  {
+    "id": "library-config",
+    "name": "Library profile and explicit legacy registration migration",
+    "document": "03-modules/individual-module-designs/core/library-config.md",
+    "sources": [
+      "src/Library.Core/LibraryConfiguration.cs"
+    ],
+    "group": "core"
+  },
+  {
+    "id": "library-refresh",
+    "name": "Background filesystem refresh coordinator",
+    "document": "03-modules/individual-module-designs/core/library-refresh.md",
+    "sources": [
+      "src/Library.Core/LibraryRefreshMonitor.cs"
+    ],
+    "group": "core"
+  },
+  {
+    "id": "path-policy",
+    "name": "Shared selected-input and generated-output policy",
+    "document": "03-modules/individual-module-designs/core/path-policy.md",
+    "sources": [
+      "src/Library.Core/PathPolicy.cs"
+    ],
+    "group": "core"
+  },
+  {
+    "id": "chart-calculations",
+    "name": "Pure JavaScript and TypeScript numerical engines",
+    "document": "03-modules/individual-module-designs/core/chart-calculations.md",
+    "sources": [
+      "packages/chart-core/src/calculations.mjs",
+      "packages/chart-core/package.json",
+      "packages/chart-engine/src/basic-charts.ts",
+      "packages/chart-engine/package.json",
+      "packages/chart-engine/tsconfig.json"
+    ],
+    "group": "core"
+  },
+  {
+    "id": "ts-scene",
+    "name": "TypeScript scene construction and v2 file adapter",
+    "document": "03-modules/individual-module-designs/core/ts-scene.md",
+    "sources": [
+      "packages/chart-engine/src/scene-builder.ts",
+      "packages/chart-engine/src/scene-contract.ts",
+      "packages/chart-engine/src/strict-scene-json.ts",
+      "packages/chart-engine/tools/render-chart-v2.mjs",
+      "packages/chart-domain/src/validate.mjs",
+      "packages/chart-domain/package.json"
+    ],
+    "group": "core"
+  },
+  {
+    "id": "svg-preview",
+    "name": "Internal SVG geometry inspection",
+    "document": "03-modules/individual-module-designs/core/svg-preview.md",
+    "sources": [
+      "packages/chart-engine/src/svg-preview.ts",
+      "packages/chart-engine/README.md"
+    ],
+    "group": "core"
+  },
+  {
+    "id": "published-schemas",
+    "name": "Published chart, scene and rendered-record schemas",
+    "document": "03-modules/individual-module-designs/core/published-schemas.md",
+    "sources": [
+      "packages/chart-domain/schema/chart-document.v2.schema.json",
+      "packages/chart-engine/schema/render-result.v1.schema.json",
+      "packages/chart-engine/schema/rendered-chart.v1.xsd"
+    ],
+    "group": "core"
+  },
+  {
+    "id": "OPS-01",
+    "name": "service-profiles",
+    "document": "03-modules/individual-module-designs/operations/service-profiles.md",
+    "sources": [
+      "apps/powerpoint-vsto/ServiceConnections.cs",
+      "services/ai-gateway/README.md",
+      "services/ai-gateway/action-plan.schema.json",
+      "tests/s0/ServiceConnectionTests.cs"
+    ],
+    "group": "operations"
+  },
+  {
+    "id": "OPS-02",
+    "name": "com-automation",
+    "document": "03-modules/individual-module-designs/operations/com-automation.md",
+    "sources": [
+      "apps/powerpoint-vsto/DemoApi.cs",
+      "apps/powerpoint-vsto/Contracts.cs"
+    ],
+    "group": "operations"
+  },
+  {
+    "id": "OPS-03",
+    "name": "packaging-build",
+    "document": "03-modules/individual-module-designs/operations/packaging-build.md",
+    "sources": [
+      "easySetup/Build-EasySetup.ps1",
+      "easySetup/Common.ps1",
+      "easySetup/Watch-EasySetup.ps1",
+      "easySetup/Test-EasySetup.ps1",
+      "easySetup/Test-ResourceReader.ps1",
+      "easySetup/SetupPolicyTests.cs",
+      "scripts/Install-Local.ps1",
+      "scripts/Package-Content.ps1",
+      "scripts/Test-DemoPackage.ps1",
+      "scripts/Test-PackageMarker.ps1",
+      "scripts/Test-PayloadRecompile.ps1",
+      "apps/powerpoint-vsto/PowerPointIntelligence.csproj"
+    ],
+    "group": "operations"
+  },
+  {
+    "id": "OPS-04",
+    "name": "deployment-bootstrap",
+    "document": "03-modules/individual-module-designs/operations/deployment-bootstrap.md",
+    "sources": [
+      "easySetup/Bootstrapper.cs"
+    ],
+    "group": "operations"
+  },
+  {
+    "id": "OPS-05",
+    "name": "build-provenance",
+    "document": "03-modules/individual-module-designs/operations/build-provenance.md",
+    "sources": [
+      "scripts/Build-Integrity.ps1",
+      "scripts/Scene-RunnerCache.ps1",
+      "scripts/Piidx-Recovery.ps1",
+      "scripts/Artifact-Inputs.ps1",
+      "scripts/Source-Fingerprint.ps1",
+      "scripts/Safe-Xml.ps1",
+      "scripts/Piidx-TestSuite.ps1",
+      "scripts/Restore-LockedDependencies.ps1",
+      "scripts/Test-BuildIntegrity.ps1",
+      "scripts/Test-Checkmarx113558.ps1",
+      "scripts/Test-PiidxRecovery.ps1",
+      "scripts/Test-SourceFingerprint.ps1",
+      "scripts/Test-SceneRunnerCache.ps1"
+    ],
+    "group": "operations"
+  },
+  {
+    "id": "OPS-06",
+    "name": "diagnostics",
+    "document": "03-modules/individual-module-designs/operations/diagnostics.md",
+    "sources": [
+      "scripts/Collect-SceneThreatEvidence.ps1",
+      "scripts/Diagnostic-OutputPath.ps1",
+      "scripts/Diagnose-PowerPointActivation.ps1",
+      "scripts/Test-DiagnosticOutputPath.ps1"
+    ],
+    "group": "operations"
+  },
+  {
+    "id": "OPS-07",
+    "name": "validation-orchestration",
+    "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+    "sources": [
+      "scripts/Check-Process.ps1",
+      "scripts/New-PiidxSample.ps1",
+      "scripts/Test-All.ps1",
+      "scripts/Test-CheckProcess.ps1",
+      "scripts/Test-DemoFeatures.ps1",
+      "scripts/Test-InstalledRibbon.ps1",
+      "scripts/Test-NativeRenderer.ps1",
+      "scripts/Test-OfficeCompatibility.ps1",
+      "scripts/Test-Piidx.ps1",
+      "scripts/Test-PiidxCatalog.ps1",
+      "scripts/Test-PiidxCorpus.ps1",
+      "scripts/Test-PiidxFoundation.ps1",
+      "scripts/Test-PiidxIsolation.ps1",
+      "scripts/Test-PiidxPreviews.ps1",
+      "scripts/Test-PiidxSourceReader.ps1",
+      "scripts/Test-PiidxSqliteCapability.ps1",
+      "scripts/Test-Ribbon.ps1",
+      "scripts/Test-S0.ps1",
+      "scripts/Test-S1.ps1",
+      "scripts/Test-SceneContracts.ps1",
+      "scripts/Test-SecurityRemediation.ps1",
+      "scripts/Test-TemplateLibrary.ps1",
+      ".github/workflows/chart-core.yml",
+      ".github/workflows/office-compatibility.yml",
+      ".github/workflows/s0-metadata.yml",
+      ".github/workflows/s1-domain.yml",
+      "chart-core.yml"
+    ],
+    "group": "operations"
+  },
+  {
+    "id": "OPS-08",
+    "name": "offline-alignment-repair",
+    "document": "03-modules/individual-module-designs/operations/offline-alignment-repair.md",
+    "sources": [
+      "scripts/Repair-TemplateAlignment.py",
+      "scripts/RepairTemplateSafety.py",
+      "tests/security/test_repair_template_alignment.py"
+    ],
+    "group": "operations"
+  },
+  {
+    "id": "OPS-09",
+    "name": "artifact-maintenance",
+    "document": "03-modules/individual-module-designs/operations/artifact-maintenance.md",
+    "sources": [
+      "scripts/Clean-Workspace.ps1",
+      "scripts/Maintain-Artifacts.py",
+      "scripts/audit-library-dependencies.py",
+      "tests/security/test_artifact_maintenance.py"
+    ],
+    "group": "operations"
+  }
+]

@@ -1,0 +1,1606 @@
+{
+  "documents": 32,
+  "source_references": [
+    {
+      "document": "06-ai-architecture/ai-data-flow.md",
+      "source": "apps/powerpoint-vsto/ServiceConnections.cs",
+      "line": 58,
+      "end": 58,
+      "valid": true
+    },
+    {
+      "document": "06-ai-architecture/ai-data-flow.md",
+      "source": "apps/powerpoint-vsto/ServiceConnections.cs",
+      "line": 75,
+      "end": 75,
+      "valid": true
+    },
+    {
+      "document": "06-ai-architecture/ai-data-flow.md",
+      "source": "apps/powerpoint-vsto/ServiceConnections.cs",
+      "line": 35,
+      "end": 35,
+      "valid": true
+    },
+    {
+      "document": "06-ai-architecture/ai-security.md",
+      "source": "apps/powerpoint-vsto/ServiceConnections.cs",
+      "line": 45,
+      "end": 45,
+      "valid": true
+    },
+    {
+      "document": "06-ai-architecture/ai-security.md",
+      "source": "apps/powerpoint-vsto/ServiceConnections.cs",
+      "line": 75,
+      "end": 75,
+      "valid": true
+    },
+    {
+      "document": "06-ai-architecture/ai-security.md",
+      "source": "apps/powerpoint-vsto/ServiceConnections.cs",
+      "line": 29,
+      "end": 29,
+      "valid": true
+    },
+    {
+      "document": "06-ai-architecture/ai-security.md",
+      "source": "apps/powerpoint-vsto/ServiceConnections.cs",
+      "line": 93,
+      "end": 93,
+      "valid": true
+    },
+    {
+      "document": "06-ai-architecture/ai-security.md",
+      "source": "services/ai-gateway/action-plan.schema.json",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "06-ai-architecture/ai-security.md",
+      "source": "docs/DECISIONS.md",
+      "line": 8,
+      "end": 8,
+      "valid": true
+    },
+    {
+      "document": "06-ai-architecture/ai-security.md",
+      "source": "docs/DECISIONS.md",
+      "line": 8,
+      "end": 8,
+      "valid": true
+    },
+    {
+      "document": "06-ai-architecture/ai-solution-architecture.md",
+      "source": "apps/powerpoint-vsto/ServiceConnections.cs",
+      "line": 29,
+      "end": 29,
+      "valid": true
+    },
+    {
+      "document": "06-ai-architecture/ai-solution-architecture.md",
+      "source": "apps/powerpoint-vsto/ServiceConnections.cs",
+      "line": 53,
+      "end": 53,
+      "valid": true
+    },
+    {
+      "document": "06-ai-architecture/ai-solution-architecture.md",
+      "source": "apps/powerpoint-vsto/ThisAddIn.cs",
+      "line": 252,
+      "end": 252,
+      "valid": true
+    },
+    {
+      "document": "06-ai-architecture/ai-solution-architecture.md",
+      "source": "services/ai-gateway/README.md",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "06-ai-architecture/ai-solution-architecture.md",
+      "source": "docs/DECISIONS.md",
+      "line": 17,
+      "end": 17,
+      "valid": true
+    },
+    {
+      "document": "06-ai-architecture/ai-workflows.md",
+      "source": "apps/powerpoint-vsto/ThisAddIn.cs",
+      "line": 252,
+      "end": 252,
+      "valid": true
+    },
+    {
+      "document": "06-ai-architecture/ai-workflows.md",
+      "source": "apps/powerpoint-vsto/ServiceConnections.cs",
+      "line": 98,
+      "end": 98,
+      "valid": true
+    },
+    {
+      "document": "06-ai-architecture/ai-workflows.md",
+      "source": "apps/powerpoint-vsto/ServiceConnections.cs",
+      "line": 93,
+      "end": 93,
+      "valid": true
+    },
+    {
+      "document": "06-ai-architecture/azure-ai-integration.md",
+      "source": "apps/powerpoint-vsto/ServiceConnections.cs",
+      "line": 12,
+      "end": 12,
+      "valid": true
+    },
+    {
+      "document": "06-ai-architecture/azure-ai-integration.md",
+      "source": "apps/powerpoint-vsto/ServiceConnections.cs",
+      "line": 45,
+      "end": 45,
+      "valid": true
+    },
+    {
+      "document": "06-ai-architecture/azure-ai-integration.md",
+      "source": "docs/DECISIONS.md",
+      "line": 8,
+      "end": 8,
+      "valid": true
+    },
+    {
+      "document": "06-ai-architecture/azure-ai-integration.md",
+      "source": "docs/DECISIONS.md",
+      "line": 8,
+      "end": 8,
+      "valid": true
+    },
+    {
+      "document": "06-ai-architecture/azure-ai-integration.md",
+      "source": "tests/s0/ServiceConnectionTests.cs",
+      "line": 35,
+      "end": 35,
+      "valid": true
+    },
+    {
+      "document": "06-ai-architecture/prompt-orchestration.md",
+      "source": "services/ai-gateway/action-plan.schema.json",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "06-ai-architecture/prompt-orchestration.md",
+      "source": "services/ai-gateway/README.md",
+      "line": 5,
+      "end": 5,
+      "valid": true
+    },
+    {
+      "document": "06-ai-architecture/prompt-orchestration.md",
+      "source": "services/ai-gateway/action-plan.schema.json",
+      "line": 5,
+      "end": 5,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/api-inventory.md",
+      "source": "apps/powerpoint-vsto/DemoApi.cs",
+      "line": 12,
+      "end": 12,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/api-inventory.md",
+      "source": "apps/powerpoint-vsto/Contracts.cs",
+      "line": 7,
+      "end": 7,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/api-inventory.md",
+      "source": "src/Chart.Renderers/NativeRenderingCore.cs",
+      "line": 136,
+      "end": 136,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/api-inventory.md",
+      "source": "apps/powerpoint-vsto/ThisAddIn.cs",
+      "line": 332,
+      "end": 332,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/api-inventory.md",
+      "source": "apps/powerpoint-vsto/DemoLinks.cs",
+      "line": 50,
+      "end": 50,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/api-inventory.md",
+      "source": "easySetup/Bootstrapper.cs",
+      "line": 33,
+      "end": 33,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/api-inventory.md",
+      "source": "apps/powerpoint-vsto/ServiceConnections.cs",
+      "line": 89,
+      "end": 89,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/external-interfaces.md",
+      "source": "apps/powerpoint-vsto/PowerPointIntelligence.csproj",
+      "line": 30,
+      "end": 30,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/external-interfaces.md",
+      "source": "apps/powerpoint-vsto/OfficeCompatibility.cs",
+      "line": 69,
+      "end": 69,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/external-interfaces.md",
+      "source": "apps/powerpoint-vsto/ExcelRangeMapping.cs",
+      "line": 59,
+      "end": 59,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/external-interfaces.md",
+      "source": "apps/powerpoint-vsto/DemoLinks.cs",
+      "line": 38,
+      "end": 38,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/external-interfaces.md",
+      "source": "scripts/Test-S1.ps1",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/external-interfaces.md",
+      "source": "scripts/Restore-LockedDependencies.ps1",
+      "line": 6,
+      "end": 6,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/internal-interfaces.md",
+      "source": "apps/powerpoint-vsto/DemoApi.cs",
+      "line": 12,
+      "end": 12,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/internal-interfaces.md",
+      "source": "apps/powerpoint-vsto/ThisAddIn.cs",
+      "line": 29,
+      "end": 29,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/internal-interfaces.md",
+      "source": "apps/powerpoint-vsto/DemoApi.cs",
+      "line": 35,
+      "end": 35,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/internal-interfaces.md",
+      "source": "apps/powerpoint-vsto/Contracts.cs",
+      "line": 7,
+      "end": 7,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/internal-interfaces.md",
+      "source": "src/Chart.Renderers/NativeRenderingCore.cs",
+      "line": 136,
+      "end": 136,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/internal-interfaces.md",
+      "source": "apps/powerpoint-vsto/ThisAddIn.cs",
+      "line": 44,
+      "end": 44,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/internal-interfaces.md",
+      "source": "apps/powerpoint-vsto/ThisAddIn.cs",
+      "line": 77,
+      "end": 77,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "apps/powerpoint-vsto/ContextPropertiesView.cs",
+      "line": 23,
+      "end": 23,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "apps/powerpoint-vsto/ContextPropertiesView.cs",
+      "line": 24,
+      "end": 24,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "apps/powerpoint-vsto/ContextSelectionBridge.cs",
+      "line": 26,
+      "end": 26,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "apps/powerpoint-vsto/ContextSelectionBridge.cs",
+      "line": 27,
+      "end": 27,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "apps/powerpoint-vsto/ContextSelectionBridge.cs",
+      "line": 28,
+      "end": 28,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "apps/powerpoint-vsto/Contracts.cs",
+      "line": 7,
+      "end": 7,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "apps/powerpoint-vsto/DemoApi.cs",
+      "line": 12,
+      "end": 12,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "apps/powerpoint-vsto/PowerPointHost.cs",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "apps/powerpoint-vsto/PowerPointHost.cs",
+      "line": 19,
+      "end": 19,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "apps/powerpoint-vsto/PowerPointHost.cs",
+      "line": 42,
+      "end": 42,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 30,
+      "end": 30,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 31,
+      "end": 31,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 32,
+      "end": 32,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 33,
+      "end": 33,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 34,
+      "end": 34,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 35,
+      "end": 35,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 36,
+      "end": 36,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 37,
+      "end": 37,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 38,
+      "end": 38,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 39,
+      "end": 39,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 40,
+      "end": 40,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 41,
+      "end": 41,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 42,
+      "end": 42,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 43,
+      "end": 43,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 44,
+      "end": 44,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 45,
+      "end": 45,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 46,
+      "end": 46,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 47,
+      "end": 47,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 48,
+      "end": 48,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 49,
+      "end": 49,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "src/Library.Core/NativeSqlite.cs",
+      "line": 50,
+      "end": 50,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/native-event-declarations.md",
+      "source": "src/Chart.Renderers/NativeRenderingCore.cs",
+      "line": 136,
+      "end": 136,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/request-response-contracts.md",
+      "source": "apps/powerpoint-vsto/Contracts.cs",
+      "line": 17,
+      "end": 17,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/request-response-contracts.md",
+      "source": "apps/powerpoint-vsto/DemoApi.cs",
+      "line": 41,
+      "end": 41,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/request-response-contracts.md",
+      "source": "apps/powerpoint-vsto/ServiceConnections.cs",
+      "line": 58,
+      "end": 58,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/request-response-contracts.md",
+      "source": "apps/powerpoint-vsto/ServiceConnections.cs",
+      "line": 75,
+      "end": 75,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/request-response-contracts.md",
+      "source": "services/ai-gateway/action-plan.schema.json",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/openapi/README.md",
+      "source": "services/ai-gateway/README.md",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "07-api-design/openapi/README.md",
+      "source": "services/ai-gateway/action-plan.schema.json",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "09-security/authentication-authorization.md",
+      "source": "apps/powerpoint-vsto/ServiceConnections.cs",
+      "line": 13,
+      "end": 13,
+      "valid": true
+    },
+    {
+      "document": "09-security/authentication-authorization.md",
+      "source": "apps/powerpoint-vsto/ServiceConnections.cs",
+      "line": 56,
+      "end": 56,
+      "valid": true
+    },
+    {
+      "document": "09-security/authentication-authorization.md",
+      "source": "apps/powerpoint-vsto/OfficeCompatibility.cs",
+      "line": 61,
+      "end": 61,
+      "valid": true
+    },
+    {
+      "document": "09-security/authentication-authorization.md",
+      "source": "apps/powerpoint-vsto/DemoApi.cs",
+      "line": 35,
+      "end": 35,
+      "valid": true
+    },
+    {
+      "document": "09-security/authentication-authorization.md",
+      "source": "apps/powerpoint-vsto/PowerPointHost.cs",
+      "line": 14,
+      "end": 14,
+      "valid": true
+    },
+    {
+      "document": "09-security/authentication-authorization.md",
+      "source": "services/ai-gateway/README.md",
+      "line": 5,
+      "end": 5,
+      "valid": true
+    },
+    {
+      "document": "09-security/authentication-authorization.md",
+      "source": "docs/DECISIONS.md",
+      "line": 8,
+      "end": 8,
+      "valid": true
+    },
+    {
+      "document": "09-security/secrets-management.md",
+      "source": "apps/powerpoint-vsto/ServiceConnections.cs",
+      "line": 45,
+      "end": 45,
+      "valid": true
+    },
+    {
+      "document": "09-security/secrets-management.md",
+      "source": "tests/s0/ServiceConnectionTests.cs",
+      "line": 29,
+      "end": 29,
+      "valid": true
+    },
+    {
+      "document": "09-security/secrets-management.md",
+      "source": "scripts/Build-Integrity.ps1",
+      "line": 57,
+      "end": 57,
+      "valid": true
+    },
+    {
+      "document": "09-security/secrets-management.md",
+      "source": "easySetup/Build-EasySetup.ps1",
+      "line": 41,
+      "end": 41,
+      "valid": true
+    },
+    {
+      "document": "09-security/secrets-management.md",
+      "source": "apps/powerpoint-vsto/PowerPointHost.cs",
+      "line": 54,
+      "end": 54,
+      "valid": true
+    },
+    {
+      "document": "09-security/secrets-management.md",
+      "source": "scripts/Collect-SceneThreatEvidence.ps1",
+      "line": 60,
+      "end": 60,
+      "valid": true
+    },
+    {
+      "document": "09-security/security-architecture.md",
+      "source": "apps/powerpoint-vsto/PowerPointHost.cs",
+      "line": 58,
+      "end": 58,
+      "valid": true
+    },
+    {
+      "document": "09-security/security-architecture.md",
+      "source": "src/Library.Core/PathPolicy.cs",
+      "line": 56,
+      "end": 56,
+      "valid": true
+    },
+    {
+      "document": "09-security/security-architecture.md",
+      "source": "src/Shared.Contracts/BoundedJson.cs",
+      "line": 19,
+      "end": 19,
+      "valid": true
+    },
+    {
+      "document": "09-security/security-architecture.md",
+      "source": "scripts/Build-Integrity.ps1",
+      "line": 21,
+      "end": 21,
+      "valid": true
+    },
+    {
+      "document": "09-security/security-architecture.md",
+      "source": "scripts/Build-Integrity.ps1",
+      "line": 39,
+      "end": 39,
+      "valid": true
+    },
+    {
+      "document": "09-security/security-architecture.md",
+      "source": "easySetup/Bootstrapper.cs",
+      "line": 36,
+      "end": 36,
+      "valid": true
+    },
+    {
+      "document": "09-security/security-gap-register.md",
+      "source": "scripts/Test-S1.ps1",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "09-security/security-gap-register.md",
+      "source": "scripts/Collect-SceneThreatEvidence.ps1",
+      "line": 23,
+      "end": 23,
+      "valid": true
+    },
+    {
+      "document": "09-security/security-gap-register.md",
+      "source": "scripts/Collect-SceneThreatEvidence.ps1",
+      "line": 42,
+      "end": 42,
+      "valid": true
+    },
+    {
+      "document": "09-security/security-gap-register.md",
+      "source": "scripts/Install-Local.ps1",
+      "line": 21,
+      "end": 21,
+      "valid": true
+    },
+    {
+      "document": "09-security/security-gap-register.md",
+      "source": "scripts/Test-DemoPackage.ps1",
+      "line": 27,
+      "end": 27,
+      "valid": true
+    },
+    {
+      "document": "09-security/security-gap-register.md",
+      "source": "services/ai-gateway/README.md",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "09-security/security-gap-register.md",
+      "source": "services/ai-gateway/action-plan.schema.json",
+      "line": 37,
+      "end": 37,
+      "valid": true
+    },
+    {
+      "document": "09-security/security-gap-register.md",
+      "source": "apps/powerpoint-vsto/ServiceConnections.cs",
+      "line": 35,
+      "end": 35,
+      "valid": true
+    },
+    {
+      "document": "09-security/security-gap-register.md",
+      "source": "src/Library.Core/PiidxCatalog.cs",
+      "line": 32,
+      "end": 32,
+      "valid": true
+    },
+    {
+      "document": "09-security/security-gap-register.md",
+      "source": "docs/DECISIONS.md",
+      "line": 35,
+      "end": 35,
+      "valid": true
+    },
+    {
+      "document": "09-security/security-gap-register.md",
+      "source": "scripts/Build-Integrity.ps1",
+      "line": 39,
+      "end": 39,
+      "valid": true
+    },
+    {
+      "document": "09-security/security-gap-register.md",
+      "source": "scripts/Test-All.ps1",
+      "line": 89,
+      "end": 89,
+      "valid": true
+    },
+    {
+      "document": "09-security/security-gap-register.md",
+      "source": "scripts/Source-Fingerprint.ps1",
+      "line": 21,
+      "end": 21,
+      "valid": true
+    },
+    {
+      "document": "09-security/security-gap-register.md",
+      "source": "easySetup/Common.ps1",
+      "line": 14,
+      "end": 14,
+      "valid": true
+    },
+    {
+      "document": "09-security/security-gap-register.md",
+      "source": "docs/security/CHECKMARX_20261103_113558_REMEDIATION.md",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "09-security/threat-model.md",
+      "source": "scripts/Artifact-Inputs.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "09-security/threat-model.md",
+      "source": "scripts/Safe-Xml.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "09-security/threat-model.md",
+      "source": "scripts/Test-S1.ps1",
+      "line": 18,
+      "end": 18,
+      "valid": true
+    },
+    {
+      "document": "09-security/threat-model.md",
+      "source": "src/Shared.Contracts/BoundedJson.cs",
+      "line": 28,
+      "end": 28,
+      "valid": true
+    },
+    {
+      "document": "09-security/threat-model.md",
+      "source": "apps/powerpoint-vsto/DemoApi.cs",
+      "line": 40,
+      "end": 40,
+      "valid": true
+    },
+    {
+      "document": "09-security/threat-model.md",
+      "source": "easySetup/Bootstrapper.cs",
+      "line": 53,
+      "end": 53,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/build-instructions.md",
+      "source": "apps/powerpoint-vsto/PowerPointIntelligence.csproj",
+      "line": 39,
+      "end": 39,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/build-instructions.md",
+      "source": "easySetup/Build-EasySetup.ps1",
+      "line": 19,
+      "end": 19,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/build-instructions.md",
+      "source": "easySetup/Build-EasySetup.ps1",
+      "line": 84,
+      "end": 84,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/build-instructions.md",
+      "source": "apps/powerpoint-vsto/PowerPointIntelligence.csproj",
+      "line": 73,
+      "end": 73,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/build-instructions.md",
+      "source": "easySetup/Watch-EasySetup.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/configuration-reference.md",
+      "source": "apps/powerpoint-vsto/App.config",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/configuration-reference.md",
+      "source": "apps/powerpoint-vsto/OfficeCompatibility.cs",
+      "line": 33,
+      "end": 33,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/configuration-reference.md",
+      "source": "apps/powerpoint-vsto/ServiceConnections.cs",
+      "line": 35,
+      "end": 35,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/configuration-reference.md",
+      "source": "scripts/Test-All.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/configuration-reference.md",
+      "source": "scripts/Test-DemoFeatures.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/configuration-reference.md",
+      "source": "docs/DECISIONS.md",
+      "line": 4,
+      "end": 4,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/deployment-guide.md",
+      "source": "apps/powerpoint-vsto/OfficeCompatibility.cs",
+      "line": 85,
+      "end": 85,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/deployment-guide.md",
+      "source": "docs/DECISIONS.md",
+      "line": 29,
+      "end": 29,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/deployment-guide.md",
+      "source": "services/ai-gateway/README.md",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/development-setup.md",
+      "source": "apps/powerpoint-vsto/PowerPointIntelligence.csproj",
+      "line": 9,
+      "end": 9,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/development-setup.md",
+      "source": "apps/powerpoint-vsto/OfficeCompatibility.cs",
+      "line": 69,
+      "end": 69,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/packaging-installation.md",
+      "source": "easySetup/Build-EasySetup.ps1",
+      "line": 74,
+      "end": 74,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/packaging-installation.md",
+      "source": "easySetup/Bootstrapper.cs",
+      "line": 13,
+      "end": 13,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/packaging-installation.md",
+      "source": "easySetup/Bootstrapper.cs",
+      "line": 36,
+      "end": 36,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/packaging-installation.md",
+      "source": "easySetup/Bootstrapper.cs",
+      "line": 20,
+      "end": 20,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/packaging-installation.md",
+      "source": "easySetup/Bootstrapper.cs",
+      "line": 53,
+      "end": 53,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/packaging-installation.md",
+      "source": "easySetup/Bootstrapper.cs",
+      "line": 15,
+      "end": 15,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/packaging-installation.md",
+      "source": "easySetup/Bootstrapper.cs",
+      "line": 64,
+      "end": 64,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/packaging-installation.md",
+      "source": "scripts/Install-Local.ps1",
+      "line": 38,
+      "end": 38,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/troubleshooting-guide.md",
+      "source": "scripts/Test-InstalledRibbon.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/troubleshooting-guide.md",
+      "source": "scripts/Diagnose-PowerPointActivation.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/troubleshooting-guide.md",
+      "source": "apps/powerpoint-vsto/PowerPointHost.cs",
+      "line": 214,
+      "end": 214,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/troubleshooting-guide.md",
+      "source": "apps/powerpoint-vsto/DataSources.cs",
+      "line": 197,
+      "end": 197,
+      "valid": true
+    },
+    {
+      "document": "11-build-deployment/troubleshooting-guide.md",
+      "source": "easySetup/Common.ps1",
+      "line": 2,
+      "end": 2,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/artifact-maintenance.md",
+      "source": "scripts/Clean-Workspace.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/artifact-maintenance.md",
+      "source": "scripts/Maintain-Artifacts.py",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/artifact-maintenance.md",
+      "source": "scripts/audit-library-dependencies.py",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/artifact-maintenance.md",
+      "source": "tests/security/test_artifact_maintenance.py",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/build-provenance.md",
+      "source": "scripts/Build-Integrity.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/build-provenance.md",
+      "source": "scripts/Scene-RunnerCache.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/build-provenance.md",
+      "source": "scripts/Piidx-Recovery.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/build-provenance.md",
+      "source": "scripts/Artifact-Inputs.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/build-provenance.md",
+      "source": "scripts/Source-Fingerprint.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/build-provenance.md",
+      "source": "scripts/Safe-Xml.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/build-provenance.md",
+      "source": "scripts/Piidx-TestSuite.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/build-provenance.md",
+      "source": "scripts/Restore-LockedDependencies.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/build-provenance.md",
+      "source": "scripts/Test-BuildIntegrity.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/build-provenance.md",
+      "source": "scripts/Test-Checkmarx113558.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/build-provenance.md",
+      "source": "scripts/Test-PiidxRecovery.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/build-provenance.md",
+      "source": "scripts/Test-SourceFingerprint.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/build-provenance.md",
+      "source": "scripts/Test-SceneRunnerCache.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/com-automation.md",
+      "source": "apps/powerpoint-vsto/DemoApi.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/com-automation.md",
+      "source": "apps/powerpoint-vsto/Contracts.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/deployment-bootstrap.md",
+      "source": "easySetup/Bootstrapper.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/diagnostics.md",
+      "source": "scripts/Collect-SceneThreatEvidence.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/diagnostics.md",
+      "source": "scripts/Diagnostic-OutputPath.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/diagnostics.md",
+      "source": "scripts/Diagnose-PowerPointActivation.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/diagnostics.md",
+      "source": "scripts/Test-DiagnosticOutputPath.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/offline-alignment-repair.md",
+      "source": "scripts/Repair-TemplateAlignment.py",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/offline-alignment-repair.md",
+      "source": "scripts/RepairTemplateSafety.py",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/offline-alignment-repair.md",
+      "source": "tests/security/test_repair_template_alignment.py",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/packaging-build.md",
+      "source": "easySetup/Build-EasySetup.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/packaging-build.md",
+      "source": "easySetup/Common.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/packaging-build.md",
+      "source": "easySetup/Watch-EasySetup.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/packaging-build.md",
+      "source": "easySetup/Test-EasySetup.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/packaging-build.md",
+      "source": "easySetup/Test-ResourceReader.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/packaging-build.md",
+      "source": "easySetup/SetupPolicyTests.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/packaging-build.md",
+      "source": "scripts/Install-Local.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/packaging-build.md",
+      "source": "scripts/Package-Content.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/packaging-build.md",
+      "source": "scripts/Test-DemoPackage.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/packaging-build.md",
+      "source": "scripts/Test-PackageMarker.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/packaging-build.md",
+      "source": "scripts/Test-PayloadRecompile.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/packaging-build.md",
+      "source": "apps/powerpoint-vsto/PowerPointIntelligence.csproj",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/service-profiles.md",
+      "source": "apps/powerpoint-vsto/ServiceConnections.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/service-profiles.md",
+      "source": "services/ai-gateway/README.md",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/service-profiles.md",
+      "source": "services/ai-gateway/action-plan.schema.json",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/service-profiles.md",
+      "source": "tests/s0/ServiceConnectionTests.cs",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": "scripts/Check-Process.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": "scripts/New-PiidxSample.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": "scripts/Test-All.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": "scripts/Test-CheckProcess.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": "scripts/Test-DemoFeatures.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": "scripts/Test-InstalledRibbon.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": "scripts/Test-NativeRenderer.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": "scripts/Test-OfficeCompatibility.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": "scripts/Test-Piidx.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": "scripts/Test-PiidxCatalog.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": "scripts/Test-PiidxCorpus.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": "scripts/Test-PiidxFoundation.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": "scripts/Test-PiidxIsolation.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": "scripts/Test-PiidxPreviews.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": "scripts/Test-PiidxSourceReader.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": "scripts/Test-PiidxSqliteCapability.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": "scripts/Test-Ribbon.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": "scripts/Test-S0.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": "scripts/Test-S1.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": "scripts/Test-SceneContracts.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": "scripts/Test-SecurityRemediation.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": "scripts/Test-TemplateLibrary.ps1",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": ".github/workflows/chart-core.yml",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": ".github/workflows/office-compatibility.yml",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": ".github/workflows/s0-metadata.yml",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    },
+    {
+      "document": "03-modules/individual-module-designs/operations/validation-orchestration.md",
+      "source": ".github/workflows/s1-domain.yml",
+      "line": 1,
+      "end": 1,
+      "valid": true
+    }
+  ],
+  "diagrams": [
+    {
+      "document": "06-ai-architecture/ai-solution-architecture.md",
+      "number": 1,
+      "type": "flowchart LR",
+      "sha256": "0f1e1c7d4d61dab23543f5ccc1ce3f01f7342954bf317e06f773f6c36287e61b",
+      "structural_valid": true,
+      "parser_validated": false
+    },
+    {
+      "document": "06-ai-architecture/ai-workflows.md",
+      "number": 1,
+      "type": "sequenceDiagram",
+      "sha256": "29fdc1ba88cb0eacffa036edbd1b178358be1b711dee1cd0a35beddb51174557",
+      "structural_valid": true,
+      "parser_validated": false
+    },
+    {
+      "document": "09-security/security-architecture.md",
+      "number": 1,
+      "type": "flowchart LR",
+      "sha256": "fe3a6fb191152a70b45e94688cc8f9240aad197b19cee9b177fd60380df5caf6",
+      "structural_valid": true,
+      "parser_validated": false
+    },
+    {
+      "document": "11-build-deployment/packaging-installation.md",
+      "number": 1,
+      "type": "sequenceDiagram",
+      "sha256": "5c6bae0aef455b32d4b3c4b26e887c03c1a20dd9dd24da61e2ce6bb1eed06d2c",
+      "structural_valid": true,
+      "parser_validated": false
+    }
+  ],
+  "links": [],
+  "errors": [],
+  "limitations": [
+    "Mermaid parser/runtime unavailable locally; structural checks are not syntax/render validation.",
+    "Source reference checks prove file/line range, not semantic truth of prose."
+  ]
+}

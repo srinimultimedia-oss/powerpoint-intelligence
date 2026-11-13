@@ -1,0 +1,228 @@
+path,review_levels,review_manifests
+.github/workflows/chart-core.yml,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+.github/workflows/office-compatibility.yml,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+.github/workflows/s0-metadata.yml,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+.github/workflows/s1-domain.yml,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+apps/powerpoint-vsto/App.config,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/ChapterAgenda.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/ChapterAgendaModel.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/ChartAnnotations.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/ContextActionRouter.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/ContextChartFormatting.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/ContextFormatting.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/ContextPanelModel.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/ContextPropertiesController.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/ContextPropertiesView.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/ContextSelectionBridge.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/Contracts.cs,Full-text indexed; targeted implementation review; semantic full-source review; complete text plus source-specific control-flow/interface/side-effect review; not execution,04-powerpoint-integration/vsto-source-review.csv; 08-data-design/reviewed-source-files.csv; 09-security/reviewed-files.csv
+apps/powerpoint-vsto/DataLinkManager.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/DataSources.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/DemoApi.cs,Full-text indexed; targeted implementation review; complete text plus source-specific control-flow/interface/side-effect review; not execution,04-powerpoint-integration/vsto-source-review.csv; 09-security/reviewed-files.csv
+apps/powerpoint-vsto/DemoInputs.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/DemoLinks.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/DemoRibbon.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/DemoTools.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/DemoWorkspace.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/ElementCommands.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/ExcelRangeMapping.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/FeatureInventory.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/IndicatorElements.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/LocalLibraryGallery.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/LocalLibraryWorkspace.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/MappedLinkOperations.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/MetadataCodec.cs,Full-text indexed; targeted implementation review; semantic full-source review,04-powerpoint-integration/vsto-source-review.csv; 08-data-design/reviewed-source-files.csv
+apps/powerpoint-vsto/NativeChartControls.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/NativeFormatting.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/NativeSeriesControls.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/OfficeCompatibility.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/PowerPointHost.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/PowerPointIntelligence.csproj,Full-text indexed; targeted implementation review; semantic full-source review; complete text plus source-specific control-flow/interface/side-effect review; not execution,04-powerpoint-integration/vsto-source-review.csv; 08-data-design/reviewed-source-files.csv; 09-security/reviewed-files.csv
+apps/powerpoint-vsto/PresentationAgenda.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/PresentationQuality.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/ProcessFlowTools.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/ProductivityTools.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/RendererRibbonCommand.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/RibbonIcons.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/ServiceConnections.cs,Full-text indexed; targeted implementation review; complete text plus source-specific control-flow/interface/side-effect review; not execution,04-powerpoint-integration/vsto-source-review.csv; 09-security/reviewed-files.csv
+apps/powerpoint-vsto/TemplateCatalog.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/TemplateLibrary.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/TextShapeElements.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/ThisAddIn.Designer.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/ThisAddIn.Designer.xml,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/ThisAddIn.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/UniversalConnectors.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+apps/powerpoint-vsto/XmlPartUpdates.cs,Full-text indexed; targeted implementation review,04-powerpoint-integration/vsto-source-review.csv
+chart-core.yml,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+easySetup/Bootstrapper.cs,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+easySetup/Build-EasySetup.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+easySetup/Common.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+easySetup/SetupPolicyTests.cs,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+easySetup/Test-EasySetup.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+easySetup/Test-ResourceReader.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+easySetup/Watch-EasySetup.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+packages/chart-core/package.json,semantic full-source review,08-data-design/reviewed-source-files.csv
+packages/chart-core/src/calculations.mjs,semantic full-source review,08-data-design/reviewed-source-files.csv
+packages/chart-core/test/calculations.test.mjs,semantic full-source review,08-data-design/reviewed-source-files.csv
+packages/chart-domain/package-lock.json,dependency metadata review,08-data-design/reviewed-source-files.csv
+packages/chart-domain/package.json,semantic full-source review,08-data-design/reviewed-source-files.csv
+packages/chart-domain/schema/chart-document.v2.schema.json,semantic full-source review,08-data-design/reviewed-source-files.csv
+packages/chart-domain/src/validate.mjs,semantic full-source review,08-data-design/reviewed-source-files.csv
+packages/chart-domain/test/contracts.test.mjs,semantic full-source review,08-data-design/reviewed-source-files.csv
+packages/chart-domain/test/validate-roundtrip.mjs,semantic full-source review,08-data-design/reviewed-source-files.csv
+packages/chart-engine/README.md,secondary documentation review,08-data-design/reviewed-source-files.csv
+packages/chart-engine/package-lock.json,dependency metadata review,08-data-design/reviewed-source-files.csv
+packages/chart-engine/package.json,semantic full-source review,08-data-design/reviewed-source-files.csv
+packages/chart-engine/schema/render-result.v1.schema.json,semantic full-source review,08-data-design/reviewed-source-files.csv
+packages/chart-engine/schema/rendered-chart.v1.xsd,semantic full-source review,08-data-design/reviewed-source-files.csv
+packages/chart-engine/src/basic-charts.ts,semantic full-source review,08-data-design/reviewed-source-files.csv
+packages/chart-engine/src/scene-builder.ts,semantic full-source review,08-data-design/reviewed-source-files.csv
+packages/chart-engine/src/scene-contract.ts,semantic full-source review,08-data-design/reviewed-source-files.csv
+packages/chart-engine/src/strict-scene-json.ts,semantic full-source review,08-data-design/reviewed-source-files.csv
+packages/chart-engine/src/svg-preview.ts,semantic full-source review,08-data-design/reviewed-source-files.csv
+packages/chart-engine/test/basic-charts.test.mjs,semantic full-source review,08-data-design/reviewed-source-files.csv
+packages/chart-engine/test/canonical-scene.test.mjs,semantic full-source review,08-data-design/reviewed-source-files.csv
+packages/chart-engine/test/scene-contract.test.mjs,semantic full-source review,08-data-design/reviewed-source-files.csv
+packages/chart-engine/test/scene-schema.test.mjs,semantic full-source review,08-data-design/reviewed-source-files.csv
+packages/chart-engine/test/svg-preview.test.mjs,semantic full-source review,08-data-design/reviewed-source-files.csv
+packages/chart-engine/tools/render-chart-v2.mjs,semantic full-source review,08-data-design/reviewed-source-files.csv
+packages/chart-engine/tsconfig.json,semantic full-source review,08-data-design/reviewed-source-files.csv
+scripts/Artifact-Inputs.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Build-Integrity.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Check-Process.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Clean-Workspace.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Collect-SceneThreatEvidence.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Diagnose-PowerPointActivation.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Diagnostic-OutputPath.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Install-Local.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Maintain-Artifacts.py,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/New-PiidxSample.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Package-Content.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Piidx-Recovery.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Piidx-TestSuite.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Repair-TemplateAlignment.py,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/RepairTemplateSafety.py,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Restore-LockedDependencies.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Safe-Xml.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Scene-RunnerCache.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Source-Fingerprint.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-All.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-BuildIntegrity.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-CheckProcess.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-Checkmarx113558.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-DemoFeatures.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-DemoPackage.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-DiagnosticOutputPath.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-InstalledRibbon.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-NativeRenderer.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-OfficeCompatibility.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-PackageMarker.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-PayloadRecompile.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-Piidx.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-PiidxCatalog.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-PiidxCorpus.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-PiidxFoundation.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-PiidxIsolation.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-PiidxPreviews.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-PiidxRecovery.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-PiidxSourceReader.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-PiidxSqliteCapability.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-Ribbon.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-S0.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-S1.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-SceneContracts.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-SceneRunnerCache.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-SecurityRemediation.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-SourceFingerprint.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/Test-TemplateLibrary.ps1,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+scripts/audit-library-dependencies.py,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+services/ai-gateway/README.md,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+services/ai-gateway/action-plan.schema.json,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+src/Chart.Domain/Chart.Domain.csproj,semantic full-source review,08-data-design/reviewed-source-files.csv
+src/Chart.Domain/ChartCodec.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+src/Chart.Domain/ChartDocument.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+src/Chart.Domain/ChartDocumentV3.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+src/Chart.Domain/ChartV3Codec.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+src/Chart.Domain/S0Migration.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+src/Chart.Renderers/NativeRenderingCore.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+src/Chart.Renderers/PowerPointSceneSurface.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+src/Chart.Renderers/SceneCodec.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+src/Chart.Renderers/SceneContracts.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+src/Chart.Renderers/StrictSceneJson.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+src/Library.Core/LibraryConfiguration.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+src/Library.Core/LibraryModels.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+src/Library.Core/LibraryRefreshMonitor.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+src/Library.Core/NativeSqlite.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+src/Library.Core/PathPolicy.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+src/Library.Core/PiidxCatalog.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+src/Library.Core/PiidxNavigation.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+src/Library.Core/PiidxPreviewCache.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+src/Library.Core/PiidxSchema.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+src/Library.Core/PiidxSearch.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+src/Library.Core/PresentationSource.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+src/Shared.Contracts/BoundedJson.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+tests/compatibility/OfficeCompatibilityTests.cs,full-body semantic source review; not executed,12-testing/deep-review-core.csv
+tests/library/GalleryTests.cs,full-body semantic source review; not executed,12-testing/deep-review-core.csv
+tests/library/LegacyLibraryCacheFixture.cs,full-body semantic source review; not executed,12-testing/deep-review-core.csv
+tests/library/LibraryBrowserTests.cs,full-body semantic source review; not executed,12-testing/deep-review-core.csv
+tests/library/PiidxGalleryTests.cs,full-body semantic source review; not executed,12-testing/deep-review-core.csv
+tests/library/TemplateFidelity.cs,full-body semantic source review; not executed,12-testing/deep-review-core.csv
+tests/library/TemplateFidelityTests.cs,full-body semantic source review; not executed,12-testing/deep-review-core.csv
+tests/library/TemplateLibraryTests.cs,full-body semantic source review; not executed,12-testing/deep-review-core.csv
+tests/library/piidx/PiidxCatalogTests.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+tests/library/piidx/PiidxCorpusTests.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+tests/library/piidx/PiidxEdgeTests.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+tests/library/piidx/PiidxPreviewTests.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+tests/library/piidx/PiidxSampleBuilder.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+tests/library/piidx/PiidxSchemaTests.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+tests/library/piidx/PiidxSourceTests.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+tests/library/piidx/PiidxWorkspaceTests.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+tests/s0/ChapterAgendaOfficeTests.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/ChapterAgendaTests.cs,Full semantic contract/test-source review; not executed,04-powerpoint-integration/vsto-source-review.csv
+tests/s0/ChartAnnotationTests.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/ContextChartFormattingTests.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/ContextForegroundPolicy.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/ContextForegroundPrompt.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/ContextFormattingOfficeTests.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/ContextFormattingTests.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/ContextPanelModelTests.cs,Full semantic contract/test-source review; not executed,04-powerpoint-integration/vsto-source-review.csv
+tests/s0/ContextPropertiesOfficeTests.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/ContextPropertiesTests.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/DataLinkManagerTests.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/DataSourceTests.cs,Full semantic contract/test-source review; not executed,04-powerpoint-integration/vsto-source-review.csv
+tests/s0/DemoContractTests.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/DemoOfficeTests.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/DemoScenario.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/ExcelRangeMappingTests.cs,Full semantic contract/test-source review; not executed,04-powerpoint-integration/vsto-source-review.csv
+tests/s0/HostIntegrationTests.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/IndicatorElementTests.cs,Full semantic contract/test-source review; not executed,04-powerpoint-integration/vsto-source-review.csv
+tests/s0/IndicatorOfficeTests.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/LinkedChartDiagnostic.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/MappedExcelOfficeTests.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/MetadataTests.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/NativeChartControlTests.cs,Full semantic contract/test-source review; not executed,04-powerpoint-integration/vsto-source-review.csv
+tests/s0/NativeFormattingTests.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/PresentationAgendaTests.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/PresentationQualityTests.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/ProcessFlowOfficeTests.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/ProcessFlowTests.cs,Full semantic contract/test-source review; not executed,04-powerpoint-integration/vsto-source-review.csv
+tests/s0/ProductivityToolOfficeTests.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/ProductivityToolTests.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/ServiceConnectionTests.cs,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+tests/s0/TextShapeElementTests.cs,Full semantic contract/test-source review; not executed,04-powerpoint-integration/vsto-source-review.csv
+tests/s0/TextShapeOfficeTests.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/UniversalConnectorOfficeTests.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/UniversalConnectorTests.cs,Full semantic contract/test-source review; not executed,04-powerpoint-integration/vsto-source-review.csv
+tests/s0/WorkflowOfficeTests.cs,Full-body semantic source review; no execution,12-testing/deep-review-vsto.csv
+tests/s0/XmlPartUpdateTests.cs,Full semantic contract/test-source review; not executed,04-powerpoint-integration/vsto-source-review.csv
+tests/s1/DomainTests.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+tests/s1/fixtures/clustered-column.v2.json,fixture/data contract review,08-data-design/reviewed-source-files.csv
+tests/s3/NativeRendererTests.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+tests/s3/RendererRibbonTests.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+tests/s3/SceneArtifactPath.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+tests/s3/SceneContractTests.cs,semantic full-source review,08-data-design/reviewed-source-files.csv
+tests/s3/fixtures/all-primitives.v1.json,fixture/data contract review,08-data-design/reviewed-source-files.csv
+tests/s3/scene-fixtures.mjs,semantic full-source review,08-data-design/reviewed-source-files.csv
+tests/s3/validate-roundtrip.mjs,semantic full-source review,08-data-design/reviewed-source-files.csv
+tests/security/PathPolicyTests.cs,full-body semantic source review; not executed,12-testing/deep-review-core.csv
+tests/security/test_artifact_maintenance.py,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv
+tests/security/test_repair_template_alignment.py,complete text plus source-specific control-flow/interface/side-effect review; not execution,09-security/reviewed-files.csv

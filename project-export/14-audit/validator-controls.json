@@ -1,0 +1,7 @@
+{
+  "positive_control": "PASS source/ref+diagram",
+  "negative_control": "PASS invalid source/missing link/bad diagram type rejected",
+  "secret_positive_control": "PASS synthetic marker detected",
+  "secret_negative_control": "PASS ordinary documentation not flagged",
+  "not_a_mermaid_parser": true
+}

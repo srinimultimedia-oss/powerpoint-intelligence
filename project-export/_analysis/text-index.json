@@ -1,0 +1,1358 @@
+{
+  "AGENTS.md": {
+    "lines": 28,
+    "bytes": 2021
+  },
+  "README.md": {
+    "lines": 31,
+    "bytes": 2625
+  },
+  "chart-core.yml": {
+    "lines": 12,
+    "bytes": 288
+  },
+  ".github/workflows/chart-core.yml": {
+    "lines": 12,
+    "bytes": 288
+  },
+  ".github/workflows/office-compatibility.yml": {
+    "lines": 15,
+    "bytes": 443
+  },
+  ".github/workflows/s0-metadata.yml": {
+    "lines": 12,
+    "bytes": 334
+  },
+  ".github/workflows/s1-domain.yml": {
+    "lines": 31,
+    "bytes": 1296
+  },
+  "apps/powerpoint-vsto/App.config": {
+    "lines": 18,
+    "bytes": 1096
+  },
+  "apps/powerpoint-vsto/ChapterAgenda.cs": {
+    "lines": 128,
+    "bytes": 29279
+  },
+  "apps/powerpoint-vsto/ChapterAgendaModel.cs": {
+    "lines": 121,
+    "bytes": 13616
+  },
+  "apps/powerpoint-vsto/ChartAnnotations.cs": {
+    "lines": 56,
+    "bytes": 15128
+  },
+  "apps/powerpoint-vsto/ContextActionRouter.cs": {
+    "lines": 27,
+    "bytes": 2053
+  },
+  "apps/powerpoint-vsto/ContextChartFormatting.cs": {
+    "lines": 23,
+    "bytes": 4406
+  },
+  "apps/powerpoint-vsto/ContextFormatting.cs": {
+    "lines": 29,
+    "bytes": 6804
+  },
+  "apps/powerpoint-vsto/ContextPanelModel.cs": {
+    "lines": 99,
+    "bytes": 10534
+  },
+  "apps/powerpoint-vsto/ContextPropertiesController.cs": {
+    "lines": 91,
+    "bytes": 10642
+  },
+  "apps/powerpoint-vsto/ContextPropertiesView.cs": {
+    "lines": 69,
+    "bytes": 13560
+  },
+  "apps/powerpoint-vsto/ContextSelectionBridge.cs": {
+    "lines": 98,
+    "bytes": 16598
+  },
+  "apps/powerpoint-vsto/Contracts.cs": {
+    "lines": 33,
+    "bytes": 1249
+  },
+  "apps/powerpoint-vsto/DataLinkManager.cs": {
+    "lines": 144,
+    "bytes": 19983
+  },
+  "apps/powerpoint-vsto/DataSources.cs": {
+    "lines": 389,
+    "bytes": 35316
+  },
+  "apps/powerpoint-vsto/DemoApi.cs": {
+    "lines": 45,
+    "bytes": 2833
+  },
+  "apps/powerpoint-vsto/DemoInputs.cs": {
+    "lines": 22,
+    "bytes": 1044
+  },
+  "apps/powerpoint-vsto/DemoLinks.cs": {
+    "lines": 77,
+    "bytes": 5899
+  },
+  "apps/powerpoint-vsto/DemoRibbon.cs": {
+    "lines": 114,
+    "bytes": 13279
+  },
+  "apps/powerpoint-vsto/DemoTools.cs": {
+    "lines": 423,
+    "bytes": 46543
+  },
+  "apps/powerpoint-vsto/DemoWorkspace.cs": {
+    "lines": 60,
+    "bytes": 4461
+  },
+  "apps/powerpoint-vsto/ElementCommands.cs": {
+    "lines": 60,
+    "bytes": 8949
+  },
+  "apps/powerpoint-vsto/ExcelRangeMapping.cs": {
+    "lines": 81,
+    "bytes": 10085
+  },
+  "apps/powerpoint-vsto/FeatureInventory.cs": {
+    "lines": 107,
+    "bytes": 26758
+  },
+  "apps/powerpoint-vsto/IndicatorElements.cs": {
+    "lines": 48,
+    "bytes": 13553
+  },
+  "apps/powerpoint-vsto/LocalLibraryGallery.cs": {
+    "lines": 148,
+    "bytes": 19902
+  },
+  "apps/powerpoint-vsto/LocalLibraryWorkspace.cs": {
+    "lines": 174,
+    "bytes": 16730
+  },
+  "apps/powerpoint-vsto/MappedLinkOperations.cs": {
+    "lines": 45,
+    "bytes": 5596
+  },
+  "apps/powerpoint-vsto/MetadataCodec.cs": {
+    "lines": 71,
+    "bytes": 3580
+  },
+  "apps/powerpoint-vsto/NativeChartControls.cs": {
+    "lines": 78,
+    "bytes": 10279
+  },
+  "apps/powerpoint-vsto/NativeFormatting.cs": {
+    "lines": 99,
+    "bytes": 14668
+  },
+  "apps/powerpoint-vsto/NativeSeriesControls.cs": {
+    "lines": 42,
+    "bytes": 5851
+  },
+  "apps/powerpoint-vsto/OfficeCompatibility.cs": {
+    "lines": 93,
+    "bytes": 5688
+  },
+  "apps/powerpoint-vsto/PowerPointHost.cs": {
+    "lines": 402,
+    "bytes": 21722
+  },
+  "apps/powerpoint-vsto/PowerPointIntelligence.csproj": {
+    "lines": 80,
+    "bytes": 9570
+  },
+  "apps/powerpoint-vsto/PresentationAgenda.cs": {
+    "lines": 109,
+    "bytes": 14015
+  },
+  "apps/powerpoint-vsto/PresentationQuality.cs": {
+    "lines": 146,
+    "bytes": 12693
+  },
+  "apps/powerpoint-vsto/ProcessFlowTools.cs": {
+    "lines": 125,
+    "bytes": 23289
+  },
+  "apps/powerpoint-vsto/ProductivityTools.cs": {
+    "lines": 109,
+    "bytes": 15132
+  },
+  "apps/powerpoint-vsto/RendererRibbonCommand.cs": {
+    "lines": 68,
+    "bytes": 4876
+  },
+  "apps/powerpoint-vsto/RibbonIcons.cs": {
+    "lines": 343,
+    "bytes": 30079
+  },
+  "apps/powerpoint-vsto/ServiceConnections.cs": {
+    "lines": 123,
+    "bytes": 14533
+  },
+  "apps/powerpoint-vsto/TemplateCatalog.cs": {
+    "lines": 296,
+    "bytes": 39005
+  },
+  "apps/powerpoint-vsto/TemplateLibrary.cs": {
+    "lines": 501,
+    "bytes": 66056
+  },
+  "apps/powerpoint-vsto/TextShapeElements.cs": {
+    "lines": 160,
+    "bytes": 28842
+  },
+  "apps/powerpoint-vsto/ThisAddIn.Designer.cs": {
+    "lines": 41,
+    "bytes": 1615
+  },
+  "apps/powerpoint-vsto/ThisAddIn.Designer.xml": {
+    "lines": 4,
+    "bytes": 881
+  },
+  "apps/powerpoint-vsto/ThisAddIn.cs": {
+    "lines": 363,
+    "bytes": 27541
+  },
+  "apps/powerpoint-vsto/UniversalConnectors.cs": {
+    "lines": 159,
+    "bytes": 31414
+  },
+  "apps/powerpoint-vsto/XmlPartUpdates.cs": {
+    "lines": 93,
+    "bytes": 11726
+  },
+  "apps/powerpoint-vsto/RendererSamples/canonical.json": {
+    "lines": 20,
+    "bytes": 801
+  },
+  "apps/powerpoint-vsto/RendererSamples/scene.json": {
+    "lines": 1,
+    "bytes": 1555
+  },
+  "docs/DECISIONS.md": {
+    "lines": 42,
+    "bytes": 8082
+  },
+  "docs/architecture/PIIDX_API_REFERENCE.md": {
+    "lines": 36,
+    "bytes": 5410
+  },
+  "docs/architecture/PIIDX_ENGINE_ARCHITECTURE.md": {
+    "lines": 33,
+    "bytes": 4657
+  },
+  "docs/architecture/PIIDX_FILE_FORMAT_SPECIFICATION.md": {
+    "lines": 59,
+    "bytes": 10940
+  },
+  "docs/architecture/PIIDX_SOURCE_EXTRACTION.md": {
+    "lines": 25,
+    "bytes": 3428
+  },
+  "docs/demo/README.md": {
+    "lines": 85,
+    "bytes": 5295
+  },
+  "docs/demo/coverage.md": {
+    "lines": 110,
+    "bytes": 16929
+  },
+  "docs/demo/sample-chart.s0.json": {
+    "lines": 1,
+    "bytes": 255
+  },
+  "docs/demo/sample-style.json": {
+    "lines": 1,
+    "bytes": 76
+  },
+  "docs/evidence/S0-2026-10-21.md": {
+    "lines": 57,
+    "bytes": 7067
+  },
+  "docs/evidence/S0-native-capture-diagnostic-2026-10-22.md": {
+    "lines": 269,
+    "bytes": 16708
+  },
+  "docs/evidence/S1-2026-10-21.md": {
+    "lines": 21,
+    "bytes": 2742
+  },
+  "docs/evidence/comprehensive-validation-2026-10-22.md": {
+    "lines": 26,
+    "bytes": 1649
+  },
+  "docs/evidence/demo-build-2026-10-22.md": {
+    "lines": 35,
+    "bytes": 2328
+  },
+  "docs/evidence/local-vsto-revalidation-2026-10-22.md": {
+    "lines": 37,
+    "bytes": 3883
+  },
+  "docs/evidence/mcafee-review-request-draft-2026-10-22.md": {
+    "lines": 22,
+    "bytes": 2655
+  },
+  "docs/evidence/native-renderer-spike-2026-10-22.md": {
+    "lines": 64,
+    "bytes": 3809
+  },
+  "docs/evidence/office-compatibility-2026-10-22.md": {
+    "lines": 20,
+    "bytes": 2334
+  },
+  "docs/evidence/production-baseline-s2-2026-10-22.md": {
+    "lines": 79,
+    "bytes": 5238
+  },
+  "docs/evidence/renderer-integration-blockers-2026-10-22.md": {
+    "lines": 84,
+    "bytes": 12587
+  },
+  "docs/evidence/revert-v17.md": {
+    "lines": 11,
+    "bytes": 1113
+  },
+  "docs/evidence/ribbon-deployment-regression-2026-10-22.md": {
+    "lines": 33,
+    "bytes": 2133
+  },
+  "docs/evidence/ribbon-icons-2026-10-22.md": {
+    "lines": 36,
+    "bytes": 2473
+  },
+  "docs/evidence/scene-antivirus-investigation-2026-10-22.md": {
+    "lines": 56,
+    "bytes": 9477
+  },
+  "docs/evidence/scene-contracts-2026-10-22.md": {
+    "lines": 62,
+    "bytes": 3556
+  },
+  "docs/evidence/v17-icons1.md": {
+    "lines": 13,
+    "bytes": 1947
+  },
+  "docs/evidence/v17-icons2.md": {
+    "lines": 27,
+    "bytes": 3026
+  },
+  "docs/evidence/v17-package-freshness-fix.md": {
+    "lines": 20,
+    "bytes": 2423
+  },
+  "docs/implementation/S0-feasibility.md": {
+    "lines": 43,
+    "bytes": 4133
+  },
+  "docs/implementation/S0-windows-validation.md": {
+    "lines": 22,
+    "bytes": 3837
+  },
+  "docs/implementation/S1-domain-contracts.md": {
+    "lines": 35,
+    "bytes": 4732
+  },
+  "docs/implementation/agenda-reference-study.md": {
+    "lines": 65,
+    "bytes": 8415
+  },
+  "docs/implementation/artifact-maintenance-20261103.md": {
+    "lines": 50,
+    "bytes": 6898
+  },
+  "docs/implementation/blocker-followup-20261029.md": {
+    "lines": 26,
+    "bytes": 4146
+  },
+  "docs/implementation/blocker-remediation-20261029.md": {
+    "lines": 43,
+    "bytes": 5888
+  },
+  "docs/implementation/canonical-native-lookup-20261029.md": {
+    "lines": 25,
+    "bytes": 3438
+  },
+  "docs/implementation/chapter-agenda.md": {
+    "lines": 57,
+    "bytes": 7919
+  },
+  "docs/implementation/context-properties-reference.md": {
+    "lines": 57,
+    "bytes": 10977
+  },
+  "docs/implementation/context-properties.md": {
+    "lines": 161,
+    "bytes": 36272
+  },
+  "docs/implementation/data-source-links.md": {
+    "lines": 92,
+    "bytes": 14763
+  },
+  "docs/implementation/deployment-validation-20261103.md": {
+    "lines": 40,
+    "bytes": 4267
+  },
+  "docs/implementation/desktop-suite-followup-20261029.md": {
+    "lines": 21,
+    "bytes": 4128
+  },
+  "docs/implementation/easySetup-20261101.md": {
+    "lines": 11,
+    "bytes": 2801
+  },
+  "docs/implementation/easySetup-resource-validation-20261102.md": {
+    "lines": 15,
+    "bytes": 2722
+  },
+  "docs/implementation/element-controls.md": {
+    "lines": 83,
+    "bytes": 12064
+  },
+  "docs/implementation/elements-reference-study.md": {
+    "lines": 93,
+    "bytes": 17060
+  },
+  "docs/implementation/embedded-binding-20261029.md": {
+    "lines": 15,
+    "bytes": 3369
+  },
+  "docs/implementation/library-palettes.csv": {
+    "lines": 21,
+    "bytes": 1995
+  },
+  "docs/implementation/linked-chart-diagnostic-20261029.md": {
+    "lines": 19,
+    "bytes": 2534
+  },
+  "docs/implementation/local-template-source.md": {
+    "lines": 13,
+    "bytes": 3278
+  },
+  "docs/implementation/native-mutation-coordination-20261029.md": {
+    "lines": 28,
+    "bytes": 3630
+  },
+  "docs/implementation/native-renderer-spike.md": {
+    "lines": 100,
+    "bytes": 6140
+  },
+  "docs/implementation/nexwave-branding-20261103.md": {
+    "lines": 13,
+    "bytes": 2505
+  },
+  "docs/implementation/office-compatibility.md": {
+    "lines": 59,
+    "bytes": 6252
+  },
+  "docs/implementation/office-regression-elements2.md": {
+    "lines": 64,
+    "bytes": 7065
+  },
+  "docs/implementation/parity-v17-validation.md": {
+    "lines": 73,
+    "bytes": 6691
+  },
+  "docs/implementation/ribbon-chart-menu.md": {
+    "lines": 11,
+    "bytes": 1683
+  },
+  "docs/implementation/ribbon-experience.md": {
+    "lines": 47,
+    "bytes": 3248
+  },
+  "docs/implementation/scene-contract-draft.md": {
+    "lines": 97,
+    "bytes": 6046
+  },
+  "docs/implementation/template-fidelity-policy.md": {
+    "lines": 88,
+    "bytes": 13778
+  },
+  "docs/implementation/template-library.md": {
+    "lines": 116,
+    "bytes": 22840
+  },
+  "docs/implementation/thinkcell-feature-parity.md": {
+    "lines": 97,
+    "bytes": 22037
+  },
+  "docs/implementation/thinkcell-observable-study.md": {
+    "lines": 216,
+    "bytes": 39945
+  },
+  "docs/implementation/typed-native-series-20261029.md": {
+    "lines": 14,
+    "bytes": 2556
+  },
+  "docs/implementation/workbook-handoff-observation-20261029.md": {
+    "lines": 36,
+    "bytes": 5109
+  },
+  "docs/implementation/workspace-cleanup.md": {
+    "lines": 25,
+    "bytes": 4714
+  },
+  "docs/implementation/x64-reviewed-recovery-20261029.md": {
+    "lines": 22,
+    "bytes": 2889
+  },
+  "docs/migration/GALLERY_INTEGRATION_CHECKPOINT.md": {
+    "lines": 41,
+    "bytes": 4906
+  },
+  "docs/migration/MIGRATION_STATUS.md": {
+    "lines": 25,
+    "bytes": 3844
+  },
+  "docs/migration/REPOSITORY_FILE_INVENTORY.md": {
+    "lines": 9,
+    "bytes": 920
+  },
+  "docs/migration/TCIDX_DEPENDENCY_AUDIT.md": {
+    "lines": 29,
+    "bytes": 4073
+  },
+  "docs/migration/TCIDX_TO_PIIDX_MIGRATION_PLAN.md": {
+    "lines": 13,
+    "bytes": 1977
+  },
+  "docs/migration/dependency-findings.csv": {
+    "lines": 208,
+    "bytes": 13099
+  },
+  "docs/migration/inventory-summary.json": {
+    "lines": 12,
+    "bytes": 268
+  },
+  "docs/migration/repository-files.csv": {
+    "lines": 398,
+    "bytes": 114699
+  },
+  "docs/migration/baseline/dependency-findings.csv": {
+    "lines": 208,
+    "bytes": 13099
+  },
+  "docs/migration/baseline/inventory-summary.json": {
+    "lines": 12,
+    "bytes": 268
+  },
+  "docs/migration/baseline/repository-files.csv": {
+    "lines": 398,
+    "bytes": 114699
+  },
+  "docs/requirements/FEATURES.md": {
+    "lines": 177,
+    "bytes": 7983
+  },
+  "docs/requirements/architecture-functional-goal-2026-10-22.md": {
+    "lines": 1550,
+    "bytes": 40819
+  },
+  "docs/requirements/demo-feature-inventory.json": {
+    "lines": 723,
+    "bytes": 28333
+  },
+  "docs/requirements/functional-feature-inventory-2026-10-22.txt": {
+    "lines": 170,
+    "bytes": 6398
+  },
+  "docs/requirements/production-requirement-traceability.json": {
+    "lines": 877,
+    "bytes": 31496
+  },
+  "docs/research/TCIDX_LIBRARY_BEHAVIOR.md": {
+    "lines": 13,
+    "bytes": 1780
+  },
+  "docs/research/tcidx-entropy-evidence.json": {
+    "lines": 98,
+    "bytes": 3697
+  },
+  "docs/research/tcidx-stream-observations.json": {
+    "lines": 99,
+    "bytes": 3029
+  },
+  "docs/security/CHECKMARX_20261103_113558_EVIDENCE.json": {
+    "lines": 109,
+    "bytes": 3351
+  },
+  "docs/security/CHECKMARX_20261103_113558_REMEDIATION.md": {
+    "lines": 34,
+    "bytes": 8372
+  },
+  "docs/security/CHECKMARX_FINDINGS.md": {
+    "lines": 3954,
+    "bytes": 364611
+  },
+  "docs/security/CHECKMARX_FINGERPRINT_20261103_091304.json": {
+    "lines": 45,
+    "bytes": 2232
+  },
+  "docs/security/CHECKMARX_FINGERPRINT_20261103_091304.md": {
+    "lines": 43,
+    "bytes": 5152
+  },
+  "docs/security/CHECKMARX_INTEGRITY_20261102_134253.json": {
+    "lines": 166,
+    "bytes": 10540
+  },
+  "docs/security/CHECKMARX_INTEGRITY_20261102_134253.md": {
+    "lines": 51,
+    "bytes": 9188
+  },
+  "docs/security/CHECKMARX_PATH_TRAVERSAL_20261102.json": {
+    "lines": 3116,
+    "bytes": 150218
+  },
+  "docs/security/CHECKMARX_PATH_TRAVERSAL_20261102.md": {
+    "lines": 143,
+    "bytes": 42234
+  },
+  "docs/security/CHECKMARX_PATH_TRAVERSAL_20261102_113655.json": {
+    "lines": 2112,
+    "bytes": 122702
+  },
+  "docs/security/CHECKMARX_PATH_TRAVERSAL_20261102_113655.md": {
+    "lines": 120,
+    "bytes": 35034
+  },
+  "docs/security/CHECKMARX_PATH_TRAVERSAL_20261102_121110.json": {
+    "lines": 253,
+    "bytes": 9863
+  },
+  "docs/security/CHECKMARX_PATH_TRAVERSAL_20261102_121110.md": {
+    "lines": 46,
+    "bytes": 6945
+  },
+  "docs/security/CODEX_REMEDIATION_INSTRUCTIONS.md": {
+    "lines": 148,
+    "bytes": 18088
+  },
+  "docs/security/PATH_TRAVERSAL_VALIDATION_20261102.md": {
+    "lines": 22,
+    "bytes": 3412
+  },
+  "docs/security/PATH_TRAVERSAL_VALIDATION_20261102_113655.md": {
+    "lines": 22,
+    "bytes": 4444
+  },
+  "docs/security/SECURITY_BOOTSTRAP_ENCODING_20261102.md": {
+    "lines": 18,
+    "bytes": 2115
+  },
+  "docs/security/SECURITY_CORPUS_NET48_20261102.md": {
+    "lines": 26,
+    "bytes": 2999
+  },
+  "docs/security/SECURITY_REMEDIATION_PLAN.md": {
+    "lines": 186,
+    "bytes": 23687
+  },
+  "docs/security/SECURITY_REMEDIATION_STATUS.md": {
+    "lines": 83,
+    "bytes": 15197
+  },
+  "easySetup/Bootstrapper.cs": {
+    "lines": 74,
+    "bytes": 9555
+  },
+  "easySetup/Build-EasySetup.ps1": {
+    "lines": 93,
+    "bytes": 11515
+  },
+  "easySetup/Common.ps1": {
+    "lines": 17,
+    "bytes": 1426
+  },
+  "easySetup/README.md": {
+    "lines": 25,
+    "bytes": 4874
+  },
+  "easySetup/SetupPolicyTests.cs": {
+    "lines": 8,
+    "bytes": 1064
+  },
+  "easySetup/Test-EasySetup.ps1": {
+    "lines": 44,
+    "bytes": 3811
+  },
+  "easySetup/Test-ResourceReader.ps1": {
+    "lines": 34,
+    "bytes": 2529
+  },
+  "easySetup/Watch-EasySetup.ps1": {
+    "lines": 16,
+    "bytes": 865
+  },
+  "easySetup/build.json": {
+    "lines": 13,
+    "bytes": 575
+  },
+  "packages/chart-core/package.json": {
+    "lines": 12,
+    "bytes": 219
+  },
+  "packages/chart-core/src/calculations.mjs": {
+    "lines": 41,
+    "bytes": 2092
+  },
+  "packages/chart-core/test/calculations.test.mjs": {
+    "lines": 14,
+    "bytes": 952
+  },
+  "packages/chart-domain/package-lock.json": {
+    "lines": 76,
+    "bytes": 2520
+  },
+  "packages/chart-domain/package.json": {
+    "lines": 15,
+    "bytes": 257
+  },
+  "packages/chart-domain/schema/chart-document.v2.schema.json": {
+    "lines": 69,
+    "bytes": 3540
+  },
+  "packages/chart-domain/src/validate.mjs": {
+    "lines": 17,
+    "bytes": 1180
+  },
+  "packages/chart-domain/test/contracts.test.mjs": {
+    "lines": 48,
+    "bytes": 2478
+  },
+  "packages/chart-domain/test/validate-roundtrip.mjs": {
+    "lines": 6,
+    "bytes": 373
+  },
+  "packages/chart-engine/README.md": {
+    "lines": 70,
+    "bytes": 4347
+  },
+  "packages/chart-engine/package-lock.json": {
+    "lines": 91,
+    "bytes": 3005
+  },
+  "packages/chart-engine/package.json": {
+    "lines": 17,
+    "bytes": 317
+  },
+  "packages/chart-engine/tsconfig.json": {
+    "lines": 14,
+    "bytes": 327
+  },
+  "packages/chart-engine/schema/render-result.v1.schema.json": {
+    "lines": 103,
+    "bytes": 5822
+  },
+  "packages/chart-engine/schema/rendered-chart.v1.xsd": {
+    "lines": 27,
+    "bytes": 2401
+  },
+  "packages/chart-engine/src/basic-charts.ts": {
+    "lines": 189,
+    "bytes": 13858
+  },
+  "packages/chart-engine/src/scene-builder.ts": {
+    "lines": 60,
+    "bytes": 5229
+  },
+  "packages/chart-engine/src/scene-contract.ts": {
+    "lines": 148,
+    "bytes": 9520
+  },
+  "packages/chart-engine/src/strict-scene-json.ts": {
+    "lines": 55,
+    "bytes": 2747
+  },
+  "packages/chart-engine/src/svg-preview.ts": {
+    "lines": 37,
+    "bytes": 3471
+  },
+  "packages/chart-engine/test/basic-charts.test.mjs": {
+    "lines": 141,
+    "bytes": 10277
+  },
+  "packages/chart-engine/test/canonical-scene.test.mjs": {
+    "lines": 29,
+    "bytes": 2237
+  },
+  "packages/chart-engine/test/scene-contract.test.mjs": {
+    "lines": 72,
+    "bytes": 5374
+  },
+  "packages/chart-engine/test/scene-schema.test.mjs": {
+    "lines": 30,
+    "bytes": 1869
+  },
+  "packages/chart-engine/test/svg-preview.test.mjs": {
+    "lines": 36,
+    "bytes": 2019
+  },
+  "packages/chart-engine/tools/render-chart-v2.mjs": {
+    "lines": 30,
+    "bytes": 1856
+  },
+  "scripts/Artifact-Inputs.ps1": {
+    "lines": 27,
+    "bytes": 1768
+  },
+  "scripts/Build-Integrity.ps1": {
+    "lines": 100,
+    "bytes": 7220
+  },
+  "scripts/Check-Process.ps1": {
+    "lines": 28,
+    "bytes": 2125
+  },
+  "scripts/Clean-Workspace.ps1": {
+    "lines": 31,
+    "bytes": 2702
+  },
+  "scripts/Collect-SceneThreatEvidence.ps1": {
+    "lines": 96,
+    "bytes": 8622
+  },
+  "scripts/Diagnose-PowerPointActivation.ps1": {
+    "lines": 41,
+    "bytes": 2742
+  },
+  "scripts/Diagnostic-OutputPath.ps1": {
+    "lines": 69,
+    "bytes": 3959
+  },
+  "scripts/Install-Local.ps1": {
+    "lines": 76,
+    "bytes": 5817
+  },
+  "scripts/Maintain-Artifacts.py": {
+    "lines": 174,
+    "bytes": 8775
+  },
+  "scripts/New-PiidxSample.ps1": {
+    "lines": 12,
+    "bytes": 1050
+  },
+  "scripts/Package-Content.ps1": {
+    "lines": 16,
+    "bytes": 719
+  },
+  "scripts/Piidx-Recovery.ps1": {
+    "lines": 24,
+    "bytes": 2753
+  },
+  "scripts/Piidx-TestSuite.ps1": {
+    "lines": 47,
+    "bytes": 4562
+  },
+  "scripts/Repair-TemplateAlignment.py": {
+    "lines": 48,
+    "bytes": 2900
+  },
+  "scripts/RepairTemplateSafety.py": {
+    "lines": 248,
+    "bytes": 11426
+  },
+  "scripts/Restore-LockedDependencies.ps1": {
+    "lines": 10,
+    "bytes": 529
+  },
+  "scripts/Safe-Xml.ps1": {
+    "lines": 19,
+    "bytes": 818
+  },
+  "scripts/Scene-RunnerCache.ps1": {
+    "lines": 99,
+    "bytes": 9172
+  },
+  "scripts/Source-Fingerprint.ps1": {
+    "lines": 36,
+    "bytes": 2691
+  },
+  "scripts/Test-All.ps1": {
+    "lines": 136,
+    "bytes": 10015
+  },
+  "scripts/Test-BuildIntegrity.ps1": {
+    "lines": 45,
+    "bytes": 3786
+  },
+  "scripts/Test-CheckProcess.ps1": {
+    "lines": 16,
+    "bytes": 1606
+  },
+  "scripts/Test-Checkmarx113558.ps1": {
+    "lines": 38,
+    "bytes": 3327
+  },
+  "scripts/Test-DemoFeatures.ps1": {
+    "lines": 38,
+    "bytes": 6547
+  },
+  "scripts/Test-DemoPackage.ps1": {
+    "lines": 34,
+    "bytes": 2991
+  },
+  "scripts/Test-DiagnosticOutputPath.ps1": {
+    "lines": 48,
+    "bytes": 3339
+  },
+  "scripts/Test-InstalledRibbon.ps1": {
+    "lines": 68,
+    "bytes": 6647
+  },
+  "scripts/Test-NativeRenderer.ps1": {
+    "lines": 33,
+    "bytes": 3973
+  },
+  "scripts/Test-OfficeCompatibility.ps1": {
+    "lines": 22,
+    "bytes": 1471
+  },
+  "scripts/Test-PackageMarker.ps1": {
+    "lines": 19,
+    "bytes": 1094
+  },
+  "scripts/Test-PayloadRecompile.ps1": {
+    "lines": 34,
+    "bytes": 2587
+  },
+  "scripts/Test-Piidx.ps1": {
+    "lines": 28,
+    "bytes": 2080
+  },
+  "scripts/Test-PiidxCatalog.ps1": {
+    "lines": 10,
+    "bytes": 692
+  },
+  "scripts/Test-PiidxCorpus.ps1": {
+    "lines": 10,
+    "bytes": 741
+  },
+  "scripts/Test-PiidxFoundation.ps1": {
+    "lines": 10,
+    "bytes": 732
+  },
+  "scripts/Test-PiidxIsolation.ps1": {
+    "lines": 15,
+    "bytes": 1853
+  },
+  "scripts/Test-PiidxPreviews.ps1": {
+    "lines": 10,
+    "bytes": 693
+  },
+  "scripts/Test-PiidxRecovery.ps1": {
+    "lines": 35,
+    "bytes": 2548
+  },
+  "scripts/Test-PiidxSourceReader.ps1": {
+    "lines": 10,
+    "bytes": 728
+  },
+  "scripts/Test-PiidxSqliteCapability.ps1": {
+    "lines": 21,
+    "bytes": 2106
+  },
+  "scripts/Test-Ribbon.ps1": {
+    "lines": 18,
+    "bytes": 4344
+  },
+  "scripts/Test-S0.ps1": {
+    "lines": 51,
+    "bytes": 3969
+  },
+  "scripts/Test-S1.ps1": {
+    "lines": 29,
+    "bytes": 2046
+  },
+  "scripts/Test-SceneContracts.ps1": {
+    "lines": 102,
+    "bytes": 10272
+  },
+  "scripts/Test-SceneRunnerCache.ps1": {
+    "lines": 92,
+    "bytes": 9404
+  },
+  "scripts/Test-SecurityRemediation.ps1": {
+    "lines": 35,
+    "bytes": 3274
+  },
+  "scripts/Test-SourceFingerprint.ps1": {
+    "lines": 37,
+    "bytes": 2894
+  },
+  "scripts/Test-TemplateLibrary.ps1": {
+    "lines": 61,
+    "bytes": 6435
+  },
+  "scripts/audit-library-dependencies.py": {
+    "lines": 57,
+    "bytes": 6268
+  },
+  "services/ai-gateway/README.md": {
+    "lines": 7,
+    "bytes": 598
+  },
+  "services/ai-gateway/action-plan.schema.json": {
+    "lines": 68,
+    "bytes": 1442
+  },
+  "src/Chart.Domain/Chart.Domain.csproj": {
+    "lines": 18,
+    "bytes": 1280
+  },
+  "src/Chart.Domain/ChartCodec.cs": {
+    "lines": 153,
+    "bytes": 8931
+  },
+  "src/Chart.Domain/ChartDocument.cs": {
+    "lines": 62,
+    "bytes": 3782
+  },
+  "src/Chart.Domain/ChartDocumentV3.cs": {
+    "lines": 47,
+    "bytes": 2837
+  },
+  "src/Chart.Domain/ChartV3Codec.cs": {
+    "lines": 95,
+    "bytes": 7124
+  },
+  "src/Chart.Domain/S0Migration.cs": {
+    "lines": 32,
+    "bytes": 1714
+  },
+  "src/Chart.Renderers/NativeRenderingCore.cs": {
+    "lines": 193,
+    "bytes": 13397
+  },
+  "src/Chart.Renderers/PowerPointSceneSurface.cs": {
+    "lines": 176,
+    "bytes": 12832
+  },
+  "src/Chart.Renderers/SceneCodec.cs": {
+    "lines": 184,
+    "bytes": 12141
+  },
+  "src/Chart.Renderers/SceneContracts.cs": {
+    "lines": 87,
+    "bytes": 5095
+  },
+  "src/Chart.Renderers/StrictSceneJson.cs": {
+    "lines": 14,
+    "bytes": 549
+  },
+  "src/Library.Core/LibraryConfiguration.cs": {
+    "lines": 93,
+    "bytes": 8815
+  },
+  "src/Library.Core/LibraryModels.cs": {
+    "lines": 77,
+    "bytes": 3195
+  },
+  "src/Library.Core/LibraryRefreshMonitor.cs": {
+    "lines": 99,
+    "bytes": 6319
+  },
+  "src/Library.Core/NativeSqlite.cs": {
+    "lines": 160,
+    "bytes": 13180
+  },
+  "src/Library.Core/PathPolicy.cs": {
+    "lines": 150,
+    "bytes": 8549
+  },
+  "src/Library.Core/PiidxCatalog.cs": {
+    "lines": 206,
+    "bytes": 19923
+  },
+  "src/Library.Core/PiidxNavigation.cs": {
+    "lines": 31,
+    "bytes": 2050
+  },
+  "src/Library.Core/PiidxPreviewCache.cs": {
+    "lines": 76,
+    "bytes": 6879
+  },
+  "src/Library.Core/PiidxSchema.cs": {
+    "lines": 79,
+    "bytes": 8604
+  },
+  "src/Library.Core/PiidxSearch.cs": {
+    "lines": 104,
+    "bytes": 9568
+  },
+  "src/Library.Core/PresentationSource.cs": {
+    "lines": 201,
+    "bytes": 18136
+  },
+  "src/Shared.Contracts/BoundedJson.cs": {
+    "lines": 130,
+    "bytes": 6508
+  },
+  "tests/compatibility/OfficeCompatibilityTests.cs": {
+    "lines": 101,
+    "bytes": 7755
+  },
+  "tests/library/GalleryTests.cs": {
+    "lines": 38,
+    "bytes": 6500
+  },
+  "tests/library/LegacyLibraryCacheFixture.cs": {
+    "lines": 25,
+    "bytes": 3758
+  },
+  "tests/library/LibraryBrowserTests.cs": {
+    "lines": 91,
+    "bytes": 11943
+  },
+  "tests/library/PiidxGalleryTests.cs": {
+    "lines": 44,
+    "bytes": 5560
+  },
+  "tests/library/TemplateFidelity.cs": {
+    "lines": 133,
+    "bytes": 16798
+  },
+  "tests/library/TemplateFidelityTests.cs": {
+    "lines": 86,
+    "bytes": 12443
+  },
+  "tests/library/TemplateLibraryTests.cs": {
+    "lines": 165,
+    "bytes": 24873
+  },
+  "tests/library/piidx/PiidxCatalogTests.cs": {
+    "lines": 85,
+    "bytes": 11028
+  },
+  "tests/library/piidx/PiidxCorpusTests.cs": {
+    "lines": 28,
+    "bytes": 2311
+  },
+  "tests/library/piidx/PiidxEdgeTests.cs": {
+    "lines": 33,
+    "bytes": 3177
+  },
+  "tests/library/piidx/PiidxPreviewTests.cs": {
+    "lines": 37,
+    "bytes": 3653
+  },
+  "tests/library/piidx/PiidxSampleBuilder.cs": {
+    "lines": 16,
+    "bytes": 1341
+  },
+  "tests/library/piidx/PiidxSchemaTests.cs": {
+    "lines": 80,
+    "bytes": 6561
+  },
+  "tests/library/piidx/PiidxSourceTests.cs": {
+    "lines": 76,
+    "bytes": 8408
+  },
+  "tests/library/piidx/PiidxWorkspaceTests.cs": {
+    "lines": 51,
+    "bytes": 6503
+  },
+  "tests/s0/ChapterAgendaOfficeTests.cs": {
+    "lines": 71,
+    "bytes": 11311
+  },
+  "tests/s0/ChapterAgendaTests.cs": {
+    "lines": 66,
+    "bytes": 9528
+  },
+  "tests/s0/ChartAnnotationTests.cs": {
+    "lines": 38,
+    "bytes": 5665
+  },
+  "tests/s0/ContextChartFormattingTests.cs": {
+    "lines": 6,
+    "bytes": 1158
+  },
+  "tests/s0/ContextForegroundPolicy.cs": {
+    "lines": 17,
+    "bytes": 725
+  },
+  "tests/s0/ContextForegroundPrompt.cs": {
+    "lines": 18,
+    "bytes": 1520
+  },
+  "tests/s0/ContextFormattingOfficeTests.cs": {
+    "lines": 12,
+    "bytes": 4573
+  },
+  "tests/s0/ContextFormattingTests.cs": {
+    "lines": 8,
+    "bytes": 1718
+  },
+  "tests/s0/ContextPanelModelTests.cs": {
+    "lines": 45,
+    "bytes": 10574
+  },
+  "tests/s0/ContextPropertiesOfficeTests.cs": {
+    "lines": 78,
+    "bytes": 15711
+  },
+  "tests/s0/ContextPropertiesTests.cs": {
+    "lines": 56,
+    "bytes": 12317
+  },
+  "tests/s0/DataLinkManagerTests.cs": {
+    "lines": 38,
+    "bytes": 7156
+  },
+  "tests/s0/DataSourceTests.cs": {
+    "lines": 148,
+    "bytes": 17098
+  },
+  "tests/s0/DemoContractTests.cs": {
+    "lines": 170,
+    "bytes": 17533
+  },
+  "tests/s0/DemoOfficeTests.cs": {
+    "lines": 91,
+    "bytes": 10092
+  },
+  "tests/s0/DemoScenario.cs": {
+    "lines": 206,
+    "bytes": 22997
+  },
+  "tests/s0/ExcelRangeMappingTests.cs": {
+    "lines": 22,
+    "bytes": 3281
+  },
+  "tests/s0/HostIntegrationTests.cs": {
+    "lines": 231,
+    "bytes": 15562
+  },
+  "tests/s0/IndicatorElementTests.cs": {
+    "lines": 11,
+    "bytes": 2152
+  },
+  "tests/s0/IndicatorOfficeTests.cs": {
+    "lines": 16,
+    "bytes": 5258
+  },
+  "tests/s0/LinkedChartDiagnostic.cs": {
+    "lines": 75,
+    "bytes": 8062
+  },
+  "tests/s0/MappedExcelOfficeTests.cs": {
+    "lines": 29,
+    "bytes": 4369
+  },
+  "tests/s0/MetadataTests.cs": {
+    "lines": 49,
+    "bytes": 3892
+  },
+  "tests/s0/NativeChartControlTests.cs": {
+    "lines": 18,
+    "bytes": 2434
+  },
+  "tests/s0/NativeFormattingTests.cs": {
+    "lines": 19,
+    "bytes": 2792
+  },
+  "tests/s0/PresentationAgendaTests.cs": {
+    "lines": 47,
+    "bytes": 5297
+  },
+  "tests/s0/PresentationQualityTests.cs": {
+    "lines": 29,
+    "bytes": 4371
+  },
+  "tests/s0/ProcessFlowOfficeTests.cs": {
+    "lines": 42,
+    "bytes": 8216
+  },
+  "tests/s0/ProcessFlowTests.cs": {
+    "lines": 31,
+    "bytes": 6504
+  },
+  "tests/s0/ProductivityToolOfficeTests.cs": {
+    "lines": 22,
+    "bytes": 4048
+  },
+  "tests/s0/ProductivityToolTests.cs": {
+    "lines": 17,
+    "bytes": 3084
+  },
+  "tests/s0/ServiceConnectionTests.cs": {
+    "lines": 38,
+    "bytes": 7198
+  },
+  "tests/s0/TextShapeElementTests.cs": {
+    "lines": 33,
+    "bytes": 6118
+  },
+  "tests/s0/TextShapeOfficeTests.cs": {
+    "lines": 46,
+    "bytes": 7624
+  },
+  "tests/s0/UniversalConnectorOfficeTests.cs": {
+    "lines": 49,
+    "bytes": 10215
+  },
+  "tests/s0/UniversalConnectorTests.cs": {
+    "lines": 54,
+    "bytes": 9353
+  },
+  "tests/s0/WorkflowOfficeTests.cs": {
+    "lines": 127,
+    "bytes": 12992
+  },
+  "tests/s0/XmlPartUpdateTests.cs": {
+    "lines": 44,
+    "bytes": 9256
+  },
+  "tests/s1/DomainTests.cs": {
+    "lines": 97,
+    "bytes": 7129
+  },
+  "tests/s1/fixtures/clustered-column.v2.json": {
+    "lines": 20,
+    "bytes": 801
+  },
+  "tests/s3/NativeRendererTests.cs": {
+    "lines": 197,
+    "bytes": 17460
+  },
+  "tests/s3/RendererRibbonTests.cs": {
+    "lines": 42,
+    "bytes": 3189
+  },
+  "tests/s3/SceneArtifactPath.cs": {
+    "lines": 42,
+    "bytes": 2388
+  },
+  "tests/s3/SceneContractTests.cs": {
+    "lines": 92,
+    "bytes": 6755
+  },
+  "tests/s3/scene-fixtures.mjs": {
+    "lines": 109,
+    "bytes": 10914
+  },
+  "tests/s3/validate-roundtrip.mjs": {
+    "lines": 23,
+    "bytes": 1711
+  },
+  "tests/s3/fixtures/all-primitives.v1.json": {
+    "lines": 139,
+    "bytes": 2875
+  },
+  "tests/security/PathPolicyTests.cs": {
+    "lines": 42,
+    "bytes": 3125
+  },
+  "tests/security/test_artifact_maintenance.py": {
+    "lines": 76,
+    "bytes": 3698
+  },
+  "tests/security/test_repair_template_alignment.py": {
+    "lines": 205,
+    "bytes": 10557
+  }
+}

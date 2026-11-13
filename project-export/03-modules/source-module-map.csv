@@ -1,0 +1,159 @@
+source_path,module_id,module_name,design_document
+apps/powerpoint-vsto/App.config,VSTO-01,"VSTO lifecycle, compatibility and S0 native host",03-modules/individual-module-designs/vsto/lifecycle-host.md
+apps/powerpoint-vsto/Contracts.cs,VSTO-01,"VSTO lifecycle, compatibility and S0 native host",03-modules/individual-module-designs/vsto/lifecycle-host.md
+apps/powerpoint-vsto/MetadataCodec.cs,VSTO-01,"VSTO lifecycle, compatibility and S0 native host",03-modules/individual-module-designs/vsto/lifecycle-host.md
+apps/powerpoint-vsto/OfficeCompatibility.cs,VSTO-01,"VSTO lifecycle, compatibility and S0 native host",03-modules/individual-module-designs/vsto/lifecycle-host.md
+apps/powerpoint-vsto/PowerPointHost.cs,VSTO-01,"VSTO lifecycle, compatibility and S0 native host",03-modules/individual-module-designs/vsto/lifecycle-host.md
+apps/powerpoint-vsto/PowerPointIntelligence.csproj,VSTO-01,"VSTO lifecycle, compatibility and S0 native host",03-modules/individual-module-designs/vsto/lifecycle-host.md
+apps/powerpoint-vsto/ThisAddIn.Designer.cs,VSTO-01,"VSTO lifecycle, compatibility and S0 native host",03-modules/individual-module-designs/vsto/lifecycle-host.md
+apps/powerpoint-vsto/ThisAddIn.Designer.xml,VSTO-01,"VSTO lifecycle, compatibility and S0 native host",03-modules/individual-module-designs/vsto/lifecycle-host.md
+apps/powerpoint-vsto/ThisAddIn.cs,VSTO-01,"VSTO lifecycle, compatibility and S0 native host",03-modules/individual-module-designs/vsto/lifecycle-host.md
+apps/powerpoint-vsto/DemoApi.cs,VSTO-02,"Ribbon catalog, dispatch, icons, browser and automation facade",03-modules/individual-module-designs/vsto/commands-ribbon.md
+apps/powerpoint-vsto/DemoInputs.cs,VSTO-02,"Ribbon catalog, dispatch, icons, browser and automation facade",03-modules/individual-module-designs/vsto/commands-ribbon.md
+apps/powerpoint-vsto/DemoRibbon.cs,VSTO-02,"Ribbon catalog, dispatch, icons, browser and automation facade",03-modules/individual-module-designs/vsto/commands-ribbon.md
+apps/powerpoint-vsto/DemoTools.cs,VSTO-02,"Ribbon catalog, dispatch, icons, browser and automation facade",03-modules/individual-module-designs/vsto/commands-ribbon.md
+apps/powerpoint-vsto/DemoWorkspace.cs,VSTO-02,"Ribbon catalog, dispatch, icons, browser and automation facade",03-modules/individual-module-designs/vsto/commands-ribbon.md
+apps/powerpoint-vsto/FeatureInventory.cs,VSTO-02,"Ribbon catalog, dispatch, icons, browser and automation facade",03-modules/individual-module-designs/vsto/commands-ribbon.md
+apps/powerpoint-vsto/RibbonIcons.cs,VSTO-02,"Ribbon catalog, dispatch, icons, browser and automation facade",03-modules/individual-module-designs/vsto/commands-ribbon.md
+apps/powerpoint-vsto/DataLinkManager.cs,VSTO-03,"Linked files, Excel mapping and source manager",03-modules/individual-module-designs/vsto/linked-data.md
+apps/powerpoint-vsto/DataSources.cs,VSTO-03,"Linked files, Excel mapping and source manager",03-modules/individual-module-designs/vsto/linked-data.md
+apps/powerpoint-vsto/DemoLinks.cs,VSTO-03,"Linked files, Excel mapping and source manager",03-modules/individual-module-designs/vsto/linked-data.md
+apps/powerpoint-vsto/ExcelRangeMapping.cs,VSTO-03,"Linked files, Excel mapping and source manager",03-modules/individual-module-designs/vsto/linked-data.md
+apps/powerpoint-vsto/MappedLinkOperations.cs,VSTO-03,"Linked files, Excel mapping and source manager",03-modules/individual-module-designs/vsto/linked-data.md
+apps/powerpoint-vsto/ChartAnnotations.cs,VSTO-04,"Native axes, series and annotations",03-modules/individual-module-designs/vsto/native-chart-controls.md
+apps/powerpoint-vsto/NativeChartControls.cs,VSTO-04,"Native axes, series and annotations",03-modules/individual-module-designs/vsto/native-chart-controls.md
+apps/powerpoint-vsto/NativeSeriesControls.cs,VSTO-04,"Native axes, series and annotations",03-modules/individual-module-designs/vsto/native-chart-controls.md
+apps/powerpoint-vsto/ContextActionRouter.cs,VSTO-05,Selection-aware floating property box,03-modules/individual-module-designs/vsto/context-properties.md
+apps/powerpoint-vsto/ContextChartFormatting.cs,VSTO-05,Selection-aware floating property box,03-modules/individual-module-designs/vsto/context-properties.md
+apps/powerpoint-vsto/ContextFormatting.cs,VSTO-05,Selection-aware floating property box,03-modules/individual-module-designs/vsto/context-properties.md
+apps/powerpoint-vsto/ContextPanelModel.cs,VSTO-05,Selection-aware floating property box,03-modules/individual-module-designs/vsto/context-properties.md
+apps/powerpoint-vsto/ContextPropertiesController.cs,VSTO-05,Selection-aware floating property box,03-modules/individual-module-designs/vsto/context-properties.md
+apps/powerpoint-vsto/ContextPropertiesView.cs,VSTO-05,Selection-aware floating property box,03-modules/individual-module-designs/vsto/context-properties.md
+apps/powerpoint-vsto/ContextSelectionBridge.cs,VSTO-05,Selection-aware floating property box,03-modules/individual-module-designs/vsto/context-properties.md
+apps/powerpoint-vsto/NativeFormatting.cs,VSTO-06,Native formatting plans and restoration transactions,03-modules/individual-module-designs/vsto/native-formatting.md
+apps/powerpoint-vsto/ElementCommands.cs,VSTO-07,"Text box, pentagon, chevron and rounded native elements",03-modules/individual-module-designs/vsto/managed-text.md
+apps/powerpoint-vsto/TextShapeElements.cs,VSTO-07,"Text box, pentagon, chevron and rounded native elements",03-modules/individual-module-designs/vsto/managed-text.md
+apps/powerpoint-vsto/ProcessFlowTools.cs,VSTO-08,Process-grid layout and retained structural history,03-modules/individual-module-designs/vsto/process-grid.md
+apps/powerpoint-vsto/IndicatorElements.cs,VSTO-09,Harvey-ball and checkbox editable vectors,03-modules/individual-module-designs/vsto/indicators.md
+apps/powerpoint-vsto/UniversalConnectors.cs,VSTO-10,Universal connector geometry and endpoint bindings,03-modules/individual-module-designs/vsto/connectors.md
+apps/powerpoint-vsto/ChapterAgenda.cs,VSTO-11,Managed chapters/contents and legacy presentation agenda,03-modules/individual-module-designs/vsto/agendas.md
+apps/powerpoint-vsto/ChapterAgendaModel.cs,VSTO-11,Managed chapters/contents and legacy presentation agenda,03-modules/individual-module-designs/vsto/agendas.md
+apps/powerpoint-vsto/PresentationAgenda.cs,VSTO-11,Managed chapters/contents and legacy presentation agenda,03-modules/individual-module-designs/vsto/agendas.md
+apps/powerpoint-vsto/TemplateCatalog.cs,VSTO-12,"Designed template layouts, editable fields and palettes",03-modules/individual-module-designs/vsto/template-catalog.md
+apps/powerpoint-vsto/TemplateLibrary.cs,VSTO-13,"Template insertion, source-original sessions and layout links",03-modules/individual-module-designs/vsto/template-insertion.md
+apps/powerpoint-vsto/LocalLibraryGallery.cs,VSTO-14,Thumbnail gallery and PIIDX workspace UI,03-modules/individual-module-designs/vsto/library-gallery.md
+apps/powerpoint-vsto/LocalLibraryWorkspace.cs,VSTO-14,Thumbnail gallery and PIIDX workspace UI,03-modules/individual-module-designs/vsto/library-gallery.md
+apps/powerpoint-vsto/ProductivityTools.cs,VSTO-15,"Local symbol, decimal, picture-copy and chart workbook tools",03-modules/individual-module-designs/vsto/productivity.md
+apps/powerpoint-vsto/PresentationQuality.cs,VSTO-16,Read-only presentation heuristics and navigation,03-modules/individual-module-designs/vsto/quality.md
+apps/powerpoint-vsto/XmlPartUpdates.cs,VSTO-17,Canonical XML ownership and compensating replacement,03-modules/individual-module-designs/vsto/xml-attachments.md
+apps/powerpoint-vsto/ServiceConnections.cs,VSTO-18,Nonsecret external-service configuration UI,03-modules/individual-module-designs/vsto/service-config.md
+apps/powerpoint-vsto/RendererRibbonCommand.cs,VSTO-19,Native scene-renderer ribbon adapter,03-modules/individual-module-designs/vsto/renderer-bridge.md
+src/Chart.Domain/Chart.Domain.csproj,domain-v2,Canonical chart v2 and explicit S0 migration,03-modules/individual-module-designs/core/domain-v2.md
+src/Chart.Domain/ChartCodec.cs,domain-v2,Canonical chart v2 and explicit S0 migration,03-modules/individual-module-designs/core/domain-v2.md
+src/Chart.Domain/ChartDocument.cs,domain-v2,Canonical chart v2 and explicit S0 migration,03-modules/individual-module-designs/core/domain-v2.md
+src/Chart.Domain/S0Migration.cs,domain-v2,Canonical chart v2 and explicit S0 migration,03-modules/individual-module-designs/core/domain-v2.md
+src/Chart.Domain/ChartDocumentV3.cs,domain-v3,Authored chart v3 options and codec,03-modules/individual-module-designs/core/domain-v3.md
+src/Chart.Domain/ChartV3Codec.cs,domain-v3,Authored chart v3 options and codec,03-modules/individual-module-designs/core/domain-v3.md
+src/Shared.Contracts/BoundedJson.cs,strict-json,Bounded JSON and Unicode utilities,03-modules/individual-module-designs/core/strict-json.md
+src/Chart.Renderers/SceneCodec.cs,scene-contract,Scene DTOs and cross-language hash boundary,03-modules/individual-module-designs/core/scene-contract.md
+src/Chart.Renderers/SceneContracts.cs,scene-contract,Scene DTOs and cross-language hash boundary,03-modules/individual-module-designs/core/scene-contract.md
+src/Chart.Renderers/StrictSceneJson.cs,scene-contract,Scene DTOs and cross-language hash boundary,03-modules/individual-module-designs/core/scene-contract.md
+src/Chart.Renderers/NativeRenderingCore.cs,native-renderer,Canonical projection and owned native shape renderer,03-modules/individual-module-designs/core/native-renderer.md
+src/Chart.Renderers/PowerPointSceneSurface.cs,native-renderer,Canonical projection and owned native shape renderer,03-modules/individual-module-designs/core/native-renderer.md
+src/Library.Core/NativeSqlite.cs,sqlite,Windows native SQLite bridge,03-modules/individual-module-designs/core/sqlite.md
+src/Library.Core/PiidxSchema.cs,piidx-schema,Versioned independent PIIDX schema,03-modules/individual-module-designs/core/piidx-schema.md
+src/Library.Core/PresentationSource.cs,source-extraction,Read-only PPTX/POTX metadata extraction,03-modules/individual-module-designs/core/source-extraction.md
+src/Library.Core/PiidxCatalog.cs,catalog,Transactional PIIDX registration and refresh,03-modules/individual-module-designs/core/catalog.md
+src/Library.Core/LibraryModels.cs,catalog-query,"PIIDX query models, search and navigation",03-modules/individual-module-designs/core/catalog-query.md
+src/Library.Core/PiidxNavigation.cs,catalog-query,"PIIDX query models, search and navigation",03-modules/individual-module-designs/core/catalog-query.md
+src/Library.Core/PiidxSearch.cs,catalog-query,"PIIDX query models, search and navigation",03-modules/individual-module-designs/core/catalog-query.md
+src/Library.Core/PiidxPreviewCache.cs,preview-cache,Validated PNG derivative cache,03-modules/individual-module-designs/core/preview-cache.md
+src/Library.Core/LibraryConfiguration.cs,library-config,Library profile and explicit legacy registration migration,03-modules/individual-module-designs/core/library-config.md
+src/Library.Core/LibraryRefreshMonitor.cs,library-refresh,Background filesystem refresh coordinator,03-modules/individual-module-designs/core/library-refresh.md
+src/Library.Core/PathPolicy.cs,path-policy,Shared selected-input and generated-output policy,03-modules/individual-module-designs/core/path-policy.md
+packages/chart-core/package.json,chart-calculations,Pure JavaScript and TypeScript numerical engines,03-modules/individual-module-designs/core/chart-calculations.md
+packages/chart-core/src/calculations.mjs,chart-calculations,Pure JavaScript and TypeScript numerical engines,03-modules/individual-module-designs/core/chart-calculations.md
+packages/chart-engine/package.json,chart-calculations,Pure JavaScript and TypeScript numerical engines,03-modules/individual-module-designs/core/chart-calculations.md
+packages/chart-engine/src/basic-charts.ts,chart-calculations,Pure JavaScript and TypeScript numerical engines,03-modules/individual-module-designs/core/chart-calculations.md
+packages/chart-engine/tsconfig.json,chart-calculations,Pure JavaScript and TypeScript numerical engines,03-modules/individual-module-designs/core/chart-calculations.md
+packages/chart-domain/package.json,ts-scene,TypeScript scene construction and v2 file adapter,03-modules/individual-module-designs/core/ts-scene.md
+packages/chart-domain/src/validate.mjs,ts-scene,TypeScript scene construction and v2 file adapter,03-modules/individual-module-designs/core/ts-scene.md
+packages/chart-engine/src/scene-builder.ts,ts-scene,TypeScript scene construction and v2 file adapter,03-modules/individual-module-designs/core/ts-scene.md
+packages/chart-engine/src/scene-contract.ts,ts-scene,TypeScript scene construction and v2 file adapter,03-modules/individual-module-designs/core/ts-scene.md
+packages/chart-engine/src/strict-scene-json.ts,ts-scene,TypeScript scene construction and v2 file adapter,03-modules/individual-module-designs/core/ts-scene.md
+packages/chart-engine/tools/render-chart-v2.mjs,ts-scene,TypeScript scene construction and v2 file adapter,03-modules/individual-module-designs/core/ts-scene.md
+packages/chart-engine/README.md,svg-preview,Internal SVG geometry inspection,03-modules/individual-module-designs/core/svg-preview.md
+packages/chart-engine/src/svg-preview.ts,svg-preview,Internal SVG geometry inspection,03-modules/individual-module-designs/core/svg-preview.md
+packages/chart-domain/schema/chart-document.v2.schema.json,published-schemas,"Published chart, scene and rendered-record schemas",03-modules/individual-module-designs/core/published-schemas.md
+packages/chart-engine/schema/render-result.v1.schema.json,published-schemas,"Published chart, scene and rendered-record schemas",03-modules/individual-module-designs/core/published-schemas.md
+packages/chart-engine/schema/rendered-chart.v1.xsd,published-schemas,"Published chart, scene and rendered-record schemas",03-modules/individual-module-designs/core/published-schemas.md
+apps/powerpoint-vsto/ServiceConnections.cs,OPS-01,service-profiles,03-modules/individual-module-designs/operations/service-profiles.md
+services/ai-gateway/README.md,OPS-01,service-profiles,03-modules/individual-module-designs/operations/service-profiles.md
+services/ai-gateway/action-plan.schema.json,OPS-01,service-profiles,03-modules/individual-module-designs/operations/service-profiles.md
+tests/s0/ServiceConnectionTests.cs,OPS-01,service-profiles,03-modules/individual-module-designs/operations/service-profiles.md
+apps/powerpoint-vsto/Contracts.cs,OPS-02,com-automation,03-modules/individual-module-designs/operations/com-automation.md
+apps/powerpoint-vsto/DemoApi.cs,OPS-02,com-automation,03-modules/individual-module-designs/operations/com-automation.md
+apps/powerpoint-vsto/PowerPointIntelligence.csproj,OPS-03,packaging-build,03-modules/individual-module-designs/operations/packaging-build.md
+easySetup/Build-EasySetup.ps1,OPS-03,packaging-build,03-modules/individual-module-designs/operations/packaging-build.md
+easySetup/Common.ps1,OPS-03,packaging-build,03-modules/individual-module-designs/operations/packaging-build.md
+easySetup/SetupPolicyTests.cs,OPS-03,packaging-build,03-modules/individual-module-designs/operations/packaging-build.md
+easySetup/Test-EasySetup.ps1,OPS-03,packaging-build,03-modules/individual-module-designs/operations/packaging-build.md
+easySetup/Test-ResourceReader.ps1,OPS-03,packaging-build,03-modules/individual-module-designs/operations/packaging-build.md
+easySetup/Watch-EasySetup.ps1,OPS-03,packaging-build,03-modules/individual-module-designs/operations/packaging-build.md
+scripts/Install-Local.ps1,OPS-03,packaging-build,03-modules/individual-module-designs/operations/packaging-build.md
+scripts/Package-Content.ps1,OPS-03,packaging-build,03-modules/individual-module-designs/operations/packaging-build.md
+scripts/Test-DemoPackage.ps1,OPS-03,packaging-build,03-modules/individual-module-designs/operations/packaging-build.md
+scripts/Test-PackageMarker.ps1,OPS-03,packaging-build,03-modules/individual-module-designs/operations/packaging-build.md
+scripts/Test-PayloadRecompile.ps1,OPS-03,packaging-build,03-modules/individual-module-designs/operations/packaging-build.md
+easySetup/Bootstrapper.cs,OPS-04,deployment-bootstrap,03-modules/individual-module-designs/operations/deployment-bootstrap.md
+scripts/Artifact-Inputs.ps1,OPS-05,build-provenance,03-modules/individual-module-designs/operations/build-provenance.md
+scripts/Build-Integrity.ps1,OPS-05,build-provenance,03-modules/individual-module-designs/operations/build-provenance.md
+scripts/Piidx-Recovery.ps1,OPS-05,build-provenance,03-modules/individual-module-designs/operations/build-provenance.md
+scripts/Piidx-TestSuite.ps1,OPS-05,build-provenance,03-modules/individual-module-designs/operations/build-provenance.md
+scripts/Restore-LockedDependencies.ps1,OPS-05,build-provenance,03-modules/individual-module-designs/operations/build-provenance.md
+scripts/Safe-Xml.ps1,OPS-05,build-provenance,03-modules/individual-module-designs/operations/build-provenance.md
+scripts/Scene-RunnerCache.ps1,OPS-05,build-provenance,03-modules/individual-module-designs/operations/build-provenance.md
+scripts/Source-Fingerprint.ps1,OPS-05,build-provenance,03-modules/individual-module-designs/operations/build-provenance.md
+scripts/Test-BuildIntegrity.ps1,OPS-05,build-provenance,03-modules/individual-module-designs/operations/build-provenance.md
+scripts/Test-Checkmarx113558.ps1,OPS-05,build-provenance,03-modules/individual-module-designs/operations/build-provenance.md
+scripts/Test-PiidxRecovery.ps1,OPS-05,build-provenance,03-modules/individual-module-designs/operations/build-provenance.md
+scripts/Test-SceneRunnerCache.ps1,OPS-05,build-provenance,03-modules/individual-module-designs/operations/build-provenance.md
+scripts/Test-SourceFingerprint.ps1,OPS-05,build-provenance,03-modules/individual-module-designs/operations/build-provenance.md
+scripts/Collect-SceneThreatEvidence.ps1,OPS-06,diagnostics,03-modules/individual-module-designs/operations/diagnostics.md
+scripts/Diagnose-PowerPointActivation.ps1,OPS-06,diagnostics,03-modules/individual-module-designs/operations/diagnostics.md
+scripts/Diagnostic-OutputPath.ps1,OPS-06,diagnostics,03-modules/individual-module-designs/operations/diagnostics.md
+scripts/Test-DiagnosticOutputPath.ps1,OPS-06,diagnostics,03-modules/individual-module-designs/operations/diagnostics.md
+.github/workflows/chart-core.yml,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+.github/workflows/office-compatibility.yml,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+.github/workflows/s0-metadata.yml,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+.github/workflows/s1-domain.yml,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+chart-core.yml,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+scripts/Check-Process.ps1,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+scripts/New-PiidxSample.ps1,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+scripts/Test-All.ps1,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+scripts/Test-CheckProcess.ps1,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+scripts/Test-DemoFeatures.ps1,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+scripts/Test-InstalledRibbon.ps1,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+scripts/Test-NativeRenderer.ps1,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+scripts/Test-OfficeCompatibility.ps1,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+scripts/Test-Piidx.ps1,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+scripts/Test-PiidxCatalog.ps1,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+scripts/Test-PiidxCorpus.ps1,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+scripts/Test-PiidxFoundation.ps1,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+scripts/Test-PiidxIsolation.ps1,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+scripts/Test-PiidxPreviews.ps1,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+scripts/Test-PiidxSourceReader.ps1,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+scripts/Test-PiidxSqliteCapability.ps1,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+scripts/Test-Ribbon.ps1,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+scripts/Test-S0.ps1,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+scripts/Test-S1.ps1,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+scripts/Test-SceneContracts.ps1,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+scripts/Test-SecurityRemediation.ps1,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+scripts/Test-TemplateLibrary.ps1,OPS-07,validation-orchestration,03-modules/individual-module-designs/operations/validation-orchestration.md
+scripts/Repair-TemplateAlignment.py,OPS-08,offline-alignment-repair,03-modules/individual-module-designs/operations/offline-alignment-repair.md
+scripts/RepairTemplateSafety.py,OPS-08,offline-alignment-repair,03-modules/individual-module-designs/operations/offline-alignment-repair.md
+tests/security/test_repair_template_alignment.py,OPS-08,offline-alignment-repair,03-modules/individual-module-designs/operations/offline-alignment-repair.md
+scripts/Clean-Workspace.ps1,OPS-09,artifact-maintenance,03-modules/individual-module-designs/operations/artifact-maintenance.md
+scripts/Maintain-Artifacts.py,OPS-09,artifact-maintenance,03-modules/individual-module-designs/operations/artifact-maintenance.md
+scripts/audit-library-dependencies.py,OPS-09,artifact-maintenance,03-modules/individual-module-designs/operations/artifact-maintenance.md
+tests/security/test_artifact_maintenance.py,OPS-09,artifact-maintenance,03-modules/individual-module-designs/operations/artifact-maintenance.md

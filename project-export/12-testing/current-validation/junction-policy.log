@@ -1,0 +1,4 @@
+PASS existing ordinary JSON artifact read positive control
+PASS artifact JSON rejects existing junction before content read
+PASS fingerprint rejects existing junction before hashing
+UTC 2026-11-13T06:15:27.4414962Z; 3 read-only policy assertions passed; no fixtures created or changed

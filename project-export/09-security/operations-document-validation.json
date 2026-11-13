@@ -1,0 +1,13 @@
+{
+  "documents": 32,
+  "module_designs": 9,
+  "source_references": 223,
+  "unique_source_references": 180,
+  "errors": [],
+  "pending_internal_targets": [],
+  "mermaid_diagrams": 4,
+  "reviewed_unique_files": 70,
+  "reviewed_lines": 3406,
+  "script_count": 49,
+  "validation": "source-reference/range/fence/link checks plus editorial reread; diagram syntax left to parent validator; no runtime executed by leaf"
+}

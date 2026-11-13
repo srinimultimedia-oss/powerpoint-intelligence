@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {pathToFileURL} from 'node:url';
+const root=path.resolve(import.meta.dirname,'../..');
+const Ajv=(await import(pathToFileURL(path.join(root,'packages/chart-domain/node_modules/ajv/dist/2020.js')))).default;
+const schema=JSON.parse(fs.readFileSync(path.join(root,'services/ai-gateway/action-plan.schema.json'),'utf8'));
+const ajv=new Ajv({strict:true,allErrors:true});const check=ajv.compile(schema);
+const text=fs.readFileSync(path.join(root,'project-export/07-api-design/request-response-contracts.md'),'utf8');
+const blocks=[...text.matchAll(/```json\s*\n([\s\S]*?)\n```/g)].map(m=>JSON.parse(m[1]));
+const plan=blocks.find(x=>Object.hasOwn(x,'planId'));if(!plan||!check(plan))throw Error('AI planned schema example mismatch');
+const s0=blocks.find(x=>x.SchemaVersion===1);if(!s0||s0.Categories.length!==s0.Series[0].Values.length)throw Error('S0 example dimension mismatch');
+console.log(JSON.stringify({jsonBlocks:blocks.length,aiSchemaExample:'PASS against actual planned schema, not live invocation',s0Example:'PASS JSON syntax and sample dimensions, not COM insertion'}));

@@ -1,0 +1,33 @@
+✔ golden document passes schema and semantic validation without mutation (2.4433ms)
+✔ Unicode text length counts code points (0.5497ms)
+✔ reject unknown schema version (0.167ms)
+✔ reject missing field (0.1524ms)
+✔ reject unknown field (0.1553ms)
+✔ reject unknown nested field (0.1105ms)
+✔ reject coerced revision (0.2473ms)
+✔ reject negative revision (0.1571ms)
+✔ reject overflow revision (0.1499ms)
+✔ reject bad chart ID (0.1875ms)
+✔ reject empty chart GUID (0.1105ms)
+✔ reject unsupported chart (0.1014ms)
+✔ reject duplicate semantic ID (0.1654ms)
+✔ reject dimensions (0.119ms)
+✔ reject empty categories (0.0947ms)
+✔ reject empty series (0.0683ms)
+✔ reject nonfinite data (0.0658ms)
+✔ reject nonfinite layout (0.1021ms)
+✔ reject zero width (0.1003ms)
+✔ reject non-point units (0.0594ms)
+✔ reject duplicate axis role (0.0876ms)
+✔ reject wrong axis scale (0.0655ms)
+✔ reject missing color (0.0719ms)
+✔ reject invalid color (0.0592ms)
+✔ reject blank label (0.0511ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 209.5541

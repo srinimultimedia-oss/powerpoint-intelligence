@@ -1,0 +1,14 @@
+✔ stack totals (0.9591ms)
+✔ 100 percent stack (0.1455ms)
+✔ zero total returns null segments (0.0922ms)
+✔ negative 100% input is rejected (0.6822ms)
+✔ waterfall total is not double counted (0.2235ms)
+✔ CAGR is ten percent (0.1289ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 87.1429
