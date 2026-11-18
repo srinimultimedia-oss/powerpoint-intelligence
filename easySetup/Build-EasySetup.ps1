@@ -73,8 +73,10 @@ Setup logs: %LOCALAPPDATA%\PowerPointIntelligence\easySetup. The EXE contains bo
 $readme | Set-Content -Encoding UTF8 (Join-Path $payload 'README.md')
 $inventory=@(Get-ChildItem $payload -Recurse -File | Sort-Object FullName | ForEach-Object {(Get-FileHash $_.FullName -Algorithm SHA256).Hash+"`t"+$_.FullName.Substring($payload.Length+1).Replace('\','/')})
 $inventory | Set-Content -Encoding UTF8 (Join-Path $payload 'payload.sha256')
-Add-Type -AssemblyName System.IO.Compression.FileSystem
-$zip=Join-Path $work 'payload.zip';[IO.Compression.ZipFile]::CreateFromDirectory($payload,$zip,[IO.Compression.CompressionLevel]::Optimal,$false)
+$zip=Join-Path $work 'payload.zip'
+New-EasySetupPayloadZip $payload $zip
+& (Join-Path $PSScriptRoot 'Test-EasySetup.ps1') -SourceOnly -BundlePath $zip
+if($LASTEXITCODE){throw 'Payload policy validation failed; no installer published.'}
 $bundleHash=(Get-FileHash $zip -Algorithm SHA256).Hash
 $bootstrap=(Get-Content (Join-Path $PSScriptRoot 'Bootstrapper.cs') -Raw).Replace('__BUNDLE_HASH__',$bundleHash)
 $bootstrapFile=Join-Path $work 'Bootstrapper.cs';$bootstrap | Set-Content -Encoding UTF8 $bootstrapFile

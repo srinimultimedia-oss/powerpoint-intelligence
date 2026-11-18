@@ -14,8 +14,56 @@ internal static class IntelligenceSetup
     internal static string Digest(Stream input) { using(var sha=SHA256.Create()) return BitConverter.ToString(sha.ComputeHash(input)).Replace("-",""); }
     internal static string SafePath(string root,string relative) {
         if(String.IsNullOrWhiteSpace(relative)||relative.Contains(":")||relative.Contains("\\")||relative.StartsWith("/"))throw new InvalidDataException("Invalid package path.");
+        var segments=relative.Split('/');
+        if(segments.Any(part=>String.IsNullOrWhiteSpace(part)||part=="."||part==".."||part.EndsWith(".",StringComparison.Ordinal)||part.EndsWith(" ",StringComparison.Ordinal)))throw new InvalidDataException("Ambiguous package path.");
         string full=Path.GetFullPath(Path.Combine(root,relative.Replace('/',Path.DirectorySeparatorChar)));
         if(!full.StartsWith(Path.GetFullPath(root)+Path.DirectorySeparatorChar,StringComparison.OrdinalIgnoreCase))throw new InvalidDataException("Package path escapes installation directory.");return full;
+    }
+    // ZIP names are ordinal strings. Framework ZipFile writers can emit Windows
+    // backslashes; the inventory contract remains forward-slash only. Build one
+    // unambiguous Windows-aware index and use those exact entries in both phases.
+    internal static Dictionary<string,ZipArchiveEntry> VerifyPackage(ZipArchive zip,string destination) {
+        if(zip.Entries.Count>5000||zip.Entries.Sum(e=>e.Length)>536870912)throw new InvalidDataException("Package exceeds extraction bounds.");
+        var entries=new Dictionary<string,ZipArchiveEntry>(StringComparer.OrdinalIgnoreCase);
+        foreach(var entry in zip.Entries){
+            string key=entry.FullName.Replace('\\','/');
+            SafePath(destination,key);
+            if(entries.ContainsKey(key))throw new InvalidDataException("Ambiguous package entries.");
+            entries.Add(key,entry);
+        }
+        ZipArchiveEntry inventory;
+        if(!entries.TryGetValue("payload.sha256",out inventory)||inventory.Length>2000000)throw new InvalidDataException("Missing package inventory.");
+        var expected=new Dictionary<string,string>(StringComparer.OrdinalIgnoreCase);
+        using(var reader=new StreamReader(inventory.Open())){
+            string line;
+            while((line=reader.ReadLine())!=null){
+                var fields=line.Split('\t');
+                if(fields.Length!=2||fields[0].Length!=64||!fields[0].All(Uri.IsHexDigit)||expected.ContainsKey(fields[1])||String.Equals(fields[1],"payload.sha256",StringComparison.OrdinalIgnoreCase))throw new InvalidDataException("Invalid package inventory.");
+                SafePath(destination,fields[1]);expected.Add(fields[1],fields[0]);
+            }
+        }
+        if(expected.Count==0||entries.Count!=expected.Count+1)throw new InvalidDataException("Unexpected package entries.");
+        var files=new Dictionary<string,ZipArchiveEntry>(StringComparer.OrdinalIgnoreCase);
+        foreach(var item in expected){
+            ZipArchiveEntry entry;
+            if(!entries.TryGetValue(item.Key,out entry))throw new InvalidDataException("Missing packaged file.");
+            using(var input=entry.Open())if(!String.Equals(Digest(input),item.Value,StringComparison.OrdinalIgnoreCase))throw new InvalidDataException("Packaged file checksum mismatch.");
+            files.Add(item.Key,entry);
+        }
+        return files;
+    }
+    internal static void ExtractPackage(Dictionary<string,ZipArchiveEntry> files,string destination) {
+        Directory.CreateDirectory(destination);
+        foreach(var item in files){
+            string target=SafePath(destination,item.Key);
+            if(File.Exists(target)){
+                using(var input=File.OpenRead(target))using(var expected=item.Value.Open())
+                    if(Digest(input)!=Digest(expected))throw new InvalidDataException("Existing version was modified; it was not overwritten.");
+                continue;
+            }
+            Directory.CreateDirectory(Path.GetDirectoryName(target));
+            using(var input=item.Value.Open())using(var output=new FileStream(target,FileMode.CreateNew,FileAccess.Write))input.CopyTo(output);
+        }
     }
     internal static string OfficeArchitecture() {
         var paths=new HashSet<string>(StringComparer.OrdinalIgnoreCase);
@@ -50,14 +98,8 @@ internal static class IntelligenceSetup
             using(var resource=Assembly.GetExecutingAssembly().GetManifestResourceStream("IntelligencePayload.zip")){
                 if(resource==null||Digest(resource)!=BundleHash)throw new InvalidDataException("Embedded package checksum mismatch.");resource.Position=0;
                 using(var zip=new ZipArchive(resource,ZipArchiveMode.Read)){
-                    if(zip.Entries.Count>5000||zip.Entries.Sum(e=>e.Length)>536870912)throw new InvalidDataException("Package exceeds extraction bounds.");
-                    var inventory=zip.GetEntry("payload.sha256");if(inventory==null||inventory.Length>2000000)throw new InvalidDataException("Missing package inventory.");
-                    var expected=new Dictionary<string,string>(StringComparer.OrdinalIgnoreCase);
-                    using(var reader=new StreamReader(inventory.Open())){string line;while((line=reader.ReadLine())!=null){var fields=line.Split('\t');if(fields.Length!=2||fields[0].Length!=64||!fields[0].All(Uri.IsHexDigit)||expected.ContainsKey(fields[1]))throw new InvalidDataException("Invalid package inventory.");SafePath(destination,fields[1]);expected.Add(fields[1],fields[0]);}}
-                    if(zip.Entries.Count!=expected.Count+1)throw new InvalidDataException("Unexpected package entries.");
-                    foreach(var item in expected){var entry=zip.GetEntry(item.Key);if(entry==null)throw new InvalidDataException("Missing packaged file.");using(var input=entry.Open())if(Digest(input)!=item.Value)throw new InvalidDataException("Packaged file checksum mismatch.");}
-                    phase="extract";Directory.CreateDirectory(destination);
-                    foreach(var item in expected){string target=SafePath(destination,item.Key);if(File.Exists(target)){using(var input=File.OpenRead(target))if(Digest(input)!=item.Value)throw new InvalidDataException("Existing version was modified; it was not overwritten.");continue;}Directory.CreateDirectory(Path.GetDirectoryName(target));using(var input=zip.GetEntry(item.Key).Open())using(var output=new FileStream(target,FileMode.CreateNew,FileAccess.Write))input.CopyTo(output);}
+                    var files=VerifyPackage(zip,destination);
+                    phase="extract";ExtractPackage(files,destination);
                 }
             }
             phase="VSTO installation";string manifest=Path.Combine(destination,architecture,"PowerPointIntelligence.vsto");
