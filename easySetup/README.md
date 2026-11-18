@@ -1,8 +1,8 @@
 ﻿# NexWave — easySetup
 
-Version: 1.0.0.18
-Source SHA-256: 5C6994BEC6C303B6AC7A7399E0B5240C6FE48837EE59A6888CA50AA75B4BB165
-Generated UTC: 2026-11-03T08:01:42.8080648Z
+Version: 1.0.0.19
+Source SHA-256: E97CFC09602595AB723FA9CE6DE5243F70FDED1F6295151D67F7BDFED39C63CB
+Generated UTC: 2026-11-17T17:16:01.1947109Z
 
 Run PowerPointIntelligenceSetup.exe after saving and closing PowerPoint. Setup detects Office x86/x64, verifies/extracts its embedded payload to the current user's LocalAppData, and opens the normal VSTO publisher prompt. Keep extracted version folders: VSTO may depend on them. Installation is per Windows user. Updates use a newer signed deployment version: the prior easySetup package is uninstalled through VSTO and the previous package is offered for rollback if installation fails. A first migration from an older repository-based installation may require uninstalling that old package normally if VSTO reports a different installation location. Uninstall through Windows Apps / Programs and Features. No administrator rights, certificate trust stores, antivirus exclusions or security policies are changed by this bootstrapper. A company policy may still require administrator assistance.
 

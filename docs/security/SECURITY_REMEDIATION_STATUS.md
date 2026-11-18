@@ -81,3 +81,8 @@ The scan explicitly resolves all six prior PowerShell ID occurrences and reports
 
 See CHECKMARX_20261103_113558_REMEDIATION.md and CHECKMARX_20261103_113558_EVIDENCE.json. Four recovery/XML flows hardened; recurrent local fingerprint hash-only flow assessed as potential false positive with additional source-root containment controls. All original five SAST similarity IDs retained. One undetailed High 2ms result deferred by owner. Scanner clearance requires a new scan; none of these records is claimed resolved in Checkmarx.
 
+
+## nexwave-plugin-008 — 17 November 2026
+
+Confirmed bootstrapper ZIP path-separator lookup failure in1.0.0.18. Shared normalized verification/extraction, ambiguity/path rejection, canonical producer and prepublication payload checks implemented. Signed1.0.0.19 published and desktop package validation passed; all137files independently verified with0backslash entries/0lookup misses. GUI x86/x64Office acceptance remains pending. See NEXWAVE_PLUGIN_008_20261117.md; this is not a scanner-wide clearance claim.
+

@@ -1,4 +1,4 @@
-﻿param([switch]$SourceOnly)
+﻿param([switch]$SourceOnly,[string]$BundlePath)
 $ErrorActionPreference='Stop'
 $repo=Split-Path $PSScriptRoot -Parent
 . (Join-Path $PSScriptRoot 'Common.ps1')
@@ -11,6 +11,22 @@ $output=Join-Path $repo 'artifacts/easySetup-tests';New-Item -ItemType Directory
 & (Join-Path $vs 'MSBuild/Current/Bin/Roslyn/csc.exe') /nologo /target:exe /main:SetupPolicyTests /langversion:7.3 /r:System.Windows.Forms.dll /r:System.Core.dll /r:System.IO.Compression.dll /r:System.IO.Compression.FileSystem.dll (Join-Path $PSScriptRoot 'Bootstrapper.cs') (Join-Path $PSScriptRoot 'SetupPolicyTests.cs') "/out:$output/SetupPolicyTests.exe"
 if($LASTEXITCODE){throw 'Setup policy compilation failed.'}
 & (Join-Path $output 'SetupPolicyTests.exe');if($LASTEXITCODE){throw 'Setup policy tests failed.'}
+if($BundlePath){& (Join-Path $output 'SetupPolicyTests.exe') --verify-bundle $BundlePath;if($LASTEXITCODE){throw 'Actual embedded payload policy verification failed.'}}
+# Exercise the actual builder writer from this PowerShell host, without signing.
+$writerRoot=Join-Path $output ('writer-'+[Guid]::NewGuid().ToString('N'))
+$writerPayload=Join-Path $writerRoot 'payload'
+$null=New-Item -ItemType Directory -Force (Join-Path $writerPayload 'x86'),(Join-Path $writerPayload 'x64')
+[IO.File]::WriteAllText((Join-Path $writerPayload 'x86/PowerPointIntelligence.vsto'),'inert x86')
+[IO.File]::WriteAllText((Join-Path $writerPayload 'x64/PowerPointIntelligence.vsto'),'inert x64')
+$writerRecords=@(Get-ChildItem $writerPayload -File -Recurse | ForEach-Object {(Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash+"`t"+$_.FullName.Substring($writerPayload.Length+1).Replace('\','/')})
+[IO.File]::WriteAllText((Join-Path $writerPayload 'payload.sha256'),($writerRecords -join "`n"))
+$writerZip=Join-Path $writerRoot 'payload.zip'
+New-EasySetupPayloadZip $writerPayload $writerZip
+$writerArchive=[IO.Compression.ZipFile]::OpenRead($writerZip)
+try{if(@($writerArchive.Entries | Where-Object {$_.FullName.Contains('\')}).Count){throw 'Payload writer emitted backslash entry names.'}}finally{$writerArchive.Dispose()}
+& (Join-Path $output 'SetupPolicyTests.exe') --verify-bundle $writerZip
+if($LASTEXITCODE){throw 'Production payload writer fixture verification failed.'}
+Write-Output 'PASS production payload writer emits forward-slash entries; both Office payload fixture hashes verified.'
 & (Join-Path $PSScriptRoot 'Test-ResourceReader.ps1') -Compiler (Join-Path $vs 'MSBuild/Current/Bin/Roslyn/csc.exe')
 if($SourceOnly){Write-Output 'PASS packaging source checks; signed installer generation and installation not validated.';return}
 $exe=Join-Path $PSScriptRoot 'PowerPointIntelligenceSetup.exe';$receipt=Join-Path $PSScriptRoot 'build.json'
